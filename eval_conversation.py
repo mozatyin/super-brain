@@ -131,7 +131,7 @@ class Chatter:
 
         response = self._client.messages.create(
             model=self._model,
-            max_tokens=256,
+            max_tokens=150,  # V2.0: shorter to maximize speaker output
             system=system,
             messages=messages if messages else [{"role": "user", "content": "Start a casual conversation."}],
         )
