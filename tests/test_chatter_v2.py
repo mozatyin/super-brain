@@ -31,3 +31,28 @@ def test_chatter_no_personality_probing():
         prompt = _build_chatter_system(turn_number=turn, total_turns=20)
         assert "what kind of person" not in prompt.lower()
         assert "describe yourself" not in prompt.lower()
+
+
+def test_chatter_max_tokens_reduced():
+    """V2.0: Chatter should use max_tokens=150 (down from 256) for shorter responses."""
+    from unittest.mock import MagicMock, patch
+
+    with patch("eval_conversation.anthropic.Anthropic") as mock_cls:
+        mock_client = MagicMock()
+        mock_cls.return_value = mock_client
+        mock_response = MagicMock()
+        mock_response.content = [MagicMock(text="That's interesting, tell me more.")]
+        mock_client.messages.create.return_value = mock_response
+
+        from eval_conversation import Chatter
+        chatter = Chatter(api_key="test-key")
+        chatter.next_message(
+            conversation=[{"role": "speaker", "text": "I had a great weekend."}],
+            turn_number=3,
+            total_turns=20,
+        )
+
+        call_kwargs = mock_client.messages.create.call_args[1]
+        assert call_kwargs["max_tokens"] <= 150, (
+            f"Chatter max_tokens should be ≤150, got {call_kwargs['max_tokens']}"
+        )
