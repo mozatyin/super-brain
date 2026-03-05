@@ -855,15 +855,24 @@ def simulate_conversation(
     profile: PersonalityDNA,
     n_turns: int,
     seed: int = 0,
-) -> list[dict]:
+    think_slow: "ThinkSlow | None" = None,
+) -> "list[dict] | tuple[list[dict], list]":
     """Simulate a natural conversation for n_turns exchanges.
 
-    Returns list of {"role": "chatter"|"speaker", "text": str}.
+    Args:
+        think_slow: Optional ThinkSlow extractor. If provided, extracts every 5 turns
+            and returns (conversation, think_slow_results).
+
+    Returns:
+        If think_slow is None: list of {"role": "chatter"|"speaker", "text": str}
+        If think_slow is provided: (conversation, list[ThinkSlowResult])
     """
     import random as _random
     rng = _random.Random(seed)
 
     conversation: list[dict] = []
+    ts_results: list = []
+    previous_ts = None
 
     # Start with a random casual opener
     opener = rng.choice(CASUAL_OPENERS)
@@ -883,6 +892,19 @@ def simulate_conversation(
         speaker_reply = speaker.respond(profile, conversation, turn_number=turn)
         conversation.append({"role": "speaker", "text": speaker_reply})
 
+        # Think Slow extraction every 5 turns
+        if think_slow and (turn + 1) % 5 == 0:
+            focus = previous_ts.low_confidence_traits if previous_ts else None
+            ts_result = think_slow.extract(
+                conversation=conversation,
+                focus_traits=focus,
+                previous=previous_ts,
+            )
+            ts_results.append(ts_result)
+            previous_ts = ts_result
+
+    if think_slow is not None:
+        return conversation, ts_results
     return conversation
 
 
@@ -993,6 +1015,8 @@ def run_eval(
     chatter = Chatter(api_key=api_key)
     speaker = PersonalitySpeaker(api_key=api_key)
     detector = Detector(api_key=api_key)
+    from super_brain.think_slow import ThinkSlow
+    think_slow = ThinkSlow(api_key=api_key)
 
     all_results: dict[str, dict] = {}
 
@@ -1014,11 +1038,23 @@ def run_eval(
 
         # Simulate full conversation
         print(f"  Simulating {max_turns}-turn conversation...", end=" ", flush=True)
-        conversation = simulate_conversation(
-            chatter, speaker, profile, n_turns=max_turns, seed=i
+        conversation, ts_results = simulate_conversation(
+            chatter, speaker, profile, n_turns=max_turns, seed=i,
+            think_slow=think_slow,
         )
         total_words = len(extract_speaker_text(conversation).split())
         print(f"done ({total_words} speaker words)")
+
+        # Log Think Slow confidence progression
+        if ts_results:
+            for idx, ts in enumerate(ts_results):
+                n_estimated = len(ts.partial_profile.traits)
+                n_low = len(ts.low_confidence_traits)
+                avg_conf = (
+                    sum(ts.confidence_map.values()) / max(len(ts.confidence_map), 1)
+                )
+                print(f"    ThinkSlow #{idx+1}: {n_estimated} traits estimated, "
+                      f"{n_low} low-confidence, avg_conf={avg_conf:.2f}")
 
         # Show a few conversation snippets
         print(f"\n  --- Conversation sample (first 3 turns) ---")
