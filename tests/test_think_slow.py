@@ -83,9 +83,13 @@ def test_think_slow_extract_returns_result():
         assert result.partial_profile is not None
         assert len(result.partial_profile.traits) == 3
         assert "anxiety" in result.confidence_map
+        # Low-confidence estimated traits are included
         assert "anxiety" in result.low_confidence_traits
         assert "feelings" in result.low_confidence_traits
+        # High-confidence estimated trait is NOT low-confidence
         assert "gregariousness" not in result.low_confidence_traits
+        # Unestimated traits are also low-confidence (they have no data at all)
+        assert "narcissism" in result.low_confidence_traits  # not estimated → low conf
 
 
 def test_think_slow_extract_with_focus_traits():

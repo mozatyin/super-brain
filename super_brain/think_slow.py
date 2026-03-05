@@ -25,8 +25,12 @@ about uncertainty.
 For each trait you can estimate:
 1. Note specific observations from the text
 2. Give a value (0.0-1.0) and confidence (0.0-1.0)
-3. Confidence should be LOW (0.1-0.3) if you have little evidence, MEDIUM (0.4-0.6) \
-if you have some signals, HIGH (0.7-1.0) if you have clear, repeated evidence
+3. Confidence calibration (STRICT):
+   - 0.1-0.2: vague impression, no direct evidence
+   - 0.3-0.4: one indirect signal
+   - 0.5-0.6: one clear signal or two indirect signals
+   - 0.7-0.8: multiple clear, consistent signals
+   - 0.9-1.0: overwhelming evidence (very rare in casual chat)
 
 Return ONLY valid JSON:
 {
@@ -39,8 +43,12 @@ Return ONLY valid JSON:
 IMPORTANT:
 - Only estimate traits you have SOME evidence for. Skip traits with zero signal.
 - Default value for uncertain traits is 0.45-0.55 (population mean).
-- This is casual conversation — apply the same LLM bias corrections as standard detection.
-- Be conservative: low confidence is better than wrong confidence.
+- This is casual conversation — apply LLM bias corrections (friendly tone ≠ high warmth, \
+articulate text ≠ high cognition, etc.)
+- Be CONSERVATIVE with confidence. In 5 turns of casual chat, most confidences should be \
+0.2-0.5. Confidence > 0.7 requires MULTIPLE DISTINCT observations across different messages.
+- Your confidence scores directly drive which traits get explored next. Over-confidence \
+means we stop investigating traits that still need more evidence.
 """
 
 
@@ -150,7 +158,15 @@ class ThinkSlow:
             traits=traits,
         )
 
+        # V2.2 fix: low_confidence includes BOTH low-confidence estimated traits
+        # AND all catalog traits that weren't estimated at all (confidence = 0)
+        all_trait_names = {t["name"] for t in TRAIT_CATALOG}
+        estimated_names = set(confidence_map.keys())
+        unestimated = all_trait_names - estimated_names
+
         low_conf = [name for name, conf in confidence_map.items() if conf < 0.5]
+        # Unestimated traits are the MOST uncertain — add them all
+        low_conf.extend(sorted(unestimated))
 
         return ThinkSlowResult(
             partial_profile=partial,
