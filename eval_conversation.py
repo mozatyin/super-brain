@@ -48,12 +48,20 @@ CASUAL_OPENERS = [
 ]
 
 
-def _build_chatter_system(turn_number: int, total_turns: int) -> str:
+def _build_chatter_system(
+    turn_number: int,
+    total_turns: int,
+    low_confidence_traits: list[str] | None = None,
+) -> str:
     """Build a Chatter system prompt with Deep Listening + Incisive Questions.
 
     V2.0: Based on Nancy Kline's 10 Component Thinking Environment.
     - Turns 1-14: Pure Deep Listening (create safety, maximize speaker output)
     - Turns 15+: Introduce Incisive Questions (targeted exploration)
+
+    V2.2: Gap-aware support — when low_confidence_traits are provided, the
+    Incisive Questions phase injects suggested exploration directions based
+    on traits where ThinkSlow confidence is lowest.
     """
     base = (
         "You are a deep listener having a natural conversation. Your goal is to create "
@@ -96,7 +104,7 @@ def _build_chatter_system(turn_number: int, total_turns: int) -> str:
             "LISTENER GOAL: Understand their values, patterns, and emotional landscape."
         )
     else:
-        return base + (
+        prompt = base + (
             "CURRENT PHASE: Incisive Questions. You now have rapport and can ask targeted, "
             "thought-provoking questions that reveal deeper patterns:\n"
             "- Questions about decisions and trade-offs ('if you had to choose between X and Y...')\n"
@@ -109,6 +117,20 @@ def _build_chatter_system(turn_number: int, total_turns: int) -> str:
             "LISTENER GOAL: Fill in the picture. Target areas you haven't explored yet."
         )
 
+        # V2.2: Gap-aware topic injection
+        if low_confidence_traits:
+            from super_brain.trait_topic_map import get_topics_for_traits
+            topics = get_topics_for_traits(low_confidence_traits[:5], max_per_trait=1)
+            if topics:
+                topic_lines = "\n".join(f"- {t}" for t in topics)
+                prompt += (
+                    f"\n\nSUGGESTED EXPLORATION DIRECTIONS (areas we haven't covered yet):\n"
+                    f"{topic_lines}\n"
+                    "Weave these naturally into conversation — don't fire them off like a questionnaire."
+                )
+
+        return prompt
+
 
 class Chatter:
     """A natural conversation partner with topic escalation over turns."""
@@ -120,9 +142,15 @@ class Chatter:
         self._client = anthropic.Anthropic(**kwargs)
         self._model = model
 
-    def next_message(self, conversation: list[dict], turn_number: int, total_turns: int) -> str:
+    def next_message(
+        self,
+        conversation: list[dict],
+        turn_number: int,
+        total_turns: int,
+        low_confidence_traits: list[str] | None = None,
+    ) -> str:
         """Generate the next conversation message with phase-appropriate depth."""
-        system = _build_chatter_system(turn_number, total_turns)
+        system = _build_chatter_system(turn_number, total_turns, low_confidence_traits=low_confidence_traits)
 
         messages = []
         for msg in conversation:
@@ -873,6 +901,7 @@ def simulate_conversation(
     conversation: list[dict] = []
     ts_results: list = []
     previous_ts = None
+    current_low_conf: list[str] = []
 
     # Start with a random casual opener
     opener = rng.choice(CASUAL_OPENERS)
@@ -885,7 +914,10 @@ def simulate_conversation(
     # Continue for n_turns - 1 more exchanges
     for turn in range(1, n_turns):
         # Chatter follows up naturally (with escalation)
-        chatter_msg = chatter.next_message(conversation, turn_number=turn + 1, total_turns=n_turns)
+        chatter_msg = chatter.next_message(
+            conversation, turn_number=turn + 1, total_turns=n_turns,
+            low_confidence_traits=current_low_conf if current_low_conf else None,
+        )
         conversation.append({"role": "chatter", "text": chatter_msg})
 
         # Speaker responds in character (turn_number drives temporal modulation)
@@ -902,6 +934,7 @@ def simulate_conversation(
             )
             ts_results.append(ts_result)
             previous_ts = ts_result
+            current_low_conf = ts_result.low_confidence_traits
 
     if think_slow is not None:
         return conversation, ts_results
