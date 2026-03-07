@@ -386,12 +386,13 @@ class Detector:
             # V0.5: Batch completeness retry — retry once if traits are missing
             parsed = []
             for attempt in range(2):
-                response = self._client.messages.create(
+                from super_brain.api_retry import retry_api_call
+                response = retry_api_call(lambda: self._client.messages.create(
                     model=self._model,
                     max_tokens=8192,
                     system=_SYSTEM_PROMPT,
                     messages=[{"role": "user", "content": user_message}],
-                )
+                ))
 
                 raw = response.content[0].text
                 parsed = _parse_batch_response(raw)

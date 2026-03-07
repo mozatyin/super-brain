@@ -157,12 +157,13 @@ class ThinkSlow:
             f"Return JSON with observations and trait_estimates."
         )
 
-        response = self._client.messages.create(
+        from super_brain.api_retry import retry_api_call
+        response = retry_api_call(lambda: self._client.messages.create(
             model=self._model,
             max_tokens=4096,
             system=_THINK_SLOW_SYSTEM,
             messages=[{"role": "user", "content": user_message}],
-        )
+        ))
 
         raw = response.content[0].text
         data = _parse_think_slow_response(raw)

@@ -167,12 +167,13 @@ class ThinkDeep:
             f"and generate bridge questions. Return JSON."
         )
 
-        response = self._client.messages.create(
+        from super_brain.api_retry import retry_api_call
+        response = retry_api_call(lambda: self._client.messages.create(
             model=self._model,
             max_tokens=4096,
             system=_THINK_DEEP_SYSTEM,
             messages=[{"role": "user", "content": user_message}],
-        )
+        ))
 
         raw = response.content[0].text
         data = _parse_think_deep_response(raw)

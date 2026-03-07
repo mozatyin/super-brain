@@ -21,9 +21,25 @@ import json
 import os
 import statistics
 import sys
+import time
 from pathlib import Path
 
 import anthropic
+
+
+def _retry_api_call(fn, max_retries=3, base_delay=5):
+    """Retry API calls on transient errors (403, 429, 500+)."""
+    for attempt in range(max_retries):
+        try:
+            return fn()
+        except (anthropic.PermissionDeniedError, anthropic.RateLimitError,
+                anthropic.InternalServerError) as e:
+            if attempt == max_retries - 1:
+                raise
+            delay = base_delay * (2 ** attempt)
+            print(f"    [retry {attempt+1}/{max_retries}] {type(e).__name__}, waiting {delay}s...")
+            time.sleep(delay)
+    raise RuntimeError("Unreachable")
 
 from super_brain.catalog import ALL_DIMENSIONS, TRAIT_CATALOG
 from super_brain.models import (
@@ -242,12 +258,12 @@ class Chatter:
             role = "assistant" if msg["role"] == "chatter" else "user"
             messages.append({"role": role, "content": msg["text"]})
 
-        response = self._client.messages.create(
+        response = _retry_api_call(lambda: self._client.messages.create(
             model=self._model,
             max_tokens=150,  # V2.0: shorter to maximize speaker output
             system=system,
             messages=messages if messages else [{"role": "user", "content": "Start a casual conversation."}],
-        )
+        ))
         return response.content[0].text
 
 
@@ -953,12 +969,12 @@ class PersonalitySpeaker:
             role = "user" if msg["role"] == "chatter" else "assistant"
             messages.append({"role": role, "content": msg["text"]})
 
-        response = self._client.messages.create(
+        response = _retry_api_call(lambda: self._client.messages.create(
             model=self._model,
             max_tokens=max_tok,
             system=system,
             messages=messages,
-        )
+        ))
         return response.content[0].text
 
 

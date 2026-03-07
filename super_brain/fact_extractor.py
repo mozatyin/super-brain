@@ -143,12 +143,13 @@ class FactExtractor:
             f"Return JSON with facts, reality, secrets, contradictions."
         )
 
-        response = self._client.messages.create(
+        from super_brain.api_retry import retry_api_call
+        response = retry_api_call(lambda: self._client.messages.create(
             model=self._model,
             max_tokens=4096,
             system=_FACT_EXTRACTOR_SYSTEM,
             messages=[{"role": "user", "content": user_message}],
-        )
+        ))
 
         raw = response.content[0].text
         data = _parse_fact_response(raw)
