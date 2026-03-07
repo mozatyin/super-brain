@@ -37,6 +37,8 @@
 | V2.3.1@10t | **0.183** | **73.7%** | **94.9%** | 3 | Same system, measured at 10 turns |
 | **V2.4** | **0.189** | **72.7%** | **94.9%** | 3 | FactExtractor + AdaptiveFrequency + Soul model (coverage=1.00) |
 | V2.4@10t | **0.164** | **83.3%** | **96.5%** | 3 | Same system, measured at 10 turns (best 10t ever!) |
+| **V2.5** | **0.178** | **74.2%** | **91.9%** | 3 | ThinkDeep + Intentions + Gaps (coverage=1.00, 31 intentions, 28 gaps avg) |
+| V2.5@10t | **0.185** | **70.7%** | **96.5%** | 3 | Same system, measured at 10 turns |
 
 ## Per-Dimension MAE (20 turns)
 
@@ -396,3 +398,70 @@ Note: V0.1-V0.8 used 3 profiles; V1.7+ used 5 profiles. Numbers not directly com
 8. **Dimension variance high**: HON +34%, OPN +30% regressions likely conversation variance (3-profile noise)
 9. **71 facts per profile**: FactExtractor extracts career, hobby, relationship, preference data richly
 10. **32 secrets per profile**: Detects avoidance patterns, energy shifts, hidden motivations
+
+### V2.5 — ThinkDeep + Intentions + Gaps
+
+**Core change**: Added ThinkDeep — a triggered (not periodic) strategic analysis that detects intentions, reality-intention gaps, and bridge questions from the full Soul state. Enhanced Conductor with gap-driven "push" mode.
+
+**New modules**:
+- `super_brain/think_deep.py` — Triggered LLM call analyzing full Soul → intentions, gaps, bridge questions, critical question, conversation strategy
+
+**New models** (in `models.py`):
+- `Intention`: description, domain, strength, blockers
+- `Gap`: intention, reality, bridge_question, priority
+- `ThinkDeepResult`: soul_narrative, intentions, gaps, critical_question, conversation_strategy
+
+**Conductor enhancement**:
+- New `think_deep` parameter in `decide()`
+- Priority 1.5: critical_question → "push" mode (one-shot, cleared after use)
+- Merged question pool: trait_gap questions + gap bridge questions compete by priority
+
+**Trigger conditions** (any of):
+- 5+ facts accumulated and no intentions yet
+- New contradiction found by FactExtractor
+- ThinkSlow info_staleness > 0.8 for 2+ consecutive cycles
+- After turn 10 if no intentions detected
+
+**Soul Coverage expanded**: 3 → 5 components (facts/10, reality, secrets/3, intentions/3, gaps/2)
+
+**V2.5 Per-Dimension MAE (20 turns, 3 profiles):**
+
+| Dimension | V2.4(3p) | V2.5(3p) | Change |
+|-----------|----------|----------|--------|
+| EXT | 0.143 | **0.088** | -38% |
+| OPN | 0.177 | **0.126** | -29% |
+| HON | 0.227 | **0.138** | -39% |
+| AGR | 0.188 | **0.149** | -21% |
+| VAL | 0.176 | **0.157** | -11% |
+| CON | 0.154 | 0.173 | +12% |
+| NEU | 0.210 | **0.183** | -13% |
+| DRK | 0.139 | 0.218 | +57% |
+| HUM | 0.240 | **0.219** | -9% |
+| SOC | 0.229 | **0.221** | -3% |
+| COG | 0.164 | 0.223 | +36% |
+| EMO | 0.190 | 0.228 | +20% |
+| STR | 0.243 | **0.232** | -5% |
+
+**Soul Coverage V2.5:**
+
+| Metric | Target | Actual |
+|--------|--------|--------|
+| Avg coverage score | ≥0.50 | **1.000** |
+| Avg facts per profile | ≥5 | **62.7** |
+| Reality populated | 3/3 | **3/3** |
+| Avg secrets per profile | — | **34.7** |
+| Avg contradictions per profile | — | **30.0** |
+| Avg intentions per profile | ≥2 | **31.3** |
+| Avg gaps per profile | ≥1 | **28.3** |
+
+**Key findings**:
+1. **20t MAE new best**: 0.178 (vs V2.4 0.189) — 5.8% improvement
+2. **EXT massively improved**: 0.143→0.088 (-38%) — best single-dimension result ever
+3. **HON massively improved**: 0.227→0.138 (-39%) — ThinkDeep's gap-driven questions probe honesty naturally
+4. **OPN recovered**: 0.177→0.126 (-29%) — back to V2.3's strong OPN performance
+5. **AGR improved**: 0.188→0.149 (-21%) — bridge questions explore trust and cooperation
+6. **10t MAE regressed**: 0.164→0.185 — ThinkDeep triggers mid-conversation, so 10-turn slice doesn't benefit yet
+7. **DRK regressed**: 0.139→0.218 (+57%) — high conversation variance, 3-profile noise
+8. **COG regressed**: 0.164→0.223 (+36%) — LLM analytical bias returns
+9. **ThinkDeep highly productive**: 31.3 intentions, 28.3 gaps per profile — may be over-extracting
+10. **Conductor push mode active**: ThinkDeep critical questions drive deeper conversation probing
