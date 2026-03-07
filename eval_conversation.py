@@ -1270,6 +1270,8 @@ def run_eval(
     think_slow = ThinkSlow(api_key=api_key)
     from super_brain.fact_extractor import FactExtractor
     fact_extractor = FactExtractor(api_key=api_key)
+    from super_brain.think_deep import ThinkDeep
+    think_deep = ThinkDeep(api_key=api_key)
     from super_brain.soul_coverage import compute_soul_coverage
 
     all_results: dict[str, dict] = {}
@@ -1296,6 +1298,7 @@ def run_eval(
             chatter, speaker, profile, n_turns=max_turns, seed=i,
             think_slow=think_slow,
             fact_extractor=fact_extractor,
+            think_deep=think_deep,
         )
         conversation, ts_results, soul = sim_result
         total_words = len(extract_speaker_text(conversation).split())
@@ -1319,6 +1322,8 @@ def run_eval(
                   f"reality={'yes' if soul.reality else 'no'}, "
                   f"{len(soul.secrets)} secrets, "
                   f"{len(soul.contradictions)} contradictions, "
+                  f"{len(soul.intentions)} intentions, "
+                  f"{len(soul.gaps)} gaps, "
                   f"coverage={coverage:.2f}")
 
         # Show a few conversation snippets
@@ -1365,6 +1370,8 @@ def run_eval(
             all_results[profile_name]["soul_reality_populated"] = soul.reality is not None
             all_results[profile_name]["soul_secrets_count"] = len(soul.secrets)
             all_results[profile_name]["soul_contradictions_count"] = len(soul.contradictions)
+            all_results[profile_name]["soul_intentions_count"] = len(soul.intentions)
+            all_results[profile_name]["soul_gaps_count"] = len(soul.gaps)
 
     # ── Overall summary ──────────────────────────────────────────────────
     print(f"\n{'='*70}")
@@ -1430,14 +1437,22 @@ def run_eval(
                                 if "soul_contradictions_count" in pr]
         reality_count = sum(1 for pr in all_results.values()
                            if pr.get("soul_reality_populated"))
+        intentions_counts = [pr.get("soul_intentions_count", 0) for pr in all_results.values()
+                             if "soul_intentions_count" in pr]
+        gaps_counts = [pr.get("soul_gaps_count", 0) for pr in all_results.values()
+                       if "soul_gaps_count" in pr]
         print(f"\n{'='*70}")
-        print(f"  SOUL COVERAGE (V2.4)")
+        print(f"  SOUL COVERAGE (V2.5)")
         print(f"{'='*70}")
         print(f"\n  Avg coverage score: {avg_cov:.3f}")
         print(f"  Avg facts per profile: {statistics.mean(fact_counts):.1f}")
         print(f"  Reality populated: {reality_count}/{n_profiles}")
         print(f"  Avg secrets per profile: {statistics.mean(secret_counts):.1f}")
         print(f"  Avg contradictions per profile: {statistics.mean(contradiction_counts):.1f}")
+        if intentions_counts:
+            print(f"  Avg intentions per profile: {statistics.mean(intentions_counts):.1f}")
+        if gaps_counts:
+            print(f"  Avg gaps per profile: {statistics.mean(gaps_counts):.1f}")
 
     # ── Save results ─────────────────────────────────────────────────────
     output_path = Path("eval_conversation_results.json")
