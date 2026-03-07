@@ -1218,6 +1218,7 @@ def detect_and_compare(
     conversation: list[dict],
     profile: PersonalityDNA,
     profile_name: str,
+    soul: "Soul | None" = None,
 ) -> dict:
     """Run detection on full conversation and compare with ground truth."""
     # V0.2: Feed FULL conversation to detector, not just speaker text
@@ -1225,10 +1226,14 @@ def detect_and_compare(
     speaker_text = extract_speaker_text(conversation)
     word_count = len(speaker_text.split())
 
+    # V2.6: Build Soul context for Detector
+    soul_ctx = _build_detector_soul_context(soul) if soul else None
+
     detected = detector.analyze(
         text=full_text,
         speaker_id=f"eval_{profile_name}",
         speaker_label="Person B",
+        soul_context=soul_ctx,
     )
 
     # Build maps
@@ -1381,7 +1386,7 @@ def run_eval(
             print(f"  Detecting at {cp} turns ({speaker_words} speaker words)...",
                   end=" ", flush=True)
 
-            result = detect_and_compare(detector, conv_slice, profile, profile_name)
+            result = detect_and_compare(detector, conv_slice, profile, profile_name, soul=soul)
             print(f"done → MAE={result['mae']:.3f} "
                   f"≤0.25={result['within_025']}/{result['total']} "
                   f"≤0.40={result['within_040']}/{result['total']}")
