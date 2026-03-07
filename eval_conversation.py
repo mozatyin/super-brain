@@ -970,6 +970,7 @@ def simulate_conversation(
     seed: int = 0,
     think_slow: "ThinkSlow | None" = None,
     fact_extractor: "FactExtractor | None" = None,
+    think_deep: "ThinkDeep | None" = None,
 ) -> "list[dict] | tuple[list[dict], list] | tuple[list[dict], list, Soul]":
     """Simulate a natural conversation for n_turns exchanges.
 
@@ -980,11 +981,17 @@ def simulate_conversation(
     use AdaptiveFrequency (default_interval=3) instead of hardcoded modulo.
     Results are accumulated into a Soul object.
 
+    V2.5: When think_deep is also provided, ThinkDeep is triggered by specific
+    conditions (5+ facts with no intentions, contradictions, staleness, or
+    after turn 10). Results accumulate into Soul (intentions, gaps).
+
     Args:
         think_slow: Optional ThinkSlow extractor. If provided, extracts every 3 turns
             and returns (conversation, think_slow_results).
         fact_extractor: Optional FactExtractor. Requires think_slow. When provided,
             enables adaptive frequency for both extractors and Soul accumulation.
+        think_deep: Optional ThinkDeep analyzer. Requires fact_extractor + think_slow.
+            Triggered by conditions, not periodic.
 
     Returns:
         If think_slow is None: list of {"role": "chatter"|"speaker", "text": str}
@@ -1015,6 +1022,11 @@ def simulate_conversation(
         fe_freq = AdaptiveFrequency(default_interval=3)
         soul = Soul(id=profile.id, character=profile)
 
+    # V2.5: ThinkDeep state tracking
+    last_td = None
+    td_fired = False
+    consecutive_stale = 0
+
     # Start with a random casual opener
     opener = rng.choice(CASUAL_OPENERS)
     conversation.append({"role": "chatter", "text": opener})
@@ -1036,7 +1048,13 @@ def simulate_conversation(
                 think_fast=last_tf,
                 think_slow=previous_ts,
                 turn_number=turn + 1,
+                think_deep=last_td,
             )
+
+        # V2.5: Clear ThinkDeep after Conductor uses it (one-shot push)
+        if conductor_action and conductor_action.mode == "push" and last_td is not None:
+            last_td = None
+            td_fired = False  # Allow re-triggering later
 
         # Chatter follows up naturally (with escalation or Conductor guidance)
         chatter_msg = chatter.next_message(
@@ -1070,12 +1088,15 @@ def simulate_conversation(
                 ts_freq.report_yield(len(ts_result.partial_profile.traits))
 
             # V2.4: Adaptive frequency for FactExtractor
+            fe_result = None
+            fe_ran_this_turn = False
             if fe_freq.should_run(turn + 1):
                 fe_result = fact_extractor.extract(
                     conversation=conversation,
                     existing_facts=soul.facts,
                     current_turn=turn + 1,
                 )
+                fe_ran_this_turn = True
                 soul.facts.extend(fe_result.new_facts)
                 if fe_result.reality is not None:
                     soul.reality = fe_result.reality
@@ -1086,6 +1107,38 @@ def simulate_conversation(
                     + len(fe_result.secrets)
                     + len(fe_result.contradictions)
                 )
+
+            # V2.5: Check ThinkDeep trigger conditions
+            if think_deep is not None and soul is not None:
+                should_fire = False
+
+                # Trigger 1: 5+ facts and no intentions yet
+                if len(soul.facts) >= 5 and len(soul.intentions) == 0:
+                    should_fire = True
+
+                # Trigger 2: New contradiction found this cycle
+                if fe_ran_this_turn and fe_result and len(fe_result.contradictions) > 0:
+                    should_fire = True
+
+                # Trigger 3: ThinkSlow staleness > 0.8 for 2+ consecutive
+                if previous_ts and previous_ts.info_staleness > 0.8:
+                    consecutive_stale += 1
+                else:
+                    consecutive_stale = 0
+                if consecutive_stale >= 2:
+                    should_fire = True
+
+                # Trigger 4: After turn 10 if no intentions
+                if turn + 1 > 10 and len(soul.intentions) == 0:
+                    should_fire = True
+
+                if should_fire and not td_fired:
+                    td_result = think_deep.analyze(soul=soul, conversation=conversation)
+                    last_td = td_result
+                    td_fired = True
+                    # Accumulate into Soul
+                    soul.intentions.extend(td_result.intentions)
+                    soul.gaps.extend(td_result.gaps)
         elif think_slow:
             # V2.3: Think Slow extraction every 3 turns (was 5 in V2.2)
             if (turn + 1) % 3 == 0:
