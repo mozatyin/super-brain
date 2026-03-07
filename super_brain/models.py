@@ -124,6 +124,32 @@ class FactExtractionResult(BaseModel):
     contradictions: list[str] = Field(default_factory=list)
 
 
+class Intention(BaseModel):
+    """A detected intention or desire of the person."""
+    description: str                # "wants to start own business"
+    domain: str                     # "career", "relationship", "personal_growth",
+                                    # "health", "creative", "financial"
+    strength: float = Field(ge=0.0, le=1.0)
+    blockers: list[str] = Field(default_factory=list)
+
+
+class Gap(BaseModel):
+    """A gap between intention and reality, with a bridge question."""
+    intention: str                  # what they want
+    reality: str                    # where they are
+    bridge_question: str            # question exploring this gap
+    priority: float = Field(ge=0.0, le=1.0)
+
+
+class ThinkDeepResult(BaseModel):
+    """Result of strategic ThinkDeep analysis (V2.5)."""
+    soul_narrative: str             # "This person is at a crossroads..."
+    intentions: list[Intention]     # detected intentions
+    gaps: list[Gap]                 # reality -> intention gaps
+    critical_question: str          # THE single most important question
+    conversation_strategy: str      # "Shift from listening to exploring risk"
+
+
 class Soul(BaseModel):
     """Full Soul model aggregating all layers of understanding about a person."""
     id: str
@@ -136,6 +162,12 @@ class Soul(BaseModel):
 
     # Layer 3: Reality (latest snapshot from FactExtractor)
     reality: Reality | None = None
+
+    # Layer 4: Intentions (from ThinkDeep)
+    intentions: list[Intention] = Field(default_factory=list)
+
+    # Layer 5: Gaps (from ThinkDeep)
+    gaps: list[Gap] = Field(default_factory=list)
 
     # Cross-layer insights
     secrets: list[str] = Field(default_factory=list)
