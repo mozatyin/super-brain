@@ -3,7 +3,7 @@
 from super_brain.conductor import Conductor
 from super_brain.models import (
     ThinkFastResult, ThinkSlowResult, ConductorAction, IncisiveQuestion,
-    PersonalityDNA, SampleSummary,
+    PersonalityDNA, SampleSummary, ThinkDeepResult, Intention, Gap,
 )
 
 
@@ -162,3 +162,61 @@ def test_conductor_no_force_probe_before_threshold_turn():
     tf = ThinkFastResult(info_entropy=0.6)
     action = conductor.decide(think_fast=tf, think_slow=ts, turn_number=7)
     assert action.mode == "listen"
+
+
+def test_conductor_uses_think_deep_critical_question():
+    """When ThinkDeep provides a critical_question, Conductor pushes it."""
+    conductor = Conductor()
+    tf = ThinkFastResult(info_entropy=0.5)
+    ts = _make_think_slow(info_staleness=0.5)
+    td = ThinkDeepResult(
+        soul_narrative="At a crossroads",
+        intentions=[Intention(description="start business", domain="career", strength=0.8)],
+        gaps=[Gap(
+            intention="start business",
+            reality="employed",
+            bridge_question="What would need to change?",
+            priority=0.9,
+        )],
+        critical_question="If you knew you couldn't fail, what would you do?",
+        conversation_strategy="Explore risk tolerance",
+    )
+    action = conductor.decide(think_fast=tf, think_slow=ts, turn_number=8, think_deep=td)
+    assert action.mode == "push"
+    assert "fail" in action.question.lower()
+
+
+def test_conductor_think_deep_none_no_change():
+    """When think_deep is None, behavior unchanged from V2.3."""
+    conductor = Conductor()
+    tf = ThinkFastResult(opening="travel plans", info_entropy=0.5)
+    action = conductor.decide(think_fast=tf, think_slow=None, turn_number=6, think_deep=None)
+    assert action.mode == "follow_thread"
+
+
+def test_conductor_picks_gap_bridge_question():
+    """When ThinkDeep gaps exist, Conductor can pick gap bridge questions."""
+    conductor = Conductor()
+    tf = ThinkFastResult(info_entropy=0.2)
+    ts = _make_think_slow(
+        incisive_questions=[
+            IncisiveQuestion(question="trait question", target="trust", priority=0.5, source="trait_gap"),
+        ],
+        info_staleness=0.8,
+    )
+    td = ThinkDeepResult(
+        soul_narrative="narrative",
+        intentions=[],
+        gaps=[Gap(
+            intention="start business",
+            reality="employed",
+            bridge_question="What's holding you back from taking the leap?",
+            priority=0.95,
+        )],
+        critical_question="",  # empty critical question — not used for push
+        conversation_strategy="",
+    )
+    action = conductor.decide(think_fast=tf, think_slow=ts, turn_number=8, think_deep=td)
+    assert action.mode == "ask_incisive"
+    # Should pick the gap bridge question since priority=0.95 > trait question priority=0.5
+    assert "leap" in action.question.lower() or "trust" in action.question.lower()

@@ -18,6 +18,8 @@ from typing import Optional
 
 from super_brain.models import (
     ConductorAction,
+    IncisiveQuestion,
+    ThinkDeepResult,
     ThinkFastResult,
     ThinkSlowResult,
 )
@@ -52,21 +54,43 @@ class Conductor:
         self._turns_since_last_incisive = 0
         self._asked_targets: set[str] = set()
 
-    def _pick_question(self, think_slow: ThinkSlowResult) -> tuple:
+    def _pick_question(self, questions: list) -> object:
         """Pick the best incisive question, preferring unasked targets."""
-        questions = think_slow.incisive_questions
-        # Prefer questions targeting traits we haven't asked about yet
+        if not questions:
+            return None
+        # Prefer questions targeting traits/gaps we haven't asked about yet
         unasked = [q for q in questions if q.target not in self._asked_targets]
         pool = unasked if unasked else questions
         top = max(pool, key=lambda q: q.priority)
         self._asked_targets.add(top.target)
         return top
 
+    def _merge_questions(
+        self,
+        think_slow: ThinkSlowResult | None,
+        think_deep: ThinkDeepResult | None,
+    ) -> list:
+        """Merge incisive questions from ThinkSlow trait gaps and ThinkDeep gap bridges."""
+        questions = []
+        if think_slow and think_slow.incisive_questions:
+            questions.extend(think_slow.incisive_questions)
+        if think_deep:
+            for gap in think_deep.gaps:
+                if gap.bridge_question:
+                    questions.append(IncisiveQuestion(
+                        question=gap.bridge_question,
+                        target=f"gap:{gap.intention[:30]}",
+                        priority=gap.priority,
+                        source="reality_gap",
+                    ))
+        return questions
+
     def decide(
         self,
         think_fast: ThinkFastResult,
         think_slow: Optional[ThinkSlowResult],
         turn_number: int,
+        think_deep: Optional[ThinkDeepResult] = None,
     ) -> ConductorAction:
         """Select the next conversation action.
 
@@ -92,15 +116,29 @@ class Conductor:
                 context="Trust-building phase — passive listening",
             )
 
+        # Priority 1.5: ThinkDeep critical question → push mode
+        if (
+            think_deep is not None
+            and think_deep.critical_question
+            and turn_number > self.trust_building_turns
+        ):
+            self._turns_since_last_incisive = 0
+            return ConductorAction(
+                mode="push",
+                context=f"ThinkDeep critical: {think_deep.conversation_strategy}",
+                question=think_deep.critical_question,
+            )
+
         # Priority 0 (highest after trust): Force-probe if too long without asking
         # Only activates after force_probe_after_turn to preserve natural flow early on
-        has_questions = (think_slow is not None and think_slow.incisive_questions)
+        all_questions = self._merge_questions(think_slow, think_deep)
+        has_questions = bool(all_questions)
         if (
             turn_number > self.force_probe_after_turn
             and self._turns_since_last_incisive >= self.max_turns_without_probe
             and has_questions
         ):
-            top_question = self._pick_question(think_slow)
+            top_question = self._pick_question(all_questions)
             self._turns_since_last_incisive = 0
             return ConductorAction(
                 mode="ask_incisive",
@@ -122,7 +160,7 @@ class Conductor:
             think_fast.info_entropy < self.entropy_threshold
             and has_questions
         ):
-            top_question = self._pick_question(think_slow)
+            top_question = self._pick_question(all_questions)
             self._turns_since_last_incisive = 0
             return ConductorAction(
                 mode="ask_incisive",
