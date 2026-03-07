@@ -1038,9 +1038,9 @@ def simulate_conversation(
         fe_freq = AdaptiveFrequency(default_interval=3)
         soul = Soul(id=profile.id, character=profile)
 
-    # V2.5: ThinkDeep state tracking
+    # V2.5/V2.7: ThinkDeep state tracking
     last_td = None
-    td_fired = False
+    td_fire_count = 0  # V2.7: was td_fired boolean, now count with max 2
     consecutive_stale = 0
 
     # Start with a random casual opener
@@ -1070,7 +1070,7 @@ def simulate_conversation(
         # V2.5: Clear ThinkDeep after Conductor uses it (one-shot push)
         if conductor_action and conductor_action.mode == "push" and last_td is not None:
             last_td = None
-            td_fired = False  # Allow re-triggering later
+            # V2.7: Don't reset fire count -- cap at 2 total fires
 
         # Chatter follows up naturally (with escalation or Conductor guidance)
         chatter_msg = chatter.next_message(
@@ -1148,10 +1148,10 @@ def simulate_conversation(
                 if turn + 1 > 10 and len(soul.intentions) == 0:
                     should_fire = True
 
-                if should_fire and not td_fired:
+                if should_fire and td_fire_count < 2:  # V2.7: max 2 fires
                     td_result = think_deep.analyze(soul=soul, conversation=conversation)
                     last_td = td_result
-                    td_fired = True
+                    td_fire_count += 1  # V2.7: increment count
                     # Accumulate into Soul
                     soul.intentions.extend(td_result.intentions)
                     soul.gaps.extend(td_result.gaps)
