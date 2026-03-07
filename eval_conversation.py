@@ -1116,8 +1116,9 @@ def simulate_conversation(
                 soul.facts.extend(fe_result.new_facts)
                 if fe_result.reality is not None:
                     soul.reality = fe_result.reality
-                soul.secrets.extend(fe_result.secrets)
-                soul.contradictions.extend(fe_result.contradictions)
+                from super_brain.dedup import dedup_extend_strings
+                dedup_extend_strings(soul.secrets, fe_result.secrets, threshold=0.6)
+                dedup_extend_strings(soul.contradictions, fe_result.contradictions, threshold=0.6)
                 fe_freq.report_yield(
                     len(fe_result.new_facts)
                     + len(fe_result.secrets)
@@ -1152,9 +1153,19 @@ def simulate_conversation(
                     td_result = think_deep.analyze(soul=soul, conversation=conversation)
                     last_td = td_result
                     td_fire_count += 1  # V2.7: increment count
-                    # Accumulate into Soul
-                    soul.intentions.extend(td_result.intentions)
-                    soul.gaps.extend(td_result.gaps)
+                    # V2.7: Dedup intentions and gaps before accumulating
+                    from super_brain.dedup import is_duplicate
+                    existing_int_descs = [i.description for i in soul.intentions]
+                    for intent in td_result.intentions:
+                        if not is_duplicate(intent.description, existing_int_descs):
+                            soul.intentions.append(intent)
+                            existing_int_descs.append(intent.description)
+
+                    existing_gap_qs = [g.bridge_question for g in soul.gaps]
+                    for gap in td_result.gaps:
+                        if not is_duplicate(gap.bridge_question, existing_gap_qs):
+                            soul.gaps.append(gap)
+                            existing_gap_qs.append(gap.bridge_question)
         elif think_slow:
             # V2.3: Think Slow extraction every 3 turns (was 5 in V2.2)
             if (turn + 1) % 3 == 0:
