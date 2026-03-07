@@ -91,3 +91,12 @@ def test_facts_limited_to_10():
     # Should have at most 10 fact lines
     fact_lines = [line for line in result.split("\n") if line.startswith("- [")]
     assert len(fact_lines) <= 10
+
+
+def test_detector_analyze_accepts_soul_context():
+    """Verify Detector.analyze() signature accepts soul_context parameter."""
+    import inspect
+    from super_brain.detector import Detector
+    sig = inspect.signature(Detector.analyze)
+    assert "soul_context" in sig.parameters
+    assert sig.parameters["soul_context"].default is None

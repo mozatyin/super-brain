@@ -346,6 +346,7 @@ class Detector:
         speaker_id: str,
         speaker_label: str = "Speaker",
         context: str = "general",
+        soul_context: str | None = None,
     ) -> PersonalityDNA:
         """Analyze text and return a PersonalityDNA profile.
 
@@ -368,9 +369,12 @@ class Detector:
             calibration = _get_calibration_examples(batch_dims)
             calibration_section = f"\n{calibration}\n" if calibration else ""
 
+            soul_section = f"\n\n{soul_context}\n" if soul_context else ""
+
             user_message = (
                 f"## Text Sample\n\n{text}\n\n"
                 f"## Target Speaker\n\nAnalyze speaker labeled '{speaker_label}'.\n\n"
+                f"{soul_section}"
                 f"## Dimensions to Analyze: {dim_labels}\n\n"
                 f"{trait_prompt}\n\n"
                 f"{calibration_section}"
