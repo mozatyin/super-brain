@@ -1233,7 +1233,7 @@ git commit -m "feat(v2.5): wire ThinkDeep into eval pipeline + enhanced reportin
 **Step 1: Run the eval**
 
 ```bash
-cd /Users/michael/super-brain && ANTHROPIC_API_KEY=REDACTED_OPENROUTER_KEY .venv/bin/python eval_conversation.py 3 20
+cd /Users/michael/super-brain && ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY .venv/bin/python eval_conversation.py 3 20
 ```
 
 Expected output includes:
@@ -1253,7 +1253,7 @@ Append V2.5 results to `EVAL_HISTORY.md`:
 ```bash
 git add EVAL_HISTORY.md eval_conversation_results.json
 git commit -m "eval(v2.5): record V2.5 evaluation results"
-git push --force https://REDACTED_GITHUB_PAT@github.com/mozatyin/communication-dna.git main
+git push --force https://$GH_TOKEN@github.com/mozatyin/communication-dna.git main
 ```
 
 ---

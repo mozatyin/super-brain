@@ -251,7 +251,7 @@ git commit -m "feat(v2.0): reduce chatter max_tokens to 150 for shorter response
 
 ```bash
 cd /Users/michael/super-brain
-ANTHROPIC_API_KEY=REDACTED_OPENROUTER_KEY \
+ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY \
   .venv/bin/python eval_conversation.py 1 20
 ```
 
@@ -909,7 +909,7 @@ And add Think Slow logging after the conversation simulation:
 
 ```bash
 cd /Users/michael/super-brain
-ANTHROPIC_API_KEY=REDACTED_OPENROUTER_KEY \
+ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY \
   .venv/bin/python eval_conversation.py 1 20
 ```
 
@@ -1456,7 +1456,7 @@ git commit -m "feat(v2.2): wire ThinkSlow gaps into chatter for targeted explora
 
 ```bash
 cd /Users/michael/super-brain
-ANTHROPIC_API_KEY=REDACTED_OPENROUTER_KEY \
+ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY \
   .venv/bin/python eval_conversation.py 3 20
 ```
 
