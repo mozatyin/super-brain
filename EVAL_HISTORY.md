@@ -39,6 +39,8 @@
 | V2.4@10t | **0.164** | **83.3%** | **96.5%** | 3 | Same system, measured at 10 turns (best 10t ever!) |
 | **V2.5** | **0.178** | **74.2%** | **91.9%** | 3 | ThinkDeep + Intentions + Gaps (coverage=1.00, 31 intentions, 28 gaps avg) |
 | V2.5@10t | **0.185** | **70.7%** | **96.5%** | 3 | Same system, measured at 10 turns |
+| **V2.6** | **0.187** | **71.7%** | **94.4%** | 3 | Soul-Informed Detection (Soul context injected into Detector prompts) |
+| V2.6@10t | **0.190** | **73.2%** | **92.4%** | 3 | Same system, measured at 10 turns |
 
 ## Per-Dimension MAE (20 turns)
 
@@ -465,3 +467,37 @@ Note: V0.1-V0.8 used 3 profiles; V1.7+ used 5 profiles. Numbers not directly com
 8. **COG regressed**: 0.164→0.223 (+36%) — LLM analytical bias returns
 9. **ThinkDeep highly productive**: 31.3 intentions, 28.3 gaps per profile — may be over-extracting
 10. **Conductor push mode active**: ThinkDeep critical questions drive deeper conversation probing
+
+### V2.6 — Soul-Informed Detection
+
+**Core change**: Pass accumulated Soul context (top 10 facts, reality, top 3 intentions) to the Detector's LLM prompts for better calibration. New helper `_build_detector_soul_context()` serializes Soul state into a concise markdown block injected between "Target Speaker" and "Dimensions to Analyze" sections.
+
+Also added: API retry wrapper (`api_retry.py`) for transient OpenRouter 403/429/500 errors.
+
+**V2.6 Per-Dimension MAE (20 turns, 3 profiles):**
+
+| Dimension | V2.5(3p) | V2.6(3p) | Change |
+|-----------|----------|----------|--------|
+| EXT | 0.088 | **0.117** | +33% |
+| VAL | 0.157 | **0.142** | -10% |
+| HON | 0.138 | 0.174 | +26% |
+| COG | 0.223 | **0.174** | -22% |
+| AGR | 0.149 | 0.175 | +17% |
+| HUM | 0.219 | **0.175** | -20% |
+| EMO | 0.228 | **0.181** | -21% |
+| CON | 0.173 | 0.183 | +6% |
+| DRK | 0.218 | **0.193** | -11% |
+| OPN | 0.126 | 0.196 | +56% |
+| NEU | 0.183 | 0.216 | +18% |
+| STR | 0.232 | 0.232 | ~ |
+| SOC | 0.221 | 0.267 | +21% |
+
+**Key findings**:
+1. **≤0.40 rate improved**: 91.9%→94.4% (+2.5pp) — fewer catastrophic errors, Soul context helps prevent extreme miscalibrations
+2. **20t MAE regressed slightly**: 0.178→0.187 (+5.1%) — Soul context may bias some dimensions
+3. **COG improved**: 0.223→0.174 (-22%) — knowing the person's background helps calibrate analytical trait detection
+4. **EMO, HUM improved**: -21%, -20% — emotional and humor calibration benefits from person context
+5. **DRK improved**: 0.218→0.193 (-11%) — knowing reality helps distinguish dark trait expression
+6. **OPN regressed**: 0.126→0.196 (+56%) — Soul context may be anchoring openness estimates
+7. **EXT regressed**: 0.088→0.117 (+33%) — V2.5's exceptional EXT result was likely variance
+8. **Overall mixed**: Soul context reduces catastrophic errors but slightly increases mean error — may benefit more with cleaner Soul state (V2.7 dedup)
