@@ -1177,6 +1177,42 @@ def extract_speaker_text(conversation: list[dict]) -> str:
     return " ".join(lines)
 
 
+def _build_detector_soul_context(soul: "Soul") -> str:
+    """Build concise Soul context for Detector calibration."""
+    sections = []
+
+    # Top facts by confidence (max 10)
+    if soul.facts:
+        top_facts = sorted(soul.facts, key=lambda f: -f.confidence)[:10]
+        fact_lines = [f"- [{f.category}] {f.content}" for f in top_facts]
+        sections.append("Known facts:\n" + "\n".join(fact_lines))
+
+    # Reality summary
+    if soul.reality:
+        sections.append(f"Reality: {soul.reality.summary}")
+        if soul.reality.constraints:
+            sections.append(f"Constraints: {', '.join(soul.reality.constraints)}")
+        if soul.reality.resources:
+            sections.append(f"Resources: {', '.join(soul.reality.resources)}")
+
+    # Top intentions (max 3)
+    if soul.intentions:
+        top_int = sorted(soul.intentions, key=lambda i: -i.strength)[:3]
+        int_lines = [f"- {i.description} ({i.domain}, strength={i.strength:.1f})" for i in top_int]
+        sections.append("Key intentions:\n" + "\n".join(int_lines))
+
+    if not sections:
+        return ""
+
+    return (
+        "## Background Information About This Person\n"
+        "The following facts were gathered from earlier in the conversation:\n"
+        + "\n".join(sections)
+        + "\n\nUse this as CONTEXT to calibrate your scoring, but base scores on "
+        "OBSERVED BEHAVIOR in the text, not on these facts alone."
+    )
+
+
 def detect_and_compare(
     detector: Detector,
     conversation: list[dict],
