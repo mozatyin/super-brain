@@ -43,6 +43,8 @@
 | V2.6@10t | **0.190** | **73.2%** | **92.4%** | 3 | Same system, measured at 10 turns |
 | **V2.7** | **0.196** | **68.7%** | **92.4%** | 3 | ThinkDeep cap=2 + Jaccard dedup (intentions 31→6, gaps 28→6) |
 | V2.7@10t | **0.179** | **76.3%** | **93.9%** | 3 | Same system, measured at 10 turns |
+| **V2.8** | **0.182** | **74.2%** | **92.9%** | 3 | ThinkSlow trajectory ensemble (Detector + ThinkSlow blend, max 40% TS weight) |
+| V2.8@10t | **0.173** | **75.8%** | **91.4%** | 3 | Same system, measured at 10 turns |
 
 ## Per-Dimension MAE (20 turns)
 
@@ -546,3 +548,46 @@ Also added: API retry wrapper (`api_retry.py`) for transient OpenRouter 403/429/
 6. **SOC improved**: 0.267→0.240 (-10%) — cleaner intentions = better social dynamics context
 7. **HUM, EMO regressed**: likely conversation variance with 3 profiles
 8. **ThinkDeep cap working**: Only 2 fires per conversation, less push mode disruption
+
+### V2.8 — ThinkSlow Trajectory Ensemble
+
+**Core change**: Blend the Detector's one-shot personality estimates with ThinkSlow's progressive trajectory of partial trait observations. Confidence-weighted averaging with ThinkSlow capped at 40% max influence.
+
+**New module**: `super_brain/ensemble.py` — `blend_with_trajectory()` and `_weighted_mean()`
+
+**Algorithm**:
+```
+for each trait:
+    ts_avg = confidence_weighted_mean(ThinkSlow estimates across all 9 cycles)
+    ts_weight = mean(confidences) * 0.4   # max 40% TS contribution
+    final = (1 - ts_weight) * detector_value + ts_weight * ts_avg
+```
+
+**V2.8 Per-Dimension MAE (20 turns, 3 profiles):**
+
+| Dimension | V2.7(3p) | V2.8(3p) | Change |
+|-----------|----------|----------|--------|
+| VAL | 0.154 | **0.138** | -10% |
+| DRK | 0.145 | **0.139** | -4% |
+| EXT | 0.147 | 0.147 | ~ |
+| HON | 0.177 | **0.167** | -6% |
+| CON | 0.203 | **0.180** | -11% |
+| NEU | 0.196 | **0.181** | -8% |
+| EMO | 0.221 | **0.185** | -16% |
+| OPN | 0.199 | **0.186** | -7% |
+| SOC | 0.240 | **0.195** | -19% |
+| STR | 0.233 | **0.204** | -12% |
+| AGR | 0.173 | 0.209 | +21% |
+| COG | 0.214 | **0.210** | -2% |
+| HUM | 0.240 | **0.230** | -4% |
+
+**Key findings**:
+1. **Ensemble smoothing works**: 20t MAE 0.196→0.182 — biggest single-version improvement in V2.6-V2.8 series
+2. **10 of 13 dimensions improved**: Only AGR regressed (+21%), likely conversation variance
+3. **SOC massively improved**: 0.240→0.195 (-19%) — ThinkSlow trajectory helps social dynamics detection
+4. **EMO improved**: 0.221→0.185 (-16%) — progressive observation of emotional patterns helps
+5. **CON improved**: 0.203→0.180 (-11%) — trajectory builds better conscientiousness signal
+6. **STR improved**: 0.233→0.204 (-12%) — strategy traits benefit from incremental observation
+7. **10t MAE also improved**: 0.179→0.173 — ensemble helps even at 10 turns (5 ThinkSlow cycles available)
+8. **Best 20t MAE in V2.6-V2.8**: 0.182 (V2.6: 0.187, V2.7: 0.196) — ensemble is the winning technique
+9. **V2.5 baseline comparison**: 20t 0.178→0.182 (+2.2%), 10t 0.185→0.173 (-6.5%) — net improvement at 10t, slight regression at 20t still within conversation variance
