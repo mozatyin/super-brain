@@ -1269,6 +1269,15 @@ def detect_and_compare(
         from super_brain.ensemble import blend_with_trajectory
         detected = blend_with_trajectory(detected, ts_results)
 
+    # V2.9: Behavioral feature adjustments
+    from super_brain.behavioral_features import (
+        extract_features, compute_adjustments, apply_adjustments,
+    )
+    bf = extract_features(conversation, speaker_role="speaker")
+    bf_adj = compute_adjustments(bf)
+    if bf_adj:
+        detected = apply_adjustments(detected, bf_adj)
+
     # Build maps
     original_map = {t.name: t.value for t in profile.traits}
     detected_map = {t.name: t.value for t in detected.traits}
@@ -1317,6 +1326,7 @@ def detect_and_compare(
             dim: round(statistics.mean(errs), 3)
             for dim, errs in dim_errors.items()
         },
+        "behavioral_adjustments": {k: round(v, 3) for k, v in bf_adj.items()} if bf_adj else {},
     }
 
 
@@ -1423,6 +1433,12 @@ def run_eval(
             print(f"done → MAE={result['mae']:.3f} "
                   f"≤0.25={result['within_025']}/{result['total']} "
                   f"≤0.40={result['within_040']}/{result['total']}")
+
+            # Show behavioral adjustments
+            bf_adj = result.get("behavioral_adjustments", {})
+            if bf_adj:
+                adj_str = ", ".join(f"{k}:{v:+.2f}" for k, v in sorted(bf_adj.items()))
+                print(f"    BF adjustments: {adj_str}")
 
             # Show worst traits
             worst = [t for t in result["traits"] if t["status"] != "OK"][:5]

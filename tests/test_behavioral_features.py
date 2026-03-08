@@ -1,0 +1,212 @@
+"""Tests for behavioral feature extraction and trait adjustments."""
+
+import pytest
+from super_brain.behavioral_features import (
+    BehavioralFeatures,
+    extract_features,
+    compute_adjustments,
+    apply_adjustments,
+)
+from super_brain.models import PersonalityDNA, Trait, SampleSummary
+
+
+def _make_conversation(speaker_texts: list[str], chatter_texts: list[str] | None = None):
+    """Build a conversation list from speaker texts."""
+    conv = []
+    if chatter_texts is None:
+        chatter_texts = ["Hey, tell me more."] * len(speaker_texts)
+    for c, s in zip(chatter_texts, speaker_texts):
+        conv.append({"role": "chatter", "text": c})
+        conv.append({"role": "speaker", "text": s})
+    return conv
+
+
+def _make_profile(trait_values: dict[str, float]) -> PersonalityDNA:
+    """Build a minimal PersonalityDNA from trait name→value dict."""
+    traits = [
+        Trait(dimension="TEST", name=name, value=val, confidence=0.7)
+        for name, val in trait_values.items()
+    ]
+    return PersonalityDNA(
+        id="test",
+        sample_summary=SampleSummary(
+            total_tokens=100, conversation_count=1,
+            date_range=["2024-01-01"], contexts=["test"],
+            confidence_overall=0.7,
+        ),
+        traits=traits,
+    )
+
+
+class TestExtractFeatures:
+    def test_empty_conversation(self):
+        result = extract_features([], speaker_role="speaker")
+        assert result.turn_count == 0
+        assert result.total_words == 0
+
+    def test_basic_word_count(self):
+        conv = _make_conversation(["Hello world", "This is a test"])
+        result = extract_features(conv)
+        assert result.turn_count == 2
+        assert result.total_words == 6
+        assert result.avg_words_per_turn == 3.0
+
+    def test_self_reference_ratio(self):
+        conv = _make_conversation([
+            "I think I should go. My plan is to leave myself alone."
+        ])
+        result = extract_features(conv)
+        # words: i, think, i, should, go, my, plan, is, to, leave, myself, alone = 12
+        # self refs: i, i, my, myself = 4
+        assert result.self_ref_ratio == pytest.approx(4 / 12, abs=0.01)
+
+    def test_other_reference_ratio(self):
+        conv = _make_conversation([
+            "You should tell your friend that they need our help."
+        ])
+        result = extract_features(conv)
+        # you, your, they, our = 4 other-refs
+        total = result.total_words
+        assert result.other_ref_ratio == pytest.approx(4 / total, abs=0.01)
+
+    def test_hedging_words(self):
+        conv = _make_conversation([
+            "Maybe I should probably go. I think it could be fine."
+        ])
+        result = extract_features(conv)
+        # hedging words: maybe, probably
+        # hedging phrases: "i think", "could be"
+        assert result.hedging_ratio > 0.1
+
+    def test_absolutist_words(self):
+        conv = _make_conversation([
+            "I always do that. Everyone definitely knows. It's absolutely never wrong."
+        ])
+        result = extract_features(conv)
+        # always, everyone, definitely, absolutely, never = 5
+        assert result.absolutist_ratio > 0.1
+
+    def test_question_ratio(self):
+        conv = _make_conversation([
+            "Really? Is that true? I had no idea."
+        ])
+        result = extract_features(conv)
+        # 3 sentences, 2 questions
+        assert result.question_ratio == pytest.approx(2 / 3, abs=0.1)
+
+    def test_exclamation_ratio(self):
+        conv = _make_conversation([
+            "Wow! That's amazing! I can't believe it."
+        ])
+        result = extract_features(conv)
+        # 3 sentences, 2 exclamations
+        assert result.exclamation_ratio == pytest.approx(2 / 3, abs=0.1)
+
+    def test_emotion_words(self):
+        conv = _make_conversation([
+            "I love this amazing day! But I hate the terrible traffic."
+        ])
+        result = extract_features(conv)
+        # pos: love, amazing = 2; neg: hate, terrible = 2
+        assert result.pos_emotion_ratio > 0
+        assert result.neg_emotion_ratio > 0
+
+    def test_only_speaker_turns(self):
+        conv = [
+            {"role": "chatter", "text": "I always definitely think about myself."},
+            {"role": "speaker", "text": "Hello."},
+        ]
+        result = extract_features(conv)
+        assert result.total_words == 1
+        assert result.self_ref_ratio == 0.0
+
+    def test_words_std(self):
+        conv = _make_conversation(["Hello", "This is a much longer sentence with many words"])
+        result = extract_features(conv)
+        assert result.words_std > 0
+
+
+class TestComputeAdjustments:
+    def test_high_self_ref_increases_narcissism(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.10, other_ref_ratio=0.02, hedging_ratio=0.01,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+        )
+        adj = compute_adjustments(features)
+        assert "narcissism" in adj
+        assert adj["narcissism"] > 0
+
+    def test_low_self_ref_decreases_narcissism(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.02, other_ref_ratio=0.05, hedging_ratio=0.01,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("narcissism", 0) < 0
+
+    def test_high_hedging_reduces_assertiveness(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.03,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("assertiveness", 0) < 0
+        assert adj.get("modesty", 0) > 0
+
+    def test_no_rules_fire_for_moderate_values(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=120, words_std=10,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.010,
+            absolutist_ratio=0.005, question_ratio=0.15, exclamation_ratio=0.10,
+            pos_emotion_ratio=0.010, neg_emotion_ratio=0.008,
+        )
+        adj = compute_adjustments(features)
+        # Most rules shouldn't fire for moderate values
+        assert len(adj) <= 3  # at most a few edge cases
+
+    def test_multiple_rules_stack(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=250, words_std=10,
+            self_ref_ratio=0.10, other_ref_ratio=0.01, hedging_ratio=0.001,
+            absolutist_ratio=0.020, question_ratio=0.3, exclamation_ratio=0.4,
+            pos_emotion_ratio=0.03, neg_emotion_ratio=0.02,
+        )
+        adj = compute_adjustments(features)
+        # assertiveness should get boost from both low hedging + high absolutist
+        assert adj.get("assertiveness", 0) > 0.10
+
+
+class TestApplyAdjustments:
+    def test_no_adjustments_returns_same(self):
+        profile = _make_profile({"narcissism": 0.5, "assertiveness": 0.5})
+        result = apply_adjustments(profile, {})
+        assert result.traits[0].value == 0.5
+
+    def test_positive_adjustment(self):
+        profile = _make_profile({"narcissism": 0.5})
+        result = apply_adjustments(profile, {"narcissism": 0.06})
+        assert result.traits[0].value == pytest.approx(0.56, abs=0.01)
+
+    def test_negative_adjustment(self):
+        profile = _make_profile({"assertiveness": 0.4})
+        result = apply_adjustments(profile, {"assertiveness": -0.07})
+        assert result.traits[0].value == pytest.approx(0.33, abs=0.01)
+
+    def test_clamp_to_bounds(self):
+        profile = _make_profile({"trait_a": 0.95, "trait_b": 0.05})
+        result = apply_adjustments(profile, {"trait_a": 0.10, "trait_b": -0.10})
+        vals = {t.name: t.value for t in result.traits}
+        assert vals["trait_a"] == 1.0
+        assert vals["trait_b"] == 0.0
+
+    def test_unadjusted_traits_unchanged(self):
+        profile = _make_profile({"narcissism": 0.5, "warmth": 0.7})
+        result = apply_adjustments(profile, {"narcissism": 0.06})
+        vals = {t.name: t.value for t in result.traits}
+        assert vals["warmth"] == 0.7

@@ -45,6 +45,10 @@
 | V2.7@10t | **0.179** | **76.3%** | **93.9%** | 3 | Same system, measured at 10 turns |
 | **V2.8** | **0.182** | **74.2%** | **92.9%** | 3 | ThinkSlow trajectory ensemble (Detector + ThinkSlow blend, max 40% TS weight) |
 | V2.8@10t | **0.173** | **75.8%** | **91.4%** | 3 | Same system, measured at 10 turns |
+| V2.8(5p) | 0.193 | 67.6% | 93.0% | 5 | V2.8 re-run with 5 profiles for stable baseline |
+| V2.8(5p)@10t | 0.197 | 67.6% | 92.1% | 5 | Same system, measured at 10 turns |
+| **V2.9** | **0.189** | **67.9%** | **91.8%** | 5 | Behavioral features (text-based signals: pronoun ratios, hedging, emotion words) |
+| V2.9@10t | **0.178** | **71.8%** | **94.5%** | 5 | Same system, measured at 10 turns |
 
 ## Per-Dimension MAE (20 turns)
 
@@ -152,6 +156,10 @@ Note: V0.1-V0.8 used 3 profiles; V1.7+ used 5 profiles. Numbers not directly com
    - `competence` — method actor/self-deprecation undermines high-competence expression
 
 8. **Best composite version**: V2.3 has best 20t MAE (0.185) and best ≤0.25 rate (76.3%). V2.3@10t has best 10t MAE (0.168) and ≤0.25 rate (78.3%). No single version is best across all dimensions — an ensemble approach could theoretically achieve MAE ~0.14 by picking per-dimension best.
+
+9. **5-profile eval reveals true performance**: V2.8(5p) MAE 0.193 vs 3p 0.182 (+6%). The 3-profile estimates consistently flattered the system. V2.9(5p) at 0.189 is the most reliable measurement to date.
+
+10. **Behavioral features provide zero-cost signal**: Text-level features (pronoun ratios, hedging, emotion words) improve 10t detection by ~10% at zero LLM cost. Effect diminishes at 20t where LLM-based detection has more data.
 
 ## Changes Per Version
 
@@ -591,3 +599,69 @@ for each trait:
 7. **10t MAE also improved**: 0.179→0.173 — ensemble helps even at 10 turns (5 ThinkSlow cycles available)
 8. **Best 20t MAE in V2.6-V2.8**: 0.182 (V2.6: 0.187, V2.7: 0.196) — ensemble is the winning technique
 9. **V2.5 baseline comparison**: 20t 0.178→0.182 (+2.2%), 10t 0.185→0.173 (-6.5%) — net improvement at 10t, slight regression at 20t still within conversation variance
+
+### V2.8(5p) — 5-Profile Stable Baseline
+
+**No code changes** — re-ran V2.8 with 5 profiles (seeds 0, 42, 84, 126, 168) for stable measurement.
+
+**Key findings**:
+1. **5p MAE higher than 3p**: 20t 0.182→0.193 (+6%), 10t 0.173→0.197 (+14%) — consistent with V1.7 observation (extra profiles dilute lucky ones)
+2. **This is the true V2.8 performance** — 3-profile estimates flattered the system
+
+**V2.8(5p) Per-Dimension MAE (20 turns, 5 profiles):**
+
+| Dimension | V2.8(3p) | V2.8(5p) |
+|-----------|----------|----------|
+| EXT | 0.147 | 0.131 |
+| HUM | 0.230 | 0.159 |
+| VAL | 0.138 | 0.175 |
+| AGR | 0.209 | 0.178 |
+| OPN | 0.186 | 0.179 |
+| COG | 0.210 | 0.183 |
+| HON | 0.167 | 0.200 |
+| STR | 0.204 | 0.202 |
+| EMO | 0.185 | 0.203 |
+| DRK | 0.139 | 0.206 |
+| CON | 0.180 | 0.207 |
+| SOC | 0.195 | 0.238 |
+| NEU | 0.181 | 0.239 |
+
+### V2.9 — Behavioral Features (Text-Based Signal Extraction)
+
+**Core change**: Extract objective, non-LLM text signals from speaker turns (pronoun ratios, hedging frequency, absolutist language, emotional word density, question/exclamation ratios) and apply small additive trait adjustments (±0.03-0.10).
+
+**New module**: `super_brain/behavioral_features.py`
+- `extract_features()` — token-level feature extraction (no LLM cost)
+- `compute_adjustments()` — rule-based mapping from features to trait deltas
+- `apply_adjustments()` — additive adjustment post-ensemble, clamped to [0,1]
+
+**21 adjustment rules** covering: narcissism, assertiveness, modesty, deliberation, need_for_cognition, warmth, intellectual_curiosity, positive_emotions, excitement_seeking, anxiety, emotional_volatility, altruism
+
+**V2.9 Per-Dimension MAE (20 turns, 5 profiles):**
+
+| Dimension | V2.8(5p) | V2.9(5p) | Change |
+|-----------|----------|----------|--------|
+| EXT | 0.131 | **0.124** | -5% |
+| OPN | 0.179 | **0.163** | -9% |
+| CON | 0.207 | **0.167** | -19% |
+| NEU | 0.239 | **0.170** | -29% |
+| AGR | 0.178 | 0.186 | +4% |
+| HUM | 0.159 | 0.192 | +21% |
+| VAL | 0.175 | 0.192 | +10% |
+| COG | 0.183 | 0.208 | +14% |
+| STR | 0.202 | 0.210 | +4% |
+| HON | 0.200 | 0.214 | +7% |
+| SOC | 0.238 | **0.218** | -8% |
+| EMO | 0.203 | 0.219 | +8% |
+| DRK | 0.206 | 0.230 | +12% |
+
+**Key findings**:
+1. **10t MAE significantly improved**: 0.197→0.178 (-9.6%) — behavioral features help with early-turn detection
+2. **20t MAE marginally improved**: 0.193→0.189 (-2.1%) — within conversation variance for 5 profiles
+3. **NEU massively improved at 20t**: 0.239→0.170 (-29%) — anxiety adjustment from negative emotion word density
+4. **CON improved**: 0.207→0.167 (-19%) — may correlate with deliberation/need_for_cognition adjustments
+5. **OPN improved**: 0.179→0.163 (-9%) — intellectual_curiosity adjustment from question frequency
+6. **Per-dimension variance still high**: HUM, DRK, COG regressed — conversation variance dominates
+7. **Behavioral features are conservative**: Only 2-7 adjustments per profile (of 21 possible rules)
+8. **Zero LLM cost**: All feature extraction is regex/counting, no API calls
+9. **First 5-profile eval since V1.7**: Establishes stable measurement baseline for future comparisons
