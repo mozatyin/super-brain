@@ -1246,6 +1246,7 @@ def detect_and_compare(
     profile: PersonalityDNA,
     profile_name: str,
     soul: "Soul | None" = None,
+    ts_results: "list | None" = None,
 ) -> dict:
     """Run detection on full conversation and compare with ground truth."""
     # V0.2: Feed FULL conversation to detector, not just speaker text
@@ -1262,6 +1263,11 @@ def detect_and_compare(
         speaker_label="Person B",
         soul_context=soul_ctx,
     )
+
+    # V2.8: Ensemble blend with ThinkSlow trajectory
+    if ts_results:
+        from super_brain.ensemble import blend_with_trajectory
+        detected = blend_with_trajectory(detected, ts_results)
 
     # Build maps
     original_map = {t.name: t.value for t in profile.traits}
@@ -1413,7 +1419,7 @@ def run_eval(
             print(f"  Detecting at {cp} turns ({speaker_words} speaker words)...",
                   end=" ", flush=True)
 
-            result = detect_and_compare(detector, conv_slice, profile, profile_name, soul=soul)
+            result = detect_and_compare(detector, conv_slice, profile, profile_name, soul=soul, ts_results=ts_results)
             print(f"done → MAE={result['mae']:.3f} "
                   f"≤0.25={result['within_025']}/{result['total']} "
                   f"≤0.40={result['within_040']}/{result['total']}")
