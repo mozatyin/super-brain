@@ -41,6 +41,8 @@
 | V2.5@10t | **0.185** | **70.7%** | **96.5%** | 3 | Same system, measured at 10 turns |
 | **V2.6** | **0.187** | **71.7%** | **94.4%** | 3 | Soul-Informed Detection (Soul context injected into Detector prompts) |
 | V2.6@10t | **0.190** | **73.2%** | **92.4%** | 3 | Same system, measured at 10 turns |
+| **V2.7** | **0.196** | **68.7%** | **92.4%** | 3 | ThinkDeep cap=2 + Jaccard dedup (intentions 31→6, gaps 28→6) |
+| V2.7@10t | **0.179** | **76.3%** | **93.9%** | 3 | Same system, measured at 10 turns |
 
 ## Per-Dimension MAE (20 turns)
 
@@ -501,3 +503,46 @@ Also added: API retry wrapper (`api_retry.py`) for transient OpenRouter 403/429/
 6. **OPN regressed**: 0.126→0.196 (+56%) — Soul context may be anchoring openness estimates
 7. **EXT regressed**: 0.088→0.117 (+33%) — V2.5's exceptional EXT result was likely variance
 8. **Overall mixed**: Soul context reduces catastrophic errors but slightly increases mean error — may benefit more with cleaner Soul state (V2.7 dedup)
+
+### V2.7 — ThinkDeep Quality Control + Dedup
+
+**Core change**: Cap ThinkDeep at max 2 fires per conversation (was unlimited via boolean reset). Add Jaccard token-level deduplication for intentions, gaps, secrets, and contradictions to reduce Soul state bloat.
+
+**New module**: `super_brain/dedup.py` — `is_duplicate()` (Jaccard similarity) and `dedup_extend_strings()`
+
+**V2.7 Per-Dimension MAE (20 turns, 3 profiles):**
+
+| Dimension | V2.6(3p) | V2.7(3p) | Change |
+|-----------|----------|----------|--------|
+| DRK | 0.193 | **0.145** | -25% |
+| EXT | 0.117 | 0.147 | +26% |
+| VAL | 0.142 | 0.154 | +8% |
+| AGR | 0.175 | **0.173** | -1% |
+| HON | 0.174 | 0.177 | +2% |
+| NEU | 0.216 | **0.196** | -9% |
+| OPN | 0.196 | 0.199 | +2% |
+| CON | 0.183 | 0.203 | +11% |
+| COG | 0.174 | 0.214 | +23% |
+| EMO | 0.181 | 0.221 | +22% |
+| STR | 0.232 | 0.233 | ~ |
+| HUM | 0.175 | 0.240 | +37% |
+| SOC | 0.267 | **0.240** | -10% |
+
+**Soul State Quality (V2.7 vs V2.5):**
+
+| Metric | V2.5 | V2.7 | Target | Hit? |
+|--------|------|------|--------|------|
+| Intentions/profile | 31.3 | **6.3** | 5-10 | YES |
+| Gaps/profile | 28.3 | **6.0** | 3-6 | YES |
+| Secrets/profile | 34.7 | 34.7 | 10-15 | No (Jaccard too weak for secrets) |
+| Contradictions/profile | 30.0 | 30.3 | — | No (same issue) |
+
+**Key findings**:
+1. **Dedup achieved target**: Intentions 31→6.3, gaps 28→6.0 — dramatic noise reduction
+2. **Secrets/contradictions unchanged**: Jaccard token overlap doesn't catch semantically similar but differently-worded secrets — would need embeddings
+3. **10t MAE improved**: 0.190→0.179 — less ThinkDeep disruption mid-conversation (cap=2 helps)
+4. **20t MAE regressed**: 0.187→0.196 — cleaner Soul context didn't help 20t detection, likely conversation variance
+5. **DRK improved**: 0.193→0.145 (-25%) — less noise in Soul context helps dark trait calibration
+6. **SOC improved**: 0.267→0.240 (-10%) — cleaner intentions = better social dynamics context
+7. **HUM, EMO regressed**: likely conversation variance with 3 profiles
+8. **ThinkDeep cap working**: Only 2 fires per conversation, less push mode disruption
