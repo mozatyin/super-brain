@@ -134,10 +134,9 @@ def test_blend_clamps_to_0_1():
     assert result.traits[0].value >= 0.0
 
 
-def test_detect_and_compare_accepts_ts_results_parameter():
-    """Verify detect_and_compare() signature accepts ts_results parameter."""
+def test_detect_and_compare_no_longer_uses_ensemble():
+    """V3.1: detect_and_compare no longer accepts ts_results (ensemble removed)."""
     import inspect
     from eval_conversation import detect_and_compare
     sig = inspect.signature(detect_and_compare)
-    assert "ts_results" in sig.parameters
-    assert sig.parameters["ts_results"].default is None
+    assert "ts_results" not in sig.parameters

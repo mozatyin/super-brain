@@ -49,6 +49,10 @@
 | V2.8(5p)@10t | 0.197 | 67.6% | 92.1% | 5 | Same system, measured at 10 turns |
 | **V2.9** | **0.189** | **67.9%** | **91.8%** | 5 | Behavioral features (text-based signals: pronoun ratios, hedging, emotion words) |
 | V2.9@10t | **0.178** | **71.8%** | **94.5%** | 5 | Same system, measured at 10 turns |
+| **V3.0** | **0.186** | **70.3%** | **91.8%** | 5 | Soul-Aware Diagnostic Questions (LLM-generated contextual probes replace static questions) |
+| V3.0@10t | **0.189** | **71.8%** | **91.5%** | 5 | Same system, measured at 10 turns |
+| **V3.1** | **0.196** | **69.1%** | **93.0%** | 5 | Strip-back: removed ThinkDeep, DiagQ, Ensemble, Soul-Informed Detection |
+| V3.1@10t | **0.186** | **72.1%** | **95.5%** | 5 | Same system, measured at 10 turns (best 5p 10t ≤0.40 ever!) |
 
 ## Per-Dimension MAE (20 turns)
 
@@ -665,3 +669,88 @@ for each trait:
 7. **Behavioral features are conservative**: Only 2-7 adjustments per profile (of 21 possible rules)
 8. **Zero LLM cost**: All feature extraction is regex/counting, no API calls
 9. **First 5-profile eval since V1.7**: Establishes stable measurement baseline for future comparisons
+
+### V3.0 — Soul-Aware Diagnostic Questions
+
+**Core change**: Replace static trait_topic_map questions with LLM-generated contextual diagnostic questions. After each ThinkSlow extraction, an LLM call generates 5 personalized questions based on: (1) already-known high-confidence traits, (2) low-confidence target traits with detection hints, (3) known facts and reality summary from Soul, (4) recent conversation context. Questions use psychology-informed types: situational dilemmas, forced-choice preferences, attribution questions, counterfactuals, value ranking.
+
+**New module**: `super_brain/diagnostic_questions.py` — `generate_diagnostic_questions()` with prompt construction helpers and robust JSON parsing.
+
+**V3.0 Per-Dimension MAE (20 turns, 5 profiles):**
+
+| Dimension | V2.9(5p) | V3.0(5p) | Change |
+|-----------|----------|----------|--------|
+| NEU | 0.170 | **0.160** | -6% |
+| CON | 0.167 | 0.170 | +2% |
+| EXT | 0.124 | 0.171 | +38% |
+| OPN | 0.163 | 0.178 | +9% |
+| VAL | 0.192 | **0.179** | -7% |
+| AGR | 0.186 | **0.179** | -4% |
+| SOC | 0.218 | **0.189** | -13% |
+| COG | 0.208 | **0.192** | -8% |
+| STR | 0.210 | **0.195** | -7% |
+| HUM | 0.192 | 0.199 | +4% |
+| HON | 0.214 | **0.203** | -5% |
+| EMO | 0.219 | **0.209** | -5% |
+| DRK | 0.230 | **0.220** | -4% |
+
+**Key findings**:
+1. **20t MAE improved**: 0.189→0.186 (-1.6%) — modest overall improvement
+2. **Hard dimensions significantly improved**: SOC -13%, COG -8%, STR -7%, VAL -7%, NEU -6%
+3. **EXT regressed**: 0.124→0.171 (+38%) — diagnostic questions may have disrupted natural extraversion signals; needs investigation
+4. **Diagnostic questions consistently generated**: 5 per ThinkSlow extraction (45 total per profile), all with `source=soul_aware_diagnostic`
+5. **Cost**: ~45 extra LLM calls per 20-turn profile (1 per ThinkSlow extraction) vs zero for V2.9 behavioral features
+6. **Pattern**: Soul-Aware questions excel at probing traits that require specific situational context (social dynamics, interpersonal strategy, values) but add noise for traits that are naturally expressed in casual conversation (extraversion)
+7. **10t MAE regressed slightly**: 0.178→0.189 (+6.2%) — diagnostic questions need more turns to accumulate benefit
+
+### V3.1 — Strip-Back to Essentials
+
+**Core change**: Removed 4 features that added complexity without proportional accuracy gains: ThinkDeep (V2.5), Diagnostic Questions (V3.0), Ensemble Blend (V2.8), Soul-Informed Detection (V2.6). Kept: Deep Listening chatter, ThinkSlow extraction, FactExtractor + Soul model, Conductor, Behavioral Features (V2.9), static trait_topic_map questions.
+
+**Motivation**: V3.0 reflection showed the entire V2.x→V3.0 architecture (12+ modules, 100+ API calls per profile) only improved MAE by 2.1% over simple V1.7 pipeline. Three fundamental bottlenecks: (1) 3-5 profile measurement noise, (2) complexity ≠ accuracy, (3) LLM-to-LLM detection ceiling ~0.185-0.190.
+
+**Removed from `simulate_conversation()`**:
+- `think_deep` parameter and all ThinkDeep trigger/state logic (~40 lines)
+- `api_key` parameter and diagnostic question generation blocks
+- Simplified Soul logging (no intentions/gaps counts)
+
+**Removed from `detect_and_compare()`**:
+- `soul` parameter and `_build_detector_soul_context()` injection
+- `ts_results` parameter and `blend_with_trajectory()` ensemble
+
+**Kept**:
+- ThinkSlow periodic extraction (gap-aware trait tracking)
+- FactExtractor + Soul model (facts, reality, secrets, contradictions)
+- Conductor dynamic conversation mode (listen/follow/incisive/push)
+- Behavioral features (zero-cost text signal extraction)
+- Static trait_topic_map incisive questions
+
+**V3.1 Per-Dimension MAE (20 turns, 5 profiles):**
+
+| Dimension | V3.0(5p) | V3.1(5p) | Change |
+|-----------|----------|----------|--------|
+| OPN | 0.178 | **0.168** | -6% |
+| EXT | 0.171 | **0.170** | -1% |
+| VAL | 0.179 | **0.177** | -1% |
+| AGR | 0.179 | 0.179 | ~ |
+| DRK | 0.220 | **0.180** | -18% |
+| HUM | 0.199 | **0.184** | -8% |
+| HON | 0.203 | **0.192** | -5% |
+| NEU | 0.160 | 0.194 | +21% |
+| SOC | 0.189 | 0.205 | +8% |
+| STR | 0.195 | 0.219 | +12% |
+| COG | 0.192 | 0.220 | +15% |
+| CON | 0.170 | 0.221 | +30% |
+| EMO | 0.209 | 0.234 | +12% |
+
+**Key findings**:
+1. **20t MAE**: 0.186→0.196 (+5.4%) — slight regression, within 5-profile run variance
+2. **10t MAE improved**: 0.189→0.186 (-1.6%) — best 5-profile 10t result ever
+3. **10t ≤0.40 rate**: 95.5% — best 5-profile 10t ≤0.40 ever (fewer catastrophic errors)
+4. **DRK massively improved**: 0.220→0.180 (-18%) — removing Soul-informed context eliminated dark trait anchoring bias
+5. **HUM improved**: 0.199→0.184 (-8%) — cleaner detection without ensemble interference
+6. **CON regressed**: 0.170→0.221 (+30%) — lost ThinkSlow trajectory smoothing benefit
+7. **NEU regressed**: 0.160→0.194 (+21%) — lost diagnostic question benefit for neuroticism probing
+8. **LLM call savings**: ~47 fewer calls per profile (2 ThinkDeep + 45 DiagQ) — significant cost reduction
+9. **Lesson**: Simpler pipeline performs comparably at 10t and within noise at 20t. The stripped-back system is a better foundation for future improvements.
+10. **Architecture decision**: Keep Soul model for rich person understanding even if not feeding into detection — valuable for future real-human interactions

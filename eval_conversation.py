@@ -986,7 +986,6 @@ def simulate_conversation(
     seed: int = 0,
     think_slow: "ThinkSlow | None" = None,
     fact_extractor: "FactExtractor | None" = None,
-    think_deep: "ThinkDeep | None" = None,
 ) -> "list[dict] | tuple[list[dict], list] | tuple[list[dict], list, Soul]":
     """Simulate a natural conversation for n_turns exchanges.
 
@@ -997,17 +996,11 @@ def simulate_conversation(
     use AdaptiveFrequency (default_interval=3) instead of hardcoded modulo.
     Results are accumulated into a Soul object.
 
-    V2.5: When think_deep is also provided, ThinkDeep is triggered by specific
-    conditions (5+ facts with no intentions, contradictions, staleness, or
-    after turn 10). Results accumulate into Soul (intentions, gaps).
-
     Args:
         think_slow: Optional ThinkSlow extractor. If provided, extracts every 3 turns
             and returns (conversation, think_slow_results).
         fact_extractor: Optional FactExtractor. Requires think_slow. When provided,
             enables adaptive frequency for both extractors and Soul accumulation.
-        think_deep: Optional ThinkDeep analyzer. Requires fact_extractor + think_slow.
-            Triggered by conditions, not periodic.
 
     Returns:
         If think_slow is None: list of {"role": "chatter"|"speaker", "text": str}
@@ -1038,11 +1031,6 @@ def simulate_conversation(
         fe_freq = AdaptiveFrequency(default_interval=3)
         soul = Soul(id=profile.id, character=profile)
 
-    # V2.5/V2.7: ThinkDeep state tracking
-    last_td = None
-    td_fire_count = 0  # V2.7: was td_fired boolean, now count with max 2
-    consecutive_stale = 0
-
     # Start with a random casual opener
     opener = rng.choice(CASUAL_OPENERS)
     conversation.append({"role": "chatter", "text": opener})
@@ -1064,13 +1052,7 @@ def simulate_conversation(
                 think_fast=last_tf,
                 think_slow=previous_ts,
                 turn_number=turn + 1,
-                think_deep=last_td,
             )
-
-        # V2.5: Clear ThinkDeep after Conductor uses it (one-shot push)
-        if conductor_action and conductor_action.mode == "push" and last_td is not None:
-            last_td = None
-            # V2.7: Don't reset fire count -- cap at 2 total fires
 
         # Chatter follows up naturally (with escalation or Conductor guidance)
         chatter_msg = chatter.next_message(
@@ -1104,15 +1086,12 @@ def simulate_conversation(
                 ts_freq.report_yield(len(ts_result.partial_profile.traits))
 
             # V2.4: Adaptive frequency for FactExtractor
-            fe_result = None
-            fe_ran_this_turn = False
             if fe_freq.should_run(turn + 1):
                 fe_result = fact_extractor.extract(
                     conversation=conversation,
                     existing_facts=soul.facts,
                     current_turn=turn + 1,
                 )
-                fe_ran_this_turn = True
                 soul.facts.extend(fe_result.new_facts)
                 if fe_result.reality is not None:
                     soul.reality = fe_result.reality
@@ -1124,48 +1103,6 @@ def simulate_conversation(
                     + len(fe_result.secrets)
                     + len(fe_result.contradictions)
                 )
-
-            # V2.5: Check ThinkDeep trigger conditions
-            if think_deep is not None and soul is not None:
-                should_fire = False
-
-                # Trigger 1: 5+ facts and no intentions yet
-                if len(soul.facts) >= 5 and len(soul.intentions) == 0:
-                    should_fire = True
-
-                # Trigger 2: New contradiction found this cycle
-                if fe_ran_this_turn and fe_result and len(fe_result.contradictions) > 0:
-                    should_fire = True
-
-                # Trigger 3: ThinkSlow staleness > 0.8 for 2+ consecutive
-                if previous_ts and previous_ts.info_staleness > 0.8:
-                    consecutive_stale += 1
-                else:
-                    consecutive_stale = 0
-                if consecutive_stale >= 2:
-                    should_fire = True
-
-                # Trigger 4: After turn 10 if no intentions
-                if turn + 1 > 10 and len(soul.intentions) == 0:
-                    should_fire = True
-
-                if should_fire and td_fire_count < 2:  # V2.7: max 2 fires
-                    td_result = think_deep.analyze(soul=soul, conversation=conversation)
-                    last_td = td_result
-                    td_fire_count += 1  # V2.7: increment count
-                    # V2.7: Dedup intentions and gaps before accumulating
-                    from super_brain.dedup import is_duplicate
-                    existing_int_descs = [i.description for i in soul.intentions]
-                    for intent in td_result.intentions:
-                        if not is_duplicate(intent.description, existing_int_descs):
-                            soul.intentions.append(intent)
-                            existing_int_descs.append(intent.description)
-
-                    existing_gap_qs = [g.bridge_question for g in soul.gaps]
-                    for gap in td_result.gaps:
-                        if not is_duplicate(gap.bridge_question, existing_gap_qs):
-                            soul.gaps.append(gap)
-                            existing_gap_qs.append(gap.bridge_question)
         elif think_slow:
             # V2.3: Think Slow extraction every 3 turns (was 5 in V2.2)
             if (turn + 1) % 3 == 0:
@@ -1245,8 +1182,6 @@ def detect_and_compare(
     conversation: list[dict],
     profile: PersonalityDNA,
     profile_name: str,
-    soul: "Soul | None" = None,
-    ts_results: "list | None" = None,
 ) -> dict:
     """Run detection on full conversation and compare with ground truth."""
     # V0.2: Feed FULL conversation to detector, not just speaker text
@@ -1254,20 +1189,11 @@ def detect_and_compare(
     speaker_text = extract_speaker_text(conversation)
     word_count = len(speaker_text.split())
 
-    # V2.6: Build Soul context for Detector
-    soul_ctx = _build_detector_soul_context(soul) if soul else None
-
     detected = detector.analyze(
         text=full_text,
         speaker_id=f"eval_{profile_name}",
         speaker_label="Person B",
-        soul_context=soul_ctx,
     )
-
-    # V2.8: Ensemble blend with ThinkSlow trajectory
-    if ts_results:
-        from super_brain.ensemble import blend_with_trajectory
-        detected = blend_with_trajectory(detected, ts_results)
 
     # V2.9: Behavioral feature adjustments
     from super_brain.behavioral_features import (
@@ -1354,8 +1280,6 @@ def run_eval(
     think_slow = ThinkSlow(api_key=api_key)
     from super_brain.fact_extractor import FactExtractor
     fact_extractor = FactExtractor(api_key=api_key)
-    from super_brain.think_deep import ThinkDeep
-    think_deep = ThinkDeep(api_key=api_key)
     from super_brain.soul_coverage import compute_soul_coverage
 
     all_results: dict[str, dict] = {}
@@ -1382,7 +1306,6 @@ def run_eval(
             chatter, speaker, profile, n_turns=max_turns, seed=i,
             think_slow=think_slow,
             fact_extractor=fact_extractor,
-            think_deep=think_deep,
         )
         conversation, ts_results, soul = sim_result
         total_words = len(extract_speaker_text(conversation).split())
@@ -1406,8 +1329,6 @@ def run_eval(
                   f"reality={'yes' if soul.reality else 'no'}, "
                   f"{len(soul.secrets)} secrets, "
                   f"{len(soul.contradictions)} contradictions, "
-                  f"{len(soul.intentions)} intentions, "
-                  f"{len(soul.gaps)} gaps, "
                   f"coverage={coverage:.2f}")
 
         # Show a few conversation snippets
@@ -1429,7 +1350,7 @@ def run_eval(
             print(f"  Detecting at {cp} turns ({speaker_words} speaker words)...",
                   end=" ", flush=True)
 
-            result = detect_and_compare(detector, conv_slice, profile, profile_name, soul=soul, ts_results=ts_results)
+            result = detect_and_compare(detector, conv_slice, profile, profile_name)
             print(f"done → MAE={result['mae']:.3f} "
                   f"≤0.25={result['within_025']}/{result['total']} "
                   f"≤0.40={result['within_040']}/{result['total']}")
@@ -1460,8 +1381,6 @@ def run_eval(
             all_results[profile_name]["soul_reality_populated"] = soul.reality is not None
             all_results[profile_name]["soul_secrets_count"] = len(soul.secrets)
             all_results[profile_name]["soul_contradictions_count"] = len(soul.contradictions)
-            all_results[profile_name]["soul_intentions_count"] = len(soul.intentions)
-            all_results[profile_name]["soul_gaps_count"] = len(soul.gaps)
 
     # ── Overall summary ──────────────────────────────────────────────────
     print(f"\n{'='*70}")
@@ -1527,22 +1446,14 @@ def run_eval(
                                 if "soul_contradictions_count" in pr]
         reality_count = sum(1 for pr in all_results.values()
                            if pr.get("soul_reality_populated"))
-        intentions_counts = [pr.get("soul_intentions_count", 0) for pr in all_results.values()
-                             if "soul_intentions_count" in pr]
-        gaps_counts = [pr.get("soul_gaps_count", 0) for pr in all_results.values()
-                       if "soul_gaps_count" in pr]
         print(f"\n{'='*70}")
-        print(f"  SOUL COVERAGE (V2.5)")
+        print(f"  SOUL COVERAGE")
         print(f"{'='*70}")
         print(f"\n  Avg coverage score: {avg_cov:.3f}")
         print(f"  Avg facts per profile: {statistics.mean(fact_counts):.1f}")
         print(f"  Reality populated: {reality_count}/{n_profiles}")
         print(f"  Avg secrets per profile: {statistics.mean(secret_counts):.1f}")
         print(f"  Avg contradictions per profile: {statistics.mean(contradiction_counts):.1f}")
-        if intentions_counts:
-            print(f"  Avg intentions per profile: {statistics.mean(intentions_counts):.1f}")
-        if gaps_counts:
-            print(f"  Avg gaps per profile: {statistics.mean(gaps_counts):.1f}")
 
     # ── Save results ─────────────────────────────────────────────────────
     output_path = Path("eval_conversation_results.json")

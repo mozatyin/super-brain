@@ -102,10 +102,10 @@ def test_detector_analyze_accepts_soul_context():
     assert sig.parameters["soul_context"].default is None
 
 
-def test_detect_and_compare_accepts_soul_parameter():
-    """Verify detect_and_compare() signature accepts soul parameter."""
+def test_detect_and_compare_signature_is_simple():
+    """Verify detect_and_compare() no longer requires soul/ts_results (V3.1 simplification)."""
     import inspect
     from eval_conversation import detect_and_compare
     sig = inspect.signature(detect_and_compare)
-    assert "soul" in sig.parameters
-    assert sig.parameters["soul"].default is None
+    assert "soul" not in sig.parameters
+    assert "ts_results" not in sig.parameters
