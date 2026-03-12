@@ -22,6 +22,12 @@ def test_trait_topic_map_has_minimum_coverage():
     assert len(TRAIT_TOPIC_MAP) >= 30
 
 
+def test_new_traits_have_topics():
+    for name in ["verbosity", "curiosity", "politeness", "optimism", "decisiveness"]:
+        assert name in TRAIT_TOPIC_MAP, f"Missing topic map for: {name}"
+        assert len(TRAIT_TOPIC_MAP[name]) >= 2
+
+
 def test_get_topics_for_traits():
     """get_topics_for_traits should return natural conversation starters."""
     topics = get_topics_for_traits(["social_dominance", "trust"], max_per_trait=2)

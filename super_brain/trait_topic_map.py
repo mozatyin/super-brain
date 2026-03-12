@@ -19,6 +19,7 @@ TRAIT_TOPIC_MAP: dict[str, list[str]] = {
         "When you're in a group project or team meeting, what role do you naturally take?",
         "How do you handle it when someone suggests a plan you think won't work?",
         "Tell me about a time you had to convince a group to go in a different direction.",
+        "In group settings, do you usually end up leading or following the flow?",
     ],
     "mirroring_ability": [
         "Do you find yourself picking up other people's accents or mannerisms?",
@@ -29,11 +30,13 @@ TRAIT_TOPIC_MAP: dict[str, list[str]] = {
         "Are you pretty open with people or do you tend to keep things close to the chest?",
         "How much do you share about yourself when you first meet someone?",
         "Is there stuff about yourself that even your close friends don't know?",
+        "Are you the kind of person who shares everything or plays it close to the chest?",
     ],
     "competence": [
         "What's something you're really good at that you've had to work hard for?",
         "When you face a new challenge at work, how do you approach it?",
         "Tell me about a time you surprised yourself with how well you handled something.",
+        "What's something at work you handle better than most people would?",
     ],
     # Dark traits
     "narcissism": [
@@ -60,6 +63,7 @@ TRAIT_TOPIC_MAP: dict[str, list[str]] = {
     "emotional_regulation": [
         "When something really upsets you, what do you do to calm down?",
         "Do you find it easy to control your emotions in stressful situations?",
+        "What do you do when something really gets under your skin?",
     ],
     "emotional_volatility": [
         "Would your friends say your moods change quickly, or are you pretty steady?",
@@ -77,6 +81,7 @@ TRAIT_TOPIC_MAP: dict[str, list[str]] = {
     "attachment_anxiety": [
         "In relationships, do you tend to worry about whether the other person cares as much as you do?",
         "How do you handle it when someone you're close to suddenly goes quiet?",
+        "How do you feel when someone takes a long time to text back?",
     ],
     "attachment_avoidance": [
         "Do you need a lot of alone time in relationships, or do you prefer constant closeness?",
@@ -249,6 +254,7 @@ TRAIT_TOPIC_MAP: dict[str, list[str]] = {
     "self_consciousness": [
         "Do you worry about what other people think of you?",
         "How do you feel when everyone's attention is on you?",
+        "Do you ever replay conversations in your head afterward?",
     ],
     "vulnerability": [
         "When things get really stressful, do you feel like you can handle it or does it overwhelm you?",
@@ -290,6 +296,28 @@ TRAIT_TOPIC_MAP: dict[str, list[str]] = {
     "intuitive_vs_analytical": [
         "When you make decisions, do you go more with your gut or do you analyze the options?",
         "Do you trust your instincts, or do you prefer to look at the data first?",
+        "When you have a big decision, do you go with your gut or make a list?",
+    ],
+    # V3.2 new traits
+    "verbosity": [
+        "Are you the type to give long detailed answers or keep it short and sweet?",
+        "When you tell a story, do people say you give too much detail?",
+    ],
+    "curiosity": [
+        "What's something you've been wanting to learn more about lately?",
+        "When you come across something you don't understand, do you dig into it or move on?",
+    ],
+    "politeness": [
+        "Are you someone who always says please and thank you, or is that more of a when-you-remember thing?",
+        "How do you feel about people who are blunt versus people who soften everything?",
+    ],
+    "optimism": [
+        "When something goes wrong, what's your first reaction — look for the silver lining or just deal with the frustration?",
+        "Would your friends describe you as a glass-half-full or glass-half-empty person?",
+    ],
+    "decisiveness": [
+        "When you're picking a restaurant, are you the one who decides or the one who says 'I'm fine with whatever'?",
+        "How long does it usually take you to make a big decision?",
     ],
 }
 
