@@ -353,8 +353,36 @@ def _generate_backstory(tmap: dict[str, float], seed: int = 0) -> str:
     # Emotional style
     if tmap.get("emotional_volatility", 0) > 0.50:
         fragments.append("Your moods shift fast — you can go from excited to irritated in minutes.")
-    if tmap.get("emotional_granularity", 0) > 0.65:
-        fragments.append("You're the type who can name exactly what you're feeling — not just 'good' or 'bad'.")
+
+    # Verbosity
+    if tmap.get("verbosity", 0) > 0.60:
+        fragments.append("You've always been a talker — your friends joke that you never give a short answer.")
+    elif tmap.get("verbosity", 0) < 0.30:
+        fragments.append("You're a person of few words — you say what needs to be said and nothing more.")
+
+    # Curiosity
+    if tmap.get("curiosity", 0) > 0.60:
+        fragments.append("You've always been the kid who asked 'why' about everything — and you never grew out of it.")
+    elif tmap.get("curiosity", 0) < 0.30:
+        fragments.append("You've never been the curious type — you focus on what's in front of you.")
+
+    # Politeness
+    if tmap.get("politeness", 0) > 0.65:
+        fragments.append("Your parents raised you with strict manners — please and thank you are second nature.")
+    elif tmap.get("politeness", 0) < 0.25:
+        fragments.append("You don't waste time with pleasantries — you get to the point.")
+
+    # Optimism
+    if tmap.get("optimism", 0) > 0.60:
+        fragments.append("You've always been a glass-half-full person, even when things go wrong.")
+    elif tmap.get("optimism", 0) < 0.30:
+        fragments.append("You've learned that expecting the worst means you're never disappointed.")
+
+    # Decisiveness
+    if tmap.get("decisiveness", 0) > 0.60:
+        fragments.append("You make decisions quickly and never look back — hesitation isn't your style.")
+    elif tmap.get("decisiveness", 0) < 0.30:
+        fragments.append("Big decisions paralyze you — you always feel like you need more information.")
 
     # Loyalty
     if tmap.get("loyalty_group", 0) > 0.75:
@@ -622,6 +650,70 @@ def _build_speaker_system(profile: PersonalityDNA, turn_number: int = 0) -> str:
         behavioral_hints.append(
             f"- LOW COMPETENCE ({tmap['competence']:.2f}): Show self-doubt about abilities. "
             "'I'm not sure I could do that', 'I always struggle with...'. Express uncertainty."
+        )
+
+    # Verbosity
+    if tmap.get("verbosity", 0) > 0.60:
+        behavioral_hints.append(
+            f"- HIGH VERBOSITY ({tmap['verbosity']:.2f}): Give LONG, detailed responses. "
+            "Add examples, tangents, elaborations. Don't summarize when you can tell the full story. "
+            "Your responses should be noticeably longer than average."
+        )
+    if tmap.get("verbosity", 0) < 0.30:
+        behavioral_hints.append(
+            f"- LOW VERBOSITY ({tmap['verbosity']:.2f}): Keep responses SHORT. 1-2 sentences max. "
+            "Don't elaborate, don't give examples, don't tell stories. Direct answers only."
+        )
+
+    # Curiosity
+    if tmap.get("curiosity", 0) > 0.55:
+        behavioral_hints.append(
+            f"- HIGH CURIOSITY ({tmap['curiosity']:.2f}): Ask follow-up questions frequently. "
+            "'How does that work?', 'I wonder why', 'Tell me more about that'. "
+            "Show genuine interest in learning new things."
+        )
+    if tmap.get("curiosity", 0) < 0.30:
+        behavioral_hints.append(
+            f"- LOW CURIOSITY ({tmap['curiosity']:.2f}): Don't ask questions or explore topics. "
+            "Accept information at face value. Don't say 'I wonder' or 'that's interesting'."
+        )
+
+    # Politeness
+    if tmap.get("politeness", 0) > 0.60:
+        behavioral_hints.append(
+            f"- HIGH POLITENESS ({tmap['politeness']:.2f}): Use please, thank you, sorry frequently. "
+            "'If you don't mind', 'I appreciate that', 'Sorry to bother'. Soften everything."
+        )
+    if tmap.get("politeness", 0) < 0.30:
+        behavioral_hints.append(
+            f"- LOW POLITENESS ({tmap['politeness']:.2f}): Skip pleasantries. No 'please' or 'thank you'. "
+            "Be blunt and direct. Don't soften your language."
+        )
+
+    # Optimism
+    if tmap.get("optimism", 0) > 0.55:
+        behavioral_hints.append(
+            f"- HIGH OPTIMISM ({tmap['optimism']:.2f}): Frame things positively. 'At least...', "
+            "'On the bright side', 'It'll work out'. Focus on solutions, not problems. "
+            "See the upside in setbacks."
+        )
+    if tmap.get("optimism", 0) < 0.30:
+        behavioral_hints.append(
+            f"- LOW OPTIMISM ({tmap['optimism']:.2f}): Be pessimistic. Dwell on problems. "
+            "'That's not going to work', 'Things never go as planned'. Don't look for silver linings."
+        )
+
+    # Decisiveness
+    if tmap.get("decisiveness", 0) > 0.55:
+        behavioral_hints.append(
+            f"- HIGH DECISIVENESS ({tmap['decisiveness']:.2f}): Make quick, confident decisions. "
+            "'I've decided', 'Let's do it', 'I'm going with X'. Don't waffle or hedge. "
+            "Commit to positions without backtracking."
+        )
+    if tmap.get("decisiveness", 0) < 0.30:
+        behavioral_hints.append(
+            f"- LOW DECISIVENESS ({tmap['decisiveness']:.2f}): Be indecisive. 'I can't decide', "
+            "'What do you think?', 'Maybe... or maybe not'. Waffle on choices."
         )
 
     # Humility, empathy, loyalty
