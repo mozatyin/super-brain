@@ -2,9 +2,10 @@
 
 ## Test Setup
 - V0.1-V0.8: 3 random 66-trait profiles (seeds: 0, 42, 84)
-- V0.9+: 5 random 66-trait profiles (seeds: 0, 42, 84, 126, 168)
+- V0.9-V3.1: 5 random 66-trait profiles (seeds: 0, 42, 84, 126, 168)
+- V3.2+: 5 random 69-trait profiles (seeds: 0, 42, 84, 126, 168)
 - 20-turn casual conversations via Chatter + PersonalitySpeaker
-- Detector reads full conversation, estimates all 66 traits
+- Detector reads full conversation, estimates all traits
 - Compared against ground-truth profile vectors
 
 ## Results Summary
@@ -53,6 +54,8 @@
 | V3.0@10t | **0.189** | **71.8%** | **91.5%** | 5 | Same system, measured at 10 turns |
 | **V3.1** | **0.196** | **69.1%** | **93.0%** | 5 | Strip-back: removed ThinkDeep, DiagQ, Ensemble, Soul-Informed Detection |
 | V3.1@10t | **0.186** | **72.1%** | **95.5%** | 5 | Same system, measured at 10 turns (best 5p 10t ≤0.40 ever!) |
+| **V3.2** | **0.191** | **69.9%** | **92.2%** | 5 | Trait optimization: -2 hard traits, +5 easy traits, A+B+C (69 traits) |
+| V3.2@10t | **0.195** | **69.0%** | **91.3%** | 5 | Same system, measured at 10 turns |
 
 ## Per-Dimension MAE (20 turns)
 
@@ -164,6 +167,10 @@ Note: V0.1-V0.8 used 3 profiles; V1.7+ used 5 profiles. Numbers not directly com
 9. **5-profile eval reveals true performance**: V2.8(5p) MAE 0.193 vs 3p 0.182 (+6%). The 3-profile estimates consistently flattered the system. V2.9(5p) at 0.189 is the most reliable measurement to date.
 
 10. **Behavioral features provide zero-cost signal**: Text-level features (pronoun ratios, hedging, emotion words) improve 10t detection by ~10% at zero LLM cost. Effect diminishes at 20t where LLM-based detection has more data.
+
+11. **Trait curation matters**: V3.2 showed removing fundamentally undetectable traits (emotional_expressiveness, emotional_granularity) improved EMO dimension by 37%. Better to have fewer well-detected traits than many poorly-detected ones.
+
+12. **New traits need calibration**: Adding easy-to-detect traits (verbosity, politeness) without calibration data caused regressions — the LLM over-detects them because the signals (word count, courtesy markers) are always present in generated text. Behavioral feature adjustments can compound with LLM over-detection.
 
 ## Changes Per Version
 
@@ -754,3 +761,45 @@ for each trait:
 8. **LLM call savings**: ~47 fewer calls per profile (2 ThinkDeep + 45 DiagQ) — significant cost reduction
 9. **Lesson**: Simpler pipeline performs comparably at 10t and within noise at 20t. The stripped-back system is a better foundation for future improvements.
 10. **Architecture decision**: Keep Soul model for rich person understanding even if not feeding into detection — valuable for future real-human interactions
+
+### V3.2 — Trait Optimization (A+B+C)
+
+**Core change**: Three-pronged optimization of the 69-trait catalog:
+- **Removed 2 undetectable traits**: `emotional_expressiveness` (MAE 0.362) and `emotional_granularity` (MAE 0.354) — fundamentally unobservable in short LLM conversations
+- **Added 5 new easy-to-detect traits**: `verbosity` (EXT), `curiosity` (OPN), `politeness` (AGR), `optimism` (EMO), `decisiveness` (CON) — all have strong, countable text signals
+- **Three-pronged approach (A+B+C)**: (A) Detection hint overhaul with concrete behavioral anchors for 10 difficult traits + 15 new behavioral adjustment rules, (B) 8 ultra-light conversation probes for difficult traits, (C) Extended `_CALIBRATION_CORRECTIONS` for 8 additional traits
+
+**Net trait count**: 66 - 2 + 5 = **69 traits**
+
+**Files modified**: catalog.py, detector.py, behavioral_features.py, trait_topic_map.py, eval_conversation.py, archetypes.py, profile_gen.py, speaker.py, models.py, eval_personality.py + all test files
+
+**V3.2 Per-Dimension MAE (20 turns, 5 profiles):**
+
+| Dimension | V3.1(5p) | V3.2(5p) | Change |
+|-----------|----------|----------|--------|
+| HUM | 0.184 | **0.143** | -22% |
+| EMO | 0.234 | **0.148** | **-37%** |
+| COG | 0.220 | **0.173** | -21% |
+| SOC | 0.205 | **0.175** | -15% |
+| VAL | 0.177 | **0.176** | -1% |
+| OPN | 0.168 | 0.182 | +8% |
+| HON | 0.192 | **0.191** | -1% |
+| DRK | 0.180 | 0.193 | +7% |
+| AGR | 0.179 | 0.198 | +11% |
+| STR | 0.219 | **0.201** | -8% |
+| NEU | 0.194 | 0.211 | +9% |
+| CON | 0.221 | **0.217** | -2% |
+| EXT | 0.170 | 0.230 | **+35%** |
+
+**Per-Profile MAE (20t)**: 0.191, 0.179, 0.192, 0.173, 0.218
+
+**Key findings**:
+1. **EMO massively improved**: 0.234→0.148 (-37%) — removing 2 noisy undetectable traits + adding optimism (clear text signal) transformed the worst dimension into one of the best
+2. **HUM improved**: 0.184→0.143 (-22%) — now best dimension; better behavioral anchoring
+3. **COG improved**: 0.220→0.173 (-21%) — detection hint overhaul + intuitive_vs_analytical behavioral rules
+4. **SOC improved**: 0.205→0.175 (-15%) — social_dominance detection hints + behavioral rules
+5. **EXT regressed badly**: 0.170→0.230 (+35%) — `verbosity` systematically over-predicted (true 0.25-0.49, predicted 0.85-0.96); the +0.08 behavioral adjustment compounds with LLM over-detection
+6. **AGR regressed**: 0.179→0.198 (+11%) — `politeness` over-detected for low true values (true 0.10, predicted 0.60)
+7. **Worst individual errors**: verbosity (0.44-0.68 over), attachment_anxiety (0.63 over), self_consciousness (0.60 over), politeness (0.50 over), decisiveness (0.38 under)
+8. **Net improvement**: Overall MAE 0.196→0.191 (-2.6%), but missed <0.180 target
+9. **Next step**: Calibration grid search for traits with systematic bias (verbosity, politeness, decisiveness, attachment_anxiety, self_consciousness)
