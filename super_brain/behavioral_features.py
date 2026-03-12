@@ -284,8 +284,7 @@ _ADJUSTMENT_RULES: list[tuple[str, float, str, str, float]] = [
     ("question_ratio", 0.30, "above", "social_dominance", -0.05),
     ("avg_words_per_turn", 180, "above", "social_dominance", 0.04),
     ("self_ref_ratio", 0.07, "above", "social_dominance", 0.04),
-    # self_consciousness
-    ("hedging_ratio", 0.025, "above", "self_consciousness", 0.06),
+    # self_consciousness — removed: +0.06 compounded with LLM over-detection
     # intuitive_vs_analytical (toward analytical)
     ("avg_words_per_turn", 160, "above", "intuitive_vs_analytical", 0.05),
     # hot_cold_oscillation
@@ -296,9 +295,8 @@ _ADJUSTMENT_RULES: list[tuple[str, float, str, str, float]] = [
     ("absolutist_ratio", 0.010, "above", "decisiveness", 0.06),
     # curiosity (new trait)
     ("question_ratio", 0.25, "above", "curiosity", 0.06),
-    # verbosity (new trait)
-    ("avg_words_per_turn", 150, "above", "verbosity", 0.08),
-    ("avg_words_per_turn", 60, "below", "verbosity", -0.08),
+    # verbosity — removed: +0.08 compounded with LLM over-detection (always predicts ~0.85+)
+    ("avg_words_per_turn", 60, "below", "verbosity", -0.10),
 ]
 
 

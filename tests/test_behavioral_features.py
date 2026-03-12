@@ -308,7 +308,8 @@ class TestV32AdjustmentRules:
         adj = compute_adjustments(features)
         assert adj.get("social_dominance", 0) > 0
 
-    def test_self_consciousness_hedging(self):
+    def test_self_consciousness_hedging_removed(self):
+        """Self_consciousness hedging rule was removed (compounded LLM over-detection)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.03,
@@ -317,7 +318,7 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert adj.get("self_consciousness", 0) > 0
+        assert "self_consciousness" not in adj
 
     def test_hot_cold_oscillation_high_std(self):
         features = BehavioralFeatures(
@@ -374,7 +375,8 @@ class TestV32AdjustmentRules:
         adj = compute_adjustments(features)
         assert adj.get("curiosity", 0) > 0
 
-    def test_verbosity_long_turns(self):
+    def test_verbosity_long_turns_no_adjustment(self):
+        """Verbosity high-end rule removed (compounded with LLM over-detection)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=2000, avg_words_per_turn=200, words_std=20,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
@@ -383,7 +385,7 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert adj.get("verbosity", 0) > 0
+        assert "verbosity" not in adj  # no upward adjustment
 
     def test_verbosity_short_turns(self):
         features = BehavioralFeatures(
