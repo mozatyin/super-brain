@@ -19,10 +19,10 @@ from super_brain.models import PersonalityDNA, Trait, Evidence, SampleSummary
 # ── Batch definitions: 7 batches grouping related dimensions ────────────────
 
 DIMENSION_BATCHES: list[list[str]] = [
-    ["OPN", "CON"],       # Batch 1: Openness + Conscientiousness (12 traits)
-    ["EXT", "AGR"],       # Batch 2: Extraversion + Agreeableness (12 traits)
+    ["OPN", "CON"],       # Batch 1: Openness + Conscientiousness (14 traits, +curiosity +decisiveness)
+    ["EXT", "AGR"],       # Batch 2: Extraversion + Agreeableness (14 traits, +verbosity +politeness)
     ["NEU", "HON"],       # Batch 3: Neuroticism + Honesty-Humility (10 traits)
-    ["DRK", "EMO"],       # Batch 4: Dark Traits + Emotional Architecture (10 traits)
+    ["DRK", "EMO"],       # Batch 4: Dark Traits + Emotional Architecture (9 traits, -2 removed +optimism)
     ["SOC", "STR"],       # Batch 5: Social Dynamics + Interpersonal Strategy (10 traits)
     ["COG", "VAL"],       # Batch 6: Cognitive Style + Values (8 traits)
     ["HUM"],              # Batch 7: Humor Style (4 traits) + cross-validation
@@ -209,12 +209,12 @@ _BATCH_CALIBRATION_EXAMPLES: dict[str, str] = {
         '"What if we just threw out the whole system and started fresh? I know it sounds crazy '
         'but imagine — we could build something entirely new. I\'ve been reading about this '
         'philosophy of radical impermanence and honestly it\'s changing how I see everything..."\n'
-        "→ fantasy=0.80, ideas=0.85, values_openness=0.75, order=0.15, deliberation=0.20\n\n"
+        "→ fantasy=0.80, ideas=0.85, values_openness=0.75, order=0.15, deliberation=0.20, curiosity=0.80, decisiveness=0.25\n\n"
         "Example B — low openness, high conscientiousness:\n"
         '"We need to follow the established process. Step 1: review the checklist. Step 2: '
         'document all findings. Step 3: submit by the deadline. I\'ve been tracking our '
         'progress daily and we\'re at 73% completion."\n'
-        "→ fantasy=0.10, ideas=0.20, order=0.90, self_discipline=0.85, achievement_striving=0.80\n"
+        "→ fantasy=0.10, ideas=0.20, order=0.90, self_discipline=0.85, achievement_striving=0.80, curiosity=0.15, decisiveness=0.85\n"
     ),
     "EXT,AGR": (
         "## Scoring Calibration Examples\n\n"
@@ -222,11 +222,11 @@ _BATCH_CALIBRATION_EXAMPLES: dict[str, str] = {
         '"Oh my gosh, everyone needs to come to this event! It\'s going to be amazing! '
         'And honestly, I think your idea was even better than mine — you should definitely '
         'lead the presentation. I\'ll support however I can!"\n'
-        "→ warmth=0.85, positive_emotions=0.90, assertiveness=0.65, modesty=0.75, altruism=0.80\n\n"
+        "→ warmth=0.85, positive_emotions=0.90, assertiveness=0.65, modesty=0.75, altruism=0.80, verbosity=0.85, politeness=0.80\n\n"
         "Example B — low extraversion, low agreeableness:\n"
         '"I\'d rather work on this alone. Your approach has several fundamental flaws '
         'that I\'ve identified. I don\'t need input on this — I know what needs to be done."\n'
-        "→ warmth=0.15, gregariousness=0.10, trust=0.20, compliance=0.10, modesty=0.15\n"
+        "→ warmth=0.15, gregariousness=0.10, trust=0.20, compliance=0.10, modesty=0.15, verbosity=0.20, politeness=0.10\n"
     ),
     "NEU,HON": (
         "## Scoring Calibration Examples\n\n"
@@ -246,12 +246,12 @@ _BATCH_CALIBRATION_EXAMPLES: dict[str, str] = {
         '"When I heard what happened to them, I felt this deep, aching sadness mixed with '
         'a kind of helpless frustration. I wanted to do something but I also knew I needed '
         'to just sit with the feeling first."\n'
-        "→ narcissism=0.10, psychopathy=0.05, emotional_regulation=0.85, empathy_affective=0.85\n\n"
+        "→ narcissism=0.10, psychopathy=0.05, emotional_regulation=0.85, empathy_affective=0.85, optimism=0.75\n\n"
         "Example B — high dark traits, low emotional depth:\n"
         '"People are predictable. Give them what they want to hear and they\'ll do whatever '
         'you need. It\'s not personal — it\'s just how things work. I don\'t see why everyone '
         'gets so emotional about it."\n'
-        "→ machiavellianism=0.80, psychopathy=0.70, emotional_regulation=0.15, empathy_affective=0.10\n"
+        "→ machiavellianism=0.80, psychopathy=0.70, emotional_regulation=0.15, empathy_affective=0.10, optimism=0.10\n"
     ),
     "SOC,STR": (
         "## Scoring Calibration Examples\n\n"
@@ -499,12 +499,21 @@ def _parse_batch_response(raw: str) -> list[dict]:
 # These compress over-detected traits toward baseline and expand under-detected ones.
 _CALIBRATION_CORRECTIONS: dict[str, tuple[float, float]] = {
     # Over-detected (detector gives too-high scores for low true values)
-    "humor_self_enhancing": (0.65, 0.10),     # compress: 0.70→0.56, 0.40→0.36
-    "charm_influence": (0.70, 0.10),           # compress: 0.70→0.59, 0.40→0.38
-    "mirroring_ability": (0.60, 0.12),         # compress: 0.65→0.51, 0.35→0.33
-    "humor_affiliative": (0.70, 0.08),         # compress: 0.70→0.57, 0.40→0.36
-    "cognitive_flexibility": (0.75, 0.10),     # compress: 0.65→0.59, 0.25→0.29
-    "fairness": (0.80, 0.05),                  # compress: 0.70→0.61, 0.40→0.37
+    "humor_self_enhancing": (0.65, 0.10),
+    "charm_influence": (0.70, 0.10),
+    "mirroring_ability": (0.60, 0.12),
+    "humor_affiliative": (0.70, 0.08),
+    "cognitive_flexibility": (0.75, 0.10),
+    "fairness": (0.80, 0.05),
+    # V3.2: Additional calibrations for difficult traits
+    "competence": (0.85, 0.05),
+    "social_dominance": (0.80, 0.05),
+    "self_consciousness": (0.85, 0.05),
+    "emotional_regulation": (0.75, 0.10),
+    "intuitive_vs_analytical": (0.80, 0.08),
+    "information_control": (0.80, 0.05),
+    "hot_cold_oscillation": (0.85, 0.03),
+    "attachment_anxiety": (0.85, 0.05),
 }
 
 
