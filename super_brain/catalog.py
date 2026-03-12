@@ -148,7 +148,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "CON",
         "name": "competence",
         "description": "Belief in own capability and effectiveness",
-        "detection_hint": "Look for confident assertions about ability, 'I can handle this', self-assured problem-solving language, lack of self-doubt",
+        "detection_hint": "Look for: (1) describing HOW they solved problems step-by-step, (2) mentioning specific skills/tools by name, (3) 'I figured out'/'I managed to' vs 'someone helped me'/'I couldn't', (4) volunteering to take on challenges vs waiting to be told. Score based on self-efficacy language, NOT articulateness (LLM bias)",
         "value_anchors": {
             "0.0": "Persistent self-doubt; 'I can't', 'I'm not good enough', defers to others",
             "0.25": "Some self-doubt; hesitant about own abilities, seeks reassurance",
@@ -490,7 +490,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "NEU",
         "name": "self_consciousness",
         "description": "Tendency to feel embarrassed, judged, and self-aware in social situations",
-        "detection_hint": "Look for 'sorry for rambling', concern about how they're perceived, self-monitoring, 'this is probably stupid but', social awkwardness",
+        "detection_hint": "Look for: (1) preemptive disclaimers ('this is probably dumb but'), (2) EDITING/QUALIFYING after stating something ('well, I mean, not exactly'), (3) seeking validation ('does that make sense?', 'am I being weird?'), (4) apologizing for taking up space ('sorry for rambling'), (5) minimizing own contributions. Score 0.40-0.50 baseline; social ease in casual chat is NORMAL",
         "value_anchors": {
             "0.0": "Completely unselfconscious; never worries about others' judgment",
             "0.25": "Rarely self-conscious; comfortable in most social situations",
@@ -659,7 +659,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "EMO",
         "name": "emotional_regulation",
         "description": "Ability to manage emotional reactions and maintain composure",
-        "detection_hint": "Look for active emotion management strategies, reframing, stepping back. IMPORTANT: Composure in casual chat is the NORM and is NOT evidence of high regulation. Only score high if you see ACTIVE regulation efforts. Score 0.45-0.55 for normal composed conversation",
+        "detection_hint": "Look for: (1) NAMING emotions explicitly then moving on ('I was frustrated but I realized...'), (2) reframing negative experiences constructively, (3) acknowledging emotional reactions WITHOUT being swept away, (4) distinguishing between 'I feel X' and 'this IS X'. IMPORTANT: Composure in casual chat is the NORM — score 0.45-0.55 baseline. Only high with ACTIVE regulation effort; only low with visible dysregulation",
         "value_anchors": {
             "0.0": "No regulation; completely overwhelmed by emotions, reactive, volatile",
             "0.25": "Poor regulation; struggles to contain emotional reactions",
@@ -734,7 +734,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "SOC",
         "name": "attachment_anxiety",
         "description": "Fear of abandonment, need for reassurance in relationships",
-        "detection_hint": "Look for 'do you still like me?', reassurance-seeking, fear of rejection, clinginess, interpreting silence as rejection",
+        "detection_hint": "Look for: (1) checking if they said something wrong ('hope that didn't come across as...'), (2) over-explaining to avoid misunderstanding, (3) excessive agreement/people-pleasing beyond normal politeness, (4) mentioning worry about relationships ending or people leaving, (5) reading negative intent into neutral responses ('are you mad at me?')",
         "value_anchors": {
             "0.0": "Completely secure; no fear of abandonment",
             "0.25": "Mostly secure; rare moments of insecurity",
@@ -762,7 +762,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "SOC",
         "name": "social_dominance",
         "description": "Desire for hierarchical status and group control",
-        "detection_hint": "Look for status references, hierarchy endorsement, competitive framing about social position. In casual chat: name-dropping, mentioning titles/ranks, 'some people are just better', endorsing meritocratic hierarchy, subtly asserting higher status through topic choices or one-upping",
+        "detection_hint": "Look for: (1) steering conversation to OWN topics/expertise, (2) one-upping or competitive comparisons, (3) giving unsolicited advice (implicit higher-status), (4) 'well actually' corrections, (5) mentioning achievements/titles without being asked. Also: question_ratio < 0.15 (not deferring). Score 0.40-0.50 baseline",
         "value_anchors": {
             "0.0": "Strongly egalitarian; rejects all hierarchy, advocates equality",
             "0.25": "Mild egalitarianism; prefers flat structures but accepts some hierarchy",
@@ -804,7 +804,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "SOC",
         "name": "charm_influence",
         "description": "Ability to attract and persuade others through personal appeal",
-        "detection_hint": "Look for ACTIVE rapport-building, making others feel uniquely valued, persuasive framing, social grace beyond mere politeness. IMPORTANT: Mere friendliness in casual chat is NOT charm (score 0.40-0.55 for normal friendly conversation). True charm involves intentional influence, making the other person feel special, and natural persuasiveness",
+        "detection_hint": "Look for: (1) making the OTHER person the focus of positive attention ('you seem like someone who...'), (2) using humor to create warmth (not just being funny), (3) REFRAMING negatives as positives for the other person, (4) strategic compliments that feel earned not generic. Score 0.40-0.50 baseline — friendly chat is NORMAL, not charm. Only >0.60 with ACTIVE persuasion or making the other person feel special",
         "value_anchors": {
             "0.0": "Socially awkward; no ability to charm or persuade",
             "0.25": "Mildly appealing; can be pleasant but not persuasive",
@@ -865,7 +865,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "COG",
         "name": "intuitive_vs_analytical",
         "description": "Decision-making style: gut feeling vs. data-driven analysis",
-        "detection_hint": "Look for 'I feel like' vs. 'the data shows', evidence-based reasoning vs. instinct, structured analysis vs. holistic sensing",
+        "detection_hint": "Look for: (1) HOW they explain decisions — narrative/story-based (intuitive) vs criteria/framework-based (analytical), (2) whether they cite specific evidence or general impressions, (3) 'it just felt right'/'my gut says' (intuitive) vs 'after weighing the options'/'logically speaking' (analytical), (4) comfort with ambiguity (intuitive) vs desire for certainty (analytical). Score 0.45-0.55 baseline; structured LLM text ≠ analytical",
         "value_anchors": {
             "0.0": "Purely intuitive; all decisions based on gut feeling, 'I just know'",
             "0.25": "Mostly intuitive; considers some evidence but trusts instinct",
@@ -945,7 +945,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "STR",
         "name": "information_control",
         "description": "Strategic management of what information to reveal or conceal",
-        "detection_hint": "Look for strategic vagueness, deflecting personal questions, controlling what gets shared. In casual chat: 'I'd rather not get into that', 'let's just say...', redirecting questions back, giving general answers to specific questions. NOTE: Normal privacy in casual chat is not information control — look for STRATEGIC or purposeful withholding",
+        "detection_hint": "Look for: (1) answering questions with questions, (2) giving category-level answers when asked for specifics ('I work in tech' vs 'I'm a backend engineer at X'), (3) redirecting personal topics to abstract discussion, (4) noticeably shorter responses on certain topics vs others, (5) 'let's just say...'/'I'd rather not get into that'. Score 0.40-0.50 baseline — normal conversational boundaries ≠ strategic control",
         "value_anchors": {
             "0.0": "Completely transparent; shares everything freely, no information strategy",
             "0.25": "Mostly open; occasionally holds back sensitive information",
@@ -959,7 +959,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "STR",
         "name": "mirroring_ability",
         "description": "Capacity to adapt own style to match the other person's",
-        "detection_hint": "Look for matching vocabulary/tone to the conversation partner, linguistic accommodation, code-switching in response to others. CRITICAL LLM BIAS: LLM-generated text NATURALLY mirrors the conversation partner's style — this is a property of the model, not the character. Default baseline is 0.40-0.50. Only score above 0.60 if you see DELIBERATE, STRATEGIC style-matching beyond normal conversational accommodation. Score below 0.30 only if the speaker actively RESISTS matching (uses formal tone when partner is casual, or vice versa).",
+        "detection_hint": "IGNORE vocabulary matching — LLM text naturally mirrors the partner's style (model artifact, not personality). Instead look for: (1) EXPLICITLY commenting on shared experience ('oh I do that too!'), (2) adopting the other person's FRAMING of a topic, (3) adjusting formality level VISIBLY mid-conversation, (4) echoing back the other person's specific words or phrases. Baseline 0.30-0.40; only >0.55 for DELIBERATE style shifts",
         "value_anchors": {
             "0.0": "No adaptation; same style regardless of who they're talking to",
             "0.25": "Minimal adaptation; slight adjustments in extreme situations",
@@ -973,7 +973,7 @@ TRAIT_CATALOG: list[dict] = [
         "dimension": "STR",
         "name": "hot_cold_oscillation",
         "description": "Pattern of alternating between warmth/engagement and distance/coldness",
-        "detection_hint": "Look for varying levels of engagement across the conversation, some messages warm and enthusiastic while others are terse/distant. Push-pull dynamics, inconsistent investment. In casual chat: being very into a topic then suddenly indifferent, warm greeting then cool response, variable message length as a signal",
+        "detection_hint": "Look for: (1) message length VARIANCE across turns (some 200 words, some 10 words on similar topics), (2) enthusiasm spikes followed by flat responses, (3) initiating then abandoning topics, (4) warm personal sharing followed by abrupt topic changes to impersonal subjects. Measurable via words_std behavioral feature. Score 0.35-0.45 baseline for consistent tone",
         "value_anchors": {
             "0.0": "Completely consistent; stable warmth or coldness, no oscillation",
             "0.25": "Mostly consistent; rare minor shifts in engagement",
