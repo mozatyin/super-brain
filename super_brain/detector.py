@@ -78,7 +78,7 @@ Most people cluster in the 0.30-0.70 range.
     trait in multiple distinct ways?" If not, score 0.55-0.65 instead.
 - A single observation moves a trait by +/-0.10-0.15 from baseline, not to an extreme.
 - The range 0.25-0.75 should cover 90%+ of your scores. Extreme scores (<0.20 or >0.80) \
-should appear for fewer than 5 traits out of the full set.
+should appear for fewer than 5 traits out of the full 69-trait set.
 
 CONVERSATION CONTEXT AWARENESS:
 - This text comes from CASUAL CONVERSATION. Critical implications:
@@ -186,6 +186,21 @@ to manipulate. <0.35 if using strategic flattery.
 - empathy_cognitive: Score 0.40-0.50 baseline. Acknowledging stories = basic conversation. \
 >0.60 only with precise emotional labeling.
 - fairness: Score 0.40-0.50 baseline. >0.60 only with explicit fairness principles.
+- verbosity: Directly measurable from response length. High = consistently long responses with \
+tangents and examples. Low = terse, direct answers. One of the most objective traits — trust \
+the text length. Score 0.40-0.50 baseline for moderate-length responses.
+- curiosity: Look for question-asking frequency AND topic exploration. Asking questions because \
+the conversation requires it ≠ curiosity. Score >0.60 only if person UNPROMPTED explores new \
+topics or asks 'I wonder' type questions. Score 0.40-0.50 baseline.
+- politeness: Directly countable: please/thank you/sorry frequency. Score based on courtesy \
+marker density. Some cultural contexts use more courtesy markers — don't over-interpret. \
+Score 0.40-0.50 baseline for normal conversational courtesy.
+- optimism: Ratio of positive to negative framing. Solution-focus vs problem-focus. 'At least' \
+and 'on the bright side' = high optimism signals. Persistent dwelling on problems without \
+positive reframing = low. Score 0.40-0.50 baseline for neutral framing.
+- decisiveness: Inverse of hedging. 'I will' and 'let's do it' = decisive. 'Maybe' and 'I'm \
+not sure' = indecisive. Score 0.40-0.50 baseline. Note: deliberation (thinking carefully) \
+is NOT the same as indecisiveness (unable to choose).
 
 GENERAL CALIBRATION:
 - Be precise. Use the anchor descriptions to calibrate your scores.
