@@ -10,8 +10,8 @@ from super_brain.catalog import (
 )
 
 
-def test_catalog_has_66_traits():
-    assert len(TRAIT_CATALOG) == 66
+def test_catalog_has_64_traits():
+    assert len(TRAIT_CATALOG) == 64
 
 
 def test_all_dimensions_present():
@@ -36,7 +36,7 @@ def test_trait_counts_per_dimension():
     assert counts["NEU"] == 6
     assert counts["HON"] == 4
     assert counts["DRK"] == 4
-    assert counts["EMO"] == 6
+    assert counts["EMO"] == 4
     assert counts["SOC"] == 6
     assert counts["COG"] == 4
     assert counts["VAL"] == 4
@@ -70,7 +70,7 @@ def test_consistency_rules_reference_valid_traits():
 
 
 def test_trait_map_complete():
-    assert len(TRAIT_MAP) == 66
+    assert len(TRAIT_MAP) == 64
     for t in TRAIT_CATALOG:
         assert (t["dimension"], t["name"]) in TRAIT_MAP
 

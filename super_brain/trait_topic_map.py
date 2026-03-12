@@ -57,10 +57,6 @@ TRAIT_TOPIC_MAP: dict[str, list[str]] = {
         "How do you feel about harsh roasts or dark humor?",
     ],
     # Emotional Architecture
-    "emotional_granularity": [
-        "When you're feeling off, can you usually pinpoint exactly what's bothering you?",
-        "Do you find it easy to describe your emotions, or is it more like a general 'good' or 'bad'?",
-    ],
     "emotional_regulation": [
         "When something really upsets you, what do you do to calm down?",
         "Do you find it easy to control your emotions in stressful situations?",
@@ -68,10 +64,6 @@ TRAIT_TOPIC_MAP: dict[str, list[str]] = {
     "emotional_volatility": [
         "Would your friends say your moods change quickly, or are you pretty steady?",
         "Have you ever surprised yourself with a sudden mood shift?",
-    ],
-    "emotional_expressiveness": [
-        "Are you the type of person whose face shows exactly what you're feeling?",
-        "Do people usually know when something's bothering you, or are you good at hiding it?",
     ],
     "empathy_cognitive": [
         "Are you good at figuring out what someone's really feeling, even when they don't say it?",

@@ -1,4 +1,4 @@
-"""Trait catalog: 68 personality traits across 13 dimensions (9 layers).
+"""Trait catalog: 64 personality traits across 13 dimensions (9 layers).
 
 Each trait has:
 - dimension: which dimension group (OPN, CON, EXT, AGR, NEU, HON, DRK, EMO, SOC, COG, VAL, STR, HUM)
@@ -70,7 +70,7 @@ TRAIT_CATALOG: list[dict] = [
             "0.75": "Strong aesthetic sensitivity; frequently uses sensory-rich language",
             "1.0": "Deeply aesthetic; language itself is artful, constantly attuned to beauty and sensory detail",
         },
-        "correlation_hints": "Positively correlated with fantasy, emotional_expressiveness, feelings",
+        "correlation_hints": "Positively correlated with fantasy, feelings",
     },
     {
         "dimension": "OPN",
@@ -84,7 +84,7 @@ TRAIT_CATALOG: list[dict] = [
             "0.75": "Emotionally open; comfortably discusses complex feelings and emotional states",
             "1.0": "Deeply emotionally attuned; embraces all feelings, rich emotional vocabulary, explores nuanced emotional states",
         },
-        "correlation_hints": "Positively correlated with emotional_granularity, emotional_expressiveness; negatively with psychopathy",
+        "correlation_hints": "Negatively correlated with psychopathy",
     },
     {
         "dimension": "OPN",
@@ -596,23 +596,9 @@ TRAIT_CATALOG: list[dict] = [
     },
 
     # ═══════════════════════════════════════════════════════════════════════
-    # Layer 4: Emotional Architecture (6 traits)
+    # Layer 4: Emotional Architecture (4 traits)
     # ═══════════════════════════════════════════════════════════════════════
 
-    {
-        "dimension": "EMO",
-        "name": "emotional_granularity",
-        "description": "Precision and richness of emotional vocabulary",
-        "detection_hint": "Look for specific emotion words (wistful, ambivalent, bittersweet) vs. vague (fine, bad, good, okay)",
-        "value_anchors": {
-            "0.0": "Extremely vague; only 'fine', 'bad', 'good', 'okay'",
-            "0.25": "Basic emotions only; happy, sad, angry, scared",
-            "0.50": "Moderate precision; uses some nuanced emotion words",
-            "0.75": "Rich vocabulary; distinguishes between subtle emotional states",
-            "1.0": "Extraordinary precision; 'melancholic yet hopeful', 'wistfully content'",
-        },
-        "correlation_hints": "Positively correlated with feelings (OPN), emotional_expressiveness; negatively with psychopathy",
-    },
     {
         "dimension": "EMO",
         "name": "emotional_regulation",
@@ -654,20 +640,6 @@ TRAIT_CATALOG: list[dict] = [
             "1.0": "Complete emotional contagion; overwhelmed by others' feelings, deeply feels their pain/joy",
         },
         "correlation_hints": "Positively correlated with tender_mindedness, care_harm; negatively with psychopathy, sadism",
-    },
-    {
-        "dimension": "EMO",
-        "name": "emotional_expressiveness",
-        "description": "Willingness and ability to outwardly express emotions",
-        "detection_hint": "Look for freely sharing feelings, emotional vocabulary density, expressive punctuation. IMPORTANT: Articulate writing is NOT evidence of high expressiveness (LLM bias). Only score high if the person actively shares personal feelings and emotions beyond what the topic requires",
-        "value_anchors": {
-            "0.0": "Alexithymic; never expresses emotions, completely flat communication",
-            "0.25": "Restrained; occasionally hints at emotions but rarely expresses them",
-            "0.50": "Moderate; expresses emotions in appropriate contexts",
-            "0.75": "Expressive; freely shares feelings, emotionally colorful language",
-            "1.0": "Extremely expressive; emotions pour out constantly, highly emotional language",
-        },
-        "correlation_hints": "Positively correlated with feelings (OPN), emotional_granularity; negatively with psychopathy",
     },
     {
         "dimension": "EMO",
@@ -714,7 +686,7 @@ TRAIT_CATALOG: list[dict] = [
             "0.75": "Avoidant; uncomfortable with closeness, deflects emotional depth",
             "1.0": "Extreme avoidance; rejects all emotional intimacy, 'I don't need anyone'",
         },
-        "correlation_hints": "Negatively correlated with warmth, emotional_expressiveness; positively with psychopathy",
+        "correlation_hints": "Negatively correlated with warmth; positively with psychopathy",
     },
     {
         "dimension": "SOC",
