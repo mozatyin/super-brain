@@ -130,12 +130,6 @@ def _generate_interaction_warnings(profile: PersonalityDNA) -> str:
             "worry. Show assertive statements with underlying nervous energy."
         )
 
-    # Low emotional expressiveness + high empathy — the 'still waters' type
-    if tmap.get("emotional_expressiveness", 0) < 0.3 and tmap.get("empathy_affective", 0) > 0.6:
-        warnings.append(
-            "- NOTE: Low expressiveness + high empathy. This person deeply feels but rarely "
-            "shows it. Express empathy through actions/observations rather than emotional words."
-        )
 
     return "\n".join(warnings)
 

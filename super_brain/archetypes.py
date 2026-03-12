@@ -143,15 +143,15 @@ _ENNEAGRAM_PROFILES: dict[str, dict[str, tuple[str, float]]] = {
         "assertiveness": ("high", 0.15), "modesty": ("low", 0.10),
     },
     "Type 4 — The Individualist": {
-        "emotional_granularity": ("high", 0.20), "aesthetics": ("high", 0.15),
+        "aesthetics": ("high", 0.15),
         "fantasy": ("high", 0.15), "depression": ("high", 0.15),
-        "self_consciousness": ("high", 0.15), "emotional_expressiveness": ("high", 0.10),
+        "self_consciousness": ("high", 0.15),
         "values_openness": ("high", 0.10),
     },
     "Type 5 — The Investigator": {
         "need_for_cognition": ("high", 0.25), "ideas": ("high", 0.20),
         "gregariousness": ("low", 0.15), "attachment_avoidance": ("high", 0.15),
-        "emotional_expressiveness": ("low", 0.15), "intuitive_vs_analytical": ("high", 0.10),
+        "intuitive_vs_analytical": ("high", 0.10),
     },
     "Type 6 — The Loyalist": {
         "anxiety": ("high", 0.20), "loyalty_group": ("high", 0.20),
@@ -201,12 +201,12 @@ def _enneagram_scores(tm: dict[str, float]) -> list[ArchetypeMatch]:
 
 _SEDUCTION_PROFILES: dict[str, dict[str, tuple[str, float]]] = {
     "Siren": {
-        "aesthetics": ("high", 0.20), "emotional_expressiveness": ("high", 0.20),
+        "aesthetics": ("high", 0.20),
         "charm_influence": ("high", 0.20), "straightforwardness": ("low", 0.15),
         "excitement_seeking": ("high", 0.15), "self_consciousness": ("low", 0.10),
     },
     "Rake": {
-        "emotional_expressiveness": ("high", 0.20), "impulsiveness": ("high", 0.20),
+        "impulsiveness": ("high", 0.20),
         "attachment_anxiety": ("high", 0.15), "deliberation": ("low", 0.15),
         "emotional_regulation": ("low", 0.15), "emotional_volatility": ("high", 0.15),
     },
@@ -222,7 +222,7 @@ _SEDUCTION_PROFILES: dict[str, dict[str, tuple[str, float]]] = {
     },
     "Natural": {
         "positive_emotions": ("high", 0.20), "trust": ("high", 0.20),
-        "emotional_expressiveness": ("high", 0.20), "machiavellianism": ("low", 0.20),
+        "machiavellianism": ("low", 0.20),
         "information_control": ("low", 0.20),
     },
     "Coquette": {
@@ -293,7 +293,7 @@ _JUNG_PROFILES: dict[str, dict[str, tuple[str, float]]] = {
         "angry_hostility": ("high", 0.10), "excitement_seeking": ("high", 0.10),
     },
     "Lover": {
-        "aesthetics": ("high", 0.20), "emotional_expressiveness": ("high", 0.20),
+        "aesthetics": ("high", 0.20),
         "warmth": ("high", 0.20), "empathy_affective": ("high", 0.20),
         "feelings": ("high", 0.20),
     },
@@ -378,7 +378,7 @@ _DISC_PROFILES: dict[str, dict[str, tuple[str, float]]] = {
     "C — Conscientiousness": {
         "order": ("high", 0.25), "deliberation": ("high", 0.20),
         "intuitive_vs_analytical": ("high", 0.20), "self_discipline": ("high", 0.15),
-        "gregariousness": ("low", 0.10), "emotional_expressiveness": ("low", 0.10),
+        "gregariousness": ("low", 0.10),
     },
 }
 

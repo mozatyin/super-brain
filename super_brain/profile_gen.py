@@ -34,7 +34,7 @@ _SOFT_CORRELATIONS: list[tuple[str, str, str]] = [
     ("angry_hostility", "impulsiveness", "positive"),
     # Cross-layer correlations
     ("empathy_cognitive", "empathy_affective", "positive"),
-    ("emotional_granularity", "emotional_expressiveness", "positive"),
+
     ("emotional_volatility", "impulsiveness", "positive"),
     ("emotional_regulation", "deliberation", "positive"),
     ("narcissism", "self_mythologizing", "positive"),

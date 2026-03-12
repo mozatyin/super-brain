@@ -246,12 +246,12 @@ _BATCH_CALIBRATION_EXAMPLES: dict[str, str] = {
         '"When I heard what happened to them, I felt this deep, aching sadness mixed with '
         'a kind of helpless frustration. I wanted to do something but I also knew I needed '
         'to just sit with the feeling first."\n'
-        "→ narcissism=0.10, psychopathy=0.05, emotional_granularity=0.85, empathy_affective=0.85\n\n"
+        "→ narcissism=0.10, psychopathy=0.05, emotional_regulation=0.85, empathy_affective=0.85\n\n"
         "Example B — high dark traits, low emotional depth:\n"
         '"People are predictable. Give them what they want to hear and they\'ll do whatever '
         'you need. It\'s not personal — it\'s just how things work. I don\'t see why everyone '
         'gets so emotional about it."\n'
-        "→ machiavellianism=0.80, psychopathy=0.70, emotional_granularity=0.15, empathy_affective=0.10\n"
+        "→ machiavellianism=0.80, psychopathy=0.70, emotional_regulation=0.15, empathy_affective=0.10\n"
     ),
     "SOC,STR": (
         "## Scoring Calibration Examples\n\n"
