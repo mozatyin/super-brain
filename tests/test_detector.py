@@ -23,7 +23,7 @@ def test_dimension_batches_cover_all_dimensions():
 
 def test_batch_trait_counts():
     """Each batch should have the expected number of traits."""
-    expected_counts = [12, 12, 10, 8, 10, 8, 4]  # total = 64
+    expected_counts = [14, 14, 10, 9, 10, 8, 4]  # total = 69
     for i, batch_dims in enumerate(DIMENSION_BATCHES):
         traits = _get_traits_for_batch(batch_dims)
         assert len(traits) == expected_counts[i], (
@@ -33,7 +33,7 @@ def test_batch_trait_counts():
 
 def test_total_traits_across_batches():
     total = sum(len(_get_traits_for_batch(b)) for b in DIMENSION_BATCHES)
-    assert total == 64
+    assert total == 69
 
 
 def test_parse_batch_response_valid_json():

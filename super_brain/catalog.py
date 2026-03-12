@@ -1,4 +1,4 @@
-"""Trait catalog: 64 personality traits across 13 dimensions (9 layers).
+"""Trait catalog: 69 personality traits across 13 dimensions (9 layers).
 
 Each trait has:
 - dimension: which dimension group (OPN, CON, EXT, AGR, NEU, HON, DRK, EMO, SOC, COG, VAL, STR, HUM)
@@ -128,6 +128,20 @@ TRAIT_CATALOG: list[dict] = [
         },
         "correlation_hints": "Positively correlated with cognitive_flexibility; negatively with authority_respect",
     },
+    {
+        "dimension": "OPN",
+        "name": "curiosity",
+        "description": "Active interest in learning, exploring new topics, asking questions",
+        "detection_hint": "Directly measurable: question frequency, 'I wonder'/'how does'/'why is' phrases, exploring tangential topics, asking follow-up questions, expressing interest in unfamiliar subjects. High = frequent questions + topic exploration. Low = sticks to established topics, rarely asks 'why'",
+        "value_anchors": {
+            "0.0": "Zero curiosity; never asks questions, no interest in learning new things",
+            "0.25": "Low curiosity; occasionally asks basic questions but doesn't explore",
+            "0.50": "Moderate; asks questions when relevant, some interest in new topics",
+            "0.75": "Curious; frequently asks probing questions, explores tangential topics enthusiastically",
+            "1.0": "Intensely curious; constant questions, 'I wonder' as default mode, deep-dives into every new topic",
+        },
+        "correlation_hints": "Positively correlated with ideas, need_for_cognition; negatively with cognitive rigidity",
+    },
 
     # ── CON: Conscientiousness (6 traits) ────────────────────────────────
     {
@@ -213,6 +227,20 @@ TRAIT_CATALOG: list[dict] = [
             "1.0": "Extremely deliberate; overthinks everything, analysis paralysis, never rushes",
         },
         "correlation_hints": "Negatively correlated with impulsiveness, excitement_seeking; positively with order",
+    },
+    {
+        "dimension": "CON",
+        "name": "decisiveness",
+        "description": "Speed and confidence in making decisions, commitment to choices",
+        "detection_hint": "Directly measurable: 'I will'/'I've decided'/'let's do' vs 'maybe'/'I'm not sure'/'it depends'. Look for how quickly they commit to positions, whether they revisit or change stances. Inverse of hedging frequency",
+        "value_anchors": {
+            "0.0": "Paralyzed by decisions; 'I just can't decide', constant waffling, never commits",
+            "0.25": "Indecisive; takes long to decide, frequently changes mind, seeks others' opinions",
+            "0.50": "Moderate; decides reasonably quickly on most things, occasional hesitation",
+            "0.75": "Decisive; makes choices quickly and confidently, commits to positions",
+            "1.0": "Extremely decisive; instant decisions, 'I've made up my mind', never looks back",
+        },
+        "correlation_hints": "Positively correlated with competence, assertiveness; negatively with deliberation at extremes",
     },
 
     # ── EXT: Extraversion (6 traits) ────────────────────────────────────
@@ -300,6 +328,20 @@ TRAIT_CATALOG: list[dict] = [
         },
         "correlation_hints": "Positively correlated with warmth, humor_affiliative; negatively with depression",
     },
+    {
+        "dimension": "EXT",
+        "name": "verbosity",
+        "description": "Tendency toward lengthy, elaborate communication vs brief, concise responses",
+        "detection_hint": "Directly measurable from text: avg_words_per_turn, total elaboration, tendency to add examples/tangents/digressions. High = 150+ words per turn with tangents and examples. Low = under 50 words per turn, direct answers only. This is one of the most objectively measurable traits",
+        "value_anchors": {
+            "0.0": "Extremely terse; one-word answers, never elaborates, bare minimum communication",
+            "0.25": "Brief; short sentences, answers directly without elaboration",
+            "0.50": "Moderate length; provides adequate detail, neither terse nor wordy",
+            "0.75": "Verbose; lengthy responses, adds examples, tangents, and elaboration",
+            "1.0": "Extremely verbose; walls of text, multiple tangents, over-explains everything",
+        },
+        "correlation_hints": "Positively correlated with gregariousness, need_for_cognition; negatively with psychopathy",
+    },
 
     # ── AGR: Agreeableness (6 traits) ───────────────────────────────────
     {
@@ -385,6 +427,20 @@ TRAIT_CATALOG: list[dict] = [
             "1.0": "Extremely tender; deeply moved by any suffering, overwhelmed by compassion",
         },
         "correlation_hints": "Positively correlated with empathy_affective, care_harm; negatively with psychopathy, sadism",
+    },
+    {
+        "dimension": "AGR",
+        "name": "politeness",
+        "description": "Use of social lubricants, courtesy markers, and considerate language",
+        "detection_hint": "Directly countable: please/thank you/sorry frequency, softeners ('if you don't mind', 'I hope'), formal address. Look for courtesy markers per message. High = multiple please/thank you per exchange + softening phrases. Low = blunt without social niceties",
+        "value_anchors": {
+            "0.0": "No courtesy; blunt, rude, no please/thank you, dismissive",
+            "0.25": "Minimal politeness; occasional courtesy when reminded but generally direct",
+            "0.50": "Moderate; uses basic please/thank you, generally considerate",
+            "0.75": "Polite; frequent courtesy markers, softening phrases, considerate framing",
+            "1.0": "Extremely polite; constant please/thank you/sorry, over-softens everything, excessive courtesy",
+        },
+        "correlation_hints": "Positively correlated with compliance, modesty; negatively with angry_hostility, assertiveness",
     },
 
     # ── NEU: Neuroticism (6 traits) ─────────────────────────────────────
@@ -654,6 +710,20 @@ TRAIT_CATALOG: list[dict] = [
             "1.0": "Extremely volatile; rapid emotional swings, unpredictable reactions",
         },
         "correlation_hints": "Positively correlated with impulsiveness, hot_cold_oscillation; negatively with emotional_regulation",
+    },
+    {
+        "dimension": "EMO",
+        "name": "optimism",
+        "description": "Tendency toward positive framing, seeing opportunities, expecting good outcomes",
+        "detection_hint": "Measurable from text: positive vs negative emotion word ratio, solution-focus vs problem-focus, 'at least'/'on the bright side' frequency, future-oriented language. High = consistent positive reframing + solution focus. Low = negative framing + dwelling on problems",
+        "value_anchors": {
+            "0.0": "Deeply pessimistic; expects the worst, dwells on problems, 'nothing works out'",
+            "0.25": "Somewhat pessimistic; tends to see downsides, cautious about hoping",
+            "0.50": "Balanced; realistic outlook, sees both positive and negative",
+            "0.75": "Optimistic; tends to see silver linings, expects good outcomes, solution-focused",
+            "1.0": "Extremely optimistic; relentlessly positive, always sees opportunity, 'everything happens for a reason'",
+        },
+        "correlation_hints": "Positively correlated with positive_emotions, humor_self_enhancing; negatively with depression, anxiety",
     },
 
     # ═══════════════════════════════════════════════════════════════════════

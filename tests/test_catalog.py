@@ -10,8 +10,8 @@ from super_brain.catalog import (
 )
 
 
-def test_catalog_has_64_traits():
-    assert len(TRAIT_CATALOG) == 64
+def test_catalog_has_69_traits():
+    assert len(TRAIT_CATALOG) == 69
 
 
 def test_all_dimensions_present():
@@ -29,14 +29,14 @@ def test_trait_counts_per_dimension():
     counts = {}
     for t in TRAIT_CATALOG:
         counts[t["dimension"]] = counts.get(t["dimension"], 0) + 1
-    assert counts["OPN"] == 6
-    assert counts["CON"] == 6
-    assert counts["EXT"] == 6
-    assert counts["AGR"] == 6
+    assert counts["OPN"] == 7
+    assert counts["CON"] == 7
+    assert counts["EXT"] == 7
+    assert counts["AGR"] == 7
     assert counts["NEU"] == 6
     assert counts["HON"] == 4
     assert counts["DRK"] == 4
-    assert counts["EMO"] == 4
+    assert counts["EMO"] == 5
     assert counts["SOC"] == 6
     assert counts["COG"] == 4
     assert counts["VAL"] == 4
@@ -70,15 +70,21 @@ def test_consistency_rules_reference_valid_traits():
 
 
 def test_trait_map_complete():
-    assert len(TRAIT_MAP) == 64
+    assert len(TRAIT_MAP) == 69
     for t in TRAIT_CATALOG:
         assert (t["dimension"], t["name"]) in TRAIT_MAP
 
 
 def test_get_traits_for_dimension():
     opn = get_traits_for_dimension("OPN")
-    assert len(opn) == 6
+    assert len(opn) == 7
     assert all(t["dimension"] == "OPN" for t in opn)
+
+
+def test_new_traits_exist():
+    names = {t["name"] for t in TRAIT_CATALOG}
+    for expected in ["curiosity", "decisiveness", "verbosity", "politeness", "optimism"]:
+        assert expected in names, f"Missing new trait: {expected}"
 
 
 def test_get_trait_by_name():
