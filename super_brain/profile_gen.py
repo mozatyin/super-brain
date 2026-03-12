@@ -1,4 +1,4 @@
-"""Generate random but internally consistent 66-trait personality profiles."""
+"""Generate random but internally consistent 69-trait personality profiles."""
 
 from __future__ import annotations
 
@@ -65,7 +65,7 @@ def generate_profile(
     seed: int | None = None,
     archetype_bias: dict[str, float] | None = None,
 ) -> PersonalityDNA:
-    """Generate a random but internally consistent 66-trait personality profile.
+    """Generate a random but internally consistent 69-trait personality profile.
 
     Args:
         profile_id: Unique identifier for the profile.
@@ -75,7 +75,7 @@ def generate_profile(
             recognizable personality types).
 
     Returns:
-        A complete PersonalityDNA with all 66 traits.
+        A complete PersonalityDNA with all 69 traits.
     """
     rng = random.Random(seed)
 

@@ -1,11 +1,11 @@
 """Evaluate personality detection from natural conversation.
 
 Method:
-  1. Generate full 66-trait random profiles
+  1. Generate full 69-trait random profiles
   2. A Chatter has natural conversation (with topic escalation)
-  3. Speaker responds in character, guided by the full 66-trait vector
-  4. After N turns, Detector reads the FULL conversation and estimates all 66 traits
-  5. Compare detected vs ground-truth across all 66 traits
+  3. Speaker responds in character, guided by the full 69-trait vector
+  4. After N turns, Detector reads the FULL conversation and estimates all 69 traits
+  5. Compare detected vs ground-truth across all 69 traits
 
 V0.5 changes:
   - Speaker: "Method actor" framing bypasses LLM safety alignment
@@ -1033,7 +1033,7 @@ def _build_speaker_system(profile: PersonalityDNA, turn_number: int = 0) -> str:
 
 
 class PersonalitySpeaker:
-    """Speaks in character according to a full 66-trait personality profile."""
+    """Speaks in character according to a full 69-trait personality profile."""
 
     def __init__(self, api_key: str, model: str = "claude-sonnet-4-20250514"):
         kwargs: dict = {"api_key": api_key}

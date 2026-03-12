@@ -49,8 +49,7 @@ PROFILES = {
         {"dim": "EXT", "name": "assertiveness", "value": 0.15},
         {"dim": "EXT", "name": "positive_emotions", "value": 0.20},
         # High emotional depth
-        {"dim": "EMO", "name": "emotional_granularity", "value": 0.85},
-        {"dim": "EMO", "name": "emotional_expressiveness", "value": 0.70},
+        {"dim": "EMO", "name": "emotional_volatility", "value": 0.70},
         {"dim": "EMO", "name": "empathy_affective", "value": 0.75},
         # Avoidant attachment
         {"dim": "SOC", "name": "attachment_avoidance", "value": 0.65},
@@ -84,8 +83,7 @@ PROFILES = {
         {"dim": "AGR", "name": "tender_mindedness", "value": 0.90},
         {"dim": "EXT", "name": "warmth", "value": 0.90},
         # High emotional awareness
-        {"dim": "EMO", "name": "emotional_granularity", "value": 0.80},
-        {"dim": "EMO", "name": "emotional_expressiveness", "value": 0.80},
+        {"dim": "EMO", "name": "optimism", "value": 0.80},
         # Values
         {"dim": "VAL", "name": "care_harm", "value": 0.95},
         {"dim": "VAL", "name": "fairness_justice", "value": 0.80},
@@ -103,7 +101,7 @@ PROFILES = {
         # Low empathy / warmth
         {"dim": "EMO", "name": "empathy_affective", "value": 0.10},
         {"dim": "EXT", "name": "warmth", "value": 0.15},
-        {"dim": "EMO", "name": "emotional_expressiveness", "value": 0.15},
+        {"dim": "EMO", "name": "optimism", "value": 0.15},
         # High cognition
         {"dim": "COG", "name": "need_for_cognition", "value": 0.85},
         {"dim": "COG", "name": "intuitive_vs_analytical", "value": 0.90},
@@ -132,7 +130,7 @@ PROFILES = {
         {"dim": "EXT", "name": "assertiveness", "value": 0.70},
         {"dim": "EXT", "name": "excitement_seeking", "value": 0.80},
         # Emotional depth
-        {"dim": "EMO", "name": "emotional_expressiveness", "value": 0.75},
+        {"dim": "EMO", "name": "emotional_volatility", "value": 0.65},
         {"dim": "OPN", "name": "feelings", "value": 0.80},
         # Humor
         {"dim": "HUM", "name": "humor_aggressive", "value": 0.55},

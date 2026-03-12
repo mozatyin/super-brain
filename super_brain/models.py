@@ -42,7 +42,7 @@ class SampleSummary(BaseModel):
 
 
 class PersonalityDNA(BaseModel):
-    """Complete personality profile for one person — 66 traits across 13 dimensions."""
+    """Complete personality profile for one person — 69 traits across 13 dimensions."""
     id: str
     version: str = "0.1"
     created: Optional[datetime] = None
@@ -154,7 +154,7 @@ class Soul(BaseModel):
     """Full Soul model aggregating all layers of understanding about a person."""
     id: str
 
-    # Layer 1: Character (existing 66-trait PersonalityDNA)
+    # Layer 1: Character (existing 69-trait PersonalityDNA)
     character: PersonalityDNA
 
     # Layer 2: Facts (accumulated from FactExtractor)
