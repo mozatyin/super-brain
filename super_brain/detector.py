@@ -440,8 +440,13 @@ class Detector:
                     )
                 )
 
-        # Post-process: validate consistency across batches
+        # Post-process pipeline:
+        # 1. Validate consistency across batches
         all_traits = _validate_consistency(all_traits)
+        # 2. Apply linear calibration corrections for known biases
+        all_traits = _calibrate_known_biases(all_traits)
+        # 3. Bayesian shrinkage for low-confidence scores
+        all_traits = _bayesian_shrinkage(all_traits)
 
         token_count = len(text.split())
         return PersonalityDNA(
