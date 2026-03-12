@@ -133,6 +133,7 @@ class TestComputeAdjustments:
             self_ref_ratio=0.10, other_ref_ratio=0.02, hedging_ratio=0.01,
             absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
             pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
         assert "narcissism" in adj
@@ -144,6 +145,7 @@ class TestComputeAdjustments:
             self_ref_ratio=0.02, other_ref_ratio=0.05, hedging_ratio=0.01,
             absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
             pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
         assert adj.get("narcissism", 0) < 0
@@ -154,6 +156,7 @@ class TestComputeAdjustments:
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.03,
             absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
             pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
         assert adj.get("assertiveness", 0) < 0
@@ -165,6 +168,7 @@ class TestComputeAdjustments:
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.010,
             absolutist_ratio=0.005, question_ratio=0.15, exclamation_ratio=0.10,
             pos_emotion_ratio=0.010, neg_emotion_ratio=0.008,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
         # Most rules shouldn't fire for moderate values
@@ -176,6 +180,7 @@ class TestComputeAdjustments:
             self_ref_ratio=0.10, other_ref_ratio=0.01, hedging_ratio=0.001,
             absolutist_ratio=0.020, question_ratio=0.3, exclamation_ratio=0.4,
             pos_emotion_ratio=0.03, neg_emotion_ratio=0.02,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
         # assertiveness should get boost from both low hedging + high absolutist
@@ -210,3 +215,183 @@ class TestApplyAdjustments:
         result = apply_adjustments(profile, {"narcissism": 0.06})
         vals = {t.name: t.value for t in result.traits}
         assert vals["warmth"] == 0.7
+
+
+class TestNewBehavioralFeatures:
+    """Tests for V3.2 politeness, curiosity, and decisiveness features."""
+
+    def test_politeness_ratio(self):
+        conv = _make_conversation([
+            "Please help me. Thank you so much, I really appreciate it."
+        ])
+        result = extract_features(conv)
+        # polite words: please, thank, appreciate = 3
+        # polite phrases: "thank you" = 1
+        assert result.politeness_ratio > 0.1
+
+    def test_curiosity_ratio(self):
+        conv = _make_conversation([
+            "I wonder how does that work? Why is it like that? Tell me more."
+        ])
+        result = extract_features(conv)
+        # curiosity phrases: "i wonder", "how does", "why is", "tell me more"
+        assert result.curiosity_ratio > 0.1
+
+    def test_decisiveness_ratio(self):
+        conv = _make_conversation([
+            "I've decided to go. I will absolutely do it, definitely."
+        ])
+        result = extract_features(conv)
+        # decisive words: decided, absolutely, definitely = 3
+        # decisive phrases: "i've decided", "i will" = 2
+        assert result.decisiveness_ratio > 0.1
+
+    def test_new_features_zero_for_empty(self):
+        result = extract_features([], speaker_role="speaker")
+        assert result.politeness_ratio == 0
+        assert result.curiosity_ratio == 0
+        assert result.decisiveness_ratio == 0
+
+    def test_new_features_present_in_extraction(self):
+        conv = _make_conversation(["Hello world"])
+        result = extract_features(conv)
+        assert hasattr(result, "politeness_ratio")
+        assert hasattr(result, "curiosity_ratio")
+        assert hasattr(result, "decisiveness_ratio")
+
+
+class TestV32AdjustmentRules:
+    """Tests for the 15 new V3.2 adjustment rules."""
+
+    def test_competence_long_turns(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=2000, avg_words_per_turn=200, words_std=20,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
+            absolutist_ratio=0.015, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("competence", 0) > 0  # long turns + high absolutist
+
+    def test_competence_reduced_by_hedging(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=2000, avg_words_per_turn=200, words_std=20,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.03,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        # competence gets +0.04 from long turns but -0.05 from hedging
+        assert adj.get("competence", 0) < 0
+
+    def test_social_dominance_questions_reduce(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
+            absolutist_ratio=0.005, question_ratio=0.35, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("social_dominance", 0) < 0
+
+    def test_social_dominance_long_self_ref(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=2000, avg_words_per_turn=200, words_std=20,
+            self_ref_ratio=0.09, other_ref_ratio=0.02, hedging_ratio=0.01,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("social_dominance", 0) > 0
+
+    def test_self_consciousness_hedging(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.03,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("self_consciousness", 0) > 0
+
+    def test_hot_cold_oscillation_high_std(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=100,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("hot_cold_oscillation", 0) > 0
+
+    def test_hot_cold_oscillation_low_std(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("hot_cold_oscillation", 0) < 0
+
+    def test_decisiveness_hedging_reduces(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.03,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("decisiveness", 0) < 0
+
+    def test_decisiveness_absolutist_increases(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.005,
+            absolutist_ratio=0.015, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("decisiveness", 0) > 0
+
+    def test_curiosity_high_questions(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
+            absolutist_ratio=0.005, question_ratio=0.30, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("curiosity", 0) > 0
+
+    def test_verbosity_long_turns(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=2000, avg_words_per_turn=200, words_std=20,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("verbosity", 0) > 0
+
+    def test_verbosity_short_turns(self):
+        features = BehavioralFeatures(
+            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
+            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
+            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
+            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
+            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
+        )
+        adj = compute_adjustments(features)
+        assert adj.get("verbosity", 0) < 0

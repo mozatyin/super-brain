@@ -1,4 +1,4 @@
-"""Behavioral feature extraction from conversation text (V2.9).
+"""Behavioral feature extraction from conversation text (V3.2).
 
 Extracts objective, non-LLM text signals (word counts, pronoun ratios,
 hedging frequency, etc.) and maps them to small trait adjustments.
@@ -45,6 +45,30 @@ _NEGATIVE_EMO = {
     "upset", "furious", "depressed", "overwhelmed", "dread",
 }
 
+_POLITENESS = {
+    "please", "thanks", "thank", "sorry", "excuse", "pardon",
+    "appreciate", "grateful", "kindly",
+}
+_POLITENESS_PHRASES = [
+    "thank you", "excuse me", "if you don't mind", "i appreciate",
+    "i'm sorry", "sorry about", "no worries",
+]
+
+_CURIOSITY_PHRASES = [
+    "i wonder", "how does", "how do", "why is", "why do",
+    "what if", "that's interesting", "tell me more",
+    "how come", "what makes",
+]
+
+_DECISIVENESS = {
+    "decided", "definitely", "absolutely", "certainly",
+    "committed", "determined",
+}
+_DECISIVENESS_PHRASES = [
+    "i will", "i've decided", "let's do", "let's go",
+    "i'm going to", "no question", "for sure",
+]
+
 
 @dataclass
 class BehavioralFeatures:
@@ -61,6 +85,9 @@ class BehavioralFeatures:
     exclamation_ratio: float    # sentences ending in ! / total sentences
     pos_emotion_ratio: float    # positive emotion words / total words
     neg_emotion_ratio: float    # negative emotion words / total words
+    politeness_ratio: float     # politeness words+phrases / total words
+    curiosity_ratio: float      # curiosity phrases / total words
+    decisiveness_ratio: float   # decisiveness words+phrases / total words
 
 
 def _tokenize(text: str) -> list[str]:
@@ -107,6 +134,7 @@ def extract_features(
             self_ref_ratio=0, other_ref_ratio=0, hedging_ratio=0,
             absolutist_ratio=0, question_ratio=0, exclamation_ratio=0,
             pos_emotion_ratio=0, neg_emotion_ratio=0,
+            politeness_ratio=0, curiosity_ratio=0, decisiveness_ratio=0,
         )
 
     # Per-turn word counts
@@ -136,6 +164,7 @@ def extract_features(
             words_std=0, self_ref_ratio=0, other_ref_ratio=0, hedging_ratio=0,
             absolutist_ratio=0, question_ratio=0, exclamation_ratio=0,
             pos_emotion_ratio=0, neg_emotion_ratio=0,
+            politeness_ratio=0, curiosity_ratio=0, decisiveness_ratio=0,
         )
 
     avg_words = total_words / len(turns)
@@ -148,6 +177,7 @@ def extract_features(
     # Count word-level features
     word_set_counts = {
         "self": 0, "other": 0, "hedge": 0, "abs": 0, "pos": 0, "neg": 0,
+        "polite": 0, "decisive": 0,
     }
     for w in all_words:
         if w in _SELF_REF:
@@ -162,9 +192,19 @@ def extract_features(
             word_set_counts["pos"] += 1
         if w in _NEGATIVE_EMO:
             word_set_counts["neg"] += 1
+        if w in _POLITENESS:
+            word_set_counts["polite"] += 1
+        if w in _DECISIVENESS:
+            word_set_counts["decisive"] += 1
 
     # Add phrase-level hedging
-    phrase_hedge_count = _count_phrases(all_text.lower(), _HEDGING_PHRASES)
+    text_lower = all_text.lower()
+    phrase_hedge_count = _count_phrases(text_lower, _HEDGING_PHRASES)
+
+    # Phrase-level counts for new features
+    phrase_polite_count = _count_phrases(text_lower, _POLITENESS_PHRASES)
+    phrase_curiosity_count = _count_phrases(text_lower, _CURIOSITY_PHRASES)
+    phrase_decisive_count = _count_phrases(text_lower, _DECISIVENESS_PHRASES)
 
     return BehavioralFeatures(
         turn_count=len(turns),
@@ -181,6 +221,13 @@ def extract_features(
         exclamation_ratio=round(total_exclamations / total_sentences, 4),
         pos_emotion_ratio=round(word_set_counts["pos"] / total_words, 4),
         neg_emotion_ratio=round(word_set_counts["neg"] / total_words, 4),
+        politeness_ratio=round(
+            (word_set_counts["polite"] + phrase_polite_count) / total_words, 4
+        ),
+        curiosity_ratio=round(phrase_curiosity_count / total_words, 4),
+        decisiveness_ratio=round(
+            (word_set_counts["decisive"] + phrase_decisive_count) / total_words, 4
+        ),
     )
 
 
@@ -227,6 +274,31 @@ _ADJUSTMENT_RULES: list[tuple[str, float, str, str, float]] = [
     # Self vs other reference balance → altruism, tender_mindedness
     ("other_ref_ratio", 0.04, "above", "altruism", 0.05),
     ("other_ref_ratio", 0.01, "below", "altruism", -0.05),
+
+    # ── V3.2: Rules for difficult + new traits ──
+    # competence signals
+    ("avg_words_per_turn", 150, "above", "competence", 0.04),
+    ("absolutist_ratio", 0.012, "above", "competence", 0.03),
+    ("hedging_ratio", 0.025, "above", "competence", -0.05),
+    # social_dominance signals
+    ("question_ratio", 0.30, "above", "social_dominance", -0.05),
+    ("avg_words_per_turn", 180, "above", "social_dominance", 0.04),
+    ("self_ref_ratio", 0.07, "above", "social_dominance", 0.04),
+    # self_consciousness
+    ("hedging_ratio", 0.025, "above", "self_consciousness", 0.06),
+    # intuitive_vs_analytical (toward analytical)
+    ("avg_words_per_turn", 160, "above", "intuitive_vs_analytical", 0.05),
+    # hot_cold_oscillation
+    ("words_std", 80, "above", "hot_cold_oscillation", 0.06),
+    ("words_std", 30, "below", "hot_cold_oscillation", -0.05),
+    # decisiveness (new trait)
+    ("hedging_ratio", 0.020, "above", "decisiveness", -0.08),
+    ("absolutist_ratio", 0.010, "above", "decisiveness", 0.06),
+    # curiosity (new trait)
+    ("question_ratio", 0.25, "above", "curiosity", 0.06),
+    # verbosity (new trait)
+    ("avg_words_per_turn", 150, "above", "verbosity", 0.08),
+    ("avg_words_per_turn", 60, "below", "verbosity", -0.08),
 ]
 
 
