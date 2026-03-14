@@ -226,8 +226,36 @@ GENERAL CALIBRATION:
 - Distinguish between the TRAIT and its expression context.
 - Trust your observations over stereotypes.
 
-FINAL CHECK: Before submitting, scan your scores. If more than 5 traits are <0.20 or >0.80, \
-you are likely over-confident. Redistribute extreme scores toward the 0.30-0.70 range.
+BIAS ALERT — UNDER-DETECTED TRAITS (adjust upward if ANY signal present):
+Research shows personality raters systematically UNDER-RATE these traits in text:
+- emotional_volatility: If you see ANY tone shift between messages, score ≥0.40
+- angry_hostility: If ANY irritation, frustration, or blame language appears, score ≥0.35
+- modesty: If person deflects praise or minimizes achievements, score ≥0.55
+- social_dominance: If person steers topics, gives unsolicited advice, or speaks authoritatively, score ≥0.50
+- humor_self_enhancing: If person reframes adversity positively ("at least..."), score ≥0.50
+
+CONTRASTIVE NOTES — COMMONLY CONFUSED TRAIT PAIRS:
+- compliance ≠ modesty: Compliance = yielding in conflict; modesty = not boasting. Different.
+- assertiveness ≠ social_dominance: Assertiveness = speaking up; social_dominance = seeking hierarchical control.
+- trust ≠ compliance: Trust = believing others are honest; compliance = avoiding confrontation.
+- empathy_cognitive ≠ empathy_affective: Cognitive = understanding emotions; affective = FEELING them yourself.
+- deliberation ≠ decisiveness: Deliberation = thinking carefully; decisiveness = choosing quickly. They CAN co-exist.
+- anxiety ≠ vulnerability: Anxiety = anticipatory worry; vulnerability = crumbling under actual pressure.
+- narcissism ≠ assertiveness: Narcissism = entitlement and grandiosity; assertiveness = simply speaking up.
+- information_control ≠ introversion: Info control = strategic concealment; introversion = less talking.
+
+USE THE FULL 0.0-1.0 RANGE:
+People truly vary. Some people ARE extremely low (0.10) on traits and some ARE extremely high (0.90).
+- 0.00-0.10: ABSENT — the person actively demonstrates the OPPOSITE of this trait
+- 0.15-0.25: Very low — clear counter-evidence
+- 0.30-0.40: Below average — some counter-evidence
+- 0.45-0.55: Average — no strong evidence either way
+- 0.60-0.70: Above average — clear positive evidence
+- 0.75-0.85: High — strong, consistent evidence from multiple observations
+- 0.90-1.00: Extreme — every relevant moment shows this trait
+
+FINAL CHECK: Before submitting, scan your scores. If ALL scores cluster in 0.35-0.65, you are being \
+too conservative. At least 30% of scores should be outside this range for a distinctive personality.
 """
 
 

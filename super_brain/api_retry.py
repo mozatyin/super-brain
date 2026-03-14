@@ -7,13 +7,14 @@ import time
 import anthropic
 
 
-def retry_api_call(fn, max_retries=3, base_delay=5):
-    """Retry API calls on transient errors (403, 429, 500+)."""
+def retry_api_call(fn, max_retries=4, base_delay=5):
+    """Retry API calls on transient errors (403, 429, 500+, timeout, connection)."""
     for attempt in range(max_retries):
         try:
             return fn()
         except (anthropic.PermissionDeniedError, anthropic.RateLimitError,
-                anthropic.InternalServerError) as e:
+                anthropic.InternalServerError, anthropic.APITimeoutError,
+                anthropic.APIConnectionError) as e:
             if attempt == max_retries - 1:
                 raise
             delay = base_delay * (2 ** attempt)
