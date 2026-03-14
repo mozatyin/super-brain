@@ -264,7 +264,18 @@ class Chatter:
             system=system,
             messages=messages if messages else [{"role": "user", "content": "Start a casual conversation."}],
         ))
-        return response.content[0].text
+        if response and response.content:
+            return response.content[0].text
+        # Retry once after delay
+        import time
+        time.sleep(5)
+        response = _retry_api_call(lambda: self._client.messages.create(
+            model=self._model,
+            max_tokens=150,
+            system=system,
+            messages=messages if messages else [{"role": "user", "content": "Start a casual conversation."}],
+        ))
+        return response.content[0].text if response and response.content else "That's interesting, tell me more about that."
 
 
 def _generate_backstory(tmap: dict[str, float], seed: int = 0) -> str:
@@ -1067,7 +1078,18 @@ class PersonalitySpeaker:
             system=system,
             messages=messages,
         ))
-        return response.content[0].text
+        if response and response.content:
+            return response.content[0].text
+        # Fallback: retry once more after a delay
+        import time
+        time.sleep(5)
+        response = _retry_api_call(lambda: self._client.messages.create(
+            model=self._model,
+            max_tokens=max_tok,
+            system=system,
+            messages=messages,
+        ))
+        return response.content[0].text if response and response.content else "..."
 
 
 def simulate_conversation(

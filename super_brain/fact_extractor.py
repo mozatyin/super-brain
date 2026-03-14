@@ -151,7 +151,16 @@ class FactExtractor:
             messages=[{"role": "user", "content": user_message}],
         ))
 
-        raw = response.content[0].text
+        if not response or not response.content:
+            import time
+            time.sleep(5)
+            response = retry_api_call(lambda: self._client.messages.create(
+                model=self._model,
+                max_tokens=4096,
+                system=_FACT_EXTRACTOR_SYSTEM,
+                messages=[{"role": "user", "content": user_message}],
+            ))
+        raw = response.content[0].text if response and response.content else '{"facts": []}'
         data = _parse_fact_response(raw)
 
         # Deduplicate facts
