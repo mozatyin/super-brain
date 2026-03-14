@@ -378,11 +378,15 @@ class Detector:
         speaker_label: str = "Speaker",
         context: str = "general",
         soul_context: str | None = None,
+        target_traits: set[str] | None = None,
     ) -> PersonalityDNA:
         """Analyze text and return a PersonalityDNA profile.
 
         Runs 7 batched LLM calls (one per dimension group) with chain-of-thought
         reasoning, then merges all traits into a single profile.
+
+        If target_traits is provided, only runs batches containing those traits
+        (optimization for scenario-based evaluation).
         """
         all_traits: list[Trait] = []
 
@@ -392,6 +396,10 @@ class Detector:
                 continue
 
             expected_names = {t["name"] for t in batch_traits}
+
+            # Skip batches with no target traits (scenario optimization)
+            if target_traits is not None and not expected_names & target_traits:
+                continue
             dim_labels = ", ".join(
                 f"{d} ({ALL_DIMENSIONS.get(d, d)})" for d in batch_dims
             )

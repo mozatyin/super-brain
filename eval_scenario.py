@@ -29,13 +29,14 @@ from super_brain.profile_gen import generate_profile
 from super_brain.scenarios import SCENARIOS, Scenario, get_scenario_sequence
 
 
-def _retry_api_call(fn, max_retries=3, base_delay=5):
-    """Retry API calls on transient errors."""
+def _retry_api_call(fn, max_retries=4, base_delay=5):
+    """Retry API calls on transient errors including timeouts."""
     for attempt in range(max_retries):
         try:
             return fn()
         except (anthropic.PermissionDeniedError, anthropic.RateLimitError,
-                anthropic.InternalServerError) as e:
+                anthropic.InternalServerError, anthropic.APITimeoutError,
+                anthropic.APIConnectionError) as e:
             if attempt == max_retries - 1:
                 raise
             delay = base_delay * (2 ** attempt)
@@ -235,11 +236,12 @@ def detect_scenario_traits(
         lines.append(f"{label}: {msg['text']}")
     full_text = "\n\n".join(lines)
 
-    # Use detector's analyze method
+    # Use detector's analyze method — only run batches with target traits
     detected = detector.analyze(
         text=full_text,
         speaker_id="eval_scenario",
         speaker_label="Person B",
+        target_traits=set(scenario.target_traits),
     )
 
     # Apply behavioral adjustments
@@ -399,6 +401,12 @@ def main():
         print(f"  → MAE: {result['mae']:.3f}, Coverage: {result['coverage']}, "
               f"Within 0.25: {result['within_025']}/{result['total']}")
         print()
+
+        # Save progress after each profile
+        outfile = f"eval_scenario_results_v40_{n_profiles}p.json"
+        with open(outfile, "w") as f:
+            json.dump(all_results, f, indent=2, default=str)
+        print(f"  [saved progress to {outfile}]")
 
     overall_mae = statistics.mean(all_maes)
     print(f"=== Overall MAE: {overall_mae:.3f} ===")
