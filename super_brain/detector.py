@@ -66,19 +66,21 @@ Guidelines:
 - confidence: how certain you are (lower if insufficient evidence in the text)
 - evidence_quote: a short direct quote from the text supporting your score
 
-UNIVERSAL BASELINE CALIBRATION (CRITICAL — READ CAREFULLY):
-- For ANY trait where you lack strong evidence, your default score MUST be 0.40-0.55. \
-Most people cluster in the 0.30-0.70 range.
-- HARD RULES for extreme scores:
-  * Scores of 0.05-0.15: FORBIDDEN unless you have 3+ clear counter-observations. \
-    If you are tempted to score 0.10 or 0.15, you MUST ask: "Did this person explicitly \
-    demonstrate the OPPOSITE of this trait?" If not, score 0.35-0.45 instead.
-  * Scores of 0.85-0.95: FORBIDDEN unless you have 3+ strong supporting observations. \
-    If you are tempted to score 0.85+, you MUST ask: "Did this person demonstrate this \
-    trait in multiple distinct ways?" If not, score 0.55-0.65 instead.
-- A single observation moves a trait by +/-0.10-0.15 from baseline, not to an extreme.
-- The range 0.25-0.75 should cover 90%+ of your scores. Extreme scores (<0.20 or >0.80) \
-should appear for fewer than 5 traits out of the full 69-trait set.
+EVIDENCE-ANCHORED SCORING (CRITICAL — READ CAREFULLY):
+- START at 0.50 (population average) for every trait, then MOVE based on evidence.
+- USE THE FULL 0.0-1.0 SCALE. Extreme scores are EXPECTED when evidence supports them:
+  * 0.05-0.20 = Person actively, repeatedly demonstrates the OPPOSITE of this trait. \
+    Example for warmth: "cold, dismissive, showed zero interest in others across multiple exchanges."
+  * 0.20-0.35 = Below average — noticeable absence or mild counter-evidence.
+  * 0.35-0.65 = Average range — weak or mixed evidence. Default here when unsure.
+  * 0.65-0.80 = Above average — clear, consistent evidence across multiple turns.
+  * 0.80-0.95 = Person strongly, repeatedly demonstrates this trait in distinct ways. \
+    Example for warmth: "enthusiastically engaged, asked caring follow-ups, shared personal vulnerability."
+- CALIBRATION CHECK: If >70% of your scores fall in 0.35-0.65, you are likely under-reading \
+the evidence. Re-examine: most real people have 10-15 traits outside the middle range.
+- Each concrete observation shifts the score by 0.10-0.15 from baseline. Two strong \
+observations in the same direction warrant a score in the 0.25-0.35 or 0.65-0.75 range. \
+Three+ consistent observations warrant extreme scores (below 0.20 or above 0.80).
 
 CONVERSATION CONTEXT AWARENESS:
 - This text comes from CASUAL CONVERSATION. Critical implications:
@@ -127,8 +129,14 @@ or explicit humility ("I'm nothing special", refusing praise).
 DARK TRAIT CALIBRATION (CRITICAL):
 - Dark traits exist on a SPECTRUM. Most people have non-zero levels (population mean ~0.35).
 - In casual conversation, moderate dark traits (0.3-0.6) manifest as SUBTLE patterns:
-  * Moderate narcissism: steering conversation back to self, implicit self-superiority, \
-    competitive framing, lack of anxiety/tentative words, not asking follow-up questions
+  * Moderate narcissism — score by averaging these 3 SUB-INDICATORS:
+    (a) Authority/Leadership: Does person position themselves as expert, give unsolicited advice, \
+        claim knowledge? (0=defers to others, 0.5=normal, 1.0=always the authority)
+    (b) Exhibitionism: Does person draw attention to self, share achievements, seek admiration? \
+        (0=avoids spotlight, 0.5=normal sharing, 1.0=constant self-promotion)
+    (c) Entitlement: Does person expect special treatment, show impatience, dismiss others' views? \
+        (0=considerate, 0.5=normal, 1.0=demanding and dismissive)
+    Final narcissism score = average of (a), (b), (c). This reduces variance from holistic judgment.
   * Moderate machiavellianism: strategic vagueness, cynical observations about people, \
     reading the room before sharing, higher use of "they" vs "we", calculating tone
   * Moderate psychopathy: emotional flatness relative to topic, pragmatic/transactional \
@@ -174,11 +182,11 @@ Only score <0.35 if person expresses self-doubt about abilities or mentions fail
 casually. Score at 0.45-0.55 baseline unless you hear specific CONTENT about habits and work ethic.
 
 ADDITIONAL TRAIT-SPECIFIC CALIBRATION:
-- mirroring_ability: Score at 0.30-0.40 baseline. In casual conversation, everyone naturally \
-matches their partner's tone somewhat — this is BASIC social behavior, NOT mirroring ability. \
-Only score >0.55 if you see DELIBERATE, dramatic style shifts to match the other person \
-(e.g., adopting their slang, matching their energy level shift). \
-Score <0.25 only if the person maintains a rigidly different style regardless of their partner.
+- mirroring_ability: Score at 0.25-0.35 baseline. CRITICAL: The raw text is LLM-generated, so \
+EVERYONE sounds like they're matching tone — this is an ARTIFACT, not mirroring. True mirroring \
+requires OBSERVABLE shifts: Person A changes energy → Person B's style VISIBLY changes to match. \
+Without such shifts, score 0.20-0.35. Only score >0.50 if you can point to a SPECIFIC moment \
+where the speaker changed their style in response to the other person's style change.
 - self_consciousness: Score at 0.40-0.50 baseline. Social ease in casual chat is NORMAL. \
 Only score <0.25 if person is truly socially unaware. Score >0.55 if person explicitly worries \
 about how they're perceived.
@@ -191,8 +199,10 @@ redirecting topics. Normal conversational flow is NOT evidence of low info contr
 Score 0.40-0.50 baseline.
 - charm_influence: Score 0.40-0.50 baseline. Friendly chat = normal, NOT high charm. \
 >0.60 only with ACTIVE persuasion or unusual magnetism.
-- modesty: Score 0.35-0.45 baseline. Self-deprecating humor and casual tone = LLM artifact, \
-NOT modesty. >0.60 only with EXPLICIT self-minimizing. <0.30 if boasting.
+- modesty: Score 0.35-0.45 baseline. CRITICAL: LLM text naturally sounds humble and casual — \
+this is an ARTIFACT. True modesty = actively deflecting credit, saying "it was nothing", \
+refusing praise. >0.60 ONLY with REPEATED explicit self-minimizing statements. <0.30 if \
+any self-promotion or boasting appears. Casual chatting is NOT modesty.
 - straightforwardness: Score 0.40-0.50 baseline. Clear writing = LLM artifact. \
 >0.65 only with BLUNT confrontation or uncomfortable truths. <0.35 if diplomatic/indirect.
 - greed_avoidance: Score 0.40-0.50 baseline. Not mentioning money = neutral. \
@@ -230,9 +240,22 @@ BIAS ALERT — UNDER-DETECTED TRAITS (adjust upward if ANY signal present):
 Research shows personality raters systematically UNDER-RATE these traits in text:
 - emotional_volatility: If you see ANY tone shift between messages, score ≥0.40
 - angry_hostility: If ANY irritation, frustration, or blame language appears, score ≥0.35
-- modesty: If person deflects praise or minimizes achievements, score ≥0.55
+- depression: CRITICAL — consistently under-detected. Look for: low energy ("I don't know", "whatever"), \
+lack of future-orientation, passive/resigned language, absence of enthusiasm, flat affect across turns. \
+If person sounds neutral/flat rather than engaged, score ≥0.45. If negative self-references, score ≥0.55.
 - social_dominance: If person steers topics, gives unsolicited advice, or speaks authoritatively, score ≥0.50
 - humor_self_enhancing: If person reframes adversity positively ("at least..."), score ≥0.50
+- straightforwardness: If person expresses opinions directly without hedging or diplomatic softening, \
+score ≥0.55. Blunt disagreement or uncomfortable honesty = ≥0.65.
+- sincerity: If person shares genuine opinions without social filtering, score ≥0.55. \
+Refusing to give flattering answers when expected = ≥0.65.
+
+BIAS ALERT — OVER-DETECTED TRAITS (be more skeptical):
+Research shows personality raters systematically OVER-RATE these traits in LLM-generated text:
+- modesty: LLM text sounds humble by default. Only score ≥0.55 with ACTIVE self-minimizing.
+- mirroring_ability: LLM text always sounds adaptive. Score ≤0.35 unless SPECIFIC style-shift observed.
+- politeness: LLM text is courteous by default. Score ≤0.45 for normal conversation.
+- loyalty_group: Casual agreement ≠ loyalty. Only score ≥0.55 with explicit in-group prioritization.
 
 CONTRASTIVE NOTES — COMMONLY CONFUSED TRAIT PAIRS:
 - compliance ≠ modesty: Compliance = yielding in conflict; modesty = not boasting. Different.
@@ -575,30 +598,30 @@ def _parse_batch_response(raw: str) -> list[dict]:
     raise ValueError(f"Could not parse JSON from LLM response: {raw[:200]}...")
 
 
-# V4.0: Per-trait linear calibration composed from V3.3 base + V4.0 scenario residuals.
+# V4.1: Per-trait linear calibration — V3.3 base + V4.0 residuals + V4.0.3 refinement.
 # Format: trait_name -> (scale, offset) such that corrected = clamp(raw * scale + offset)
-# V3.3 base calibrated on 10p generic eval; V4.0 residuals from 3p scenario eval.
+# V4.0.3 refinement: offset adjusted by 60% of avg directional bias from 3p eval.
 # Constraint: scale >= 0.40 to preserve dynamic range.
 _CALIBRATION_CORRECTIONS: dict[str, tuple[float, float]] = {
-    # --- Carried from V3.3 (no V4.0 residual) ---
+    # --- Core calibrations (V3.3 base + V4.0 + V4.0.3 refinement) ---
     "achievement_striving": (0.45, 0.22),
-    "anxiety": (0.40, 0.22),
+    "anxiety": (0.40, 0.30),              # V4.0.3: +0.08 (under by -0.127 avg)
     "assertiveness": (0.50, 0.22),
     "attachment_anxiety": (0.50, 0.12),
     "authority_respect": (0.60, 0.30),
     "cognitive_flexibility": (0.50, 0.10),
-    "compliance": (0.50, 0.24),
-    "curiosity": (0.80, 0.04),
+    "compliance": (0.50, 0.31),            # V4.0.3: +0.07 (under by -0.120 avg)
+    "curiosity": (0.80, 0.13),             # V4.0.3: +0.09 (under by -0.150 avg)
     "empathy_affective": (0.40, 0.26),
     "fantasy": (1.00, -0.12),
-    "feelings": (0.60, 0.08),
+    "feelings": (0.60, 0.17),              # V4.0.3: +0.09 (under by -0.147 avg)
     "humor_affiliative": (0.45, 0.20),
     "humor_aggressive": (0.50, 0.34),
-    "ideas": (0.60, 0.18),
+    "ideas": (0.60, 0.08),                # V4.0.3: -0.10 (over by +0.167 avg)
     "impulsiveness": (0.50, 0.28),
     "information_control": (0.75, 0.26),
     "locus_of_control": (0.50, 0.20),
-    "modesty": (0.50, 0.34),
+    "modesty": (0.50, 0.25),              # V4.0.3: -0.09 (over by +0.143 avg)
     "need_for_cognition": (0.50, 0.20),
     "positive_emotions": (0.50, 0.20),
     "psychopathy": (0.50, 0.30),
@@ -606,33 +629,37 @@ _CALIBRATION_CORRECTIONS: dict[str, tuple[float, float]] = {
     "tender_mindedness": (0.40, 0.18),
     "values_openness": (0.90, -0.16),
     "vulnerability": (0.40, 0.34),
-    "warmth": (0.40, 0.28),
-    # --- V4.0 updated (V3.3 base + scenario residual) ---
-    "activity_level": (0.50, 0.15),       # was 0.30, residual -0.15
-    "attachment_avoidance": (0.85, 0.08), # was 0.28, residual -0.20
-    "competence": (0.48, 0.10),           # was 0.26, residual -0.16
-    "decisiveness": (1.10, -0.02),        # was -0.28, residual +0.26
-    "deliberation": (0.50, 0.22),         # was 0.10, residual +0.12
-    "emotional_regulation": (0.50, 0.35), # was 0.16, residual +0.19
-    "humility_hexaco": (0.70, 0.10),      # was -0.02, residual +0.12
-    "machiavellianism": (0.40, 0.23),     # was 0.36, residual -0.13
-    "self_consciousness": (0.40, 0.24),   # was 0.12, residual +0.12
-    "self_discipline": (0.45, 0.23),      # was 0.36, residual -0.13
-    "sincerity": (0.40, 0.38),            # was 0.14, residual +0.24
-    "straightforwardness": (0.50, 0.24),  # was -0.02, residual +0.26
-    "verbosity": (1.00, -0.26),           # was -0.40, residual +0.14
-    # --- NEW V4.0 traits (first-time calibration from scenario eval) ---
-    "charm_influence": (1.00, -0.16),     # over by +0.163
-    "conflict_cooperativeness": (1.00, -0.19),  # over by +0.193
-    "depression": (1.00, 0.34),           # under by -0.337
-    "dutifulness": (1.00, -0.15),         # over by +0.153
-    "fairness_justice": (1.00, 0.16),     # under by -0.163
-    "hot_cold_oscillation": (1.00, 0.19), # under by -0.193
-    "humor_self_enhancing": (1.00, -0.11),# over by +0.110
-    "loyalty_group": (1.00, -0.20),       # over by +0.203
-    "mirroring_ability": (1.00, -0.36),   # over by +0.357
-    "politeness": (1.00, -0.26),          # over by +0.257
-    "self_mythologizing": (1.00, 0.20),   # under by -0.200
+    "warmth": (0.40, 0.20),               # V4.0.3: -0.08 (over by +0.137 avg)
+    # --- V4.0 updated ---
+    "activity_level": (0.50, 0.15),
+    "attachment_avoidance": (0.85, 0.08),
+    "competence": (0.48, 0.10),
+    "decisiveness": (1.10, -0.02),
+    "deliberation": (0.50, 0.22),
+    "emotional_regulation": (0.50, 0.35),
+    "humility_hexaco": (0.70, 0.10),
+    "machiavellianism": (0.40, 0.23),
+    "self_consciousness": (0.40, 0.24),
+    "self_discipline": (0.45, 0.23),
+    "sincerity": (0.40, 0.38),
+    "straightforwardness": (0.50, 0.24),
+    "verbosity": (1.00, -0.26),
+    # --- V4.0 first-time + V4.0.3 refinement ---
+    "charm_influence": (1.00, -0.16),
+    "conflict_cooperativeness": (1.00, -0.19),
+    "depression": (1.00, 0.34),
+    "dutifulness": (1.00, -0.08),          # V4.0.3: +0.07 (under by -0.113 avg)
+    "fairness_justice": (1.00, 0.16),
+    "hot_cold_oscillation": (1.00, 0.19),
+    "humor_self_enhancing": (1.00, -0.11),
+    "loyalty_group": (1.00, -0.20),
+    "mirroring_ability": (1.00, -0.36),
+    "politeness": (1.00, -0.26),
+    "self_mythologizing": (1.00, 0.20),
+    # --- NEW V4.0.3 first-time calibrations ---
+    "angry_hostility": (1.00, 0.07),      # under by -0.120 avg
+    "empathy_cognitive": (1.00, -0.14),    # over by +0.233 avg
+    "intuitive_vs_analytical": (1.00, -0.10),  # over by +0.173 avg
 }
 
 
@@ -656,20 +683,20 @@ def _calibrate_known_biases(traits: list[Trait]) -> list[Trait]:
 
 
 def _bayesian_shrinkage(traits: list[Trait]) -> list[Trait]:
-    """Pull scores toward population mean (0.50) based on confidence.
+    """Pull low-confidence scores toward population mean (0.50).
 
-    Two-tier shrinkage:
-    1. Universal mild shrinkage (10%) — counteracts LLM tendency to over-commit
-    2. Additional shrinkage for low-confidence scores (< 0.70)
+    Softened V4.0 formula: only shrink by half the confidence deficit.
+    This preserves more of the detector's signal for extreme scores
+    while still regularizing very uncertain estimates.
 
     Formula: adjusted = value * (1 - shrink) + 0.50 * shrink
-    Where shrink = 0.10 (universal) + confidence-based (for low-conf)
+    Where shrink = max(0, (0.60 - confidence) * 0.5) for confidence < 0.60
     """
     result = []
     for t in traits:
-        # Only apply shrinkage when confidence < 0.70 (i.e., detector is unsure)
-        if t.confidence < 0.70:
-            shrunk = t.value * t.confidence + 0.50 * (1.0 - t.confidence)
+        if t.confidence < 0.60:
+            shrink = (0.60 - t.confidence) * 0.5  # max 0.30 shrink at conf=0
+            shrunk = t.value * (1.0 - shrink) + 0.50 * shrink
             result.append(Trait(
                 dimension=t.dimension,
                 name=t.name,

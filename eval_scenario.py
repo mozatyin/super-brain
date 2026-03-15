@@ -62,25 +62,43 @@ def _build_scenario_speaker_system(profile: PersonalityDNA, scenario: Scenario) 
     from super_brain.speaker import profile_to_style_instructions
     style = profile_to_style_instructions(profile)
 
-    # Focused behavioral hints for target traits
+    # Focused behavioral hints for ALL target traits with specific guidance
     behavioral_hints = []
     for tname in scenario.target_traits:
         val = tmap.get(tname, 0.5)
-        if val > 0.65 or val < 0.30:
+        if val > 0.75:
             behavioral_hints.append(
-                f"- {tname}={val:.2f}: This trait is {'HIGH' if val > 0.65 else 'LOW'} — "
-                f"make this CLEARLY visible in how you respond to the current topic."
+                f"- {tname}={val:.2f} (VERY HIGH): Express this STRONGLY. "
+                f"This should be one of your most obvious traits in this conversation."
+            )
+        elif val > 0.60:
+            behavioral_hints.append(
+                f"- {tname}={val:.2f} (HIGH): Show this clearly — lean into it. "
+                f"A perceptive observer should notice this about you."
+            )
+        elif val < 0.20:
+            behavioral_hints.append(
+                f"- {tname}={val:.2f} (VERY LOW): Show the OPPOSITE of this trait strongly. "
+                f"This should be noticeably absent or reversed in your responses."
+            )
+        elif val < 0.35:
+            behavioral_hints.append(
+                f"- {tname}={val:.2f} (LOW): Show less of this than average. "
+                f"A perceptive observer should notice you're below average on this."
+            )
+        else:
+            behavioral_hints.append(
+                f"- {tname}={val:.2f} (MODERATE): Express this at an average level. "
+                f"Neither notably high nor low."
             )
 
-    hints_section = ""
-    if behavioral_hints:
-        hints_section = (
-            "\n<scenario_focus>\n"
-            "The current conversation topic is designed to reveal these traits. "
-            "Make sure your responses clearly show your personality on these dimensions:\n"
-            + "\n".join(behavioral_hints) +
-            "\n</scenario_focus>\n"
-        )
+    hints_section = (
+        "\n<scenario_focus>\n"
+        "The current conversation is designed to reveal these traits. "
+        "Express each one at the indicated level:\n"
+        + "\n".join(behavioral_hints) +
+        "\n</scenario_focus>\n"
+    )
 
     return (
         "You are a person with the personality described below. You are having a "
