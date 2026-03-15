@@ -1,0 +1,536 @@
+[1] "You know there isn't going to be any war,"
+
+[2] "I hope it doesn't rain tomorrow,"
+
+[3] "What?"
+
+[4] "Oh. I know about that,"
+
+[5] "Well, I'm not,"
+
+[6] "Mother was only fifteen when she married you, and I'm sixteen,"
+
+[7] "He thinks I'm a child,"
+
+[8] "Will you stop treating me like a child!"
+
+[9] "Oh, Pa,"
+
+[10] "There's nobody in the County sits a horse better than Ashley,"
+
+[11] "I wouldn't have Cade on a silver tray,"
+
+[12] "Oh,"
+
+[13] "He did give me a thought,"
+
+[14] "So, he is the father of Emmie Slattery's baby,"
+
+[15] "They would,"
+
+[16] "Put down that tray and come lace me tighter,"
+
+[17] "That,"
+
+[18] "If you say one word to her before I'm dressed I won't eat a bite,"
+
+[19] "I'll remember how beautiful this day is till I die,"
+
+[20] "That's all you know,"
+
+[21] "Darling, I don't care a thing about Brent,"
+
+[22] "Well, go and tattle and see if I care,"
+
+[23] "Well, at any rate I've never been thrown,"
+
+[24] "Pa, please ride behind us or in front of us. You kick up such a
+heap of dust that we're choking,"
+
+[25] "God's nightgown!"
+
+[26] "Cathleen,"
+
+[27] "I can't guess. Tell me,"
+
+[28] "Did she have a baby?"
+
+[29] "Oh, my God!"
+
+[30] "I should cry into my pillow every night,"
+
+[31] "What a fool!"
+
+[32] "Um?"
+
+[33] "Um,"
+
+[34] "There he goes again,"
+
+[35] "Why, he means the boys are a passel of fools!"
+
+[36] "I must get home!"
+
+[37] "And God only knows,"
+
+[38] "I won't,"
+
+[39] "Good Heavens!"
+
+[40] "Oh, dear, but I've promised a thousand ladies already!"
+
+[41] "Don't do that!"
+
+[42] "But she's such a stick,"
+
+[43] "I think we should go,"
+
+[44] "Too good to be true! Too good to be true!"
+
+[45] "How sweet I'd look in that dress,"
+
+[46] "But—but—"
+
+[47] "Why, Melly!"
+
+[48] "No,"
+
+[49] "He died in camp,"
+
+[50] "Not a word about me!"
+
+[51] "Two months,"
+
+[52] "Wait!"
+
+[53] "What!"
+
+[54] "Oh, the man's impossible—an ill-bred boor,"
+
+[55] "Sh-sh,"
+
+[56] "He isn't brave,"
+
+[57] "Pa is coming tomorrow and he's going to land on me like a duck on a
+June bug,"
+
+[58] "You all must stand by me and not leave me alone with him for one
+minute,"
+
+[59] "Coward!"
+
+[60] "No, he won't,"
+
+[61] "You'd be glad to do without me if you knew what I really think of
+you,"
+
+[62] "She's nothing but a child!"
+
+[63] "Oh, my God, it's that hateful Butler man!"
+
+[64] "Is he going to tell the whole neighborhood?"
+
+[65] "I suppose I must go down,"
+
+[66] "Mother of God!"
+
+[67] "I don't see why you're so much nicer to her than to me,"
+
+[68] "Oh, why doesn't he keep his mouth shut!"
+
+[69] "What on earth has the Pope to do with it?"
+
+[70] "Now, why didn't I have the gumption to say that?"
+
+[71] "Oh! That letter,"
+
+[72] "I think you are vile and mercenary,"
+
+[73] "I do appreciate good advice so much,"
+
+[74] "Indeed, no, and don't let's discuss it any further,"
+
+[75] "Oh, dear,"
+
+[76] "Did she really call her a peahen?"
+
+[77] "Quick, Melly,"
+
+[78] "And have him get killed,"
+
+[79] "Jealous—of me?"
+
+[80] "Fiddle-dee-dee!"
+
+[81] "Don't be silly,"
+
+[82] "Dear God!"
+
+[83] "Hush!"
+
+[84] "You leave me alone,"
+
+[85] "And I,"
+
+[86] "Oh, how could he?"
+
+[87] "Oh, God,"
+
+[88] "Oh, well,"
+
+[89] "Around here?"
+
+[90] "Oh, not Pa!"
+
+[91] "Because she's Charlie's sister—and like a sister to me,"
+
+[92] "Mrs. Meade usually comes over at night,"
+
+[93] "Why Jonesboro?"
+
+[94] "Yes,"
+
+[95] "Oh, all right, I promise,"
+
+[96] "Oh, all right,"
+
+[97] "You're as slow as molasses in January,"
+
+[98] "Mrs. Meade's over at the hospital,"
+
+[99] "Less than no time,"
+
+[100] "Yes, right away,"
+
+[101] "Some day, I'm going to take a strap to that little wench,"
+
+[102] "Never mind what she said,"
+
+[103] "Don't look so simple minded!"
+
+[104] "The Yankees—"
+
+[105] "Come,"
+
+[106] "Oh, yes,"
+
+[107] "You're a long way from there,"
+
+[108] "I'll make a hant out of you if you don't get out of this wagon,"
+
+[109] "It's only a cow,"
+
+[110] "You're a fool nigger, and the worst day's work Pa ever did was to
+buy you,"
+
+[111] "Make him hush. I can't stand it,"
+
+[112] "It's Melanie and her baby,"
+
+[113] "Oh, gallant little Gerald!"
+
+[114] "Thank God,"
+
+[115] "Oh, can Pa have lost his mind?"
+
+[116] "Don't be a goose, Melly,"
+
+[117] "Look at mine,"
+
+[118] "Why—why—she's like me! She understands how I feel!"
+
+[119] "What a cool liar!"
+
+[120] "He must be alone,"
+
+[121] "I do not,"
+
+[122] "Of course,"
+
+[123] "Don't be silly, I won't look at you,"
+
+[124] "Thank God, I'm not that modest,"
+
+[125] "Have you all had any news of what's been happening in Atlanta?"
+
+[126] "All our cotton—a hundred and fifty thousand dollars worth,"
+
+[127] "Me? Pick cotton?"
+
+[128] "Oh, they are better, much better, almost well but quite weak,"
+
+[129] "You just mention Mother's name once more, Suellen O'Hara, and I'll
+slap you flat,"
+
+[130] "Don't you dare go bothering Pa with any of our troubles!"
+
+[131] "You can taste those chitlins already, can't you?"
+
+[132] "And I thought it was such a good idea to keep the pigs under the
+house, so nobody could steal them,"
+
+[133] "Good for the sow,"
+
+[134] "You can't take that!"
+
+[135] "Indeed,"
+
+[136] "You look like a nigger,"
+
+[137] "If you mean did they rape me, no,"
+
+[138] "She really must care about him,"
+
+[139] "But I thought Atlanta burned the night I left,"
+
+[140] "Then,"
+
+[141] "Well, I don't,"
+
+[142] "And didn't his little scheme work well!"
+
+[143] "They are damn Yankees!"
+
+[144] "Don't say it!"
+
+[145] "Do you mean to tell me,"
+
+[146] "Hump!"
+
+[147] "Indeed yes,"
+
+[148] "Of course, she isn't married,"
+
+[149] "You know that wouldn't bother Dimity,"
+
+[150] "I don't know why we fought and I don't care,"
+
+[151] "Oh, in the name of God, hush!"
+
+[152] "How is Cade?"
+
+[153] "Good Lord!"
+
+[154] "You've been with me for months,"
+
+[155] "Don't be a goose, girls! There's not enough for us as it is and if
+there are two or three famished soldiers out there, none of us will
+even get a taste,"
+
+[156] "Who is it?"
+
+[157] "Her beau?"
+
+[158] "Well, fiddle-dee-dee!"
+
+[159] "If you think Confederate money is cute, Will, I certainly don't,"
+
+[160] "Don't let's talk about him,"
+
+[161] "Wife?"
+
+[162] "What are you up to listening outside doors?"
+
+[163] "I'm not saying anything,"
+
+[164] "This is a fine mess,"
+
+[165] "It is,"
+
+[166] "She's the town bad woman,"
+
+[167] "The Lord stopped thinking about us years ago,"
+
+[168] "Of course, he hasn't any money,"
+
+[169] "But how do they all squeeze in?"
+
+[170] "I think it's wonderful,"
+
+[171] "He's no friend of mine,"
+
+[172] "I am tired,"
+
+[173] "She thinks I'm a hussy,"
+
+[174] "Well,"
+
+[175] "I want,"
+
+[176] "Name of God!"
+
+[177] "Indeed, no!"
+
+[178] "No, thank you. I'm still mourning my mother,"
+
+[179] "She said nothing,"
+
+[180] "Well, what if he is?"
+
+[181] "Don't be impudent,"
+
+[182] "Pride! Pride tastes awfully good, especially when the crust is
+flaky and you put meringue on it,"
+
+[183] "That shouldn't be difficult,"
+
+[184] "I'm afraid you'll find no Irish servants in Atlanta,"
+
+[185] "Nobody but the Angel Gabriel could have done better,"
+
+[186] "I did no such thing!"
+
+[187] "I did, too!"
+
+[188] "Oh, for God's sake, hush!"
+
+[189] "Oh, Alex, please hush! Not now!"
+
+[190] "Oh, no!"
+
+[191] "It's not a carriage, it's an old buggy,"
+
+[192] "Of course I've heard about that,"
+
+[193] "They never gave aid and comfort to anybody,"
+
+[194] "Pa take the Iron Clad oath!"
+
+[195] "One hundred and fifty thousand dollars,"
+
+[196] "She'll be dipping snuff soon, if she isn't doing it already,"
+
+[197] "Oh!"
+
+[198] "Now, why did Will do that?"
+
+[199] "But—you can stand alone too,"
+
+[200] "Indeed?"
+
+[201] "Class?"
+
+[202] "But you said you thought it would be a successful match!"
+
+[203] "Ashley is a very fine man,"
+
+[204] "That's your opinion,"
+
+[205] "Don't you fuss at him!"
+
+[206] "Manager!"
+
+[207] "They don't talk of anything else,"
+
+[208] "But—"
+
+[209] "I wish,"
+
+[210] "With pleasure,"
+
+[211] "You do bore me. You bore me to distraction,"
+
+[212] "You've been poor! You just said that your father turned you out
+without a penny!"
+
+[213] "Because,"
+
+[214] "Yes, you are,"
+
+[215] "I think I know my husband better than you do,"
+
+[216] "Let her talk,"
+
+[217] "What on earth—"
+
+[218] "Where is Ashley? What has happened to him, Melly?"
+
+[219] "That can't be Ashley!"
+
+[220] "Not the old gentleman!"
+
+[221] "Then it's true!"
+
+[222] "No!"
+
+[223] "I shall marry whom I please,"
+
+[224] "But you were the main one I wanted to tell to go to hell,"
+
+[225] "It doesn't make me especially happy,"
+
+[226] "Why, we're a handsome people,"
+
+[227] "Rhett, don't use such vulgar words!"
+
+[228] "Everybody? So everybody's been clacking and blabbing about me, have
+they?"
+
+[229] "Fiddle-dee-dee, Melly, what a tempest you make in a teapot,"
+
+[230] "It's a matter of supreme indifference to me whether you come or
+not,"
+
+[231] "Great balls of fire!"
+
+[232] "There is something to do about it,"
+
+[233] "He's going to kiss me!"
+
+[234] "Wade, you are lying!"
+
+[235] "I'll skin Mammy this minute!"
+
+[236] "Now why all these lies, my gallant soldier laddie?"
+
+[237] "I wish Melly would keep her mouth shut,"
+
+[238] "I'll thank you to let me manage my children,"
+
+[239] "I consider this whole affair a tempest in a teapot,"
+
+[240] "Melly, I wouldn't have that old desperado in my house,"
+
+[241] "Well, I don't see that what that smelly old hill-billy thinks is of
+any importance,"
+
+[242] "The mean things!"
+
+[243] "If you were not so drunk and insulting, I would explain
+everything,"
+
+[244] "It's a lie! I will sell them to him!"
+
+[245] "Then, you must think all my money is tainted,"
+
+[246] "If she wasn't such a sweet, darling thing, she'd be impossible,"
+
+[247] "But, my darling! Not that blue velvet! The blue velvet is for a
+party dress for me,"
+
+[248] "I'm watching dear,"
+
+[249] "They are like Pa's eyes,"
+
+[250] "Hah!"
+
+[251] "Rhett?"
+
+[252] "My God! She's gone!"
+
+[253] "Don't speak to me or I'll scream,"
+
+[254] "but I'm afraid Mammy will
+have something to say about that. She's been my maid ever since I was
+born."
+
+[255] "What am I supposed to do—give three cheers?"
+
+[256] "What are hospital committees anyway?"
+
+[257] "If ever any
+husband of mine wrote me such twaddle-twaddle, he'd certainly hear from
+me! Why, even Charlie wrote better letters than these."
+
+[258] "I thought you were ashamed of your war record,"
+
