@@ -1,0 +1,8 @@
+{
+  "character": "scarlett",
+  "total_quotes": 278,
+  "total_segments": 24,
+  "final_mae_gt_llm": 0.276,
+  "final_mae_gt_crowd": 0.282,
+  "gt_consistency_mae": 0.091
+}

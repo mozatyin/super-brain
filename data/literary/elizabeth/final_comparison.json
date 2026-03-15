@@ -1,0 +1,8 @@
+{
+  "character": "elizabeth",
+  "total_quotes": 377,
+  "total_segments": 32,
+  "final_mae_gt_llm": 0.236,
+  "final_mae_gt_crowd": 0.228,
+  "gt_consistency_mae": 0.103
+}

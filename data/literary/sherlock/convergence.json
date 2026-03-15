@@ -1,0 +1,644 @@
+{
+  "character": "sherlock",
+  "segments": [
+    {
+      "segment_id": 0,
+      "cumulative_quotes": 12,
+      "mae_vs_gt_llm": 0.252,
+      "mae_vs_gt_crowd": 0.225,
+      "traits_converged": 0,
+      "avg_confidence": 0.419,
+      "elapsed": 171.7
+    },
+    {
+      "segment_id": 1,
+      "cumulative_quotes": 24,
+      "mae_vs_gt_llm": 0.266,
+      "mae_vs_gt_crowd": 0.241,
+      "traits_converged": 7,
+      "avg_confidence": 0.65,
+      "elapsed": 152.5
+    },
+    {
+      "segment_id": 2,
+      "cumulative_quotes": 36,
+      "mae_vs_gt_llm": 0.254,
+      "mae_vs_gt_crowd": 0.228,
+      "traits_converged": 68,
+      "avg_confidence": 0.791,
+      "elapsed": 160.3
+    },
+    {
+      "segment_id": 3,
+      "cumulative_quotes": 48,
+      "mae_vs_gt_llm": 0.265,
+      "mae_vs_gt_crowd": 0.237,
+      "traits_converged": 27,
+      "avg_confidence": 0.872,
+      "elapsed": 144.5
+    },
+    {
+      "segment_id": 4,
+      "cumulative_quotes": 60,
+      "mae_vs_gt_llm": 0.261,
+      "mae_vs_gt_crowd": 0.227,
+      "traits_converged": 27,
+      "avg_confidence": 0.922,
+      "elapsed": 151.9
+    },
+    {
+      "segment_id": 5,
+      "cumulative_quotes": 72,
+      "mae_vs_gt_llm": 0.249,
+      "mae_vs_gt_crowd": 0.217,
+      "traits_converged": 21,
+      "avg_confidence": 0.945,
+      "elapsed": 171.4
+    },
+    {
+      "segment_id": 6,
+      "cumulative_quotes": 84,
+      "mae_vs_gt_llm": 0.254,
+      "mae_vs_gt_crowd": 0.216,
+      "traits_converged": 23,
+      "avg_confidence": 0.95,
+      "elapsed": 168.1
+    },
+    {
+      "segment_id": 7,
+      "cumulative_quotes": 96,
+      "mae_vs_gt_llm": 0.245,
+      "mae_vs_gt_crowd": 0.209,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 157.1
+    },
+    {
+      "segment_id": 8,
+      "cumulative_quotes": 108,
+      "mae_vs_gt_llm": 0.239,
+      "mae_vs_gt_crowd": 0.207,
+      "traits_converged": 25,
+      "avg_confidence": 0.95,
+      "elapsed": 172.8
+    },
+    {
+      "segment_id": 9,
+      "cumulative_quotes": 120,
+      "mae_vs_gt_llm": 0.279,
+      "mae_vs_gt_crowd": 0.244,
+      "traits_converged": 15,
+      "avg_confidence": 0.95,
+      "elapsed": 151.7
+    },
+    {
+      "segment_id": 10,
+      "cumulative_quotes": 132,
+      "mae_vs_gt_llm": 0.263,
+      "mae_vs_gt_crowd": 0.232,
+      "traits_converged": 12,
+      "avg_confidence": 0.95,
+      "elapsed": 175.3
+    },
+    {
+      "segment_id": 11,
+      "cumulative_quotes": 144,
+      "mae_vs_gt_llm": 0.268,
+      "mae_vs_gt_crowd": 0.236,
+      "traits_converged": 19,
+      "avg_confidence": 0.95,
+      "elapsed": 159.4
+    },
+    {
+      "segment_id": 12,
+      "cumulative_quotes": 156,
+      "mae_vs_gt_llm": 0.256,
+      "mae_vs_gt_crowd": 0.227,
+      "traits_converged": 24,
+      "avg_confidence": 0.95,
+      "elapsed": 154.6
+    },
+    {
+      "segment_id": 13,
+      "cumulative_quotes": 168,
+      "mae_vs_gt_llm": 0.256,
+      "mae_vs_gt_crowd": 0.231,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 153.1
+    },
+    {
+      "segment_id": 14,
+      "cumulative_quotes": 180,
+      "mae_vs_gt_llm": 0.242,
+      "mae_vs_gt_crowd": 0.214,
+      "traits_converged": 27,
+      "avg_confidence": 0.95,
+      "elapsed": 173.7
+    },
+    {
+      "segment_id": 15,
+      "cumulative_quotes": 192,
+      "mae_vs_gt_llm": 0.229,
+      "mae_vs_gt_crowd": 0.208,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 170.5
+    },
+    {
+      "segment_id": 16,
+      "cumulative_quotes": 204,
+      "mae_vs_gt_llm": 0.22,
+      "mae_vs_gt_crowd": 0.203,
+      "traits_converged": 24,
+      "avg_confidence": 0.95,
+      "elapsed": 167.1
+    },
+    {
+      "segment_id": 17,
+      "cumulative_quotes": 216,
+      "mae_vs_gt_llm": 0.238,
+      "mae_vs_gt_crowd": 0.211,
+      "traits_converged": 25,
+      "avg_confidence": 0.95,
+      "elapsed": 161.3
+    },
+    {
+      "segment_id": 18,
+      "cumulative_quotes": 228,
+      "mae_vs_gt_llm": 0.234,
+      "mae_vs_gt_crowd": 0.206,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 175.4
+    },
+    {
+      "segment_id": 19,
+      "cumulative_quotes": 240,
+      "mae_vs_gt_llm": 0.217,
+      "mae_vs_gt_crowd": 0.191,
+      "traits_converged": 22,
+      "avg_confidence": 0.95,
+      "elapsed": 197.3
+    },
+    {
+      "segment_id": 20,
+      "cumulative_quotes": 252,
+      "mae_vs_gt_llm": 0.222,
+      "mae_vs_gt_crowd": 0.193,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 175.9
+    },
+    {
+      "segment_id": 21,
+      "cumulative_quotes": 264,
+      "mae_vs_gt_llm": 0.227,
+      "mae_vs_gt_crowd": 0.206,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 172.2
+    },
+    {
+      "segment_id": 22,
+      "cumulative_quotes": 276,
+      "mae_vs_gt_llm": 0.236,
+      "mae_vs_gt_crowd": 0.21,
+      "traits_converged": 29,
+      "avg_confidence": 0.95,
+      "elapsed": 166.0
+    },
+    {
+      "segment_id": 23,
+      "cumulative_quotes": 288,
+      "mae_vs_gt_llm": 0.221,
+      "mae_vs_gt_crowd": 0.189,
+      "traits_converged": 33,
+      "avg_confidence": 0.95,
+      "elapsed": 154.9
+    },
+    {
+      "segment_id": 24,
+      "cumulative_quotes": 300,
+      "mae_vs_gt_llm": 0.221,
+      "mae_vs_gt_crowd": 0.194,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 150.9
+    },
+    {
+      "segment_id": 25,
+      "cumulative_quotes": 312,
+      "mae_vs_gt_llm": 0.218,
+      "mae_vs_gt_crowd": 0.19,
+      "traits_converged": 34,
+      "avg_confidence": 0.95,
+      "elapsed": 156.3
+    },
+    {
+      "segment_id": 26,
+      "cumulative_quotes": 324,
+      "mae_vs_gt_llm": 0.229,
+      "mae_vs_gt_crowd": 0.202,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 163.7
+    },
+    {
+      "segment_id": 27,
+      "cumulative_quotes": 336,
+      "mae_vs_gt_llm": 0.251,
+      "mae_vs_gt_crowd": 0.218,
+      "traits_converged": 24,
+      "avg_confidence": 0.95,
+      "elapsed": 153.6
+    },
+    {
+      "segment_id": 28,
+      "cumulative_quotes": 348,
+      "mae_vs_gt_llm": 0.24,
+      "mae_vs_gt_crowd": 0.206,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 156.0
+    },
+    {
+      "segment_id": 29,
+      "cumulative_quotes": 360,
+      "mae_vs_gt_llm": 0.233,
+      "mae_vs_gt_crowd": 0.202,
+      "traits_converged": 25,
+      "avg_confidence": 0.95,
+      "elapsed": 184.4
+    },
+    {
+      "segment_id": 30,
+      "cumulative_quotes": 372,
+      "mae_vs_gt_llm": 0.222,
+      "mae_vs_gt_crowd": 0.193,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 178.4
+    },
+    {
+      "segment_id": 31,
+      "cumulative_quotes": 384,
+      "mae_vs_gt_llm": 0.222,
+      "mae_vs_gt_crowd": 0.197,
+      "traits_converged": 28,
+      "avg_confidence": 0.95,
+      "elapsed": 162.8
+    },
+    {
+      "segment_id": 32,
+      "cumulative_quotes": 396,
+      "mae_vs_gt_llm": 0.216,
+      "mae_vs_gt_crowd": 0.197,
+      "traits_converged": 27,
+      "avg_confidence": 0.95,
+      "elapsed": 162.0
+    },
+    {
+      "segment_id": 33,
+      "cumulative_quotes": 408,
+      "mae_vs_gt_llm": 0.235,
+      "mae_vs_gt_crowd": 0.206,
+      "traits_converged": 31,
+      "avg_confidence": 0.95,
+      "elapsed": 178.4
+    },
+    {
+      "segment_id": 34,
+      "cumulative_quotes": 420,
+      "mae_vs_gt_llm": 0.241,
+      "mae_vs_gt_crowd": 0.208,
+      "traits_converged": 23,
+      "avg_confidence": 0.95,
+      "elapsed": 158.6
+    },
+    {
+      "segment_id": 35,
+      "cumulative_quotes": 432,
+      "mae_vs_gt_llm": 0.256,
+      "mae_vs_gt_crowd": 0.216,
+      "traits_converged": 21,
+      "avg_confidence": 0.95,
+      "elapsed": 150.6
+    },
+    {
+      "segment_id": 36,
+      "cumulative_quotes": 444,
+      "mae_vs_gt_llm": 0.257,
+      "mae_vs_gt_crowd": 0.22,
+      "traits_converged": 29,
+      "avg_confidence": 0.95,
+      "elapsed": 160.8
+    },
+    {
+      "segment_id": 37,
+      "cumulative_quotes": 456,
+      "mae_vs_gt_llm": 0.255,
+      "mae_vs_gt_crowd": 0.222,
+      "traits_converged": 32,
+      "avg_confidence": 0.95,
+      "elapsed": 161.5
+    },
+    {
+      "segment_id": 38,
+      "cumulative_quotes": 468,
+      "mae_vs_gt_llm": 0.248,
+      "mae_vs_gt_crowd": 0.219,
+      "traits_converged": 27,
+      "avg_confidence": 0.95,
+      "elapsed": 163.1
+    },
+    {
+      "segment_id": 39,
+      "cumulative_quotes": 480,
+      "mae_vs_gt_llm": 0.239,
+      "mae_vs_gt_crowd": 0.209,
+      "traits_converged": 22,
+      "avg_confidence": 0.95,
+      "elapsed": 170.2
+    },
+    {
+      "segment_id": 40,
+      "cumulative_quotes": 492,
+      "mae_vs_gt_llm": 0.234,
+      "mae_vs_gt_crowd": 0.206,
+      "traits_converged": 23,
+      "avg_confidence": 0.95,
+      "elapsed": 165.5
+    },
+    {
+      "segment_id": 41,
+      "cumulative_quotes": 504,
+      "mae_vs_gt_llm": 0.235,
+      "mae_vs_gt_crowd": 0.211,
+      "traits_converged": 31,
+      "avg_confidence": 0.95,
+      "elapsed": 170.5
+    },
+    {
+      "segment_id": 42,
+      "cumulative_quotes": 516,
+      "mae_vs_gt_llm": 0.239,
+      "mae_vs_gt_crowd": 0.217,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 159.2
+    },
+    {
+      "segment_id": 43,
+      "cumulative_quotes": 528,
+      "mae_vs_gt_llm": 0.237,
+      "mae_vs_gt_crowd": 0.205,
+      "traits_converged": 23,
+      "avg_confidence": 0.95,
+      "elapsed": 168.2
+    },
+    {
+      "segment_id": 44,
+      "cumulative_quotes": 540,
+      "mae_vs_gt_llm": 0.248,
+      "mae_vs_gt_crowd": 0.22,
+      "traits_converged": 24,
+      "avg_confidence": 0.95,
+      "elapsed": 167.4
+    },
+    {
+      "segment_id": 45,
+      "cumulative_quotes": 552,
+      "mae_vs_gt_llm": 0.237,
+      "mae_vs_gt_crowd": 0.205,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 173.0
+    },
+    {
+      "segment_id": 46,
+      "cumulative_quotes": 564,
+      "mae_vs_gt_llm": 0.241,
+      "mae_vs_gt_crowd": 0.211,
+      "traits_converged": 23,
+      "avg_confidence": 0.95,
+      "elapsed": 155.0
+    },
+    {
+      "segment_id": 47,
+      "cumulative_quotes": 576,
+      "mae_vs_gt_llm": 0.245,
+      "mae_vs_gt_crowd": 0.216,
+      "traits_converged": 20,
+      "avg_confidence": 0.95,
+      "elapsed": 149.7
+    },
+    {
+      "segment_id": 48,
+      "cumulative_quotes": 588,
+      "mae_vs_gt_llm": 0.223,
+      "mae_vs_gt_crowd": 0.196,
+      "traits_converged": 25,
+      "avg_confidence": 0.95,
+      "elapsed": 157.0
+    },
+    {
+      "segment_id": 49,
+      "cumulative_quotes": 600,
+      "mae_vs_gt_llm": 0.24,
+      "mae_vs_gt_crowd": 0.212,
+      "traits_converged": 28,
+      "avg_confidence": 0.95,
+      "elapsed": 164.5
+    },
+    {
+      "segment_id": 50,
+      "cumulative_quotes": 612,
+      "mae_vs_gt_llm": 0.25,
+      "mae_vs_gt_crowd": 0.217,
+      "traits_converged": 29,
+      "avg_confidence": 0.95,
+      "elapsed": 155.4
+    },
+    {
+      "segment_id": 51,
+      "cumulative_quotes": 624,
+      "mae_vs_gt_llm": 0.237,
+      "mae_vs_gt_crowd": 0.207,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 151.5
+    },
+    {
+      "segment_id": 52,
+      "cumulative_quotes": 636,
+      "mae_vs_gt_llm": 0.244,
+      "mae_vs_gt_crowd": 0.218,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 191.4
+    },
+    {
+      "segment_id": 53,
+      "cumulative_quotes": 648,
+      "mae_vs_gt_llm": 0.232,
+      "mae_vs_gt_crowd": 0.204,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 163.3
+    },
+    {
+      "segment_id": 54,
+      "cumulative_quotes": 660,
+      "mae_vs_gt_llm": 0.222,
+      "mae_vs_gt_crowd": 0.2,
+      "traits_converged": 24,
+      "avg_confidence": 0.95,
+      "elapsed": 174.4
+    },
+    {
+      "segment_id": 55,
+      "cumulative_quotes": 672,
+      "mae_vs_gt_llm": 0.232,
+      "mae_vs_gt_crowd": 0.202,
+      "traits_converged": 28,
+      "avg_confidence": 0.95,
+      "elapsed": 170.6
+    },
+    {
+      "segment_id": 56,
+      "cumulative_quotes": 684,
+      "mae_vs_gt_llm": 0.249,
+      "mae_vs_gt_crowd": 0.218,
+      "traits_converged": 29,
+      "avg_confidence": 0.95,
+      "elapsed": 171.8
+    },
+    {
+      "segment_id": 57,
+      "cumulative_quotes": 696,
+      "mae_vs_gt_llm": 0.252,
+      "mae_vs_gt_crowd": 0.221,
+      "traits_converged": 27,
+      "avg_confidence": 0.95,
+      "elapsed": 153.8
+    },
+    {
+      "segment_id": 58,
+      "cumulative_quotes": 708,
+      "mae_vs_gt_llm": 0.246,
+      "mae_vs_gt_crowd": 0.212,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 154.3
+    },
+    {
+      "segment_id": 59,
+      "cumulative_quotes": 720,
+      "mae_vs_gt_llm": 0.244,
+      "mae_vs_gt_crowd": 0.211,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 154.3
+    },
+    {
+      "segment_id": 60,
+      "cumulative_quotes": 732,
+      "mae_vs_gt_llm": 0.249,
+      "mae_vs_gt_crowd": 0.219,
+      "traits_converged": 27,
+      "avg_confidence": 0.95,
+      "elapsed": 172.7
+    },
+    {
+      "segment_id": 61,
+      "cumulative_quotes": 744,
+      "mae_vs_gt_llm": 0.258,
+      "mae_vs_gt_crowd": 0.227,
+      "traits_converged": 23,
+      "avg_confidence": 0.95,
+      "elapsed": 165.4
+    },
+    {
+      "segment_id": 62,
+      "cumulative_quotes": 756,
+      "mae_vs_gt_llm": 0.232,
+      "mae_vs_gt_crowd": 0.206,
+      "traits_converged": 28,
+      "avg_confidence": 0.95,
+      "elapsed": 149.7
+    },
+    {
+      "segment_id": 63,
+      "cumulative_quotes": 768,
+      "mae_vs_gt_llm": 0.242,
+      "mae_vs_gt_crowd": 0.212,
+      "traits_converged": 27,
+      "avg_confidence": 0.95,
+      "elapsed": 154.1
+    },
+    {
+      "segment_id": 64,
+      "cumulative_quotes": 780,
+      "mae_vs_gt_llm": 0.254,
+      "mae_vs_gt_crowd": 0.22,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 149.0
+    },
+    {
+      "segment_id": 65,
+      "cumulative_quotes": 792,
+      "mae_vs_gt_llm": 0.233,
+      "mae_vs_gt_crowd": 0.207,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 199.9
+    },
+    {
+      "segment_id": 66,
+      "cumulative_quotes": 804,
+      "mae_vs_gt_llm": 0.222,
+      "mae_vs_gt_crowd": 0.196,
+      "traits_converged": 26,
+      "avg_confidence": 0.95,
+      "elapsed": 173.9
+    },
+    {
+      "segment_id": 67,
+      "cumulative_quotes": 816,
+      "mae_vs_gt_llm": 0.231,
+      "mae_vs_gt_crowd": 0.203,
+      "traits_converged": 25,
+      "avg_confidence": 0.95,
+      "elapsed": 169.5
+    },
+    {
+      "segment_id": 68,
+      "cumulative_quotes": 828,
+      "mae_vs_gt_llm": 0.24,
+      "mae_vs_gt_crowd": 0.211,
+      "traits_converged": 27,
+      "avg_confidence": 0.95,
+      "elapsed": 161.8
+    },
+    {
+      "segment_id": 69,
+      "cumulative_quotes": 840,
+      "mae_vs_gt_llm": 0.23,
+      "mae_vs_gt_crowd": 0.202,
+      "traits_converged": 30,
+      "avg_confidence": 0.95,
+      "elapsed": 166.3
+    },
+    {
+      "segment_id": 70,
+      "cumulative_quotes": 847,
+      "mae_vs_gt_llm": 0.247,
+      "mae_vs_gt_crowd": 0.221,
+      "traits_converged": 32,
+      "avg_confidence": 0.95,
+      "elapsed": 194.1
+    }
+  ]
+}
