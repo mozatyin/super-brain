@@ -121,7 +121,7 @@ class ScenarioChatter:
     """Chatter that follows scenario scripts."""
 
     def __init__(self, api_key: str, model: str = "claude-sonnet-4-20250514"):
-        kwargs: dict = {"api_key": api_key}
+        kwargs: dict = {"api_key": api_key, "timeout": 120.0}
         if api_key.startswith("sk-or-"):
             kwargs["base_url"] = "https://openrouter.ai/api"
         self._client = anthropic.Anthropic(**kwargs)
@@ -160,7 +160,7 @@ class ScenarioSpeaker:
     """Speaker that responds in character with scenario-focused traits."""
 
     def __init__(self, api_key: str, model: str = "claude-sonnet-4-20250514"):
-        kwargs: dict = {"api_key": api_key}
+        kwargs: dict = {"api_key": api_key, "timeout": 120.0}
         if api_key.startswith("sk-or-"):
             kwargs["base_url"] = "https://openrouter.ai/api"
         self._client = anthropic.Anthropic(**kwargs)

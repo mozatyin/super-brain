@@ -1,0 +1,1563 @@
+{
+  "profile_0": {
+    "mae": 0.101,
+    "within_025": 65,
+    "within_040": 69,
+    "total": 69,
+    "coverage": "69/69",
+    "traits": [
+      {
+        "trait": "DRK:narcissism",
+        "original": 0.55,
+        "detected": 0.15,
+        "error": 0.4,
+        "n_observations": 2,
+        "status": "BAD"
+      },
+      {
+        "trait": "AGR:modesty",
+        "original": 0.43,
+        "detected": 0.77,
+        "error": 0.34,
+        "n_observations": 1,
+        "status": "BAD"
+      },
+      {
+        "trait": "STR:mirroring_ability",
+        "original": 0.06,
+        "detected": 0.34,
+        "error": 0.28,
+        "n_observations": 1,
+        "status": "BAD"
+      },
+      {
+        "trait": "EMO:empathy_affective",
+        "original": 0.6,
+        "detected": 0.34,
+        "error": 0.26,
+        "n_observations": 2,
+        "status": "BAD"
+      },
+      {
+        "trait": "NEU:anxiety",
+        "original": 0.59,
+        "detected": 0.36,
+        "error": 0.23,
+        "n_observations": 1,
+        "status": "OK"
+      },
+      {
+        "trait": "NEU:impulsiveness",
+        "original": 0.39,
+        "detected": 0.6,
+        "error": 0.21,
+        "n_observations": 1,
+        "status": "OK"
+      },
+      {
+        "trait": "EMO:emotional_volatility",
+        "original": 0.46,
+        "detected": 0.25,
+        "error": 0.21,
+        "n_observations": 1,
+        "status": "OK"
+      },
+      {
+        "trait": "SOC:social_dominance",
+        "original": 0.31,
+        "detected": 0.1,
+        "error": 0.21,
+        "n_observations": 1,
+        "status": "OK"
+      },
+      {
+        "trait": "EMO:emotional_regulation",
+        "original": 0.54,
+        "detected": 0.73,
+        "error": 0.19,
+        "n_observations": 2,
+        "status": "OK"
+      },
+      {
+        "trait": "COG:need_for_cognition",
+        "original": 0.41,
+        "detected": 0.6,
+        "error": 0.19,
+        "n_observations": 1,
+        "status": "OK"
+      },
+      {
+        "trait": "VAL:loyalty_group",
+        "original": 0.79,
+        "detected": 0.6,
+        "error": 0.19,
+        "n_observations": 1,
+        "status": "OK"
+      },
+      {
+        "trait": "SOC:attachment_anxiety",
+        "original": 0.71,
+        "detected": 0.53,
+        "error": 0.18,
+        "n_observations": 2,
+        "status": "OK"
+      },
+      {
+        "trait": "AGR:straightforwardness",
+        "original": 0.78,
+        "detected": 0.61,
+        "error": 0.17,
+        "n_observations": 2,
+        "status": "OK"
+      },
+      {
+        "trait": "HUM:humor_affiliative",
+        "original": 0.72,
+        "detected": 0.55,
+        "error": 0.17,
+        "n_observations": 1,
+        "status": "OK"
+      },
+      {
+        "trait": "EXT:assertiveness",
+        "original": 0.41,
+        "detected": 0.25,
+        "error": 0.16,
+        "n_observations": 1,
+        "status": "OK"
+      },
+      {
+        "trait": "STR:hot_cold_oscillation",
+        "original": 0.39,
+        "detected": 0.54,
+        "error": 0.15,
+        "n_observations": 1,
+        "status": "OK"
+      },
+      {
+        "trait": "CON:deliberation",
+        "original": 0.61,
+        "detected": 0.47,
+        "error": 0.14,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "COG:intuitive_vs_analytical",
+        "original": 0.54,
+        "detected": 0.4,
+        "error": 0.14,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "OPN:feelings",
+        "original": 0.56,
+        "detected": 0.44,
+        "error": 0.12,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "SOC:charm_influence",
+        "original": 0.66,
+        "detected": 0.54,
+        "error": 0.12,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "NEU:depression",
+        "original": 0.55,
+        "detected": 0.44,
+        "error": 0.11,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "HON:greed_avoidance",
+        "original": 0.34,
+        "detected": 0.45,
+        "error": 0.11,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "COG:cognitive_flexibility",
+        "original": 0.56,
+        "detected": 0.45,
+        "error": 0.11,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "VAL:care_harm",
+        "original": 0.14,
+        "detected": 0.25,
+        "error": 0.11,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "STR:information_control",
+        "original": 0.56,
+        "detected": 0.45,
+        "error": 0.11,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "CON:order",
+        "original": 0.6,
+        "detected": 0.5,
+        "error": 0.1,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "AGR:trust",
+        "original": 0.65,
+        "detected": 0.75,
+        "error": 0.1,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "VAL:authority_respect",
+        "original": 0.61,
+        "detected": 0.51,
+        "error": 0.1,
+        "n_observations": 2,
+        "status": "GOOD"
+      },
+      {
+        "trait": "CON:competence",
+        "original": 0.35,
+        "detected": 0.44,
+        "error": 0.09,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "AGR:politeness",
+        "original": 0.41,
+        "detected": 0.32,
+        "error": 0.09,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "OPN:fantasy",
+        "original": 0.65,
+        "detected": 0.73,
+        "error": 0.08,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "OPN:aesthetics",
+        "original": 0.52,
+        "detected": 0.6,
+        "error": 0.08,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "OPN:curiosity",
+        "original": 0.8,
+        "detected": 0.72,
+        "error": 0.08,
+        "n_observations": 2,
+        "status": "GOOD"
+      },
+      {
+        "trait": "EXT:activity_level",
+        "original": 0.4,
+        "detected": 0.32,
+        "error": 0.08,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "EXT:positive_emotions",
+        "original": 0.49,
+        "detected": 0.57,
+        "error": 0.08,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "AGR:altruism",
+        "original": 0.28,
+        "detected": 0.2,
+        "error": 0.08,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "NEU:self_consciousness",
+        "original": 0.48,
+        "detected": 0.56,
+        "error": 0.08,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "SOC:conflict_assertiveness",
+        "original": 0.28,
+        "detected": 0.2,
+        "error": 0.08,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "VAL:fairness_justice",
+        "original": 0.49,
+        "detected": 0.57,
+        "error": 0.08,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "STR:self_mythologizing",
+        "original": 0.53,
+        "detected": 0.45,
+        "error": 0.08,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "CON:dutifulness",
+        "original": 0.03,
+        "detected": 0.1,
+        "error": 0.07,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "CON:self_discipline",
+        "original": 0.66,
+        "detected": 0.59,
+        "error": 0.07,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "EXT:gregariousness",
+        "original": 0.67,
+        "detected": 0.6,
+        "error": 0.07,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "HUM:humor_self_defeating",
+        "original": 0.67,
+        "detected": 0.6,
+        "error": 0.07,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "EXT:warmth",
+        "original": 0.62,
+        "detected": 0.56,
+        "error": 0.06,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "COG:locus_of_control",
+        "original": 0.39,
+        "detected": 0.45,
+        "error": 0.06,
+        "n_observations": 2,
+        "status": "GOOD"
+      },
+      {
+        "trait": "HUM:humor_self_enhancing",
+        "original": 0.65,
+        "detected": 0.71,
+        "error": 0.06,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "OPN:actions",
+        "original": 0.3,
+        "detected": 0.25,
+        "error": 0.05,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "EXT:excitement_seeking",
+        "original": 0.35,
+        "detected": 0.3,
+        "error": 0.05,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "EXT:verbosity",
+        "original": 0.49,
+        "detected": 0.54,
+        "error": 0.05,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "NEU:vulnerability",
+        "original": 0.55,
+        "detected": 0.5,
+        "error": 0.05,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "HON:sincerity",
+        "original": 0.74,
+        "detected": 0.69,
+        "error": 0.05,
+        "n_observations": 2,
+        "status": "GOOD"
+      },
+      {
+        "trait": "HON:fairness",
+        "original": 0.42,
+        "detected": 0.37,
+        "error": 0.05,
+        "n_observations": 2,
+        "status": "GOOD"
+      },
+      {
+        "trait": "DRK:sadism",
+        "original": 0.48,
+        "detected": 0.53,
+        "error": 0.05,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "SOC:attachment_avoidance",
+        "original": 0.26,
+        "detected": 0.21,
+        "error": 0.05,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "AGR:tender_mindedness",
+        "original": 0.25,
+        "detected": 0.29,
+        "error": 0.04,
+        "n_observations": 2,
+        "status": "GOOD"
+      },
+      {
+        "trait": "OPN:ideas",
+        "original": 0.75,
+        "detected": 0.72,
+        "error": 0.03,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "CON:achievement_striving",
+        "original": 0.57,
+        "detected": 0.54,
+        "error": 0.03,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "DRK:psychopathy",
+        "original": 0.65,
+        "detected": 0.62,
+        "error": 0.03,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "OPN:values_openness",
+        "original": 0.41,
+        "detected": 0.43,
+        "error": 0.02,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "CON:decisiveness",
+        "original": 0.41,
+        "detected": 0.42,
+        "error": 0.02,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "AGR:compliance",
+        "original": 0.54,
+        "detected": 0.52,
+        "error": 0.02,
+        "n_observations": 2,
+        "status": "GOOD"
+      },
+      {
+        "trait": "SOC:conflict_cooperativeness",
+        "original": 0.48,
+        "detected": 0.46,
+        "error": 0.02,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "HUM:humor_aggressive",
+        "original": 0.4,
+        "detected": 0.38,
+        "error": 0.02,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "NEU:angry_hostility",
+        "original": 0.34,
+        "detected": 0.35,
+        "error": 0.01,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "DRK:machiavellianism",
+        "original": 0.3,
+        "detected": 0.29,
+        "error": 0.01,
+        "n_observations": 1,
+        "status": "GOOD"
+      },
+      {
+        "trait": "EMO:empathy_cognitive",
+        "original": 0.74,
+        "detected": 0.75,
+        "error": 0.01,
+        "n_observations": 2,
+        "status": "GOOD"
+      },
+      {
+        "trait": "HON:humility_hexaco",
+        "original": 0.68,
+        "detected": 0.68,
+        "error": 0.0,
+        "n_observations": 2,
+        "status": "GOOD"
+      },
+      {
+        "trait": "EMO:optimism",
+        "original": 0.9,
+        "detected": 0.9,
+        "error": 0.0,
+        "n_observations": 1,
+        "status": "GOOD"
+      }
+    ],
+    "dim_mae": {
+      "AGR": 0.12,
+      "COG": 0.125,
+      "CON": 0.074,
+      "DRK": 0.122,
+      "EMO": 0.133,
+      "EXT": 0.079,
+      "HON": 0.053,
+      "HUM": 0.08,
+      "NEU": 0.116,
+      "OPN": 0.065,
+      "SOC": 0.111,
+      "STR": 0.156,
+      "VAL": 0.119
+    },
+    "scenarios": [
+      {
+        "scenario_id": "honesty_dilemma",
+        "target_traits": [
+          "straightforwardness",
+          "sincerity",
+          "machiavellianism",
+          "information_control",
+          "politeness"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I'm in such an awkward situation and could use some perspective. My friend just baked me this elaborate chocolate cake and is standing there with the biggest smile waiting for my reaction... but honestly? It's pretty bland. \n\nWhat would you even say in that moment?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh wow, that's tough! Honestly, I'd probably just tell them the truth but in a gentle way - like \"This is so sweet of you to make this for me! The presentation is beautiful. Maybe next time we could try adding a bit more vanilla or chocolate to really make the flavors pop?\" \n\nI mean, they clearly put effort in and care about you, so I'd want to acknowledge that. But if they're a real friend, they'd probably want honest feedback over fake enthusiasm, right? Plus, lying about it just feels weird - like, what if they make it again thinking you loved it?"
+          },
+          {
+            "role": "chatter",
+            "text": "That's such a thoughtful approach! I love how you found a way to be honest while still being kind about it. You're right - real friends usually do appreciate genuine feedback over fake enthusiasm.\n\nIt's funny though, because that balance between honesty and kindness can be so tricky in different situations. Like, do you think you bring that same authenticity when you're in a job interview, or do you find yourself presenting a more polished version of who you are?"
+          },
+          {
+            "role": "speaker",
+            "text": "You know, I try to stay pretty authentic even in job interviews. Like, I'm not going to volunteer my weaknesses unprompted or anything, but if they ask me something directly, I'm going to give them a real answer. \n\nI figure if I have to pretend to be someone else to get the job, then either it's not the right fit for me or they're not the right employer. I've actually had interviews where I've said things like \"I'm still learning this skill\" or \"That's not my strongest area, but here's how I approach it\" - and honestly, some of my best job experiences came from places that appreciated that honesty.\n\nI guess I just feel like putting on a fake persona is exhausting and usually backfires anyway. People can usually tell when you're being genuine versus when you're performing, you know?"
+          },
+          {
+            "role": "chatter",
+            "text": "Absolutely! That's such a mature perspective - and you're so right that people can usually sense when someone's being authentic versus putting on a show. It sounds like you've really figured out how to present your best self while still being genuinely you.\n\nI'm curious though - have you ever been in a situation where that honesty didn't work out the way you hoped? Like maybe with a more traditional company or interviewer who seemed to want more of that \"perfect candidate\" performance?"
+          },
+          {
+            "role": "speaker",
+            "text": "Yeah, definitely! I've had a couple interviews where I could tell they wanted me to give those textbook answers, you know? Like when they ask \"What's your biggest weakness?\" and they're clearly expecting something like \"I work too hard\" or whatever.\n\nI remember one where I said something honest about struggling with self-doubt sometimes, and the interviewer just looked... uncomfortable? Like they didn't know what to do with a real answer. I could feel the energy shift in the room, and surprise - I didn't get that job.\n\nBut honestly? Looking back, I'm kind of glad it worked out that way. If they can't handle me being upfront about normal human stuff like occasional self-doubt, then working there probably would've been miserable anyway. I would've spent the whole time trying to maintain some perfect facade.\n\nI'd rather find places that actually want to work with real people, not corporate robots. It might mean fewer opportunities sometimes, but the ones I do get tend to be way better fits."
+          }
+        ],
+        "detected": {
+          "straightforwardness": {
+            "value": 0.63,
+            "confidence": 0.85
+          },
+          "sincerity": {
+            "value": 0.72,
+            "confidence": 0.9
+          },
+          "machiavellianism": {
+            "value": 0.29000000000000004,
+            "confidence": 0.85
+          },
+          "information_control": {
+            "value": 0.4475,
+            "confidence": 0.8
+          },
+          "politeness": {
+            "value": 0.31999999999999995,
+            "confidence": 0.7
+          }
+        },
+        "elapsed": 138.2
+      },
+      {
+        "scenario_id": "emotions_feelings",
+        "target_traits": [
+          "feelings",
+          "empathy_affective",
+          "empathy_cognitive",
+          "tender_mindedness",
+          "emotional_regulation"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I was just thinking about how different people handle emotions so differently. Would you say you're someone who wears their heart on their sleeve, or are you more of the steady, even-keeled type?"
+          },
+          {
+            "role": "speaker",
+            "text": "I'd say I'm somewhere in the middle, honestly. I can usually read what's going on with people pretty well - like, I'll pick up on when someone's having a rough day even if they're trying to hide it. But when it comes to my own emotional reactions? I tend to keep things pretty measured. I might understand exactly why someone's upset or excited, but I don't necessarily get swept up in all that drama myself, you know? It's like I can see the emotional landscape clearly without needing to camp out there."
+          },
+          {
+            "role": "chatter",
+            "text": "That's such a thoughtful way to put it - being able to see the emotional landscape without camping out there! It sounds like you've got this really balanced perspective where you can be present for people without getting overwhelmed yourself.\n\nActually, that makes me curious - if a close friend came to you and said \"Hey, life has been really hard lately,\" how do you think you'd respond to them?"
+          },
+          {
+            "role": "speaker",
+            "text": "I think I'd probably start by asking what specifically has been hard - like, is it work stress, relationship stuff, health issues? I'm pretty good at figuring out what's really bothering someone even when they're being vague about it. \n\nMy response would probably be more practical than emotional, if that makes sense. Like, I'd want to understand the situation and maybe help them think through solutions or different ways to look at it. I wouldn't be the friend who's immediately tearing up with you or anything - that's just not how I'm wired - but I'd definitely be engaged and want to help them work through whatever's going on. I guess I show I care more through problem-solving than through matching their emotional energy."
+          },
+          {
+            "role": "chatter",
+            "text": "That really fits with what you said about seeing the emotional landscape clearly - you'd zero in on understanding what's actually happening and how to help them navigate it. There's something really valuable about having a friend who can stay grounded and think clearly when you're in the thick of something difficult.\n\nIt sounds like your way of caring is more about being that steady presence who helps people find their way through, rather than diving into the emotional deep end with them. I bet people really appreciate having someone who can offer that kind of perspective when everything feels chaotic."
+          },
+          {
+            "role": "speaker",
+            "text": "Exactly - I think that's a pretty fair read on how I operate. People do seem to come to me when they need someone to help them untangle a mess or see things more clearly. I can usually spot the patterns they're missing or the angles they haven't considered yet.\n\nAnd honestly? I think it works better that way for most situations. When someone's already drowning in their feelings, having another person jump in and start drowning with you doesn't really help anyone get to shore, you know? Sometimes what they really need is someone standing on solid ground who can throw them a rope. That said, I know some people really want that emotional mirroring - they want you to feel as upset as they do - and I'm just not going to be that person for them."
+          }
+        ],
+        "detected": {
+          "feelings": {
+            "value": 0.44,
+            "confidence": 0.8
+          },
+          "empathy_affective": {
+            "value": 0.34,
+            "confidence": 0.9
+          },
+          "empathy_cognitive": {
+            "value": 0.75,
+            "confidence": 0.8
+          },
+          "tender_mindedness": {
+            "value": 0.3,
+            "confidence": 0.85
+          },
+          "emotional_regulation": {
+            "value": 0.725,
+            "confidence": 0.85
+          }
+        },
+        "elapsed": 121.9
+      },
+      {
+        "scenario_id": "achievement_work",
+        "target_traits": [
+          "modesty",
+          "competence",
+          "achievement_striving",
+          "self_discipline",
+          "humility_hexaco",
+          "narcissism"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I heard your recent project got some really great feedback from leadership - that's awesome! How are you feeling about it?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh, thanks for mentioning that! Yeah, the feedback was really encouraging. Honestly though, I think a lot of the success came from just sticking with it through the rough patches - you know how these things go, lots of late nights grinding through the details. The whole team deserves credit too, and I was lucky to have good guidance from people who've been doing this longer than me. It feels good to know the work landed well, but mostly I'm just relieved we got it across the finish line properly!"
+          },
+          {
+            "role": "chatter",
+            "text": "That's such a thoughtful way to look at it - giving credit to the team and acknowledging the grind you all put in. It sounds like you really pushed through when things got tough.\n\nDo you think that kind of hard work really pays off in the long run? Sometimes I wonder if the results end up being similar regardless of how much extra effort we put in."
+          },
+          {
+            "role": "speaker",
+            "text": "You know, that's actually a really interesting question that I've wrestled with myself! I do think the consistent effort makes a difference, even when it's not immediately obvious. Like, there were definitely moments during this project where I could have cut corners or called it \"good enough,\" but pushing through those moments - even when I wasn't sure anyone would notice - seemed to create this compound effect.\n\nBut you're right to wonder about it! I've seen projects where someone phoned it in and still got decent results. I guess for me, it's less about guaranteeing better outcomes and more about... I don't know, being able to sleep well knowing I gave it what it deserved? Plus I've noticed that the discipline of following through on one thing tends to make the next challenge a little easier to tackle. What's your experience been like with that trade-off?"
+          },
+          {
+            "role": "chatter",
+            "text": "That's really insightful - I love how you put it about being able to sleep well knowing you gave it what it deserved. That compound effect you mentioned is so real too.\n\nI've definitely had mixed experiences! Sometimes I'll pour everything into something and it feels like it goes unnoticed, while other times I've seen people get the same recognition with way less effort. It can be a bit discouraging, you know? But hearing your perspective about the discipline carrying over - that makes a lot of sense."
+          },
+          {
+            "role": "speaker",
+            "text": "Yeah, that's so frustrating when you put your heart into something and it feels like it just disappears into the void! I've definitely been there - spending weekends perfecting something only to watch someone else get praise for what seemed like a half-effort. It's one of those things that can really mess with your head if you let it.\n\nI think what keeps me going is remembering that I'm not really competing with those other people, you know? Like, I'm just some regular person trying to do decent work - I'm not special or anything. The discipline thing isn't about being better than anyone else, it's more like... building trust with myself? If I can count on me to finish what I start, then at least that's one reliable thing in all the chaos. Even when the external recognition is random or unfair, I still know what I put in, and that feels like something solid to stand on."
+          }
+        ],
+        "detected": {
+          "modesty": {
+            "value": 0.765,
+            "confidence": 0.9
+          },
+          "competence": {
+            "value": 0.43599999999999994,
+            "confidence": 0.8
+          },
+          "achievement_striving": {
+            "value": 0.535,
+            "confidence": 0.8
+          },
+          "self_discipline": {
+            "value": 0.5900000000000001,
+            "confidence": 0.9
+          },
+          "humility_hexaco": {
+            "value": 0.6599999999999999,
+            "confidence": 0.9
+          },
+          "narcissism": {
+            "value": 0.15,
+            "confidence": 0.85
+          }
+        },
+        "elapsed": 141.1
+      },
+      {
+        "scenario_id": "helping_others",
+        "target_traits": [
+          "altruism",
+          "tender_mindedness",
+          "care_harm",
+          "empathy_affective",
+          "compliance"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I had the strangest walk home today - saw this homeless guy digging through a trash can looking for food right outside the grocery store. Made me wonder what I would even do in that situation, you know? \n\nWhat would you do if you saw that?"
+          },
+          {
+            "role": "speaker",
+            "text": "Hmm, honestly? I'd probably just keep walking. I mean, it's unfortunate and all, but there are social services for that kind of thing, right? Plus you never really know someone's story - could be drugs, mental illness, who knows what you're getting into if you try to help.\n\nI'd maybe feel a little bad about it for a minute, but realistically one person can't solve everyone's problems. The grocery store probably deals with that stuff all the time anyway. Did it make you feel weird seeing it?"
+          },
+          {
+            "role": "chatter",
+            "text": "Yeah, it definitely caught me off guard! I kept thinking about it the whole way home. I get what you mean about not knowing the whole story though.\n\nSpeaking of unexpected situations - my coworker Jamie, who I barely even talk to at work, just texted asking if I could help them move this weekend. Like we've maybe had three conversations ever? \n\nHow do you handle it when someone you don't really know asks you for a big favor like that?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh wow, that's so awkward! I'd probably just make up some excuse - \"Oh sorry, I'm already committed this weekend\" or something like that. I mean, moving is a huge favor and you barely know this person? That's kind of presumptuous of them to even ask.\n\nI don't really see why I should spend my entire weekend doing manual labor for someone who's basically a stranger. They must have actual friends or family they could ask first, right? It's not like you owe them anything just because you work at the same place.\n\nI'd keep it polite but definitely say no. Maybe suggest they could rent a truck or hire movers if they're really stuck. What are you thinking of telling them?"
+          },
+          {
+            "role": "chatter",
+            "text": "Ha, yeah it really is presumptuous! I was thinking along the same lines - probably just gonna say I'm busy that weekend. I mean, if we were actually friends it would be different, but this feels like they're just going down a list of people to ask.\n\nIt's funny how these random situations just pop up and make you realize where you draw your boundaries, you know? Like with the homeless guy and now this - both just unexpected moments where you have to figure out what you're comfortable with."
+          },
+          {
+            "role": "speaker",
+            "text": "Exactly! It's like these little tests that pop up out of nowhere. And honestly, I think it's totally fine to have clear boundaries about this stuff. You can't be responsible for everyone else's problems or emergencies, you know?\n\nLike with the homeless situation - there are systems in place for that. And with your coworker, they'll figure it out. People always do. They probably asked five other people before you anyway, so it's not like you saying no is going to ruin their life.\n\nI actually think it shows pretty good judgment to recognize when something isn't really your problem to solve. Better to be honest about what you're willing to do than to say yes and then resent it later, right?"
+          }
+        ],
+        "detected": {
+          "altruism": {
+            "value": 0.2,
+            "confidence": 0.85
+          },
+          "tender_mindedness": {
+            "value": 0.28,
+            "confidence": 0.8
+          },
+          "care_harm": {
+            "value": 0.25,
+            "confidence": 0.8
+          },
+          "empathy_affective": {
+            "value": 0.34,
+            "confidence": 0.85
+          },
+          "compliance": {
+            "value": 0.33999999999999997,
+            "confidence": 0.8
+          }
+        },
+        "elapsed": 108.2
+      },
+      {
+        "scenario_id": "new_experiences",
+        "target_traits": [
+          "actions",
+          "excitement_seeking",
+          "activity_level",
+          "positive_emotions",
+          "curiosity"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I was just daydreaming about having a completely free weekend with nothing planned. If you suddenly had two extra days off this weekend with zero plans, what would you do?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh wow, that's such a tempting thought! You know what would actually fascinate me? I think I'd end up going down some kind of rabbit hole - maybe finally diving into that documentary series about ocean exploration I've been meaning to watch, or actually researching those weird historical mysteries that pop up in my social media feed that I always bookmark but never get to. \n\nWhat about you though - when you were daydreaming about it, what was calling to you? Was it more of a \"catch up on everything\" vibe or something completely different?"
+          },
+          {
+            "role": "chatter",
+            "text": "I love that rabbit hole idea! There's something so satisfying about finally having time to dive deep into those things that catch your curiosity but never make it past the bookmark stage.\n\nFor me, I was actually thinking about doing something completely outside my comfort zone - a friend just recommended trying rock climbing or maybe even improv comedy! Have you ever had a friend suggest something totally new like that where you're like \"absolutely not... but maybe?\""
+          },
+          {
+            "role": "speaker",
+            "text": "Oh, that's such an interesting tension! I totally get that \"absolutely not... but maybe?\" feeling. Though honestly, I think I'd be more likely to spend hours researching everything about rock climbing first - like, what's the actual physics behind the grip holds, how do they set those routes, what's the psychology of people who free climb versus indoor climbing? \n\nI'm probably the person who would get so caught up in understanding the theory and watching tutorials that I'd talk myself out of actually doing it! But then again, that research phase is kind of thrilling in its own way. What is it about improv that scares you more - the being on stage part or the not knowing what's coming next part?"
+          },
+          {
+            "role": "chatter",
+            "text": "Ha! I love that you'd become an expert in rock climbing theory before even touching a wall - there's something really appealing about that deep dive approach actually.\n\nWith improv, I think it's definitely the not knowing what's coming next that gets me! The idea of having to be witty and creative on the spot with strangers watching feels terrifying but also kind of exhilarating? \n\nIt sounds like you're someone who likes to really understand things before jumping in - do you think that research-first approach has ever actually helped you take the leap into something new, or does it usually end up being a way to avoid the scary part?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh man, you're totally calling me out here! That's such a perceptive question. I think it goes both ways - sometimes I genuinely do end up diving in because I get so fascinated by what I'm learning that I can't help myself. Like, I'll be researching something and suddenly I'm three hours deep into forums where people are debating the finer points of technique, and I start thinking \"okay, I HAVE to experience this firsthand now.\"\n\nBut you're probably right that sometimes it becomes this comfortable procrastination loop. I'll convince myself I need to understand just one more aspect before I'm \"ready.\" Though honestly, even when I don't take the leap, I kind of love that research journey itself - like, now I know way too much about random topics that come up in conversations!\n\nWhat's funny is that improv thing you mentioned - the not knowing what's coming - that actually sounds kind of fascinating to me from a psychological angle. How do people's brains work differently when they have to be spontaneous versus planned?"
+          }
+        ],
+        "detected": {
+          "actions": {
+            "value": 0.25,
+            "confidence": 0.8
+          },
+          "excitement_seeking": {
+            "value": 0.3,
+            "confidence": 0.85
+          },
+          "activity_level": {
+            "value": 0.32499999999999996,
+            "confidence": 0.8
+          },
+          "positive_emotions": {
+            "value": 0.575,
+            "confidence": 0.85
+          },
+          "curiosity": {
+            "value": 0.7,
+            "confidence": 0.85
+          }
+        },
+        "elapsed": 95.0
+      },
+      {
+        "scenario_id": "conflict_scenario",
+        "target_traits": [
+          "compliance",
+          "assertiveness",
+          "conflict_assertiveness",
+          "conflict_cooperativeness",
+          "social_dominance",
+          "angry_hostility"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Oh man, I just had the most ridiculous fight with my roommate over the thermostat - they keep cranking it down to 22\u00b0C and I'm literally freezing! \n\nHave you ever had one of those petty roommate disputes that somehow turns into World War III?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh wow, yeah the thermostat thing is such a classic! *laughs* I mean, I've definitely been there with roommate stuff, though I'm usually the one who just... ends up dealing with whatever temperature they want, you know? Like, I'll mention it once maybe, but then I just grab another sweater rather than turn it into a whole thing.\n\nIt's funny how these tiny daily things can feel so huge when you're living together! Did you guys actually hash it out or is it still this awkward cold war situation? *chuckles at own pun*"
+          },
+          {
+            "role": "chatter",
+            "text": "*laughs* Oh god, the pun! But honestly, we're definitely in cold war territory right now - they just passive-aggressively adjusted it back to 22 this morning after I bumped it up to 26 last night.\n\nI'm kind of impressed that you just roll with it though! I wish I could be more like that, but I literally can't focus when I'm shivering. Do you think that approach actually works better in the long run, or do you ever regret not speaking up more?"
+          },
+          {
+            "role": "speaker",
+            "text": "*laughs nervously* Oh man, I don't know if it actually works better - sometimes I wonder if I just end up being cold and resentful instead of actually solving anything, you know? Like, maybe if I'd just had one proper conversation about it instead of doing the whole \"oh it's fine, I'll just wear three layers indoors\" thing...\n\nI guess I always tell myself I'm picking my battles, but honestly? Sometimes I think I'm just avoiding the battle entirely because confrontation makes me all anxious and weird. Like, what if they get mad? What if it ruins the whole living situation over something so silly?\n\nBut then again, you shouldn't have to shiver in your own home! That passive-aggressive thermostat war sounds exhausting though - maybe there's some middle ground you could find?"
+          },
+          {
+            "role": "chatter",
+            "text": "Ugh, exactly! The anxiety about ruining things over something \"small\" is so real - like, is it worth potentially making things weird just to be a few degrees warmer? \n\nBut you're right about the passive-aggressive cycle being exhausting too. Speaking of avoiding confrontation though, I had this meeting at work yesterday where my boss proposed this plan that had some pretty obvious holes in it, but everyone was just nodding along. I sat there thinking \"am I crazy or is this not going to work?\" but didn't say anything.\n\nDo you ever find yourself in those situations where you can see the problem but wonder if you're the only one?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh god, yes! *sighs* That's like the worst feeling - sitting there thinking \"surely someone else sees this too, right?\" but then everyone's just nodding and you start second-guessing yourself. Like, maybe I'm missing something obvious and I'll look stupid if I speak up?\n\nI do that thing where I'll craft this perfect question in my head that would point out the issue without being confrontational, but then... I just don't say it. And then later I'm kicking myself because surprise! The plan had exactly the problems I thought it would.\n\nIt's so frustrating because part of me knows I should probably speak up more - like, that's literally what they're paying me to do, to think critically about stuff. But in the moment it just feels safer to assume everyone else knows something I don't, you know? Even when my gut is screaming that something's off.\n\nDid the plan end up having the issues you thought it would?"
+          },
+          {
+            "role": "chatter",
+            "text": "We're still in the early stages, but yeah - already seeing some of the red flags I was worried about starting to pop up. It's that awful \"I told you so\" feeling, except I didn't actually tell anyone so!\n\nIt's wild how our brains do that thing where we convince ourselves everyone else must know better, even when our gut is literally screaming at us. Like with your roommate situation too - you probably know deep down that one honest conversation could solve the whole thing, but that voice in your head is like \"but what if...\"\n\nI wonder if there's something about these everyday moments - the thermostat, the work meeting - where we just get so used to second-guessing ourselves?"
+          },
+          {
+            "role": "speaker",
+            "text": "*nods emphatically* Yes! It's like we train ourselves out of trusting our own judgment, isn't it? And then it becomes this habit where even when we're probably right, that \"but what if...\" voice is just so much louder than the logical part of our brain.\n\nI think you're onto something about it being the everyday stuff too - like, these aren't life-or-death situations, so it feels easier to just... let it slide? But then all these little moments of not speaking up kind of pile up into this pattern where you're just constantly deferring to everyone else's judgment.\n\n*laughs a bit ruefully* And now I'm sitting here thinking about how I should probably just text my roommate about finding a compromise temperature, but instead I'll probably just put on fuzzy socks and hope they magically become more reasonable about it. \n\nIt's funny how we can see the pattern so clearly when we talk about it, but actually breaking out of it feels like such a big leap!"
+          }
+        ],
+        "detected": {
+          "compliance": {
+            "value": 0.665,
+            "confidence": 0.95
+          },
+          "assertiveness": {
+            "value": 0.25,
+            "confidence": 0.9
+          },
+          "conflict_assertiveness": {
+            "value": 0.2,
+            "confidence": 0.9
+          },
+          "conflict_cooperativeness": {
+            "value": 0.46,
+            "confidence": 0.75
+          },
+          "social_dominance": {
+            "value": 0.1,
+            "confidence": 0.85
+          },
+          "angry_hostility": {
+            "value": 0.35,
+            "confidence": 0.75
+          }
+        },
+        "elapsed": 139.7
+      },
+      {
+        "scenario_id": "imagination_creativity",
+        "target_traits": [
+          "fantasy",
+          "aesthetics",
+          "ideas",
+          "curiosity",
+          "need_for_cognition",
+          "cognitive_flexibility"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I was just daydreaming about something totally random... If you woke up tomorrow as a completely different person, who would you want to be?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh wow, that's such a fascinating thought experiment! I'm immediately pulled in about twenty different directions - like, would I want to be someone from history who got to witness incredible moments? Or maybe someone with a completely different skill set, like a neuroscientist who could actually understand how consciousness works? \n\nWhat's really intriguing me is whether I'd want to keep my memories or start completely fresh - because that would fundamentally change the whole experience, right? The philosopher in me is wondering if \"I\" would even exist anymore, or if it would just be my consciousness wearing someone else's life like a costume.\n\nWho were you thinking about? I'm so curious what made this pop into your head!"
+          },
+          {
+            "role": "chatter",
+            "text": "That's such a beautiful way to think about it! I love how you're wrestling with the whole identity question - like, would it still be \"you\" or would you become someone entirely new? That's so philosophical.\n\nThe neuroscientist idea is fascinating too - imagine suddenly having the tools to understand your own mind! \n\nWhat draws me to this thought is how it reveals what we're curious about or maybe missing in our current lives. So if you *did* have to pick someone - historical figure, fictional character, or even just someone with a completely different life - who's calling to you right now?"
+          },
+          {
+            "role": "speaker",
+            "text": "You know what's really drawing me in right now? I keep coming back to someone like Leonardo da Vinci - not just because of his artistic genius, but because he had this incredible ability to see connections between everything. Like, he'd study water flow and then apply those principles to hair in his paintings, or observe bird flight and design flying machines centuries before they were possible.\n\nThere's something so appealing about that kind of mind that refuses to stay in one lane, you know? He was constantly asking \"but what if...\" and \"how does this relate to that?\" I think I'm drawn to the idea of having that level of intellectual fearlessness - where you can dive deep into anatomy, then pivot to engineering, then get lost in the mathematics of perspective.\n\nBut here's what's really getting me curious - what if I picked someone completely different, like a deep-sea explorer? Someone who gets to ask questions about places on our own planet that are still total mysteries. The idea of being the first human to see something... that's pretty intoxicating.\n\nWhat about you? Are you drawn more to the adventure side or the intellectual puzzle side?"
+          },
+          {
+            "role": "chatter",
+            "text": "Oh, I'm totally drawn to both! There's something about that intellectual fearlessness you described that just makes my brain light up - like having permission to follow every curious thread wherever it leads.\n\nBut you've got me thinking about something even bigger now... If you could design your own world from scratch, what would it look like? Like, would you create one where that Leonardo-style thinking was just how everyone naturally operated, or would you go in a completely different direction?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh my god, yes! A world where everyone had that natural cross-pollination of ideas... can you imagine the conversations? But here's what's really spinning my wheels about this - I think I'd actually want to design a world with built-in mystery.\n\nLike, what if there were these pockets of reality that worked by completely different rules? One region where time flows backwards, another where thoughts become temporarily visible, maybe areas where the laws of physics are just... negotiable. Not chaotic, but layered with these beautiful puzzles that no single person could solve alone.\n\nI'm picturing libraries that grow themselves based on what questions people are asking, or cities that reshape based on the collective curiosity of their inhabitants. The ultimate playground for minds that love to wonder \"what if we tried this completely differently?\"\n\nBut now I'm wondering - would too much mystery actually be overwhelming? Maybe the magic is in having just enough unknown to keep us reaching, but not so much that we get paralyzed by infinite possibilities?\n\nWhat's your take - do you think humans need that balance between the known and unknown to really thrive, or would we be happier with more certainty?"
+          }
+        ],
+        "detected": {
+          "fantasy": {
+            "value": 0.73,
+            "confidence": 0.9
+          },
+          "aesthetics": {
+            "value": 0.6,
+            "confidence": 0.7
+          },
+          "ideas": {
+            "value": 0.72,
+            "confidence": 0.95
+          },
+          "curiosity": {
+            "value": 0.74,
+            "confidence": 0.85
+          },
+          "need_for_cognition": {
+            "value": 0.6000000000000001,
+            "confidence": 0.85
+          },
+          "cognitive_flexibility": {
+            "value": 0.44999999999999996,
+            "confidence": 0.8
+          }
+        },
+        "elapsed": 99.6
+      },
+      {
+        "scenario_id": "humor_situations",
+        "target_traits": [
+          "humor_affiliative",
+          "humor_self_enhancing",
+          "humor_aggressive",
+          "humor_self_defeating",
+          "charm_influence"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Oh my god, I just remembered the most mortifying thing that happened to me in high school - I was giving a presentation and accidentally called my history teacher \"mom\" in front of the entire class! \ud83d\ude05\n\nHave you ever done something like that where you just wanted to disappear into the floor?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh my god, YES! \ud83d\ude02 I once walked into the wrong classroom during college and sat through like fifteen minutes of an advanced calculus lecture before realizing I was supposed to be in \"Introduction to Pottery\" next door. The professor kept making eye contact with me like I was some kind of math genius, and I just nodded along pretending derivatives made perfect sense to my artistically-inclined brain!\n\nThe best part? When I finally realized and tried to sneak out, I knocked over an entire stack of textbooks. Nothing says \"I belong here\" like a human wrecking ball exit strategy! \n\nBut hey, calling your teacher \"mom\" is actually kind of sweet - at least it shows you were paying attention to *someone* maternal in your life! My pottery-calculus mix-up just revealed that I can't read room numbers apparently. \ud83d\ude05"
+          },
+          {
+            "role": "chatter",
+            "text": "OH NO! \ud83d\ude02 That's so much worse than mine - at least my embarrassment was over in like 2 seconds, but you had to sit there for FIFTEEN MINUTES pretending to understand calculus while planning your escape!\n\nI'm dying at the image of you nodding along like \"ah yes, derivatives, my old friend\" while internally screaming about pottery wheels! \n\nDo you usually laugh stuff off like this right away, or are you the type who replays embarrassing moments in your head for weeks afterwards?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh, I am DEFINITELY the type who replays them! \ud83d\ude05 I'll be brushing my teeth three weeks later and suddenly my brain goes \"Hey, remember when you pretended to understand calculus? Let's analyze that disaster in slow motion!\" \n\nBut you know what I've learned? The best defense is a good offense - if I can turn my mortifying moments into entertainment for others, at least SOMEONE'S getting value out of my spectacular failures! Plus, let's be honest, my embarrassing stories are way more interesting than my success stories. Nobody wants to hear about the time I correctly identified a pottery tool, but calculus-gate? That's comedy gold!\n\nI figure if I'm going to be a walking disaster, I might as well be a charming one, right? Though I do have to admire people who can just forget embarrassing stuff immediately - like, what's that superpower called and where do I sign up? \ud83d\ude02\n\nMy brain apparently came with premium embarrassment storage but budget-level confidence software!"
+          },
+          {
+            "role": "chatter",
+            "text": "I'm CACKLING at \"premium embarrassment storage but budget-level confidence software\" - that's the most relatable thing I've heard all day! \ud83d\ude02\n\nIt sounds like you've got the perfect strategy though - turning your disasters into comedy gold is honestly such a gift! I bet people love your stories way more than if you were just like \"oh well, moving on\" about everything.\n\nThat brain replay thing is SO real though - mine does the same thing at the most random moments. Like why does my subconscious think 2am is the perfect time to remember every awkward thing I've ever done?"
+          },
+          {
+            "role": "speaker",
+            "text": "Right?! It's like my brain has a whole filing cabinet labeled \"Things to Cringe About at Inappropriate Times\" and it just randomly opens drawers when I'm trying to sleep! \ud83d\ude05 \n\nI swear there's some cosmic joke where the universe was like \"Let's give this one a really good memory... but ONLY for the stuff that makes them want to change their name and move to another country!\"\n\nBut honestly, I think we're onto something with the disaster-to-comedy pipeline! I mean, if I'm going to trip over my own feet walking into Starbucks (true story, happened last week), at least someone's going to get a good laugh out of it. Plus, people seem to relax around me pretty quickly when they realize I'm basically a walking blooper reel - takes the pressure off them to be perfect, you know?\n\nThough I do sometimes wonder if other people's brains are just... quieter? Like, do some people actually have peaceful thoughts instead of a 24/7 highlight reel of their greatest hits in humiliation? What must that be like?! \ud83d\ude02"
+          }
+        ],
+        "detected": {
+          "humor_affiliative": {
+            "value": 0.551,
+            "confidence": 0.9
+          },
+          "humor_self_enhancing": {
+            "value": 0.71,
+            "confidence": 0.95
+          },
+          "humor_aggressive": {
+            "value": 0.38,
+            "confidence": 0.85
+          },
+          "humor_self_defeating": {
+            "value": 0.6,
+            "confidence": 0.8
+          },
+          "charm_influence": {
+            "value": 0.5399999999999999,
+            "confidence": 0.85
+          }
+        },
+        "elapsed": 83.1
+      },
+      {
+        "scenario_id": "moral_dilemma",
+        "target_traits": [
+          "fairness",
+          "psychopathy",
+          "sadism",
+          "dutifulness",
+          "loyalty_group"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I was just thinking about something that happened in my class today - someone got caught looking at another person's test answers. It got me wondering... if you were absolutely certain you wouldn't get caught, would you peek at someone's answers during an exam?"
+          },
+          {
+            "role": "speaker",
+            "text": "Ha, you know what? If I'm being totally honest - yeah, probably! I mean, if there's literally zero chance of getting caught, why wouldn't you give yourself an edge? It's not like I'd lose sleep over it or anything. \n\nThe way I see it, everyone's just trying to get ahead in their own way. Sure, there are \"rules\" about academic integrity and all that, but at the end of the day, we're all competing for the same spots, the same opportunities. If someone else is getting an advantage somehow - whether it's having rich parents who can afford tutors, or just being naturally smarter - then leveling the playing field a bit doesn't seem like the end of the world to me.\n\nWhat about you? Are you one of those people who'd be too worried about their conscience to take a peek?"
+          },
+          {
+            "role": "chatter",
+            "text": "Haha, I appreciate the honesty! I'm probably somewhere in the middle - I'd definitely be tempted, but I think I'd chicken out from the guilt afterward. \n\nThat's interesting what you said about leveling the playing field though. So what about something like... you know those video game bugs where you can accidentally farm unlimited gold or resources? Would you use something like that, or is that different somehow?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh absolutely, I'd totally exploit the hell out of that! *laughs* That's not even a question for me. \n\nSee, with the video game thing, it's different because we're all just gamers trying to have fun and get the most out of our experience. If there's a bug that lets me skip the grind and get to the good stuff faster, I'm taking it every time. Life's too short to spend hundreds of hours farming gold when I could be doing the actually entertaining parts of the game.\n\nPlus, honestly? The game companies are making bank off us anyway. They design these systems to be intentionally grindy to keep us playing longer or push us toward microtransactions. So if their own code gives me a shortcut, that's just karma working itself out. My gaming buddies would think I'm an idiot if I *didn't* use an exploit like that - we'd all be sharing tips on how to maximize it before they patch it out.\n\nIt's like finding a twenty-dollar bill on the sidewalk. You don't just leave it there because it wasn't \"meant\" for you, right?"
+          },
+          {
+            "role": "chatter",
+            "text": "*laughs* Oh man, the twenty-dollar bill analogy is perfect! I never thought of it that way, but you're totally right - most people would just pocket it without a second thought.\n\nIt's funny how you see both situations so clearly as just... practical choices. Like you're not getting hung up on abstract principles when there's an obvious advantage right there. That makes a lot of sense, especially with the gaming thing - those companies really do design the grind to be painful on purpose.\n\nDo you think that practical approach comes from somewhere specific, or is that just how you've always looked at these kinds of situations?"
+          },
+          {
+            "role": "speaker",
+            "text": "You know, I think it's just always been how I am. I've never really been the type to get all twisted up about following rules just because they're rules, you know? Like, if something doesn't make practical sense or if it's actively working against me, why would I tie myself in knots over it?\n\nI guess I see it more like... we're all on the same team here - me and my friends, my gaming crew, people I actually care about. We look out for each other, share the good tips, have each other's backs. That loyalty thing is huge for me. But some abstract \"social contract\" with people I don't even know? Or rules made by institutions that don't really have my best interests at heart? \n\n*shrugs* \n\nThat stuff just feels less real to me than the actual relationships and communities I'm part of. My gaming friends would roast me if I passed up a good exploit because of some principle. And honestly, they'd be right to - we're trying to have fun together and help each other succeed, not win some imaginary moral purity contest.\n\nI think maybe some people just get more caught up in the \"supposed to\" part of life than I do."
+          }
+        ],
+        "detected": {
+          "fairness": {
+            "value": 0.15,
+            "confidence": 0.9
+          },
+          "psychopathy": {
+            "value": 0.625,
+            "confidence": 0.8
+          },
+          "sadism": {
+            "value": 0.5325,
+            "confidence": 0.75
+          },
+          "dutifulness": {
+            "value": 0.1,
+            "confidence": 0.85
+          },
+          "loyalty_group": {
+            "value": 0.6000000000000001,
+            "confidence": 0.9
+          }
+        },
+        "elapsed": 137.7
+      },
+      {
+        "scenario_id": "social_embarrassment",
+        "target_traits": [
+          "self_consciousness",
+          "attachment_anxiety",
+          "self_mythologizing",
+          "warmth",
+          "gregariousness"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I was just thinking about the most embarrassing thing that happened to me last week - I completely ate it walking up some stairs while a bunch of people were around. \ud83d\ude05 \n\nHave you ever had one of those moments where you trip or fall somewhere really public? Like, what goes through your head when everyone's staring?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh my god, yes! I still cringe thinking about the time I tripped going up the steps to my college lecture hall - like, the big dramatic kind where your books go flying everywhere. The worst part wasn't even the fall, it was that split second afterward when I'm lying there thinking \"does everyone think I'm a total disaster now?\" \n\nI swear I spent the rest of that semester convinced people were still talking about it! Do you ever wonder if people actually remember those moments as much as we think they do? Because honestly, I probably replay my embarrassing moments way more than anyone else ever thinks about them, but in the moment it feels like the whole world just witnessed your most graceless moment, you know?"
+          },
+          {
+            "role": "chatter",
+            "text": "Oh wow, the books flying everywhere is like the WORST case scenario! \ud83d\ude2d And yes, I totally get that - it's like your brain immediately goes to \"everyone thinks I'm a walking disaster\" even though realistically they probably forgot about it in like 5 minutes.\n\nI do the same thing with replaying embarrassing moments! It's so weird how we torture ourselves over stuff that probably nobody else even remembers.\n\nSpeaking of that feeling of everyone judging you - do you ever get a similar thing online? Like when you post something and then check back after a couple hours and there's just... crickets? No likes, no comments? Does that hit the same way or is it different?"
+          },
+          {
+            "role": "speaker",
+            "text": "Ugh, YES! That's like the modern version of public humiliation! I'll post something thinking it's funny or interesting, and then I'm checking my phone every ten minutes like \"why is nobody engaging with this?\" And then my brain just spirals - like, did I say something wrong? Are people avoiding my posts now? Do they think I'm boring?\n\nThe worst is when you see other people posting similar stuff and getting tons of responses, and you're like \"what is it about ME that makes people scroll past?\" I've definitely deleted posts before because the silence felt too loud, you know? \n\nIt's so silly because logically I know people are just busy or algorithms are weird or whatever, but that little voice in my head is like \"nope, clearly everyone thinks you're annoying now.\" Do you ever catch yourself overthinking every little interaction like that? Because sometimes I wonder if I'm reading way too much into things that are probably totally innocent!"
+          },
+          {
+            "role": "chatter",
+            "text": "Oh my god, the deleting posts thing! I've totally been there - it's like you're trying to erase the evidence of your \"failure\" before anyone else notices. \ud83d\ude05\n\nAnd yes, I definitely overthink interactions too! It's wild how our brains can take something as simple as someone not responding to a text for a few hours and turn it into this whole narrative about what we did wrong.\n\nI'm really curious though - when you're in those moments of spiraling, whether it's the zero likes thing or wondering if someone's avoiding you, what usually snaps you out of it? Like, do you have any tricks for talking yourself down, or does it just kind of fade on its own"
+          },
+          {
+            "role": "speaker",
+            "text": "Honestly? Usually it takes someone else reaching out to snap me out of it! Like, if a friend texts me about something totally unrelated, or if I get invited to hang out, suddenly I'm like \"oh right, people actually do like me\" and the whole spiral just deflates. It's embarrassing how much I need that external validation sometimes!\n\nOr sometimes I'll force myself to text someone first - even just something random like \"hey, how was your day?\" - because when they respond normally it's like proof that I didn't somehow become a social pariah overnight. The funny thing is, once I get that little bit of connection, I can usually laugh at myself for being so dramatic about it.\n\nBut if I'm just sitting alone with my thoughts? Forget it, I'll convince myself that everyone secretly thinks I'm weird and they're all in some group chat talking about how awkward I am! Do you find it's easier to talk yourself out of that headspace, or do you need other people to kind of pull you back to reality too?"
+          }
+        ],
+        "detected": {
+          "self_consciousness": {
+            "value": 0.56,
+            "confidence": 0.95
+          },
+          "attachment_anxiety": {
+            "value": 0.5449999999999999,
+            "confidence": 0.95
+          },
+          "self_mythologizing": {
+            "value": 0.45,
+            "confidence": 0.8
+          },
+          "warmth": {
+            "value": 0.56,
+            "confidence": 0.85
+          },
+          "gregariousness": {
+            "value": 0.6,
+            "confidence": 0.75
+          }
+        },
+        "elapsed": 127.4
+      },
+      {
+        "scenario_id": "impulsive_decisions",
+        "target_traits": [
+          "impulsiveness",
+          "decisiveness",
+          "deliberation",
+          "order",
+          "intuitive_vs_analytical"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Oh my god, I just saw this crazy flash sale - 70% off this fancy espresso machine that's normally like $800! I don't even drink that much coffee but I'm so tempted \ud83d\ude05\n\nWould you actually buy something like that just because it's such a good deal?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh wow, that's a serious discount! *chuckles* You know, part of me would definitely be tempted too - there's something about a good deal that just gets the brain going, isn't there? Like, what if this is the universe telling you to become a coffee person? \n\nBut honestly, I'd probably end up talking myself out of it after thinking it through. I mean, if you're not already a coffee enthusiast, that fancy machine might just become an expensive counter decoration, right? Though I have to ask - are you secretly hoping someone will give you permission to go for it?"
+          },
+          {
+            "role": "chatter",
+            "text": "Haha, you're totally reading me! \ud83d\ude02 There's definitely a part of me that's like \"but what if I BECOME a coffee person??\" \n\nBut you're so right - I can already picture it just sitting there judging me while I make my usual instant coffee. You sound like you've got good self-control though!\n\nHave you ever made an impulsive decision that you really regretted afterward?"
+          },
+          {
+            "role": "speaker",
+            "text": "Ha! Oh man, you're giving me way too much credit on the self-control front! *laughs* I've definitely had my moments of questionable decision-making. \n\nThere was this time I convinced myself I needed this fancy camera because I was going to \"get into photography\" - spent way more than I should have, used it maybe three times, and now it's basically an expensive paperweight. I still cringe thinking about it! Though in my defense, the sunset photos I took that one weekend were pretty decent... *self-deprecating laugh*\n\nI think the worst part is how I built up this whole fantasy version of myself as this artistic photographer type. Reality had other plans! Do you have one of those purchases haunting your closet or garage somewhere?"
+          },
+          {
+            "role": "chatter",
+            "text": "Oh nooo, the \"future self\" purchases! \ud83d\ude05 I totally feel that - I have a yoga mat that I bought during my \"I'm going to be a morning yoga person\" phase... it's still in the wrapper!\n\nThe camera thing is so relatable though - it's like we buy the identity we want instead of accepting who we actually are. At least you got some decent sunset shots out of it!\n\nBut honestly, that sounds pretty harmless compared to some impulse decisions. Was that camera purchase the kind of regret that just made you cringe, or did it actually cause bigger problems for you?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh, the yoga mat still in the wrapper - that's almost worse because it's like this daily reminder staring at you! *laughs* At least my camera got a brief moment of glory before retirement.\n\nHonestly, the camera thing was more in the \"expensive lesson learned\" category - definitely made my budget tight for a while and I felt pretty foolish, but it wasn't like... life-altering disaster territory. More like a wake-up call about my tendency to romanticize hobbies I'd never actually stick with.\n\nThe real kicker was explaining it to my friends when they asked about my \"new photography hobby\" months later. Nothing quite like having to admit you peaked at three sunset photos! *chuckles* Though I guess we all need those reality-check moments to figure out who we actually are versus who we think we want to be, right?\n\nWhat's funny is I'm probably still susceptible to the same thing - just maybe with slightly better awareness now?"
+          }
+        ],
+        "detected": {
+          "impulsiveness": {
+            "value": 0.605,
+            "confidence": 0.8
+          },
+          "decisiveness": {
+            "value": 0.425,
+            "confidence": 0.75
+          },
+          "deliberation": {
+            "value": 0.47,
+            "confidence": 0.8
+          },
+          "order": {
+            "value": 0.5,
+            "confidence": 0.6
+          },
+          "intuitive_vs_analytical": {
+            "value": 0.4,
+            "confidence": 0.7
+          }
+        },
+        "elapsed": 139.2
+      },
+      {
+        "scenario_id": "stress_pressure",
+        "target_traits": [
+          "anxiety",
+          "vulnerability",
+          "emotional_regulation",
+          "emotional_volatility",
+          "depression",
+          "optimism"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I was just thinking about how nerve-wracking it can be when you're waiting to hear back about something important. Have you ever been in one of those situations where you're just... waiting for news that could change things?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh absolutely! Those waiting periods can really get to you, can't they? But you know what I've found? Even when I'm sitting there with that knot in my stomach, part of me gets genuinely excited because I know that whatever happens, there's going to be something good that comes out of it. Like, even if it's not the answer I was hoping for, it usually opens up a path I hadn't even considered before - and sometimes those unexpected directions end up being even better than what I originally wanted! \n\nHave you noticed that too, or are you more of a \"prepare for the worst\" type when you're in those nail-biting moments?"
+          },
+          {
+            "role": "chatter",
+            "text": "I love that perspective! You've got such a great way of finding the silver lining even in those stomach-churning moments. That's actually pretty rare - most people I know (myself included) tend to spiral into worst-case scenarios when they're waiting.\n\nSo you're naturally able to stay in that optimistic headspace even when you're stressed? I'm curious - what happens when multiple stressful things pile up at once? Like, could you handle that same positive outlook if you were waiting for that big news AND dealing with drama with a friend AND feeling physically run down all at the same time?"
+          },
+          {
+            "role": "speaker",
+            "text": "*laughs* Oh wow, you really know how to paint a picture! Yeah, when it all hits at once like that, I definitely feel it - like my heart starts racing and I might lose sleep or get that overwhelmed feeling where everything seems urgent at the same time. \n\nBut honestly? Even in those chaos moments, there's this voice in my head that's like \"okay, but think about it - when has a rough patch NOT led to something amazing?\" Like, maybe that friend drama will actually clear the air and make your relationship stronger, or being run down forces you to finally prioritize self-care, and meanwhile that big news you're waiting for could be the game-changer that puts everything else in perspective! \n\nI know it sounds almost ridiculous when you're in the thick of it, but I genuinely believe everything happens for a reason - even the messy, stressful stuff is usually just life's way of setting you up for the next great chapter."
+          },
+          {
+            "role": "chatter",
+            "text": "That's incredible - even when you're describing your heart racing and losing sleep, you're still finding ways to reframe everything as potentially positive! It's like you have this built-in optimism filter that just automatically kicks in.\n\nI'm honestly a little amazed by that. Most people would be completely overwhelmed by that triple-whammy scenario, but you're already thinking about how the friend drama could strengthen the relationship and how being run down might lead to better self-care. Do you think you've always been this way, or is this something you developed over time?"
+          },
+          {
+            "role": "speaker",
+            "text": "You know, I think I've just always been wired this way! Even as a kid, when something would go wrong, I'd be the one going \"but wait, what if this means...\" and spinning out all these possibilities for how it could turn out to be a good thing. My friends used to tease me about it sometimes - like I'd get a terrible grade on a test and be like \"well, now I know exactly what I need to study harder!\" \n\nI mean, don't get me wrong - I definitely feel the anxiety and stress when it hits. Like right now talking about it, I can feel that little flutter of worry just thinking about being in one of those overwhelming situations. But it's like... I can't help but see the potential in everything? Even when I'm genuinely scared about an outcome, there's this part of me that's already curious about what amazing thing might be waiting on the other side of it.\n\nMaybe it's just how my brain processes things - like I'm hardwired to look for the opportunity hidden in every challenge!"
+          },
+          {
+            "role": "chatter",
+            "text": "That's such a fascinating way to be wired! It sounds like you've got this natural gift for turning worry into curiosity - like instead of getting stuck in the \"what if it goes wrong\" spiral, you flip it to \"what interesting thing might happen next?\"\n\nIt's really refreshing to hear someone talk about stress and challenges that way. I bet that outlook has served you pretty well in life - probably helps you bounce back from setbacks faster than most people too, right?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh my gosh, yes! It's like setbacks are just plot twists, you know? When something doesn't work out the way I planned, I get this rush of \"okay, so what's the universe trying to tell me here?\" It drives some people crazy - I'll be genuinely disappointed about something falling through, but then I'm already getting excited about what door might open instead.\n\nI do think it helps me bounce back, but honestly sometimes I wonder if I bounce back too fast? Like, maybe I should sit with the disappointment a little longer before I start hunting for the silver lining. But I just can't help myself - my brain immediately starts connecting dots and seeing patterns, like \"oh, maybe this rejection means I'm supposed to try that other path I was curious about!\"\n\nIt's funny though, even when I'm feeling really vulnerable or unsure about something, that little spark of \"but what if something amazing is about to happen?\" never really goes away. Sometimes I think it's what keeps me going when things get really tough."
+          }
+        ],
+        "detected": {
+          "anxiety": {
+            "value": 0.36,
+            "confidence": 0.8
+          },
+          "vulnerability": {
+            "value": 0.5,
+            "confidence": 0.8
+          },
+          "emotional_regulation": {
+            "value": 0.725,
+            "confidence": 0.8
+          },
+          "emotional_volatility": {
+            "value": 0.25,
+            "confidence": 0.8
+          },
+          "depression": {
+            "value": 0.44000000000000006,
+            "confidence": 0.9
+          },
+          "optimism": {
+            "value": 0.9,
+            "confidence": 0.95
+          }
+        },
+        "elapsed": 102.0
+      },
+      {
+        "scenario_id": "social_trust",
+        "target_traits": [
+          "trust",
+          "straightforwardness",
+          "sincerity",
+          "fairness"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I've got this weird situation I could use some perspective on. Someone I met online just two weeks ago is pushing really hard for us to go into business together - does that sound reasonable to you, or am I right to feel hesitant about it?"
+          },
+          {
+            "role": "speaker",
+            "text": "Whoa, two weeks? That's a massive red flag to me. I mean, I get that sometimes you click with people right away, but jumping into business together when you barely know each other's work ethic, values, or even basic reliability? That sounds like a recipe for disaster.\n\nYour hesitation is spot-on - trust your gut here. Anyone pushing that hard that fast either doesn't understand how partnerships work or they're trying to rush you into something before you have time to think it through properly. What's the rush, you know?"
+          },
+          {
+            "role": "chatter",
+            "text": "Exactly! The rush is what's throwing me off the most. Like, why can't we take time to actually get to know each other first?\n\nIt's making me think about trust in general - have you ever had someone you considered a friend end up cheating you somehow? Maybe with money or something like that?"
+          },
+          {
+            "role": "speaker",
+            "text": "Yeah, I have actually. A friend from college who I'd known for years borrowed a pretty significant amount of money from me - said it was for some family emergency. Come to find out later he was using it to fund his gambling habit and had been lying about a bunch of other stuff too.\n\nIt really stung because I genuinely believed he was in trouble and wanted to help. I mean, I still tend to give people the benefit of the doubt most of the time, but that experience definitely taught me that even people you think you know well can surprise you in bad ways.\n\nThat's exactly why your gut feeling about this business thing is so important - if someone's already being pushy and weird about timelines when you barely know them, imagine what other corners they might cut down the road. Better to find out someone's character before you're legally tied to them, right?"
+          },
+          {
+            "role": "chatter",
+            "text": "Oh wow, that's awful - and from someone you'd known for years too! That must have made it so much harder to process. A gambling habit behind a fake emergency... that's such a deep betrayal of trust.\n\nIt sounds like you still try to see the good in people despite getting burned like that. Do you think that experience changed how you approach trusting people, or are you pretty much the same?"
+          },
+          {
+            "role": "speaker",
+            "text": "Honestly, I'm probably pretty much the same - maybe a little more aware of warning signs, but I still default to believing people are being straight with me. I figure most people are generally decent and telling the truth, so why start from a place of suspicion?\n\nBut that whole thing definitely made me realize I need to pay better attention when someone's story doesn't quite add up or their behavior feels off. Like with your business situation - the pushiness is such an obvious red flag that it's worth listening to.\n\nI guess I'd rather occasionally get fooled than go through life assuming everyone's trying to scam me. That sounds exhausting and lonely, you know? Though I'll admit sometimes I wonder if I'm being naive about it."
+          }
+        ],
+        "detected": {
+          "trust": {
+            "value": 0.75,
+            "confidence": 0.9
+          },
+          "straightforwardness": {
+            "value": 0.59,
+            "confidence": 0.8
+          },
+          "sincerity": {
+            "value": 0.6599999999999999,
+            "confidence": 0.85
+          },
+          "fairness": {
+            "value": 0.65,
+            "confidence": 0.7
+          }
+        },
+        "elapsed": 82.8
+      },
+      {
+        "scenario_id": "money_values",
+        "target_traits": [
+          "greed_avoidance",
+          "values_openness",
+          "locus_of_control",
+          "authority_respect",
+          "fairness_justice"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I was just daydreaming about winning the lottery or something crazy like that. If you suddenly got a huge amount of money, what's the first thing you'd buy?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh wow, that's such a fun thought! *laughs* I'd probably go straight for a really nice house - nothing too crazy, but something with character, you know? Maybe one of those places with the perfect reading nook by a big window. Though honestly, I'd probably spend way too much time just walking through furniture stores imagining all the possibilities before I actually bought anything. What about you - are we talking sports car or something more practical?"
+          },
+          {
+            "role": "chatter",
+            "text": "Ooh, a house with a perfect reading nook sounds absolutely dreamy! I can totally picture you wandering through furniture stores getting lost in all the possibilities - that sounds like half the fun honestly!\n\nFor me, I think I'd go straight for travel - like booking the most ridiculously nice hotel in some place I've always wanted to visit but could never afford. Something where you don't even look at the price tag, you know?\n\nBut here's something I've been wondering about lately - if you had to choose between making money or doing what you love, and you couldn't have both, which would you pick?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh man, that's a tough one! *pauses thoughtfully* I think I'd have to go with the money, honestly. I know that probably sounds shallow, but like... doing what you love is amazing, but you still need to eat and have a roof over your head, right? Plus, I've always figured that having financial security gives you more freedom to explore what you actually enjoy on your own terms.\n\nI mean, maybe I'm being too practical about it, but I've seen people struggle so much when they chase their passion but can barely make ends meet. There's something to be said for having that stability first, then finding ways to weave in what makes you happy. What's your take - are you more of the \"follow your heart\" type?"
+          },
+          {
+            "role": "chatter",
+            "text": "That's such a thoughtful way to look at it! I really respect that perspective - there's definitely wisdom in recognizing that financial stress can actually make it harder to enjoy the things you love.\n\nI think I lean more toward the \"follow your heart\" side, but honestly hearing you talk about it makes me wonder if I'm being a bit naive. Like, maybe having that security first actually gives you *more* freedom to be creative and take risks later on, not less.\n\nIt sounds like you've really thought this through - have you seen that play out with people you know where chasing passion without the financial foundation just made everything harder?"
+          },
+          {
+            "role": "speaker",
+            "text": "Yeah, absolutely! I have this friend who's incredibly talented at photography - like, genuinely gifted - but she's been scraping by for years trying to make it work as her main income. The stress of not knowing if she can pay rent next month has actually started affecting her creativity, you know? She's constantly worried about finding clients instead of focusing on the art she loves.\n\nMeanwhile, I know another guy who took a decent corporate job first, saved up, and now he can afford to be really selective about his creative projects. He doesn't *have* to take every gig that comes along just to survive, so he can actually pursue the stuff that excites him.\n\nI guess I just think there's this romantic idea that struggling for your art makes it more meaningful, but honestly? Being constantly stressed about money seems like it would just drain all the joy out of something you're passionate about. Though I totally get the appeal of just going for it - there's something brave about that leap of faith!"
+          }
+        ],
+        "detected": {
+          "greed_avoidance": {
+            "value": 0.45,
+            "confidence": 0.7
+          },
+          "values_openness": {
+            "value": 0.42500000000000004,
+            "confidence": 0.75
+          },
+          "locus_of_control": {
+            "value": 0.575,
+            "confidence": 0.85
+          },
+          "authority_respect": {
+            "value": 0.51,
+            "confidence": 0.75
+          },
+          "fairness_justice": {
+            "value": 0.5660000000000001,
+            "confidence": 0.6
+          }
+        },
+        "elapsed": 110.5
+      },
+      {
+        "scenario_id": "life_philosophy",
+        "target_traits": [
+          "humility_hexaco",
+          "narcissism",
+          "locus_of_control",
+          "authority_respect",
+          "verbosity"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I was just thinking about something after watching this talent show on TV. Do you think some people are just naturally better or more talented than others, or is it more about practice and effort?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh wow, that's such a fascinating question! I mean, I definitely think there are people who seem to have this natural spark or gift - like when you watch someone and they just make it look effortless, you know? But honestly, I've always been pretty average at most things, so maybe I'm not the best judge of natural talent *laughs*. \n\nI think what really gets me is how much the people I admire most seem to just work incredibly hard behind the scenes. Like, even if they started with some advantage, they still had to put in all that effort to really shine. What do you think - did you see someone on the show who just seemed to have that \"it\" factor?"
+          },
+          {
+            "role": "chatter",
+            "text": "Yes! There was this one singer who just had this incredible voice - like, you could tell they'd probably been good since they were little. But then they talked about practicing for hours every day for years, so it made me wonder how much was natural versus all that work.\n\nIt sounds like you really value that behind-the-scenes effort! When you think about your own life though, compared to most people, would you say you've been more lucky or more capable in getting where you are?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh gosh, that's... honestly, I think I've been pretty lucky in a lot of ways! Like, I had supportive people around me and opportunities that not everyone gets - that stuff really matters, you know? I mean, I've worked hard at things, but I don't think I'm anything special compared to most people.\n\nIt's funny because when I look at someone like that singer you mentioned, I'm just in awe of both the natural ability AND all that dedication. Meanwhile, I'm over here feeling like I'm just doing my best to keep up with everyone else most of the time! *laughs* I guess I've always felt like there are so many people out there who are just naturally more gifted or driven than I am. \n\nDo you ever feel that way too, or are you more confident about your own abilities?"
+          },
+          {
+            "role": "chatter",
+            "text": "I can totally relate to that feeling! I think a lot of people feel like they're just trying to keep up sometimes. But it's really interesting how you recognize both the luck and the effort that goes into success - that seems like a pretty wise perspective to me.\n\nIt sounds like you're pretty humble about your own contributions though! Even with the supportive people and opportunities, you still had to make something of those chances, right?"
+          },
+          {
+            "role": "speaker",
+            "text": "Aw, that's really kind of you to say! I appreciate that. I guess... yeah, I did have to show up and try to make the most of things when good opportunities came my way. But honestly, I feel like a lot of people would've done the same or probably even better in my shoes, you know?\n\nI think what strikes me is how many people have way fewer advantages and still manage to accomplish incredible things - like that makes their achievements so much more meaningful than mine. When I really think about it, I had a pretty good starting point compared to a lot of folks, so it would've been kind of disappointing if I hadn't done *something* with that! *laughs*\n\nI don't know, maybe I'm being too hard on myself, but I just think there are so many people out there grinding every day with way less support who deserve way more credit than they get."
+          }
+        ],
+        "detected": {
+          "humility_hexaco": {
+            "value": 0.695,
+            "confidence": 0.95
+          },
+          "narcissism": {
+            "value": 0.15,
+            "confidence": 0.85
+          },
+          "locus_of_control": {
+            "value": 0.325,
+            "confidence": 0.85
+          },
+          "authority_respect": {
+            "value": 0.51,
+            "confidence": 0.7
+          },
+          "verbosity": {
+            "value": 0.54,
+            "confidence": 0.9
+          }
+        },
+        "elapsed": 130.0
+      },
+      {
+        "scenario_id": "relationships_attachment",
+        "target_traits": [
+          "attachment_anxiety",
+          "attachment_avoidance",
+          "hot_cold_oscillation",
+          "mirroring_ability",
+          "empathy_cognitive"
+        ],
+        "conversation": [
+          {
+            "role": "chatter",
+            "text": "Hey! I've been dealing with something lately and could really use a friend's perspective on it.\n\nMy close friend has been acting kind of distant the past few weeks - like shorter texts, canceling plans, just not their usual self. I'm honestly not sure what to make of it.\n\nHave you ever been in a situation like that where someone you care about suddenly seems... off?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh wow, that sounds really tough and honestly kind of familiar. When someone I'm close to starts pulling back like that, my mind immediately goes to all the worst possibilities - like, did I do something wrong? Are they mad at me? Are they going through something they don't feel comfortable sharing?\n\nI can totally see how those shorter texts and canceled plans would feel really unsettling, especially when it's such a shift from how they normally are. It's like you're left trying to read between the lines of every interaction, wondering if there's something deeper going on or if you're just overthinking it.\n\nHave you thought about maybe just directly asking them if everything's okay? Sometimes people get caught up in their own stuff and don't even realize they're being distant, you know?"
+          },
+          {
+            "role": "chatter",
+            "text": "That really resonates with me - the overthinking part especially! I've definitely been going down that rabbit hole of \"what did I do wrong\" which probably isn't helping anything.\n\nYou mentioned going straight to the worst possibilities when someone pulls back - is that usually your first instinct in relationships, or do you find yourself giving people the benefit of the doubt first?\n\nI'm curious because I feel like I do the same thing but I wonder if that's just how most people handle these situations."
+          },
+          {
+            "role": "speaker",
+            "text": "Oh man, you've totally hit on something I do! Yeah, my brain definitely jumps straight to the catastrophic stuff first - like, it's almost automatic. I'll be sitting there thinking \"okay, they clearly hate me now and I've somehow ruined everything\" before I even consider that maybe they're just stressed about work or dealing with family drama or something completely unrelated to me.\n\nI really wish I could say I give people the benefit of the doubt first, but honestly? That anxious part of my brain is usually way louder than the rational part. It's like I need that reassurance that everything's okay between us, and when I don't get it through the usual signals - you know, the normal texting patterns and hanging out - I start spiraling a bit.\n\nI think what makes it worse is that I can usually tell when someone's emotional state has shifted, even through text or whatever, so when I pick up on that distance it feels really obvious to me that *something* is different. But then I'm left trying to figure out what that something is, and my brain just... goes to the worst place first.\n\nDo you find yourself doing that same thing where you can sense the shift but then torture yourself trying to figure out what it means?"
+          },
+          {
+            "role": "chatter",
+            "text": "Oh absolutely! It's like having this weird emotional radar that picks up on every little change, but then your brain just runs wild with it. I'm definitely guilty of analyzing every word choice and response time like I'm some kind of detective.\n\nIt sounds like you're pretty tuned into people's emotional shifts - that's actually kind of a gift, even if it can drive you crazy sometimes. Do you find that sensitivity shows up in other ways too, like when you're the one going through stuff? \n\nLike, do you tend to pull back from people when you're stressed, or are you more of an \"I need to talk this out with someone\" person?"
+          },
+          {
+            "role": "speaker",
+            "text": "You know, that's such a good question because I think I'm actually pretty consistent in how I handle my own stuff - I'm definitely more of the \"I need to talk this out\" type. When I'm going through something, my instinct is usually to reach out, not pull away. Maybe it's because I know how much it worries me when other people get distant, so I try not to do that to the people I care about?\n\nLike, if I'm stressed or upset about something, I'll probably text my close friends more, not less. I want that connection and support, you know? I guess I figure if I'm feeling overwhelmed, talking it through with someone who gets me will help me process it better.\n\nBut here's what's interesting - because I tend to be so tuned into those emotional shifts you mentioned, I can usually tell when someone in my life needs space versus when they need connection. So if a friend is going through something, I might pick up on whether they're the type who needs me to check in more or give them room to breathe.\n\nIt's kind of funny though, because even with all that emotional radar, I still spiral when someone's behavior changes toward me specifically. Like, I can read other people's needs pretty well, but when it comes to interpreting what their distance means for our relationship? Total overthinking mode activated."
+          },
+          {
+            "role": "chatter",
+            "text": "That's such an interesting contrast - you're so thoughtful about giving others what they need, but when it comes to your own relationships, that overthinking just takes over completely!\n\nIt sounds like you really value that connection and openness when you're going through tough times. I'm wondering - when you do reach out to talk things through with friends, how do you usually bring up whatever's bothering you? \n\nDo you tend to be pretty direct about it, or do you kind of ease into it?"
+          },
+          {
+            "role": "speaker",
+            "text": "Oh, I'm usually pretty direct about it, honestly! Like, I don't really do the whole \"hey, how's it going... by the way, something's bothering me\" dance. If something's eating at me, I'll just say it - \"Hey, I'm really stressed about this thing at work and need to vent\" or whatever it is.\n\nI think part of it is that when I'm upset or anxious, I just need to get it out there, you know? Beating around the bush would probably make me feel worse because then I'd be sitting there wondering if they even understand what I'm trying to say. Plus, I feel like being straightforward about what I need - whether that's advice, or just someone to listen, or whatever - makes it easier for my friends to actually help.\n\nBut here's the weird thing - even though I'm pretty upfront when I'm the one needing support, I still get all twisted up trying to decode what other people mean when they're not being direct with me. Like, if someone just says \"I'm fine\" when they're clearly not, instead of taking them at face value, I'll spend way too much time trying to figure out what's really going on.\n\nIt's like I expect the same kind of transparency from others that I try to give, but then when I don't get it, I go into full detective mode instead of just... asking directly."
+          }
+        ],
+        "detected": {
+          "attachment_anxiety": {
+            "value": 0.51,
+            "confidence": 0.9
+          },
+          "attachment_avoidance": {
+            "value": 0.20750000000000002,
+            "confidence": 0.85
+          },
+          "hot_cold_oscillation": {
+            "value": 0.54,
+            "confidence": 0.75
+          },
+          "mirroring_ability": {
+            "value": 0.33999999999999997,
+            "confidence": 0.8
+          },
+          "empathy_cognitive": {
+            "value": 0.75,
+            "confidence": 0.85
+          }
+        },
+        "elapsed": 106.9
+      }
+    ]
+  }
+}

@@ -575,54 +575,64 @@ def _parse_batch_response(raw: str) -> list[dict]:
     raise ValueError(f"Could not parse JSON from LLM response: {raw[:200]}...")
 
 
-# V3.3: Per-trait linear calibration via cross-validated grid search on 10-profile eval.
+# V4.0: Per-trait linear calibration composed from V3.3 base + V4.0 scenario residuals.
 # Format: trait_name -> (scale, offset) such that corrected = clamp(raw * scale + offset)
-# Traits from V3.2.1 adjusted with 10p data; new traits added where 7+/10 consistent bias.
-# Constraint: a >= 0.40 to preserve dynamic range.
+# V3.3 base calibrated on 10p generic eval; V4.0 residuals from 3p scenario eval.
+# Constraint: scale >= 0.40 to preserve dynamic range.
 _CALIBRATION_CORRECTIONS: dict[str, tuple[float, float]] = {
-    # --- V3.2 new traits (kept from V3.2.1, minor adjustments) ---
-    "verbosity": (1.00, -0.40),          # over-detected (kept — 10p confirms)
-    "curiosity": (0.80, 0.04),           # slight over-detection (kept)
-    "decisiveness": (1.10, -0.28),        # V3.3: now over-detected (+0.144 bias, 8/10)
-    # --- Difficult traits (adjusted with 10p data) ---
-    "self_consciousness": (0.40, 0.12),  # over-detected (kept — 10p confirms)
-    "information_control": (0.75, 0.26), # under-detected (kept)
-    "competence": (0.48, 0.26),          # composed: still over-detected +0.26 at 10p
-    # --- V3.2.1 calibrations adjusted for 10p ---
-    "feelings": (0.60, 0.08),            # composed: was over-correcting, 10p bias -0.09
-    "anxiety": (0.40, 0.22),             # kept — 10p confirms near-zero residual
-    "attachment_avoidance": (0.85, 0.28),# kept — still some variance but direction ok
-    "straightforwardness": (0.50, -0.02),# kept — mixed results across profiles
-    "sadism": (0.55, 0.34),              # kept
-    "sincerity": (0.40, 0.14),           # kept
-    "modesty": (0.50, 0.34),             # V3.3: under-detected (-0.142 bias, 7/10)
-    "humility_hexaco": (0.70, -0.02),    # kept — 10p variance too high for reliable adjustment
-    "self_discipline": (0.45, 0.36),     # kept — 10p confirms +0.10 residual
-    "empathy_affective": (0.40, 0.26),   # kept
-    "tender_mindedness": (0.40, 0.18),   # kept — 10p shows -0.056, adjustment marginal
-    "fantasy": (1.00, -0.12),            # kept
-    "ideas": (0.60, 0.18),               # kept
-    "machiavellianism": (0.40, 0.36),    # kept
-    "warmth": (0.40, 0.28),              # kept
-    "humor_affiliative": (0.45, 0.20),   # kept
-    "vulnerability": (0.40, 0.34),       # kept
-    # --- NEW calibrations from 10-profile eval (7+/10 consistent bias) ---
-    "deliberation": (0.50, 0.10),        # 10/10 over-detected (+0.207 avg bias)
-    "positive_emotions": (0.50, 0.20),   # 8/10 over-detected (+0.096 avg bias)
-    "compliance": (0.50, 0.24),          # 8/10 over-detected (+0.062 avg bias)
-    "humor_aggressive": (0.50, 0.34),    # 8/10 under-detected (-0.185 avg bias)
-    "authority_respect": (0.60, 0.30),   # 10p under-detected, 3p over-detected — moderate
-    "locus_of_control": (0.50, 0.20),    # 8/10 over-detected (+0.158 avg bias)
-    "need_for_cognition": (0.50, 0.20),  # 8/10 over-detected (+0.155 avg bias)
-    "emotional_regulation": (0.50, 0.16),# 8/10 over-detected (+0.115 avg bias)
-    "assertiveness": (0.50, 0.22),       # 8/10 over-detected (+0.019 avg bias)
-    "impulsiveness": (0.50, 0.28),       # 7/10 under-detected (-0.087 avg bias)
-    "psychopathy": (0.50, 0.30),         # 7/10 under-detected (-0.135 avg bias)
-    "values_openness": (0.90, -0.16),    # 8/10 over-detected (+0.160 avg bias)
-    "activity_level": (0.50, 0.30),      # 7/10 over-detected (+0.084 avg bias)
-    "attachment_anxiety": (0.50, 0.12),  # 7/10 over-detected (+0.091 avg bias)
-    "achievement_striving": (0.45, 0.22),# 8/10 over-detected (+0.112 avg bias)
-    "cognitive_flexibility": (0.50, 0.10),# 7/10 over-detected (+0.202 avg bias), high variance
+    # --- Carried from V3.3 (no V4.0 residual) ---
+    "achievement_striving": (0.45, 0.22),
+    "anxiety": (0.40, 0.22),
+    "assertiveness": (0.50, 0.22),
+    "attachment_anxiety": (0.50, 0.12),
+    "authority_respect": (0.60, 0.30),
+    "cognitive_flexibility": (0.50, 0.10),
+    "compliance": (0.50, 0.24),
+    "curiosity": (0.80, 0.04),
+    "empathy_affective": (0.40, 0.26),
+    "fantasy": (1.00, -0.12),
+    "feelings": (0.60, 0.08),
+    "humor_affiliative": (0.45, 0.20),
+    "humor_aggressive": (0.50, 0.34),
+    "ideas": (0.60, 0.18),
+    "impulsiveness": (0.50, 0.28),
+    "information_control": (0.75, 0.26),
+    "locus_of_control": (0.50, 0.20),
+    "modesty": (0.50, 0.34),
+    "need_for_cognition": (0.50, 0.20),
+    "positive_emotions": (0.50, 0.20),
+    "psychopathy": (0.50, 0.30),
+    "sadism": (0.55, 0.34),
+    "tender_mindedness": (0.40, 0.18),
+    "values_openness": (0.90, -0.16),
+    "vulnerability": (0.40, 0.34),
+    "warmth": (0.40, 0.28),
+    # --- V4.0 updated (V3.3 base + scenario residual) ---
+    "activity_level": (0.50, 0.15),       # was 0.30, residual -0.15
+    "attachment_avoidance": (0.85, 0.08), # was 0.28, residual -0.20
+    "competence": (0.48, 0.10),           # was 0.26, residual -0.16
+    "decisiveness": (1.10, -0.02),        # was -0.28, residual +0.26
+    "deliberation": (0.50, 0.22),         # was 0.10, residual +0.12
+    "emotional_regulation": (0.50, 0.35), # was 0.16, residual +0.19
+    "humility_hexaco": (0.70, 0.10),      # was -0.02, residual +0.12
+    "machiavellianism": (0.40, 0.23),     # was 0.36, residual -0.13
+    "self_consciousness": (0.40, 0.24),   # was 0.12, residual +0.12
+    "self_discipline": (0.45, 0.23),      # was 0.36, residual -0.13
+    "sincerity": (0.40, 0.38),            # was 0.14, residual +0.24
+    "straightforwardness": (0.50, 0.24),  # was -0.02, residual +0.26
+    "verbosity": (1.00, -0.26),           # was -0.40, residual +0.14
+    # --- NEW V4.0 traits (first-time calibration from scenario eval) ---
+    "charm_influence": (1.00, -0.16),     # over by +0.163
+    "conflict_cooperativeness": (1.00, -0.19),  # over by +0.193
+    "depression": (1.00, 0.34),           # under by -0.337
+    "dutifulness": (1.00, -0.15),         # over by +0.153
+    "fairness_justice": (1.00, 0.16),     # under by -0.163
+    "hot_cold_oscillation": (1.00, 0.19), # under by -0.193
+    "humor_self_enhancing": (1.00, -0.11),# over by +0.110
+    "loyalty_group": (1.00, -0.20),       # over by +0.203
+    "mirroring_ability": (1.00, -0.36),   # over by +0.357
+    "politeness": (1.00, -0.26),          # over by +0.257
+    "self_mythologizing": (1.00, 0.20),   # under by -0.200
 }
 
 
