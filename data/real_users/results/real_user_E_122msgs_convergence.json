@@ -1,0 +1,48 @@
+{
+  "user": "real_user_E_122msgs",
+  "total_msgs": 117,
+  "segment_size": 25,
+  "convergence": [
+    {
+      "checkpoint": 0,
+      "cumulative_msgs": 25,
+      "pct": 21.4,
+      "mae_vs_v41_full": 0.071,
+      "profile_delta": 0.0,
+      "elapsed": 170.8
+    },
+    {
+      "checkpoint": 1,
+      "cumulative_msgs": 50,
+      "pct": 42.7,
+      "mae_vs_v41_full": 0.056,
+      "profile_delta": 0.0706,
+      "elapsed": 180.5
+    },
+    {
+      "checkpoint": 2,
+      "cumulative_msgs": 75,
+      "pct": 64.1,
+      "mae_vs_v41_full": 0.064,
+      "profile_delta": 0.0457,
+      "elapsed": 198.2
+    },
+    {
+      "checkpoint": 3,
+      "cumulative_msgs": 100,
+      "pct": 85.5,
+      "mae_vs_v41_full": 0.066,
+      "profile_delta": 0.0621,
+      "elapsed": 182.7
+    },
+    {
+      "checkpoint": 4,
+      "cumulative_msgs": 117,
+      "pct": 100.0,
+      "mae_vs_v41_full": 0.055,
+      "profile_delta": 0.0545,
+      "elapsed": 211.3
+    }
+  ],
+  "final_mae": 0.055
+}

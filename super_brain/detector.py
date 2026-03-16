@@ -415,12 +415,14 @@ def _get_traits_for_batch(batch_dims: list[str]) -> list[dict]:
 class Detector:
     """Detect personality traits from text using Claude."""
 
-    def __init__(self, api_key: str, model: str = "claude-sonnet-4-20250514"):
+    def __init__(self, api_key: str, model: str = "claude-sonnet-4-20250514",
+                 temperature: float = 0.0):
         kwargs: dict = {"api_key": api_key}
         if api_key.startswith("sk-or-"):
             kwargs["base_url"] = "https://openrouter.ai/api"
         self._client = anthropic.Anthropic(**kwargs)
         self._model = model
+        self._temperature = temperature
 
     def analyze(
         self,
@@ -480,6 +482,7 @@ class Detector:
                 response = retry_api_call(lambda: self._client.messages.create(
                     model=self._model,
                     max_tokens=8192,
+                    temperature=self._temperature,
                     system=_SYSTEM_PROMPT,
                     messages=[{"role": "user", "content": user_message}],
                 ))
@@ -490,6 +493,7 @@ class Detector:
                     response = retry_api_call(lambda: self._client.messages.create(
                         model=self._model,
                         max_tokens=8192,
+                        temperature=self._temperature,
                         system=_SYSTEM_PROMPT,
                         messages=[{"role": "user", "content": user_message}],
                     ))

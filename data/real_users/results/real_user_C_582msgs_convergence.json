@@ -1,0 +1,104 @@
+{
+  "user": "real_user_C_582msgs",
+  "total_msgs": 552,
+  "segment_size": 50,
+  "convergence": [
+    {
+      "checkpoint": 0,
+      "cumulative_msgs": 50,
+      "pct": 9.1,
+      "mae_vs_v41_full": 0.095,
+      "profile_delta": 0.0,
+      "elapsed": 187.9
+    },
+    {
+      "checkpoint": 1,
+      "cumulative_msgs": 100,
+      "pct": 18.1,
+      "mae_vs_v41_full": 0.09,
+      "profile_delta": 0.0662,
+      "elapsed": 217.0
+    },
+    {
+      "checkpoint": 2,
+      "cumulative_msgs": 150,
+      "pct": 27.2,
+      "mae_vs_v41_full": 0.077,
+      "profile_delta": 0.0543,
+      "elapsed": 236.8
+    },
+    {
+      "checkpoint": 3,
+      "cumulative_msgs": 200,
+      "pct": 36.2,
+      "mae_vs_v41_full": 0.076,
+      "profile_delta": 0.0673,
+      "elapsed": 201.5
+    },
+    {
+      "checkpoint": 4,
+      "cumulative_msgs": 250,
+      "pct": 45.3,
+      "mae_vs_v41_full": 0.093,
+      "profile_delta": 0.0855,
+      "elapsed": 233.1
+    },
+    {
+      "checkpoint": 5,
+      "cumulative_msgs": 300,
+      "pct": 54.3,
+      "mae_vs_v41_full": 0.059,
+      "profile_delta": 0.0755,
+      "elapsed": 213.6
+    },
+    {
+      "checkpoint": 6,
+      "cumulative_msgs": 350,
+      "pct": 63.4,
+      "mae_vs_v41_full": 0.08,
+      "profile_delta": 0.0767,
+      "elapsed": 208.5
+    },
+    {
+      "checkpoint": 7,
+      "cumulative_msgs": 400,
+      "pct": 72.5,
+      "mae_vs_v41_full": 0.055,
+      "profile_delta": 0.0672,
+      "elapsed": 215.0
+    },
+    {
+      "checkpoint": 8,
+      "cumulative_msgs": 450,
+      "pct": 81.5,
+      "mae_vs_v41_full": 0.056,
+      "profile_delta": 0.0473,
+      "elapsed": 202.6
+    },
+    {
+      "checkpoint": 9,
+      "cumulative_msgs": 500,
+      "pct": 90.6,
+      "mae_vs_v41_full": 0.076,
+      "profile_delta": 0.0676,
+      "elapsed": 207.2
+    },
+    {
+      "checkpoint": 10,
+      "cumulative_msgs": 550,
+      "pct": 99.6,
+      "mae_vs_v41_full": 0.067,
+      "profile_delta": 0.0736,
+      "elapsed": 206.4
+    },
+    {
+      "checkpoint": 11,
+      "cumulative_msgs": 552,
+      "pct": 100.0,
+      "mae_vs_v41_full": 0.049,
+      "profile_delta": 0.0621,
+      "elapsed": 196.1
+    }
+  ],
+  "final_mae": 0.049
+}

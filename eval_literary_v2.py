@@ -30,12 +30,22 @@ from super_brain.behavioral_features import (
 from super_brain.literary import segment_dialogue, compute_mae
 
 
-CHARACTERS = ["scarlett", "sherlock", "elizabeth"]
+CHARACTERS = [
+    "scarlett", "sherlock", "elizabeth",
+    "darcy", "watson", "hamlet", "jane_eyre", "scrooge", "ahab", "huck",
+]
 
 CHARACTER_NAMES = {
     "scarlett": "Scarlett",
     "sherlock": "Holmes",
     "elizabeth": "Elizabeth",
+    "darcy": "Darcy",
+    "watson": "Watson",
+    "hamlet": "Hamlet",
+    "jane_eyre": "Jane",
+    "scrooge": "Scrooge",
+    "ahab": "Ahab",
+    "huck": "Huck",
 }
 
 # GT source weights
