@@ -1,0 +1,102 @@
+{
+  "character": "scrooge",
+  "total_quotes": 151,
+  "total_checkpoints": 7,
+  "segment_size": 25,
+  "gt_sources": [
+    "gt_v41",
+    "gt_llm",
+    "gt_crowd"
+  ],
+  "convergence": [
+    {
+      "checkpoint": 0,
+      "cumulative_quotes": 25,
+      "pct_dialogue": 16.6,
+      "mae_vs_composite": 0.155,
+      "mae_vs_v41_full": 0.133,
+      "mae_vs_gt_llm": 0.198,
+      "mae_vs_gt_crowd": 0.2,
+      "profile_delta": 0.0,
+      "elapsed": 181.8
+    },
+    {
+      "checkpoint": 1,
+      "cumulative_quotes": 50,
+      "pct_dialogue": 33.1,
+      "mae_vs_composite": 0.152,
+      "mae_vs_v41_full": 0.136,
+      "mae_vs_gt_llm": 0.196,
+      "mae_vs_gt_crowd": 0.198,
+      "profile_delta": 0.0384,
+      "elapsed": 191.6
+    },
+    {
+      "checkpoint": 2,
+      "cumulative_quotes": 75,
+      "pct_dialogue": 49.7,
+      "mae_vs_composite": 0.137,
+      "mae_vs_v41_full": 0.1,
+      "mae_vs_gt_llm": 0.189,
+      "mae_vs_gt_crowd": 0.206,
+      "profile_delta": 0.0682,
+      "elapsed": 207.6
+    },
+    {
+      "checkpoint": 3,
+      "cumulative_quotes": 100,
+      "pct_dialogue": 66.2,
+      "mae_vs_composite": 0.146,
+      "mae_vs_v41_full": 0.097,
+      "mae_vs_gt_llm": 0.201,
+      "mae_vs_gt_crowd": 0.219,
+      "profile_delta": 0.0604,
+      "elapsed": 199.4
+    },
+    {
+      "checkpoint": 4,
+      "cumulative_quotes": 125,
+      "pct_dialogue": 82.8,
+      "mae_vs_composite": 0.147,
+      "mae_vs_v41_full": 0.09,
+      "mae_vs_gt_llm": 0.19,
+      "mae_vs_gt_crowd": 0.248,
+      "profile_delta": 0.0922,
+      "elapsed": 211.8
+    },
+    {
+      "checkpoint": 5,
+      "cumulative_quotes": 150,
+      "pct_dialogue": 99.3,
+      "mae_vs_composite": 0.156,
+      "mae_vs_v41_full": 0.092,
+      "mae_vs_gt_llm": 0.194,
+      "mae_vs_gt_crowd": 0.252,
+      "profile_delta": 0.078,
+      "elapsed": 215.8
+    },
+    {
+      "checkpoint": 6,
+      "cumulative_quotes": 151,
+      "pct_dialogue": 100.0,
+      "mae_vs_composite": 0.151,
+      "mae_vs_v41_full": 0.077,
+      "mae_vs_gt_llm": 0.194,
+      "mae_vs_gt_crowd": 0.254,
+      "profile_delta": 0.086,
+      "elapsed": 224.6
+    }
+  ],
+  "convergence_point": null,
+  "final": {
+    "checkpoint": 6,
+    "cumulative_quotes": 151,
+    "pct_dialogue": 100.0,
+    "mae_vs_composite": 0.151,
+    "mae_vs_v41_full": 0.077,
+    "mae_vs_gt_llm": 0.194,
+    "mae_vs_gt_crowd": 0.254,
+    "profile_delta": 0.086,
+    "elapsed": 224.6
+  }
+}

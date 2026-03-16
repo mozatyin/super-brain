@@ -1,0 +1,80 @@
+{
+  "character": "darcy",
+  "total_quotes": 116,
+  "total_checkpoints": 5,
+  "segment_size": 25,
+  "gt_sources": [
+    "gt_v41",
+    "gt_llm",
+    "gt_crowd"
+  ],
+  "convergence": [
+    {
+      "checkpoint": 0,
+      "cumulative_quotes": 25,
+      "pct_dialogue": 21.6,
+      "mae_vs_composite": 0.18,
+      "mae_vs_v41_full": 0.096,
+      "mae_vs_gt_llm": 0.258,
+      "mae_vs_gt_crowd": 0.277,
+      "profile_delta": 0.0,
+      "elapsed": 174.3
+    },
+    {
+      "checkpoint": 1,
+      "cumulative_quotes": 50,
+      "pct_dialogue": 43.1,
+      "mae_vs_composite": 0.177,
+      "mae_vs_v41_full": 0.089,
+      "mae_vs_gt_llm": 0.256,
+      "mae_vs_gt_crowd": 0.271,
+      "profile_delta": 0.0561,
+      "elapsed": 198.5
+    },
+    {
+      "checkpoint": 2,
+      "cumulative_quotes": 75,
+      "pct_dialogue": 64.7,
+      "mae_vs_composite": 0.163,
+      "mae_vs_v41_full": 0.091,
+      "mae_vs_gt_llm": 0.235,
+      "mae_vs_gt_crowd": 0.256,
+      "profile_delta": 0.0515,
+      "elapsed": 202.9
+    },
+    {
+      "checkpoint": 3,
+      "cumulative_quotes": 100,
+      "pct_dialogue": 86.2,
+      "mae_vs_composite": 0.161,
+      "mae_vs_v41_full": 0.078,
+      "mae_vs_gt_llm": 0.242,
+      "mae_vs_gt_crowd": 0.259,
+      "profile_delta": 0.0448,
+      "elapsed": 209.2
+    },
+    {
+      "checkpoint": 4,
+      "cumulative_quotes": 116,
+      "pct_dialogue": 100.0,
+      "mae_vs_composite": 0.148,
+      "mae_vs_v41_full": 0.064,
+      "mae_vs_gt_llm": 0.231,
+      "mae_vs_gt_crowd": 0.247,
+      "profile_delta": 0.0613,
+      "elapsed": 198.1
+    }
+  ],
+  "convergence_point": null,
+  "final": {
+    "checkpoint": 4,
+    "cumulative_quotes": 116,
+    "pct_dialogue": 100.0,
+    "mae_vs_composite": 0.148,
+    "mae_vs_v41_full": 0.064,
+    "mae_vs_gt_llm": 0.231,
+    "mae_vs_gt_crowd": 0.247,
+    "profile_delta": 0.0613,
+    "elapsed": 198.1
+  }
+}
