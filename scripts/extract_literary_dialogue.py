@@ -31,6 +31,55 @@ SOURCES = {
         "character": "Elizabeth Bennet",
         "attribution_patterns": "Elizabeth said, said Elizabeth, she replied, she cried, Elizabeth cried, Lizzy said, said Lizzy, Miss Bennet said, Elizabeth answered",
     },
+    "darcy": {
+        "urls": [
+            "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",  # Pride & Prejudice
+        ],
+        "character": "Mr. Darcy",
+        "attribution_patterns": "Darcy said, said Darcy, Mr. Darcy said, said Mr. Darcy, Darcy replied, Darcy cried, he said (when Darcy is the subject), he replied (when Darcy is the subject)",
+    },
+    "watson": {
+        "urls": [
+            "https://www.gutenberg.org/cache/epub/1661/pg1661.txt",  # Adventures
+        ],
+        "character": "Dr. Watson",
+        "attribution_patterns": "Watson said, said Watson, I said (Watson is the narrator), I cried, I replied, I answered, I remarked, I exclaimed",
+    },
+    "hamlet": {
+        "urls": [
+            "https://www.gutenberg.org/cache/epub/1524/pg1524.txt",  # Hamlet
+        ],
+        "character": "Hamlet",
+        "attribution_patterns": "Ham. (speech prefix in play format), HAMLET. — this is a play, so look for lines prefixed with 'Ham.' or 'HAMLET' as the speaker",
+    },
+    "jane_eyre": {
+        "urls": [
+            "https://www.gutenberg.org/cache/epub/1260/pg1260.txt",  # Jane Eyre
+        ],
+        "character": "Jane Eyre",
+        "attribution_patterns": "I said, I replied, I answered, I cried, I exclaimed, said I, Jane said, said Jane (Jane is the first-person narrator)",
+    },
+    "scrooge": {
+        "urls": [
+            "https://www.gutenberg.org/cache/epub/46/pg46.txt",  # A Christmas Carol
+        ],
+        "character": "Ebenezer Scrooge",
+        "attribution_patterns": "Scrooge said, said Scrooge, Scrooge replied, Scrooge cried, Scrooge exclaimed, he said (when Scrooge is the subject)",
+    },
+    "ahab": {
+        "urls": [
+            "https://www.gutenberg.org/cache/epub/2701/pg2701.txt",  # Moby Dick
+        ],
+        "character": "Captain Ahab",
+        "attribution_patterns": "Ahab said, said Ahab, cried Ahab, Ahab cried, Captain Ahab said, he said (when Ahab is the subject)",
+    },
+    "huck": {
+        "urls": [
+            "https://www.gutenberg.org/cache/epub/76/pg76.txt",  # Adventures of Huck Finn
+        ],
+        "character": "Huckleberry Finn",
+        "attribution_patterns": "I says, says I, I said, said I, I told (Huck is the first-person narrator using dialect 'I says')",
+    },
 }
 
 

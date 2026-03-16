@@ -23,6 +23,13 @@ CHARACTER_IDS = {
     "scarlett": {"series": "GWW", "char_id": "1", "name": "Scarlett O'Hara"},
     "sherlock": {"series": "SL", "char_id": "1", "name": "Sherlock Holmes"},
     "elizabeth": {"series": "PP", "char_id": "2", "name": "Elizabeth Bennet"},
+    "darcy": {"series": "PP", "char_id": "1", "name": "Mr. Darcy"},
+    "watson": {"series": "SL", "char_id": "2", "name": "Dr. Watson"},
+    "hamlet": {"series": "H", "char_id": "1", "name": "Hamlet"},
+    "jane_eyre": {"series": "JE", "char_id": "1", "name": "Jane Eyre"},
+    "scrooge": {"series": "ACC", "char_id": "1", "name": "Ebenezer Scrooge"},
+    "ahab": {"series": "MD", "char_id": "1", "name": "Captain Ahab"},
+    "huck": {"series": "HF", "char_id": "1", "name": "Huckleberry Finn"},
 }
 
 
@@ -57,6 +64,70 @@ def fetch_crowd_profile(series: str, char_id: str) -> str:
             "opinionated, principled, perceptive, literary, quick-thinking.\n"
             "Low traits: submissive, materialistic, vain, timid, conventional, "
             "gullible, self-doubting, docile."
+        ),
+        "PP/1": (
+            "Mr. Darcy crowd-rated personality (OpenPsychometrics, 3M+ raters):\n"
+            "Top traits: rich (96.5%), dignified (94.2%), reserved (93.8%), "
+            "proper (93.1%), loyal (92.4%), private (91.9%), brooding (90.5%), "
+            "intelligent, principled, proud, awkward in social settings, "
+            "devoted, honest, generous (in secret), protective.\n"
+            "Low traits: outgoing, talkative, flirtatious, easygoing, "
+            "spontaneous, playful, warm (initially), expressive."
+        ),
+        "SL/2": (
+            "Dr. Watson crowd-rated personality (OpenPsychometrics, 3M+ raters):\n"
+            "Top traits: loyal (95.8%), brave (93.2%), patient (92.1%), "
+            "reliable (91.7%), warm (90.3%), practical (89.5%), honest (89.1%), "
+            "modest, sociable, conventional, empathetic, dutiful, romantic, "
+            "supportive, good-natured.\n"
+            "Low traits: eccentric, arrogant, cold, manipulative, "
+            "antisocial, narcissistic, impulsive, reckless."
+        ),
+        "H/1": (
+            "Hamlet crowd-rated personality (OpenPsychometrics, 3M+ raters):\n"
+            "Top traits: intellectual (96.2%), melancholy (95.1%), indecisive (94.3%), "
+            "philosophical (93.8%), dramatic (92.7%), brooding (92.1%), "
+            "passionate, witty, unpredictable, sensitive, tortured, "
+            "eloquent, suspicious, bitter, impulsive (when acting).\n"
+            "Low traits: simple, cheerful, decisive, practical, stable, "
+            "content, trusting, straightforward, calm."
+        ),
+        "JE/1": (
+            "Jane Eyre crowd-rated personality (OpenPsychometrics, 3M+ raters):\n"
+            "Top traits: independent (96.1%), principled (95.3%), strong-willed (94.7%), "
+            "passionate (93.2%), honest (92.8%), resilient (92.1%), intelligent (91.5%), "
+            "reserved, moral, plain-spoken, fierce, dignified, "
+            "self-respecting, observant, emotional (internally).\n"
+            "Low traits: submissive, vain, materialistic, superficial, "
+            "manipulative, flirtatious, extravagant, dependent."
+        ),
+        "ACC/1": (
+            "Ebenezer Scrooge crowd-rated personality (OpenPsychometrics, 3M+ raters):\n"
+            "Top traits (pre-transformation): miserly (97.2%), cold (96.1%), "
+            "isolated (95.3%), grumpy (94.8%), selfish (94.1%), bitter (93.5%), "
+            "cynical, harsh, unsympathetic, rigid, workaholic, "
+            "fearful (of poverty), controlling, dismissive.\n"
+            "Low traits: generous, warm, sociable, empathetic, charitable, "
+            "joyful, trusting, gentle, festive.\n"
+            "Note: transforms dramatically by end — but baseline personality is miserly/cold."
+        ),
+        "MD/1": (
+            "Captain Ahab crowd-rated personality (OpenPsychometrics, 3M+ raters):\n"
+            "Top traits: obsessive (97.5%), determined (96.3%), commanding (95.1%), "
+            "intense (94.8%), charismatic (93.2%), defiant (92.7%), "
+            "monomaniacal, fearless, tyrannical, eloquent, scarred, "
+            "vengeful, proud, manipulative, self-destructive.\n"
+            "Low traits: flexible, peaceful, content, cooperative, "
+            "cautious, gentle, humble, rational, balanced."
+        ),
+        "HF/1": (
+            "Huckleberry Finn crowd-rated personality (OpenPsychometrics, 3M+ raters):\n"
+            "Top traits: independent (95.8%), adventurous (95.1%), street-smart (94.3%), "
+            "resourceful (93.7%), rebellious (93.1%), kind-hearted (92.4%), "
+            "superstitious, free-spirited, honest (to self), creative liar, "
+            "loyal (to Jim), practical, nature-loving, uneducated.\n"
+            "Low traits: conventional, obedient, refined, educated, "
+            "materialistic, religious, proper, ambitious, sophisticated."
         ),
     }
     return profiles.get(f"{series}/{char_id}", "No data available")

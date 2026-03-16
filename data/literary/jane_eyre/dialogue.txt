@@ -1,0 +1,2038 @@
+[1] Take me out! Let me go into the nursery!
+
+[2] Oh! I saw a light, and I thought a ghost would come.
+
+[3] O aunt! have pity! Forgive me! I cannot endure it—let me be punished some other way! I shall be killed if—
+
+[4] I will try.
+
+[5] No, thank you, Bessie.
+
+[6] Bessie, what is the matter with me? Am I ill?
+
+[7] Yes, sir, Jane Eyre.
+
+[8] No, sir.
+
+[9] I never cried for such a thing in my life: I hate going out in the carriage. I cry because I am miserable.
+
+[10] I was knocked down
+
+[11] but that did not make me ill
+
+[12] I was shut up in a room where there is a ghost till after dark.
+
+[13] Of Mr. Reed's ghost I am: he died in that room, and was laid out there. Neither Bessie nor any one else will go into it at night, if they can help it; and it was cruel to shut me up alone without a candle,—so cruel that I think I shall never forget it.
+
+[14] No: but night will come again before long: and besides,—I am unhappy,—very unhappy, for other things.
+
+[15] For one thing, I have no father or mother, brothers or sisters.
+
+[16] But John Reed knocked me down, and my aunt shut me up in the red-room.
+
+[17] It is not my house, sir; and Abbot says I have less right to be here than a servant.
+
+[18] If I had anywhere else to go, I should be glad to leave it; but I can never get away from Gateshead till I am a woman.
+
+[19] I think not, sir.
+
+[20] I don't know: I asked Aunt Reed once, and she said possibly I might have some poor, low relations called Eyre, but she knew nothing about them.
+
+[21] No; I should not like to belong to poor people
+
+[22] I cannot tell; Aunt Reed says if I have any, they must be a beggarly set: I should not like to go a begging.
+
+[23] I should indeed like to go to school
+
+[24] They are not fit to associate with me.
+
+[25] What would Uncle Reed say to you, if he were alive?
+
+[26] My Uncle Reed is in heaven, and can see all you do and think; and so can papa and mama: they know how you shut me up all day long, and how you wish me dead.
+
+[27] No, Bessie; I have only just finished dusting.
+
+[28] Jane Eyre, sir.
+
+[29] They go to hell.
+
+[30] A pit full of fire.
+
+[31] No, sir.
+
+[32] I must keep in good health, and not die.
+
+[33] Yes, sir.
+
+[34] Sometimes.
+
+[35] I like Revelations, and the book of Daniel, and Genesis and Samuel, and a little bit of Exodus, and some parts of Kings and Chronicles, and Job and Jonah.
+
+[36] No, sir.
+
+[37] Psalms are not interesting.
+
+[38] I am not deceitful: if I were, I should say I loved _you;_ but I declare I do not love you: I dislike you the worst of anybody in the world except John Reed; and this book about the liar, you may give to your girl, Georgiana, for it is she who tells lies, and not I.
+
+[39] I am glad you are no relation of mine: I will never call you aunt again as long as I live. I will never come to see you when I am grown up; and if any one asks me how I liked you, and how you treated me, I will say the very thought of you makes me sick, and that you treated me with miserable cruelty.
+
+[40] How dare I, Mrs. Reed? How dare I? Because it is the _truth_. You think I have no feelings, and that I can do without one bit of love or kindness; but I cannot live so: and you have no pity. I shall remember how you thrust me back—roughly and violently thrust me back—into the red-room, and locked me up there, to my dying day; though I was in agony; though I cried out, while suffocating with distress, 'Have mercy! Have mercy, Aunt Reed!' And that punishment you made me suffer because your wicked boy struck me—knocked me down for nothing. I will tell anybody who asks me questions, this exact tale. People think you a good woman, but you are bad, hard-hearted. _You_ are deceitful!
+
+[41] No, Mrs. Reed.
+
+[42] Not you. You told Mr. Brocklehurst I had a bad character, a deceitful disposition; and I'll let everybody at Lowood know what you are, and what you have done.
+
+[43] Deceit is not my fault!
+
+[44] I am not your dear; I cannot lie down: send me to school soon, Mrs. Reed, for I hate to live here.
+
+[45] Come, Bessie! don't scold.
+
+[46] What does Bessie care for me? She is always scolding me.
+
+[47] What! to get more knocks?
+
+[48] I don't think you have, Bessie.
+
+[49] Bessie, you must promise not to scold me any more till I go.
+
+[50] I don't think I shall ever be afraid of you again, Bessie, because I have got used to you, and I shall soon have another set of people to dread.
+
+[51] As you do, Bessie?
+
+[52] You don't show it.
+
+[53] Why, I shall soon be away from you, and besides—
+
+[54] Not at all, Bessie; indeed, just now I'm rather sorry.
+
+[55] I'll kiss you and welcome: bend your head down.
+
+[56] No, Bessie: she came to my crib last night when you were gone down to supper, and said I need not disturb her in the morning, or my cousins either; and she told me to remember that she had always been my best friend, and to speak of her and be grateful to her accordingly.
+
+[57] Nothing: I covered my face with the bedclothes, and turned from her to the wall.
+
+[58] It was quite right, Bessie. Your Missis has not been my friend: she has been my foe.
+
+[59] Good-bye to Gateshead!
+
+[60] A little, ma'am.
+
+[61] Is your book interesting?
+
+[62] What is it about?
+
+[63] Can you tell me what the writing on that stone over the door means? What is Lowood Institution?
+
+[64] And why do they call it Institution? Is it in any way different from other schools?
+
+[65] Both died before I can remember.
+
+[66] Do we pay no money? Do they keep us for nothing?
+
+[67] Then why do they call us charity-children?
+
+[68] Who subscribes?
+
+[69] Who was Naomi Brocklehurst?
+
+[70] Then this house does not belong to that tall lady who wears a watch, and who said we were to have some bread and cheese?
+
+[71] Does he live here?
+
+[72] Is he a good man?
+
+[73] Did you say that tall lady was called Miss Temple?
+
+[74] And what are the other teachers called?
+
+[75] Do you like the teachers?
+
+[76] Do you like the little black one, and the Madame ——?—I cannot pronounce her name as you do.
+
+[77] But Miss Temple is the best—isn't she?
+
+[78] Have you been long here?
+
+[79] Are you an orphan?
+
+[80] Are you happy here?
+
+[81] Is it still 'Rasselas'?
+
+[82] What is your name besides Burns?
+
+[83] Do you come a long way from here?
+
+[84] Will you ever go back?
+
+[85] You must wish to leave Lowood?
+
+[86] But that teacher, Miss Scatcherd, is so cruel to you?
+
+[87] And if I were in your place I should dislike her; I should resist her. If she struck me with that rod, I should get it from her hand; I should break it under her nose.
+
+[88] But then it seems disgraceful to be flogged, and to be sent to stand in the middle of a room full of people; and you are such a great girl: I am far younger than you, and I could not bear it.
+
+[89] You say you have faults, Helen: what are they? To me you seem very good.
+
+[90] And cross and cruel
+
+[91] Is Miss Temple as severe to you as Miss Scatcherd?
+
+[92] That is curious, it is so easy to be careful.
+
+[93] And when Miss Temple teaches you, do your thoughts wander then?
+
+[94] Well, then, with Miss Temple you are good?
+
+[95] A great deal: you are good to those who are good to you. It is all I ever desire to be. If people were always kind and obedient to those who are cruel and unjust, the wicked people would have it all their own way: they would never feel afraid, and so they would never alter, but would grow worse and worse. When we are struck at without a reason, we should strike back again very hard; I am sure we should—so hard as to teach the person who struck us never to do it again.
+
+[96] But I feel this, Helen; I must dislike those who, whatever I do to please them, persist in disliking me; I must resist those who punish me unjustly. It is as natural as that I should love those who show me affection, or submit to punishment when I feel it is deserved.
+
+[97] How? I don't understand.
+
+[98] What then?
+
+[99] What does He say?
+
+[100] Then I should love Mrs. Reed, which I cannot do; I should bless her son John, which is impossible.
+
+[101] Well, is not Mrs. Reed a hard-hearted, bad woman?
+
+[102] Helen, why do you stay with a girl whom everybody believes to be a liar?
+
+[103] But what have I to do with millions? The eighty I know despise me.
+
+[104] How can they pity me after what Mr. Brocklehurst has said?
+
+[105] Well, Helen?
+
+[106] No; I know I should think well of myself; but that is not enough: if others don't love me I would rather die than live—I cannot bear to be solitary and hated, Helen. Look here; to gain some real affection from you, or Miss Temple, or any other whom I truly love, I would willingly submit to have the bone of my arm broken, or to let a bull toss me, or to stand behind a kicking horse, and let it dash its hoof at my chest—
+
+[107] I am afraid I never shall do that.
+
+[108] Because I have been wrongly accused; and you, ma'am, and everybody else, will now think me wicked.
+
+[109] Shall I, Miss Temple?
+
+[110] Mrs. Reed, my uncle's wife. My uncle is dead, and he left me to her care.
+
+[111] No, ma'am; she was sorry to have to do it: but my uncle, as I have often heard the servants say, got her to promise before he died that she would always keep me.
+
+[112] How is Helen Burns?
+
+[113] Is it her Mr. Bates has been to see?
+
+[114] And what does he say about her?
+
+[115] May I go up and speak to her?
+
+[116] Helen!
+
+[117] I came to see you, Helen: I heard you were very ill, and I could not sleep till I had spoken to you.
+
+[118] Are you going somewhere, Helen? Are you going home?
+
+[119] No, no, Helen!
+
+[120] But where are you going to, Helen? Can you see? Do you know?
+
+[121] Where is God? What is God?
+
+[122] You are sure, then, Helen, that there is such a place as heaven, and that our souls can get to it when we die?
+
+[123] And shall I see you again, Helen, when I die?
+
+[124] I'll stay with you, _dear_ Helen: no one shall take me away.
+
+[125] Good-night, Helen.
+
+[126] Then, grant me at least a new servitude!
+
+[127] A new servitude! There is something in that
+
+[128] I know there is, because it does not sound too sweet; it is not like such words as Liberty, Excitement, Enjoyment: delightful sounds truly; but no more than sounds for me; and so hollow and fleeting that it is mere waste of time to listen to them. But Servitude! That must be matter of fact. Any one may serve: I have served here eight years; now all I want is to serve elsewhere. Can I not get so much of my own will? Is not the thing feasible? Yes—yes—the end is not so difficult; if I had only a brain active enough to ferret out the means of attaining it.
+
+[129] What do I want? A new place, in a new house, amongst new faces, under new circumstances: I want this because it is of no use wanting anything better. How do people do to get a new place? They apply to friends, I suppose: I have no friends. There are many others who have no friends, who must look about for themselves and be their own helpers; and what is their resource?
+
+[130] How? I know nothing about advertising.
+
+[131] Are there any letters for J.E.?
+
+[132] Is there only one?
+
+[133] Then you are married, Bessie?
+
+[134] And you don't live at Gateshead?
+
+[135] Well, and how do they all get on? Tell me everything about them, Bessie: but sit down first; and, Bobby, come and sit on my knee, will you?
+
+[136] Georgiana is handsome, I suppose, Bessie?
+
+[137] Well, and what of John Reed?
+
+[138] What does he look like?
+
+[139] And Mrs. Reed?
+
+[140] Did she send you here, Bessie?
+
+[141] I am afraid you are disappointed in me, Bessie.
+
+[142] A little.
+
+[143] Yes, Bessie, I can both read it and speak it.
+
+[144] I can.
+
+[145] Never in my life.
+
+[146] What foreign country was he going to, Bessie?
+
+[147] Madeira?
+
+[148] So he went?
+
+[149] Very likely, or perhaps clerk or agent to a wine-merchant.
+
+[150] Is there a place in this neighbourhood called Thornfield?
+
+[151] Mrs. Fairfax, I suppose?
+
+[152] Yes, ma'am.
+
+[153] Shall I have the pleasure of seeing Miss Fairfax to-night?
+
+[154] Indeed! Then she is not your daughter?
+
+[155] Mr. Rochester!
+
+[156] Who is he?
+
+[157] I thought, Thornfield belonged to you.
+
+[158] And the little girl—my pupil!
+
+[159] Are they foreigners?
+
+[160] Eyre—Jane Eyre.
+
+[161] Adèle, with whom did you live when you were in that pretty clean town you spoke of?
+
+[162] Was it your mama who taught you that piece?
+
+[163] No, that will do: but after your mama went to the Holy Virgin, as you say, with whom did you live then?
+
+[164] What a beautiful room!
+
+[165] In what order you keep these rooms, Mrs. Fairfax!
+
+[166] No dust, no canvas coverings: except that the air feels chilly, one would think they were inhabited daily.
+
+[167] Is Mr. Rochester an exacting, fastidious sort of man?
+
+[168] Do you like him? Is he generally liked?
+
+[169] Well, but, leaving his land out of the question, do you like him? Is he liked for himself?
+
+[170] But has he no peculiarities? What, in short, is his character?
+
+[171] In what way is he peculiar?
+
+[172] Do the servants sleep in these rooms?
+
+[173] So I think: you have no ghost, then?
+
+[174] Nor any traditions of one? no legends or ghost stories?
+
+[175] Yes—'after life's fitful fever they sleep well,'
+
+[176] Where are you going now, Mrs. Fairfax?
+
+[177] Mrs. Fairfax!
+
+[178] Did you hear that loud laugh? Who is it?
+
+[179] Did you hear it?
+
+[180] Are you injured, sir?
+
+[181] Can I do anything?
+
+[182] If you are hurt, and want help, sir, I can fetch some one either from Thornfield Hall or from Hay.
+
+[183] I cannot think of leaving you, sir, at so late an hour, in this solitary lane, till I see you are fit to mount your horse.
+
+[184] From just below; and I am not at all afraid of being out late when it is moonlight: I will run over to Hay for you with pleasure, if you wish it: indeed, I am going there to post a letter.
+
+[185] Yes, sir.
+
+[186] Mr. Rochester's.
+
+[187] No, I have never seen him.
+
+[188] I cannot.
+
+[189] I am the governess.
+
+[190] Yes, sir.
+
+[191] What dog is this?
+
+[192] With whom?
+
+[193] Indeed! and is Mrs. Fairfax with him?
+
+[194] Did the horse fall in Hay Lane?
+
+[195] Ah! Bring me a candle will you Leah?
+
+[196] When is his tea-time?
+
+[197] Is it necessary to change my frock?
+
+[198] I hardly know, sir; I have little experience of them: they are generally thought pleasant things.
+
+[199] I should be obliged to take time, sir, before I could give you an answer worthy of your acceptance: a present has many faces to it, has it not? and one should consider all, before pronouncing an opinion as to its nature.
+
+[200] Because I have less confidence in my deserts than Adèle has: she can prefer the claim of old acquaintance, and the right too of custom; for she says you have always been in the habit of giving her playthings; but if I had to make out a case I should be puzzled, since I am a stranger, and have done nothing to entitle me to an acknowledgment.
+
+[201] Sir, you have now given me my 'cadeau;' I am obliged to you: it is the meed teachers most covet—praise of their pupils' progress.
+
+[202] Yes, sir.
+
+[203] From Lowood school, in ——shire.
+
+[204] Eight years.
+
+[205] I have none.
+
+[206] For whom, sir?
+
+[207] The men in green all forsook England a hundred years ago
+
+[208] No; none that I ever saw.
+
+[209] I have none.
+
+[210] I have no brothers or sisters.
+
+[211] I advertised, and Mrs. Fairfax answered my advertisement.
+
+[212] No, sir.
+
+[213] None but the pupils and teachers of Lowood, and now the inmates of Thornfield.
+
+[214] Only such books as came in my way; and they have not been numerous or very learned.
+
+[215] Yes, sir.
+
+[216] Oh, no.
+
+[217] I disliked Mr. Brocklehurst; and I was not alone in the feeling. He is a harsh man; at once pompous and meddling; he cut off our hair; and for economy's sake bought us bad needles and thread, with which we could hardly sew.
+
+[218] He starved us when he had the sole superintendence of the provision department, before the committee was appointed; and he bored us with long lectures once a week, and with evening readings from books of his own inditing, about sudden deaths and judgments, which made us afraid to go to bed.
+
+[219] About ten.
+
+[220] A little.
+
+[221] No, indeed!
+
+[222] Then I will say nothing, and you shall judge for yourself, sir.
+
+[223] I did them in the last two vacations I spent at Lowood, when I had no other occupation.
+
+[224] Out of my head.
+
+[225] Yes, sir.
+
+[226] I should think it may have: I should hope—better.
+
+[227] I was absorbed, sir: yes, and I was happy. To paint them, in short, was to enjoy one of the keenest pleasures I have ever known.
+
+[228] I had nothing else to do, because it was the vacation, and I sat at them from morning till noon, and from noon till night: the length of the midsummer days favoured my inclination to apply.
+
+[229] Far from it. I was tormented by the contrast between my idea and my handiwork: in each case I had imagined something which I was quite powerless to realise.
+
+[230] You said Mr. Rochester was not strikingly peculiar, Mrs. Fairfax
+
+[231] I think so: he is very changeful and abrupt.
+
+[232] What about?
+
+[233] His _elder_ brother?
+
+[234] Nine years is a tolerable time. Was he so very fond of his brother as to be still inconsolable for his loss?
+
+[235] Why should he shun it?
+
+[236] No, sir.
+
+[237] Sir, I was too plain; I beg your pardon. I ought to have replied that it was not easy to give an impromptu answer to a question about appearances; that tastes mostly differ; and that beauty is of little consequence, or something of that sort.
+
+[238] Mr. Rochester, allow me to disown my first answer: I intended no pointed repartee: it was only a blunder.
+
+[239] Far from it, sir. You would, perhaps, think me rude if I inquired in return whether you are a philanthropist?
+
+[240] Hope of what, sir?
+
+[241] What about, sir?
+
+[242] I am willing to amuse you, if I can, sir—quite willing; but I cannot introduce a topic, because how do I know what will interest you? Ask me questions, and I will do my best to answer them.
+
+[243] Do as you please, sir.
+
+[244] I don't think, sir, you have a right to command me, merely because you are older than I, or because you have seen more of the world than I have; your claim to superiority depends on the use you have made of your time and experience.
+
+[245] I was thinking, sir, that very few masters would trouble themselves to inquire whether or not their paid subordinates were piqued and hurt by their orders.
+
+[246] No, sir, not on that ground; but, on the ground that you did forget it, and that you care whether or not a dependent is comfortable in his dependency, I agree heartily.
+
+[247] I am sure, sir, I should never mistake informality for insolence: one I rather like, the other nothing free-born would submit to, even for a salary.
+
+[248] How was your memory when you were eighteen, sir?
+
+[249] How do you know?—how can you guess all this, sir?
+
+[250] Repentance is said to be its cure, sir.
+
+[251] Then you will degenerate still more, sir.
+
+[252] It will sting—it will taste bitter, sir.
+
+[253] I only remind you of your own words, sir: you said error brought remorse, and you pronounced remorse the poison of existence.
+
+[254] Distrust it, sir; it is not a true angel.
+
+[255] I judged by your countenance, sir, which was troubled when you said the suggestion had returned upon you. I feel sure it will work you more misery if you listen to it.
+
+[256] To speak truth, sir, I don't understand you at all: I cannot keep up the conversation, because it has got out of my depth. Only one thing, I know: you said you were not as good as you should like to be, and that you regretted your own imperfection;—one thing I can comprehend: you intimated that to have a sullied memory was a perpetual bane. It seems to me, that if you tried hard, you would in time find it possible to become what you yourself would approve; and that if from this day you began with resolution to correct your thoughts and actions, you would in a few years have laid up a new and stainless store of recollections, to which you might revert with pleasure.
+
+[257] And better?
+
+[258] They cannot be, sir, if they require a new statute to legalise them.
+
+[259] That sounds a dangerous maxim, sir; because one can see at once that it is liable to abuse.
+
+[260] You are human and fallible.
+
+[261] The human and fallible should not arrogate a power with which the divine and perfect alone can be safely intrusted.
+
+[262] That of saying of any strange, unsanctioned line of action,—'Let it be right.'
+
+[263] _May_ it be right then
+
+[264] To put Adèle to bed: it is past her bedtime.
+
+[265] Your language is enigmatical, sir: but though I am bewildered, I am certainly not afraid.
+
+[266] In that sense I do feel apprehensive—I have no wish to talk nonsense.
+
+[267] It has struck nine, sir.
+
+[268] Did you leave the balcony, sir," I asked, "when Mdlle. Varens entered?
+
+[269] No: Adèle is not answerable for either her mother's faults or yours: I have a regard for her; and now that I know she is, in a sense, parentless—forsaken by her mother and disowned by you, sir—I shall cling closer to her than before. How could I possibly prefer the spoilt pet of a wealthy family, who would hate her governess as a nuisance, to a lonely little orphan, who leans towards her as a friend?
+
+[270] Who is there?
+
+[271] Who is there?
+
+[272] Wake! wake!
+
+[273] No, sir, but there has been a fire: get up, do; you are quenched now; I will fetch you a candle.
+
+[274] I will fetch you a candle, sir; and, in Heaven's name, get up. Somebody has plotted something: you cannot too soon find out who and what it is.
+
+[275] Shall I call Mrs. Fairfax?
+
+[276] Then I will fetch Leah, and wake John and his wife.
+
+[277] How, sir?
+
+[278] No, sir, only the candlestick on the ground.
+
+[279] Yes, sir: there is a woman who sews here, called Grace Poole,—she laughs in that way. She is a singular person.
+
+[280] Good-night, then, sir
+
+[281] You said I might go, sir.
+
+[282] Good-night again, sir. There is no debt, benefit, burden, obligation, in the case.
+
+[283] I am glad I happened to be awake
+
+[284] I am cold, sir.
+
+[285] I think I hear Mrs. Fairfax move, sir
+
+[286] Good morning, Grace. Has anything happened here? I thought I heard the servants all talking together a while ago.
+
+[287] A strange affair!
+
+[288] Did Mr. Rochester wake nobody? Did no one hear him move?
+
+[289] I did, and at first I thought it was Pilot: but Pilot cannot laugh; and I am certain I heard a laugh, and a strange one.
+
+[290] I was not dreaming
+
+[291] I have not had the opportunity of speaking to him this morning.
+
+[292] On the contrary, I bolted my door.
+
+[293] Hitherto I have often omitted to fasten the bolt: I did not think it necessary. I was not aware any danger or annoyance was to be dreaded at Thornfield Hall: but in future I shall take good care to make all secure before I venture to lie down.
+
+[294] I am hot, Adèle, with stooping!
+
+[295] Evening approaches. I have never heard Mr. Rochester's voice or step in the house to-day; but surely I shall see him before night: I feared the meeting in the morning; now I desire it, because expectation has been so long baffled that it is grown impatient.
+
+[296] Oh, quite well! I never felt better.
+
+[297] Journey!—Is Mr. Rochester gone anywhere? I did not know he was out.
+
+[298] Do you expect him back to-night?
+
+[299] Are there ladies at the Leas?
+
+[300] You saw her, you say, Mrs. Fairfax: what was she like?
+
+[301] And what was she like?
+
+[302] She was greatly admired, of course?
+
+[303] Mr. Rochester? I was not aware he could sing.
+
+[304] And Miss Ingram: what sort of a voice had she?
+
+[305] And this beautiful and accomplished lady, she is not yet married?
+
+[306] But I wonder no wealthy nobleman or gentleman has taken a fancy to her: Mr. Rochester, for instance. He is rich, is he not?
+
+[307] What of that? More unequal matches are made every day.
+
+[308] No: I am too thirsty to eat. Will you let me have another cup?
+
+[309] You, a favourite with Mr. Rochester? You gifted with the power of pleasing him? You of importance to him in any way? Go! your folly sickens me.
+
+[310] I'll do it
+
+[311] You have nothing to do with the master of Thornfield, further than to receive the salary he gives you for teaching his protégée, and to be grateful for such respectful and kind treatment as, if you do your duty, you have a right to expect at his hands. Be sure that is the only tie he seriously acknowledges between you and him; so don't make him the object of your fine feelings, your raptures, agonies, and so forth. He is not of your order: keep to your caste, and be too self-respecting to lavish the love of the whole heart, soul, and strength, where such a gift is not wanted and would be despised.
+
+[312] Mr. Rochester is not likely to return soon, I suppose?
+
+[313] Don't you feel hungry, Adèle?
+
+[314] Well now, while the ladies are in their rooms, I will venture down and get you something to eat.
+
+[315] No, indeed, I don't; Mr. Rochester has something else to think about. Never mind the ladies to-night; perhaps you will see them to-morrow: here is your dinner.
+
+[316] You said it was not likely they should think of being married, but you see Mr. Rochester evidently prefers her to any of the other ladies.
+
+[317] And she him, look how she leans her head towards him as if she were conversing confidentially; I wish I could see her face; I have never had a glimpse of it yet.
+
+[318] Yes; he said that from mere politeness: I need not go, I am sure
+
+[319] I will not give him that trouble. I will go, if no better may be; but I don't like it. Shall you be there, Mrs. Fairfax?
+
+[320] Will these people remain long, do you think?
+
+[321] What is it, Adèle?
+
+[322] You think too much of your 'toilette,' Adèle: but you may have a flower.
+
+[323] Oh, I will go by all means
+
+[324] No, Sam, return to the kitchen: I am not in the least afraid.
+
+[325] I don't care about it, mother; you may please yourself: but I ought to warn you, I have no faith.
+
+[326] Did you? You've a quick ear.
+
+[327] You need them all in your trade.
+
+[328] I'm not cold.
+
+[329] I am not sick.
+
+[330] I'm not silly.
+
+[331] Prove it
+
+[332] You might say all that to almost any one who you knew lived as a solitary dependent in a great house.
+
+[333] In my circumstances.
+
+[334] It would be easy to find you thousands.
+
+[335] I don't understand enigmas. I never could guess a riddle in my life.
+
+[336] And I must cross it with silver, I suppose?
+
+[337] I believe you
+
+[338] Ah! now you are coming to reality. I shall begin to put some faith in you presently.
+
+[339] I feel tired often, sleepy sometimes, but seldom sad.
+
+[340] Not I. The utmost I hope is, to save money enough out of my earnings to set up a school some day in a little house rented by myself.
+
+[341] You have learned them from the servants.
+
+[342] You have—have you?
+
+[343] I like to observe all the faces and all the figures.
+
+[344] I do frequently; when the gestures or looks of a pair seem telling a tale: it amuses me to watch them.
+
+[345] Oh, I have not much choice! They generally run on the same theme—courtship; and promise to end in the same catastrophe—marriage.
+
+[346] Positively, I don't care about it: it is nothing to me.
+
+[347] I what?
+
+[348] I don't know the gentlemen here. I have scarcely interchanged a syllable with one of them; and as to thinking well of them, I consider some respectable, and stately, and middle-aged, and others young, dashing, handsome, and lively: but certainly they are all at liberty to be the recipients of whose smiles they please, without my feeling disposed to consider the transaction of any moment to me.
+
+[349] He is not at home.
+
+[350] No; but I can scarcely see what Mr. Rochester has to do with the theme you had introduced.
+
+[351] Mr. Rochester has a right to enjoy the society of his guests.
+
+[352] The eagerness of a listener quickens the tongue of a narrator.
+
+[353] Grateful! I cannot remember detecting gratitude in his face.
+
+[354] Humph! Not exactly. Your witch's skill is rather at fault sometimes.
+
+[355] Never mind: I came here to inquire, not to confess. Is it known that Mr. Rochester is to be married?
+
+[356] Shortly?
+
+[357] But, mother, I did not come to hear Mr. Rochester's fortune: I came to hear my own; and you have told me nothing of it.
+
+[358] Don't keep me long; the fire scorches me.
+
+[359] Only take off the red cloak, sir, and then—
+
+[360] Break it, sir.
+
+[361] Now, sir, what a strange idea!
+
+[362] With the ladies you must have managed well.
+
+[363] You did not act the character of a gipsy with me.
+
+[364] No; some unaccountable one. In short, I believe you have been trying to draw me out—or in; you have been talking nonsense to make me talk nonsense. It is scarcely fair, sir.
+
+[365] I cannot tell till I have thought it all over. If, on reflection, I find I have fallen into no great absurdity, I shall try to forgive you; but it was not right.
+
+[366] Wonder and self-congratulation, sir. I have your permission to retire now, I suppose?
+
+[367] Discussing the gipsy, I daresay.
+
+[368] I had better not stay long, sir; it must be near eleven o'clock. Oh, are you aware, Mr. Rochester, that a stranger has arrived here since you left this morning?
+
+[369] No; he said he had known you long, and that he could take the liberty of installing himself here till you returned.
+
+[370] His name is Mason, sir; and he comes from the West Indies; from Spanish Town, in Jamaica, I think.
+
+[371] Do you feel ill, sir?
+
+[372] Oh, lean on me, sir.
+
+[373] Yes, sir, yes; and my arm.
+
+[374] Can I help you, sir?—I'd give my life to serve you.
+
+[375] Thank you, sir. Tell me what to do,—I'll try, at least, to do it.
+
+[376] Laughing and talking, sir.
+
+[377] Not at all: they are full of jests and gaiety.
+
+[378] He was laughing too.
+
+[379] Turn them out of the room, sir, if I could.
+
+[380] I rather think not, sir: I should have more pleasure in staying with you.
+
+[381] Yes, sir, to comfort you, as well as I could.
+
+[382] I, probably, should know nothing about their ban; and if I did, I should care nothing about it.
+
+[383] I could dare it for the sake of any friend who deserved my adherence; as you, I am sure, do.
+
+[384] Yes, sir.
+
+[385] Am I wanted?
+
+[386] Yes, sir.
+
+[387] Yes, sir.
+
+[388] I think I shall not: I have never been tried yet.
+
+[389] When will he come? When will he come?
+
+[390] No, sir; all was very still.
+
+[391] It seems to me a splendid mansion, sir.
+
+[392] Thank you, sir.
+
+[393] I do, very much.
+
+[394] Yes, sir.
+
+[395] I was afraid of some one coming out of the inner room.
+
+[396] Will Grace Poole live here still, sir?
+
+[397] Yet it seems to me your life is hardly secure while she stays.
+
+[398] Is the danger you apprehended last night gone by now, sir?
+
+[399] But Mr. Mason seems a man easily led. Your influence, sir, is evidently potent with him: he will never set you at defiance or wilfully injure you.
+
+[400] Tell him to be cautious, sir: let him know what you fear, and show him how to avert the danger.
+
+[401] I like to serve you, sir, and to obey you in all that is right.
+
+[402] If you have no more to fear from Mr. Mason than you have from me, sir, you are very safe.
+
+[403] No, sir; I am content.
+
+[404] Sir, a wanderer's repose or a sinner's reformation should never depend on a fellow-creature. Men and women die; philosophers falter in wisdom, and Christians in goodness: if any one you know has suffered and erred, let him look higher than his equals for strength to amend and solace to heal.
+
+[405] Curse you? No, sir.
+
+[406] Whenever I can be useful, sir.
+
+[407] Yes, sir.
+
+[408] Yes, sir.
+
+[409] Oh, Robert! how do you do? I remember you very well: you used to give me a ride sometimes on Miss Georgiana's bay pony. And how is Bessie? You are married to Bessie?
+
+[410] And are the family well at the house, Robert?
+
+[411] I hope no one is dead.
+
+[412] Mr. John?
+
+[413] And how does his mother bear it?
+
+[414] I heard from Bessie he was not doing well.
+
+[415] Yes, Robert, I shall be ready: it seems to me that I ought to go.
+
+[416] Yes; and I will do it now;
+
+[417] If you please, sir, I want leave of absence for a week or two.
+
+[418] To see a sick lady who has sent for me.
+
+[419] At Gateshead; in ——shire.
+
+[420] Her name is Reed, sir—Mrs. Reed.
+
+[421] It is his widow, sir.
+
+[422] Mr. Reed was my uncle—my mother's brother.
+
+[423] None that would own me, sir. Mr. Reed is dead, and his wife cast me off.
+
+[424] Because I was poor, and burdensome, and she disliked me.
+
+[425] John Reed is dead, too, sir: he ruined himself and half-ruined his family, and is supposed to have committed suicide. The news so shocked his mother that it brought on an apoplectic attack.
+
+[426] Yes, sir, but that is long ago; and when her circumstances were very different: I could not be easy to neglect her wishes now.
+
+[427] As short a time as possible, sir.
+
+[428] I had better not pass my word: I might be obliged to break it.
+
+[429] Oh, no! I shall certainly return if all be well.
+
+[430] No, sir, she has sent her coachman.
+
+[431] Yes, sir, he has lived ten years in the family.
+
+[432] Early to-morrow morning, sir.
+
+[433] Five shillings, sir.
+
+[434] Yes, sir, but now you owe me five.
+
+[435] You have as good as informed me, sir, that you are going shortly to be married?
+
+[436] In that case, sir, Adèle ought to go to school: I am sure you will perceive the necessity of it.
+
+[437] I hope not, sir; but I must seek another situation somewhere.
+
+[438] No, sir; I am not on such terms with my relatives as would justify me in asking favours of them—but I shall advertise.
+
+[439] And so have I, sir, I could not spare the money on any account.
+
+[440] Not five shillings, sir; nor five pence.
+
+[441] No, sir; you are not to be trusted.
+
+[442] I'll promise you anything, sir, that I think I am likely to perform.
+
+[443] I shall be glad so to do, sir, if you, in your turn, will promise that I and Adèle shall be both safe out of the house before your bride enters it.
+
+[444] Yes, sir; early.
+
+[445] No, sir, I must prepare for the journey.
+
+[446] I suppose so, sir.
+
+[447] They say, Farewell, or any other form they prefer.
+
+[448] Farewell, Mr. Rochester, for the present.
+
+[449] The same, if you like, sir.
+
+[450] It is enough, sir: as much good-will may be conveyed in one hearty word as in many.
+
+[451] Yes, Bessie, and I trust I am not too late. How is Mrs. Reed?—Alive still, I hope.
+
+[452] Has she mentioned me lately?
+
+[453] How is Mrs. Reed?
+
+[454] If you would just step upstairs and tell her I am come, I should be much obliged to you.
+
+[455] I know she had a particular wish to see me, and I would not defer attending to her desire longer than is absolutely necessary.
+
+[456] Yes, Aunt Reed. How are you, dear aunt?
+
+[457] You sent for me, and I am here; and it is my intention to stay till I see how you get on.
+
+[458] I am Jane Eyre.
+
+[459] A strange wish, Mrs. Reed; why do you hate her so?
+
+[460] I think I had better leave her now
+
+[461] It is I, Aunt Reed.
+
+[462] She is at the lodge, aunt.
+
+[463] Why did I never hear of this?
+
+[464] Dear Mrs. Reed, think no more of all this, let it pass away from your mind. Forgive me for my passionate language: I was a child then; eight, nine years have passed since that day.
+
+[465] If you could but be persuaded to think no more of it, aunt, and to regard me with kindness and forgiveness——
+
+[466] My disposition is not so bad as you think: I am passionate, but not vindictive. Many a time, as a little child, I should have been glad to love you if you would have let me; and I long earnestly to be reconciled to you now: kiss me, aunt.
+
+[467] Love me, then, or hate me, as you will, you have my full and free forgiveness: ask now for God's, and be at peace.
+
+[468] You are not without sense, cousin Eliza; but what you have, I suppose, in another year will be walled up alive in a French convent. However, it is not my business, and so it suits you, I don't much care.
+
+[469] I have been with my aunt, sir, who is dead.
+
+[470] Mrs. Fairfax told me in a letter.
+
+[471] Oh, yes, sir! Everybody knew your errand.
+
+[472] It would be past the power of magic, sir;
+
+[473] Thank you, Mr. Rochester, for your great kindness. I am strangely glad to get back again to you: and wherever you are is my home—my only home.
+
+[474] Yes, sir.
+
+[475] I am attached to it, indeed.
+
+[476] Yes, sir; in different ways, I have an affection for both.
+
+[477] Must I move on, sir? Must I leave Thornfield?
+
+[478] Well, sir, I shall be ready when the order to march comes.
+
+[479] Then you _are_ going to be married, sir?
+
+[480] Soon, sir?
+
+[481] Yes, sir, I will advertise immediately: and meantime, I suppose—
+
+[482] Thank you, sir; I am sorry to give—
+
+[483] It is a long way off, sir.
+
+[484] Not the voyage, but the distance: and then the sea is a barrier—
+
+[485] From England and from Thornfield: and—
+
+[486] From _you_, sir.
+
+[487] It is a long way
+
+[488] Yes, sir.
+
+[489] That I _never_ should, sir: you know—
+
+[490] I grieve to leave Thornfield: I love Thornfield:—I love it, because I have lived in it a full and delightful life,—momentarily at least. I have not been trampled on. I have not been petrified. I have not been buried with inferior minds, and excluded from every glimpse of communion with what is bright and energetic and high. I have talked, face to face, with what I reverence, with what I delight in,—with an original, a vigorous, an expanded mind. I have known you, Mr. Rochester; and it strikes me with terror and anguish to feel I absolutely must be torn from you for ever. I see the necessity of departure; and it is like looking on the necessity of death.
+
+[491] Where? You, sir, have placed it before me.
+
+[492] In the shape of Miss Ingram; a noble and beautiful woman,—your bride.
+
+[493] But you will have.
+
+[494] Then I must go:—you have said it yourself.
+
+[495] I tell you I must go! Do you think I can stay to become nothing to you? Do you think I am an automaton?—a machine without feelings? and can bear to have my morsel of bread snatched from my lips, and my drop of living water dashed from my cup? Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless? You think wrong!—I have as much soul as you,—and full as much heart! And if God had gifted me with some beauty and much wealth, I should have made it as hard for you to leave me, as it is now for me to leave you. I am not talking to you now through the medium of custom, conventionalities, nor even of mortal flesh;—it is my spirit that addresses your spirit; just as if both had passed through the grave, and we stood at God's feet, equal,—as we are!
+
+[496] Yes, so, sir, and yet not so; for you are a married man—or as good as a married man, and wed to one inferior to you—to one with whom you have no sympathy—whom I do not believe you truly love; for I have seen and heard you sneer at her. I would scorn such a union: therefore I am better than you—let me go!
+
+[497] Yes—to Ireland. I have spoken my mind, and can go anywhere now.
+
+[498] I am no bird; and no net ensnares me; I am a free human being with an independent will, which I now exert to leave y
+
+[499] You play a farce, which I merely laugh at.
+
+[500] For that fate you have already made your choice, and must abide by it.
+
+[501] I will never again come to your side: I am torn away now, and cannot return.
+
+[502] Your bride stands between us.
+
+[503] Entirely.
+
+[504] Not a whit.
+
+[505] What, me! I who have not a friend in the world but you—if you are my friend: not a shilling but what you have given me?
+
+[506] Mr. Rochester, let me look at your face: turn to the moonlight.
+
+[507] Because I want to read your countenance—turn!
+
+[508] How can I do that? If you are true, and your offer real, my only feelings to you must be gratitude and devotion—they cannot torture.
+
+[509] Are you in earnest? Do you truly love me? Do you sincerely wish me to be your wife?
+
+[510] Then, sir, I will marry you.
+
+[511] Dear Edward!
+
+[512] There is no one to meddle, sir. I have no kindred to interfere.
+
+[513] It is Jane Eyre, sir.
+
+[514] Because you gave me a new name—Jane Rochester; and it seems so strange.
+
+[515] It can never be, sir; it does not sound likely. Human beings never enjoy complete happiness in this world. I was not born for a different destiny to the rest of my species: to imagine such a lot befalling me is a fairy tale—a day-dream.
+
+[516] Oh, sir!—never rain jewels! I don't like to hear them spoken of. Jewels for Jane Eyre sounds unnatural and strange: I would rather not have them.
+
+[517] No, no, sir! think of other subjects, and speak of other things, and in another strain. Don't address me as if I were a beauty; I am your plain, Quakerish governess.
+
+[518] Puny and insignificant, you mean. You are dreaming, sir,—or you are sneering. For God's sake, don't be ironical!
+
+[519] And then you won't know me, sir; and I shall not be your Jane Eyre any longer, but an ape in a harlequin's jacket—a jay in borrowed plumes. I would as soon see you, Mr. Rochester, tricked out in stage-trappings, as myself clad in a court-lady's robe; and I don't call you handsome, sir, though I love you most dearly: far too dearly to flatter you. Don't flatter me.
+
+[520] Shall I travel?—and with you, sir?
+
+[521] I am not an angel, and I will not be one till I die: I will be myself. Mr. Rochester, you must neither expect nor exact anything celestial of me—for you will not get it, any more than I shall get it of you: which I do not at all anticipate.
+
+[522] What do you anticipate of me?
+
+[523] For a little while you will perhaps be as you are now,—a very little while; and then you will turn cool; and then you will be capricious; and then you will be stern, and I shall have much ado to please you: but when you get well used to me, you will perhaps like me again,—_like_ me, I say, not _love_ me. I suppose your love will effervesce in six months, or less. I have observed in books written by men, that period assigned as the farthest to which a husband's ardour extends. Yet, after all, as a friend and companion, I hope never to become quite distasteful to my dear master.
+
+[524] Yet are you not capricious, sir?
+
+[525] Had you ever experience of such a character, sir? Did you ever love such an one?
+
+[526] But before me: if I, indeed, in any respect come up to your difficult standard?
+
+[527] I was thinking, sir (you will excuse the idea; it was involuntary), I was thinking of Hercules and Samson with their charmers—
+
+[528] Hush, sir! You don't talk very wisely just now; any more than those gentlemen acted very wisely. However, had they been married, they would no doubt by their severity as husbands have made up for their softness as suitors; and so will you, I fear. I wonder how you will answer me a year hence, should I ask a favour it does not suit your convenience or pleasure to grant.
+
+[529] Indeed I will, sir; I have my petition all ready.
+
+[530] Not at all, sir; I ask only this: don't send for the jewels, and don't crown me with roses: you might as well put a border of gold lace round that plain pocket handkerchief you have there.
+
+[531] Well then, sir, have the goodness to gratify my curiosity, which is much piqued on one point.
+
+[532] But there can be no danger in complying with this, sir.
+
+[533] Now, King Ahasuerus! What do I want with half your estate? Do you think I am a Jew-usurer, seeking good investment in land? I would much rather have all your confidence. You will not exclude me from your confidence if you admit me to your heart?
+
+[534] Why not, sir? You have just been telling me how much you liked to be conquered, and how pleasant over-persuasion is to you. Don't you think I had better take advantage of the confession, and begin and coax and entreat—even cry and be sulky if necessary—for the sake of a mere essay of my power?
+
+[535] Is it, sir? You soon give in. How stern you look now! Your eyebrows have become as thick as my finger, and your forehead resembles what, in some very astonishing poetry, I once saw styled, 'a blue-piled thunderloft.' That will be your married look, sir, I suppose?
+
+[536] There, you are less than civil now; and I like rudeness a great deal better than flattery. I had rather be a _thing_ than an angel. This is what I have to ask,—Why did you take such pains to make me believe you wished to marry Miss Ingram?
+
+[537] Of course I did. But to the point if you please, sir—Miss Ingram?
+
+[538] Excellent! Now you are small—not one whit bigger than the end of my little finger. It was a burning shame and a scandalous disgrace to act in that way. Did you think nothing of Miss Ingram's feelings, sir?
+
+[539] Never mind, Mr. Rochester: it is in no way interesting to you to know that. Answer me truly once more. Do you think Miss Ingram will not suffer from your dishonest coquetry? Won't she feel forsaken and deserted?
+
+[540] You have a curious, designing mind, Mr. Rochester. I am afraid your principles on some points are eccentric.
+
+[541] Once again, seriously; may I enjoy the great good that has been vouchsafed to me, without fearing that any one else is suffering the bitter pain I myself felt a while ago?
+
+[542] Communicate your intentions to Mrs. Fairfax, sir: she saw me with you last night in the hall, and she was shocked. Give her some explanation before I see her again. It pains me to be misjudged by so good a woman.
+
+[543] I believe she thought I had forgotten my station, and yours, sir.
+
+[544] He has said the same thing to me.
+
+[545] He tells me so.
+
+[546] No, indeed, Mrs. Fairfax! he is nothing like my father! No one, who saw us together, would suppose it for an instant. Mr. Rochester looks as young, and is as young, as some men at five-and-twenty.
+
+[547] Why?—am I a monster? is it impossible that Mr. Rochester should have a sincere affection for me?
+
+[548] Well, never mind that now, it is enough that all was right.
+
+[549] That I will, Adèle.
+
+[550] Adèle may accompany us, may she not, sir?
+
+[551] Do let her go, Mr. Rochester, if you please: it would be better.
+
+[552] I would far rather she went, sir.
+
+[553] Let her come to me, she will, perhaps, trouble you, sir: there is plenty of room on this side.
+
+[554] I said I should like to go; but reminded it, as you did me, that I had no wings to fly
+
+[555] I told her not to mind his badinage
+
+[556] I told him in a new series of whispers, that he might as well buy me a gold gown and a silver bonnet at once: I should certainly never venture to wear his choice
+
+[557] You need not look in that way, if you do, I'll wear nothing but my old Lowood frocks to the end of the chapter. I'll be married in this lilac gingham: you may make a dressing-gown for yourself out of the pearl-grey silk, and an infinite series of waistcoats out of the black satin
+
+[558] I'll not stand you an inch in the stead of a seraglio, so don't consider me an equivalent for one. If you have a fancy for anything in that line, away with you, sir, to the bazaars of Stamboul without delay, and lay out in extensive slave-purchases some of that spare cash you seem at a loss to spend satisfactorily here
+
+[559] I'll be preparing myself to go out as a missionary to preach liberty to them that are enslaved—your harem inmates amongst the rest. I'll get admitted there, and I'll stir up mutiny; and you, three-tailed bashaw as you are, sir, shall in a trice find yourself fettered amongst our hands: nor will I, for one, consent to cut your bonds till you have signed a charter, the most liberal that despot ever yet conferred
+
+[560] I would have no mercy, Mr. Rochester, if you supplicated for it with an eye like that. While you looked so, I should be certain that whatever charter you might grant under coercion, your first act, when released, would be to violate its conditions
+
+[561] I only want an easy mind, sir; not crushed by crowded obligations. Do you remember what you said of Céline Varens?—of the diamonds, the cashmeres you gave her? I will not be your English Céline Varens. I shall continue to act as Adèle's governess; by that I shall earn my board and lodging, and thirty pounds a year besides. I'll furnish my own wardrobe out of that money, and you shall give me nothing but—
+
+[562] Your regard; and if I give you mine in return, that debt will be quit
+
+[563] No, thank you, sir
+
+[564] I never have dined with you, sir: and I see no reason why I should now: till—
+
+[565] Till I can't help it
+
+[566] I have formed no supposition on the subject, sir; but I want to go on as usual for another month
+
+[567] Indeed, begging your pardon, sir, I shall not. I shall just go on with it as usual. I shall keep out of your way all day, as I have been accustomed to do: you may send for me in the evening, when you feel disposed to see me, and I'll come then; but at no other time
+
+[568] Very much
+
+[569] Very well, sir, I will try
+
+[570] I will leave you by yourself, white dream. I am feverish: I hear the wind blowing: I will go out of doors and feel it
+
+[571] You did right to hold fast to each other. I think, scathed as you look, and charred and scorched, there must be a little sense of life in you yet, rising out of that adhesion at the faithful, honest roots: you will never have green leaves more—never more see birds making nests and singing idyls in your boughs; the time of pleasure and love is over with you: but you are not desolate: each of you has a comrade to sympathise with him in his decay
+
+[572] How late it grows! I will run down to the gates: it is moonlight at intervals; I can see a good way on the road. He may be coming now, and to meet him will save some minutes of suspense
+
+[573] I wish he would come! I wish he would come!
+
+[574] No, but I thought you would never come. I could not bear to wait in the house for you, especially with this rain and wind
+
+[575] Nothing now; I am neither afraid nor unhappy
+
+[576] Rather: but I'll tell you all about it by-and-by, sir; and I daresay you will only laugh at me for my pains
+
+[577] I wanted you: but don't boast. Here we are at Thornfield: now let me get down
+
+[578] I cannot see my prospects clearly to-night, sir; and I hardly know what thoughts I have in my head. Everything in life seems unreal
+
+[579] You, sir, are the most phantom-like of all: you are a mere dream
+
+[580] Yes; though I touch it, it is a dream
+
+[581] Sir, have you finished supper?
+
+[582] It is near midnight
+
+[583] I did; and I will keep my promise, for an hour or two at least: I have no wish to go to bed
+
+[584] All, sir
+
+[585] Very well, sir
+
+[586] I believe I am
+
+[587] I could not, sir: no words could tell you what I feel. I wish this present hour would never end: who knows with what fate the next may come charged?
+
+[588] Do you, sir, feel calm and happy?
+
+[589] It is the idea farthest from my thoughts
+
+[590] Then, sir, listen. You were from home last night?
+
+[591] No, sir
+
+[592] I do, sir—I do, with my whole heart.
+
+[593] I will tease you and vex you to your heart's content, when I have finished my tale: but hear me to the end.
+
+[594] I dreamt another dream, sir: that Thornfield Hall was a dreary ruin, the retreat of bats and owls. I thought that of all the stately front nothing remained but a shell-like wall, very high and very fragile-looking. I wandered, on a moonlight night, through the grass-grown enclosure within: here I stumbled over a marble hearth, and there over a fallen fragment of cornice. Wrapped up in a shawl, I still carried the unknown little child: I might not lay it down anywhere, however tired were my arms—however much its weight impeded my progress, I must retain it. I heard the gallop of a horse at a distance on the road; I was sure it was you; and you were departing for many years and for a distant country. I climbed the thin wall with frantic perilous haste, eager to catch one glimpse of you from the top: the stones rolled from under my feet, the ivy branches I grasped gave way, the child clung round my neck in terror, and almost strangled me; at last I gained the summit. I saw you like a speck on a white track, lessening every moment. The blast blew so strong I could not stand. I sat down on the narrow ledge; I hushed the scared infant in my lap: you turned an angle of the road: I bent forward to take a last look; the wall crumbled; I was shaken; the child rolled from my knee, I lost my balance, fell, and woke.
+
+[595] All the preface, sir; the tale is yet to come. On waking, a gleam dazzled my eyes; I thought—Oh, it is daylight! But I was mistaken; it was only candlelight. Sophie, I supposed, had come in. There was a light in the dressing-table, and the door of the closet, where, before going to bed, I had hung my wedding-dress and veil, stood open; I heard a rustling there. I asked, 'Sophie, what are you doing?' No one answered; but a form emerged from the closet; it took the light, held it aloft, and surveyed the garments pendent from the portmanteau. 'Sophie! Sophie!' I again cried: and still it was silent. I had risen up in bed, I bent forward: first surprise, then bewilderment, came over me; and then my blood crept cold through my veins. Mr. Rochester, this was not Sophie, it was not Leah, it was not Mrs. Fairfax: it was not—no, I was sure of it, and am still—it was not even that strange woman, Grace Poole.
+
+[596] No, sir, I solemnly assure you to the contrary. The shape standing before me had never crossed my eyes within the precincts of Thornfield Hall before; the height, the contour were new to me.
+
+[597] It seemed, sir, a woman, tall and large, with thick and dark hair hanging long down her back. I know not what dress she had on: it was white and straight; but whether gown, sheet, or shroud, I cannot tell.
+
+[598] Not at first. But presently she took my veil from its place; she held it up, gazed at it long, and then she threw it over her own head, and turned to the mirror. At that moment I saw the reflection of the visage and features quite distinctly in the dark oblong glass.
+
+[599] Fearful and ghastly to me—oh, sir, I never saw a face like it! It was a discoloured face—it was a savage face. I wish I could forget the roll of the red eyes and the fearful blackened inflation of the lineaments!
+
+[600] This, sir, was purple: the lips were swelled and dark; the brow furrowed: the black eyebrows widely raised over the bloodshot eyes. Shall I tell you of what it reminded me?
+
+[601] Of the foul German spectre—the Vampyre.
+
+[602] Sir, it removed my veil from its gaunt head, rent it in two parts, and flinging both on the floor, trampled on them.
+
+[603] It drew aside the window-curtain and looked out; perhaps it saw dawn approaching, for, taking the candle, it retreated to the door. Just at my bedside, the figure stopped: the fiery eyes glared upon me—she thrust up her candle close to my face, and extinguished it under my eyes. I was aware her lurid visage flamed over mine, and I lost consciousness: for the second time in my life—only the second time—I became insensible from terror.
+
+[604] No one, sir, but the broad day. I rose, bathed my head and face in water, drank a long draught; felt that though enfeebled I was not ill, and determined that to none but you would I impart this vision. Now, sir, tell me who and what that woman was?
+
+[605] Sir, depend on it, my nerves were not in fault; the thing was real: the transaction actually took place.
+
+[606] Not yet.
+
+[607] Mental terrors, sir! I wish I could believe them to be only such: I wish it more now than ever; since even you cannot explain to me the mystery of that awful visitant.
+
+[608] But, sir, when I said so to myself on rising this morning, and when I looked round the room to gather courage and comfort from the cheerful aspect of each familiar object in full daylight, there—on the carpet—I saw what gave the distinct lie to my hypothesis,—the veil, torn from top to bottom in two halves!
+
+[609] Yes, sir.
+
+[610] I shall be very glad to do so, sir.
+
+[611] The night is serene, sir; and so am I.
+
+[612] My uncle! What of him? Do you know him?
+
+[613] What am I to do?
+
+[614] That I am not Edward Rochester's bride is the least part of my woe
+
+[615] that I have wakened out of most glorious dreams, and found them all void and vain, is a horror I could bear and master; but that I must leave him decidedly, instantly, entirely, is intolerable. I cannot do it.
+
+[616] Let me be torn away, then
+
+[617] Friends always forget those whom fortune forsakes
+
+[618] Yes, sir.
+
+[619] I cannot: I am tired and sick. I want some water.
+
+[620] Much better, sir; I shall be well soon.
+
+[621] At any rate, there is neither room nor claim for me, sir.
+
+[622] Sir, I do not wish to act against you
+
+[623] All is changed about me, sir; I must change too—there is no doubt of that; and to avoid fluctuations of feeling, and continual combats with recollections and associations, there is only one way—Adèle must have a new governess, sir.
+
+[624] you are inexorable for that unfortunate lady: you speak of her with hate—with vindictive antipathy. It is cruel—she cannot help being mad.
+
+[625] I do indeed, sir.
+
+[626] And take Adèle with you, sir
+
+[627] she will be a companion for you.
+
+[628] You spoke of a retirement, sir; and retirement and solitude are dull: too dull for you.
+
+[629] Sit down; I'll talk to you as long as you like, and hear all you have to say, whether reasonable or unreasonable.
+
+[630] I _do_ love you
+
+[631] more than ever: but I must not show or indulge the feeling: and this is the last time I must express it.
+
+[632] No, sir; that I am certain I could not; and therefore I see there is but one way: but you will be furious if I mention it.
+
+[633] Mr. Rochester, I must leave you.
+
+[634] I must leave Adèle and Thornfield. I must part with you for my whole life: I must begin a new existence among strange faces and strange scenes.
+
+[635] Sir, your wife is living: that is a fact acknowledged this morning by yourself. If I lived with you as you desire, I should then be your mistress: to say otherwise is sophistical—is false.
+
+[636] Yes, sir; for hours if you will.
+
+[637] I remember Mrs. Fairfax told me so once.
+
+[638] I have understood something to that effect.
+
+[639] No, sir, finish it now; I pity you—I do earnestly pity you.
+
+[640] Now, sir, proceed; what did you do when you found she was mad?
+
+[641] And what, sir, did you do when you had settled her here? Where did you go?
+
+[642] But you could not marry, sir.
+
+[643] Well, sir?
+
+[644] I mean,—What next? How did you proceed? What came of such an event?
+
+[645] Whether you found any one you liked: whether you asked her to marry you; and what she said.
+
+[646] I don't like you so well as I have done sometimes, indeed, sir. Did it not seem to you in the least wrong to live in that way, first with one mistress and then another? You talk of it as a mere matter of course.
+
+[647] Don't talk any more of those days, sir
+
+[648] Mr. Rochester, I will _not_ be yours.
+
+[649] It would to obey you.
+
+[650] Do as I do: trust in God and yourself. Believe in heaven. Hope to meet again there.
+
+[651] I advise you to live sinless, and I wish you to die tranquil.
+
+[652] Mr. Rochester, I no more assign this fate to you than I grasp at it for myself. We were born to strive and endure—you as well as I: do so. You will forget me before I forget you.
+
+[653] I am going, sir.
+
+[654] I am going.
+
+[655] Mr. Rochester!
+
+[656] God bless you, my dear master! God keep you from harm and wrong—direct you, solace you—reward you well for your past kindness to me.
+
+[657] Mother, I will.
+
+[658] Farewell, kind Mrs. Fairfax!
+
+[659] Farewell, my darling Adèle!
+
+[660] Mr. Rochester, I will love you and live with you through life till death
+
+[661] if there were any dressmaker or plain-workwoman in the village?
+
+[662] Did she know of any place in the neighbourhood where a servant was wanted?
+
+[663] What was the chief trade in this place? What did most of the people do?
+
+[664] Did Mr. Oliver employ women?
+
+[665] And what do the women do?
+
+[666] Can you tell me where I could get employment of any kind? I am a stranger, without acquaintance in this place. I want some work: no matter what.
+
+[667] Would she give me a roll for this handkerchief?
+
+[668] Would she take my gloves?
+
+[669] Will you give me a piece of bread? for I am very hungry.
+
+[670] Will you give me that?
+
+[671] My strength is quite failing me, I feel I cannot go much farther. Shall I be an outcast again this night? While the rain descends so, must I lay my head on the cold, drenched ground? I fear I cannot do otherwise: for who will receive me? But it will be very dreadful, with this feeling of hunger, faintness, chill, and this sense of desolation—this total prostration of hope. In all likelihood, though, I should die before morning. And why cannot I reconcile myself to the prospect of death? Why do I struggle to retain a valueless life? Because I know, or believe, Mr. Rochester is living: and then, to die of want and cold is a fate to which nature cannot submit passively. Oh, Providence! sustain me a little longer! Aid!—direct me!
+
+[672] Well, I would rather die yonder than in a street or on a frequented road, And far better that crows and ravens—if any ravens there be in these regions—should pick my flesh from my bones, than that they should be prisoned in a workhouse coffin and moulder in a pauper's grave.
+
+[673] That is an _ignis fatuus_
+
+[674] Is it, then, a bonfire just kindled?
+
+[675] It may be a candle in a house, but if so, I can never reach it. It is much too far away: and were it within a yard of me, what would it avail? I should but knock at the door to have it shut in my face.
+
+[676] May I speak to your mistresses?
+
+[677] I am a stranger.
+
+[678] I want a night's shelter in an out-house or anywhere, and a morsel of bread to eat.
+
+[679] Do let me speak to your mistresses.
+
+[680] But where shall I go if you drive me away? What shall I do?
+
+[681] A penny cannot feed me, and I have no strength to go farther. Don't shut the door:—oh, don't, for God's sake!
+
+[682] Tell the young ladies. Let me see them—
+
+[683] But I must die if I am turned away.
+
+[684] I can but die, and I believe in God. Let me try to wait His will in silence.
+
+[685] Who or what speaks?
+
+[686] My name is Jane Elliott.
+
+[687] Sir, I can give you no details to-night.
+
+[688] Nothing,
+
+[689] I will trust you. If I were a masterless and stray dog, I know that you would not turn me from your hearth to-night: as it is, I really have no fear. Do with me and for me as you like; but excuse me from much discourse—my breath is short—I feel a spasm when I speak.
+
+[690] You are mistaken in supposing me a beggar. I am no beggar; any more than yourself or your young ladies.
+
+[691] The want of house or brass (by which I suppose you mean money) does not make a beggar in your sense of the word.
+
+[692] Yes, very.
+
+[693] I was at a boarding-school eight years.
+
+[694] I have kept myself; and, I trust, shall keep myself again. What are you going to do with these gooseberries?
+
+[695] Give them to me and I'll pick them.
+
+[696] But I must do something. Let me have them.
+
+[697] No, you are wrong. And now, never mind what I have been: don't trouble your head further about me; but tell me the name of the house where we are.
+
+[698] And the gentleman who lives here is called Mr. St. John?
+
+[699] That village a few miles off?
+
+[700] And what is he?
+
+[701] This, then, was his father's residence?
+
+[702] The name, then, of that gentleman, is Mr. St. John Rivers?
+
+[703] And his sisters are called Diana and Mary Rivers?
+
+[704] Their father is dead?
+
+[705] They have no mother?
+
+[706] Have you lived with the family long?
+
+[707] That proves you must have been an honest and faithful servant. I will say so much for you, though you have had the incivility to call me a beggar.
+
+[708] And though, you wished to turn me from the door, on a night when you should not have shut out a dog.
+
+[709] But I do think hardly of you, and I'll tell you why—not so much because you refused to give me shelter, or regarded me as an impostor, as because you just now made it a species of reproach that I had no 'brass' and no house. Some of the best people that ever lived have been as destitute as I am; and if you are a Christian, you ought not to consider poverty a crime.
+
+[710] That will do—I forgive you now. Shake hands.
+
+[711] I am very well here.
+
+[712] I am, sir.
+
+[713] I trust I shall not eat long at your expense, sir,
+
+[714] That, I must plainly tell you, is out of my power to do; being absolutely without home and friends.
+
+[715] I do. Not a tie links me to any living thing: not a claim do I possess to admittance und
+
+[716] I am near nineteen: but I am not married. No.
+
+[717] The name of the place where, and of the person with whom I lived, is my secret
+
+[718] I need it, and I seek it so far, sir, that some true philanthropist will put me in the way of getting work which I can do, and the remuneration for which will keep me, if but in the barest necessaries of life.
+
+[719] Mr. Rivers, you and your sisters have done me a great service—the greatest man can do his fellow-being; you have rescued me, by your noble hospitality, from death. This benefit conferred gives you an unlimited claim on my gratitude, and a claim, to a certain extent, on my confidence. I will tell you as much of the history of the wanderer you have harboured, as I can tell without compromising my own peace of mind—my own security, moral and physical, and that of others. I am an orphan, the daughter of a clergyman. My parents died before I could know them. I was brought up a dependent; educated in a charitable institution. I will even tell you the name of the establishment, where I passed six years as a pupil, and two as a teacher—Lowood Orphan Asylum, ——shire: you will have heard of it, Mr. Rivers?—the Rev. Robert Brocklehurst is the treasurer.
+
+[720] I left Lowood nearly a year since to become a private governess. I obtained a good situation, and was happy. This place I was obliged to leave four days before I came here. The reason of my departure I cannot and ought not to explain: it would be useless, dangerous, and would sound incredible. No blame attached to me: I am as free from culpability as any one of you three. Miserable I am, and must be for a time; for the catastrophe which drove me from a house I had found a paradise was of a strange and direful nature. I observed but two points in planning my departure—speed, secrecy: to secure these, I had to leave behind me everything I possessed except a small parcel; which, in my hurry and trouble of mind, I forgot to take out of the coach that brought me to Whitcross. To this neighbourhood, then, I came, quite destitute. I slept two nights in the open air, and wandered about two days without crossing a threshold: but twice in that space of time did I taste food; and it was when brought by hunger, exhaustion, and despair almost to the last gasp, that you, Mr. Rivers, forbade me to perish of want at your door, and took me under the shelter of your roof. I know all your sisters have done for me since—for I have not been insensible during my seeming torpor—and I owe to their spontaneous, genuine, genial compassion as large a debt as to your evangelical charity.
+
+[721] I did say so; and it is the name by which I think it expedient to be called at present, but it is not my real name, and when I hear it, it sounds strange to me.
+
+[722] No: I fear discovery above all things; and whatever disclosure would lead to it, I avoid.
+
+[723] I do: I have already said so. Show me how to work, or how to seek work: that is all I now ask; then let me go, if it be but to the meanest cottage; but till then, allow me to stay here: I dread another essay of the horrors of homeless destitution.
+
+[724] I will be a dressmaker; I will be a plain-workwoman; I will be a servant, a nurse-girl, if I can be no better
+
+[725] Yes; I wish to know whether you have heard of any service I can offer myself to undertake?
+
+[726] And they will go in three days now?
+
+[727] What is the employment you had in view, Mr. Rivers? I hope this delay will not have increased the difficulty of securing it.
+
+[728] Do explain
+
+[729] I thank you for the proposal, Mr. Rivers, and I accept it with all my heart.
+
+[730] Save them till they are wanted. They will keep.
+
+[731] I will go to my house to-morrow, and open the school, if you like, next week.
+
+[732] What do you disapprove of, Mr. Rivers?
+
+[733] Why? What is your reason for saying so?
+
+[734] I am not ambitious.
+
+[735] I was speaking of myself.
+
+[736] Oh, no! On the contrary, I think in time I shall get on with my scholars very well.
+
+[737] My cottage is clean and weather-proof; my furniture sufficient and commodious. All I see has made me thankful, not despondent. I am not absolutely such a fool and sensualist as to regret the absence of a carpet, a sofa, and silver plate; besides, five weeks ago I had nothing—I was an outcast, a beggar, a vagrant; now I have acquaintance, a home, a business. I wonder at the goodness of God; the generosity of my friends; the bounty of my lot. I do not repine.
+
+[738] I have hardly had time yet to enjoy a sense of tranquillity, much less to grow impatient under one of loneliness.
+
+[739] It is what I mean to do.
+
+[740] I hope I shall. I have many inducements to do so.
+
+[741] Quite.
+
+[742] Very much.
+
+[743] Very nicely, indeed.
+
+[744] You have indeed. She is teachable and handy.
+
+[745] With pleasure.
+
+[746] Take a chair, Mr. Rivers.
+
+[747] Is this portrait like?
+
+[748] You did, Mr. Rivers.
+
+[749] Yes, yes; I know all that. But what of the resemblance? Who is it like?
+
+[750] Of course. And now, sir, to reward you for the accurate guess, I will promise to paint you a careful and faithful duplicate of this very p
+
+[751] As far as I can see, it would be wiser and more judicious if you were to take to yourself the original at once.
+
+[752] She likes you, I am sure, and her father respects you. Moreover, she is a sweet girl—rather thoughtless; but you would have sufficient thought for both yourself and her. You ought to marry her.
+
+[753] Certainly; better than she likes any one else. She talks of you continually: there is no subject she enjoys so much or touches upon so often.
+
+[754] But where is the use of going on, when you are probably preparing some iron blow of contradiction, or forging a fresh chain to fetter your heart?
+
+[755] Strange indeed!
+
+[756] But you need not be a missionary. You might relinquish that scheme.
+
+[757] And Miss Oliver? Are her disappointment and sorrow of no interest to you?
+
+[758] You speak coolly enough; but you suffer in the conflict. You are wasting away.
+
+[759] You tremble and become flushed whenever Miss Oliver enters the schoolroom.
+
+[760] You would describe yourself as a mere pagan philosopher.
+
+[761] And may I not paint one like it for you?
+
+[762] What is the matter?
+
+[763] Well! that caps the globe, however!
+
+[764] Any ill news? Has anything happened?
+
+[765] But why are you come?
+
+[766] I wish Diana or Mary would come and live with you: it is too bad that you should be quite alone; and you are recklessly rash about your own health.
+
+[767] Well, if you won't talk, you may be still; I'll let you alone now, and return to my book.
+
+[768] Have you heard from Diana and Mary lately?
+
+[769] There has not been any change made about your own arrangements? You will not be summoned to leave England sooner than you expected?
+
+[770] Mary Garrett's mother is better, and Mary came back to the school this morning, and I shall have four new girls next week from the Foundry Close—they would have come to-day but for the snow.
+
+[771] Mr. Oliver pays for two.
+
+[772] He means to give the whole school a treat at Christmas.
+
+[773] Was it your suggestion?
+
+[774] Whose, then?
+
+[775] It is like her: she is so good-natured.
+
+[776] Mr. Rivers!
+
+[777] Just tell me this, and since you know so much, you surely _can_ tell it me—what of Mr. Rochester? How and where is he? What is he doing? Is he well?
+
+[778] Did no one go to Thornfield Hall, then? Did no one see Mr. Rochester?
+
+[779] But they wrote to him?
+
+[780] And what did he say? Who has his letters?
+
+[781] You don't know him—don't pronounce an opinion upon him.
+
+[782] Yes—yes; but where is Mr. Briggs? He perhaps knows more of Mr. Rochester than you do.
+
+[783] Well, what did he want?
+
+[784] I!—rich?
+
+[785] How much am I worth?
+
+[786] Twenty thousand pounds?
+
+[787] It is a large sum—don't you think there is a mistake?
+
+[788] Perhaps you have read the figures wrong—it may be two thousand!
+
+[789] Stop one minute!
+
+[790] It puzzles me to know why Mr. Briggs wrote to you about me; or how he knew you, or could fancy that you, living in such an out-of-the-way place, had the power to aid in my discovery.
+
+[791] No; that does not satisfy me! It is a very strange piece of business. I must know more about it.
+
+[792] No; to-night!—to-night!
+
+[793] You certainly shall not go till you have told me all.
+
+[794] You shall!—you must!
+
+[795] And I am a hard woman,—impossible to put off.
+
+[796] Whereas I am hot, and fire dissolves ice. The blaze there has thawed all the snow from your cloak; by the same token, it has streamed on to my floor, and made it like a trampled street. As you hope ever to be forgiven, Mr. Rivers, the high crime and misdemeanour of spoiling a sanded kitchen, tell me what I wish to know.
+
+[797] Of course: that was all settled before.
+
+[798] No, indeed! I remember now seeing the letter E. comprised in your initials written in books you have at different times lent me; but I never asked for what name it stood. But what then? Surely—
+
+[799] Do let me speak; let me have one moment to draw breath and reflect.
+
+[800] Your mother was my father's sister?
+
+[801] My aunt, consequently?
+
+[802] My uncle John was your uncle John? You, Diana, and Mary are his sister's children, as I am his brother's child?
+
+[803] You three, then, are my cousins; half our blood on each side flows from the same source?
+
+[804] Oh, I am glad!—I am glad!
+
+[805] What _can_ you mean? It may be of no moment to you; you have sisters and don't care for a cousin; but I had nobody; and now three relations,—or two, if you don't choose to be counted,—are born into my world full-grown. I say again, I am glad!
+
+[806] Write to Diana and Mary to-morrow, and tell them to come home directly. Diana said they would both consider themselves rich with a thousand pounds, so with five thousand they will do very well.
+
+[807] Nonsense! and what sort of an effect will the bequest have on you? Will it keep you in England, induce you to marry Miss Oliver, and settle down like an ordinary mortal?
+
+[808] Mr. Rivers! you quite put me out of patience: I am rational enough; it is you who misunderstand, or rather who affect to misunderstand.
+
+[809] Explain! What is there to explain? You cannot fail to see that twenty thousand pounds, the sum in question, divided equally between the nephew and three nieces of our uncle, will give five thousand to each? What I want is, that you should write to your sisters and tell them of the fortune that has accrued to them.
+
+[810] I have intimated my view of the case: I am incapable of taking any other. I am not brutally selfish, blindly unjust, or fiendishly ungrateful. Besides, I am resolved I will have a home and connections. I like Moor House, and I will live at Moor House; I like Diana and Mary, and I will attach myself for life to Diana and Mary. It would please and benefit me to have five thousand pounds; it would torment and oppress me to have twenty thousand; which, moreover, could never be mine in justice, though it might in law. I abandon to you, then, what is absolutely superfluous to me. Let there be no opposition, and no discussion about it; let us agree amongst each other, and decide the point at once.
+
+[811] Oh! if all you doubt is my sincerity, I am easy: you see the justice of the case?
+
+[812] With me, it is fully as much a matter of feeling as of conscience: I must indulge my feelings; I so seldom have had an opportunity of doing so. Were you to argue, object, and annoy me for a year, I could not forego the delicious pleasure of which I have caught a glimpse—that of repaying, in part, a mighty obligation, and winning to myself lifelong friends.
+
+[813] And you, cannot at all imagine the craving I have for fraternal and sisterly love. I never had a home, I never had brothers or sisters; I must and will have them now: you are not reluctant to admit me and own me, are you?
+
+[814] Brother? Yes; at the distance of a thousand leagues! Sisters? Yes; slaving amongst strangers! I, wealthy—gorged with gold I never earned and do not merit! You, penniless! Famous equality and fraternisation! Close union! Intimate attachment!
+
+[815] Nonsense, again! Marry! I don't want to marry, and never shall marry.
+
+[816] It is not saying too much: I know what I feel, and how averse are my inclinations to the bare thought of marriage. No one would take me for love; and I will not be regarded in the light of a mere money speculation. And I do not want a stranger—unsympathising, alien, different from me; I want my kindred: those with whom I have full fellow-feeling. Say again you will be my brother: when you uttered the words I was satisfied, happy; repeat them, if you can, repeat them sincerely.
+
+[817] Thank you: that contents me for to-night. Now you had better go; for if you stay longer, you will perhaps irritate me afresh by some mistrustful scruple.
+
+[818] No. I will retain my post of mistress till you get a substitute.
+
+[819] Doubtless.
+
+[820] Yes, but I could not go on for ever so: I want to enjoy my own faculties as well as to cultivate those of other people. I must enjoy them now; don't recall either my mind or body to the school; I am out of it and disposed for full holiday.
+
+[821] To be active: as active as I can. And first I must beg you to set Hannah at liberty, and get somebody else to wait on you.
+
+[822] Yes, to go with me to Moor House. Diana and Mary will be at home in a week, and I want to have everything in order against their arrival.
+
+[823] Tell her to be ready by to-morrow then; and here is the schoolroom key: I will give you the key of my cottage in the morning.
+
+[824] My first aim will be to _clean down_ (do you comprehend the full force of the expression?)—to _clean down_ Moor House from chamber to cellar; my next to rub it up with bees-wax, oil, and an indefinite number of cloths, till it glitters again; my third, to arrange every chair, table, bed, carpet, with mathematical precision; afterwards I shall go near to ruin you in coals and peat to keep up good fires in every room; and lastly, the two days preceding that on which your sisters are expected will be devoted by Hannah and me to such a beating of eggs, sorting of currants, grating of spices, compounding of Christmas cakes, chopping up of materials for mince-pies, and solemnising of other culinary rites, as words can convey but an inadequate notion of to the uninitiated like you. My purpose, in short, is to have all things in an absolutely perfect state of readiness for Diana and Mary before next Thursday; and my ambition is to give them a beau-ideal of a welcome when they come.
+
+[825] The best things the world has!
+
+[826] I mean, on the contrary, to be busy.
+
+[827] St. John, I think you are almost wicked to talk so. I am disposed to be as content as a queen, and you try to stir me up to restlessness! To what end?
+
+[828] Yes; just as if you were speaking Greek. I feel I have adequate cause to be happy, and I _will_ be happy. Goodbye!
+
+[829] Where does she live, Hannah?
+
+[830] Tell him I will go.
+
+[831] But are you sure you are not in the position of those conquerors whose triumphs have cost them too dear? Would not such another ruin you?
+
+[832] Learning German.
+
+[833] You are not in earnest?
+
+[834] I know it.
+
+[835] I will call Diana and Mary.
+
+[836] God will protect you; for you have undertaken His work,
+
+[837] All have not your powers, and it would be folly for the feeble to wish to march with the strong.
+
+[838] Those are few in number, and difficult to discover.
+
+[839] If they are really qualified for the task, will not their own hearts be the first to inform them of it?
+
+[840] My heart is mute,—my heart is mute,
+
+[841] Oh, St. John! have some mercy!
+
+[842] I am not fit for it: I have no vocation,
+
+[843] I do not understand a missionary life: I have never studied missionary labours.
+
+[844] But my powers—where are they for this undertaking? I do not feel them. Nothing speaks or stirs in me while you talk. I am sensible of no light kindling—no life quickening—no voice counselling or cheering. Oh, I wish I could make you see how much my mind is at this moment like a rayless dungeon, with one shrinking fear fettered in its depths—the fear of being persuaded by you to attempt what I cannot accomplish!
+
+[845] I am ready to go to India, if I may go free.
+
+[846] You have hitherto been my adopted brother—I, your adopted sister: let us continue as such: you and I had better not marry.
+
+[847] St. John, I regard you as a brother—you, me as a sister: so let us continue.
+
+[848] Conditionally.
+
+[849] Seek one elsewhere than in me, St. John: seek one fitted to you.
+
+[850] And I will give the missionary my energies—it is all he wants—but not myself: that would be only adding the husk and shell to the kernel. For them he has no use: I retain them.
+
+[851] Oh! I will give my heart to God, You do not want it.
+
+[852] Shall I?
+
+[853] St. John!
+
+[854] I repeat I freely consent to go with you as your fellow-missionary, but not as your wife; I cannot marry you and become part of you.
+
+[855] Very well, under the circumstances, quite as well as if I were either your real sister, or a man and a clergyman like yourself.
+
+[856] It would do, perfectly well. I have a woman's heart, but not where you are concerned; for you I have only a comrade's constancy; a fellow-soldier's frankness, fidelity, fraternity, if you like; a neophyte's respect and submission to his hierophant: nothing more—don't fear.
+
+[857] I scorn your idea of love, I scorn the counterfeit sentiment you offer: yes, St. John, and I scorn you when you offer it.
+
+[858] Forgive me the words, St. John; but it is your own fault that I have been roused to speak so unguardedly. You have introduced a topic on which our natures are at variance—a topic we should never discuss: the very name of love is an apple of discord between us. If the reality were required, what should we do? How should we feel? My dear cousin, abandon your scheme of marriage—forget it.
+
+[859] Good-night, St. John,
+
+[860] Then shake hands,
+
+[861] St. John, I am unhappy because you are still angry with me. Let us be friends.
+
+[862] No, St. John, we are not friends as we were. You know that.
+
+[863] I believe you, St. John; for I am sure you are incapable of wishing any one ill; but, as I am your kinswoman, I should desire somewhat more of affection than that sort of general philanthropy you extend to mere strangers.
+
+[864] Must we part in this way, St. John? And when you go to India, will you leave me so, without a kinder word than you have yet spoken?
+
+[865] You said I could not unless I married you.
+
+[866] No. St. John, I will not marry you. I adhere to my resolution.
+
+[867] Formerly, because you did not love me; now, I reply, because you almost hate me. If I were to marry you, you would kill me. You are killing me now.
+
+[868] Now you will indeed hate me. It is useless to attempt to conciliate you: I see I have made an eternal enemy of you.
+
+[869] You utterly misinterpret my words. I have no intention to grieve or pain you—indeed, I have not.
+
+[870] Yes, I will, as your assistant.
+
+[871] Keep to common sense, St. John: you are verging on nonsense. You pretend to be shocked by what I have said. You are not really shocked: for, with your superior mind, you cannot be either so dull or so conceited as to misunderstand my meaning. I say again, I will be your curate, if you like, but never your wife.
+
+[872] There is no dishonour, no breach of promise, no desertion in the case. I am not under the slightest obligation to go to India, especially with strangers. With you I would have ventured much, because I admire, confide in, and, as a sister, I love you; but I am convinced that, go when and with whom I would, I should not live long in that climate.
+
+[873] I am. God did not give me my life to throw away; and to do as you wish me would, I begin to think, be almost equivalent to committing suicide. Moreover, before I definitively resolve on quitting England, I will know for certain whether I cannot be of greater use by remaining in it than by leaving it.
+
+[874] It would be fruitless to attempt to explain; but there is a point on which I have long endured painful doubt, and I can go nowhere till by some means that doubt is removed.
+
+[875] I must find out what is become of him.
+
+[876] No, Die, not one whit.
+
+[877] He does—he has asked me to be his wife.
+
+[878] Far from that, Diana; his sole idea in proposing to me is to procure a fitting fellow-labourer in his Indian toils.
+
+[879] I have refused to marry him—
+
+[880] Deeply: he will never forgive me, I fear: yet I offered to accompany him as his sister.
+
+[881] Not as a husband.
+
+[882] And I am so plain, you see, Die. We should never suit.
+
+[883] I must indeed, for when just now I repeated the offer of serving him for a deacon, he expressed himself shocked at my want of decency. He seemed to think I had committed an impropriety in proposing to accompany him unmarried: as if I had not from the first hoped to find in him a brother, and habitually regarded him as such.
+
+[884] You should hear himself on the subject. He has again and again explained that it is not himself, but his office he wishes to mate. He has told me I am formed for labour—not for love: which is true, no doubt. But, in my opinion, if I am not formed for love, it follows that I am not formed for marriage. Would it not be strange, Die, to be chained for life to a man who regarded one but as a useful tool?
+
+[885] And then, though I have only sisterly affection for him now, yet, if forced to be his wife, I can imagine the possibility of conceiving an inevitable, strange, torturing kind of love for him, because he is so talented; and there is often a certain heroic grandeur in his look, manner, and conversation. In that case, my lot would become unspeakably wretched. He would not want me to love him; and if I showed the feeling, he would make me sensible that it was a superfluity, unrequired by him, unbecoming in me. I know he would.
+
+[886] He is a good and a great man; but he forgets, pitilessly, the feelings and claims of little people, in pursuing his own large views. It is better, therefore, for the insignificant to keep out of his way, lest, in his progress, he should trample them down. Here he comes! I will leave you, Diana.
+
+[887] I could decide if I were but certain, were I but convinced that it is God's will I should marry you, I could vow to marry you here and now—come afterwards what would!
+
+[888] Show me, show me the path!
+
+[889] O God! what is it?
+
+[890] I am coming! Wait for me! Oh, I will come!
+
+[891] Where are you?
+
+[892] Down superstition! This is not thy deception, nor thy witchcraft: it is the work of nature. She was roused, and did—no miracle—but her best.
+
+[893] My spirit, is willing to do what is right; and my flesh, I hope, is strong enough to accomplish the will of Heaven, when once that will is distinctly known to me. At any rate, it shall be strong enough to search—inquire—to grope an outlet from this cloud of doubt, and find the open day of certainty.
+
+[894] In a few more hours I shall succeed you in that track, cousin, I too have a coach to meet at Whitcross. I too have some to see and ask after in England, before I depart for ever.
+
+[895] Ere many days, I will know something of him whose voice seemed last night to summon me. Letters have proved of no avail—personal inquiry shall replace them.
+
+[896] Yes; it was to see or hear news of a friend about whom I had for some time been uneasy.
+
+[897] How far is Thornfield Hall from here?
+
+[898] My journey is closed.
+
+[899] Your master himself may be beyond the British Channel, for aught you know: and then, if he is at Thornfield Hall, towards which you hasten, who besides him is there? His lunatic wife: and you have nothing to do with him: you dare not speak to him or seek his presence. You have lost your labour—you had better go no farther
+
+[900] My first view of it shall be in front, where its bold battlements will strike the eye nobly at once, and where I can single out my master's very window: perhaps he will be standing at it—he rises early: perhaps he is now walking in the orchard, or on the pavement in front. Could I but see him!—but a moment! Surely, in that case, I should not be so mad as to run to him? I cannot tell—I am not certain. And if I did—what then? God bless him! What then? Who would be hurt by my once more tasting the life his glance can give me? I rave: perhaps at this moment he is watching the sun rise over the Pyrenees, or on the tideless sea of the south.
+
+[901] Is he with Damer de Rochester, sharing the shelter of his narrow marble house?
+
+[902] You know Thornfield Hall, of course?
+
+[903] Is he dead?
+
+[904] Is Mr. Rochester living at Thornfield Hall now?
+
+[905] Was it known how it originated?
+
+[906] I have heard something of it.
+
+[907] And this lady?
+
+[908] But the fire.
+
+[909] You shall tell me this part of the story another time, but now I have a particular reason for wishing to hear all about the fire. Was it suspected that this lunatic, Mrs. Rochester, had any hand in it?
+
+[910] What! did he not leave England?
+
+[911] Then Mr. Rochester was at home when the fire broke out?
+
+[912] Good God!
+
+[913] And afterwards?
+
+[914] Were any other lives lost?
+
+[915] What do you mean?
+
+[916] You said he was alive?
+
+[917] Why? How? Where is he? Is he in England?
+
+[918] Where is he? Where does he now live?
+
+[919] Who is with him?
+
+[920] Have you any sort of conveyance?
+
+[921] Let it be got ready instantly; and if your post-boy can drive me to Ferndean before dark this day, I'll pay both you and him twice the hire you usually demand.
+
+[922] Can there be life here?
+
+[923] Mary, how are you?
+
+[924] When you go in, tell your master that a person wishes to speak to him, but do not give my name.
+
+[925] Is that what he rang for?
+
+[926] Give the tray to me; I will carry it in.
+
+[927] Lie down!
+
+[928] Down, Pilot!
+
+[929] Mary is in the kitchen.
+
+[930] Will you have a little more water, sir? I spilt half of what was in the glass.
+
+[931] Pilot knows me, and John and Mary know I am here. I came only this evening.
+
+[932] No delusion—no madness: your mind, sir, is too strong for delusion, your health too sound for frenzy.
+
+[933] And this her voice. She is all here: her heart, too. God bless you, sir! I am glad to be so near you again.
+
+[934] My dear master, I am Jane Eyre: I have found you out—I am come back to you.
+
+[935] You touch me, sir,—you hold me, and fast enough: I am not cold like a corpse, nor vacant like air, am I?
+
+[936] Which I never will, sir, from this day.
+
+[937] There, sir—and there!
+
+[938] No, sir! I am an independent woman now.
+
+[939] My uncle in Madeira is dead, and he left me five thousand pounds.
+
+[940] Quite rich, sir. If you won't let me live with you, I can build a house of my own close up to your door, and you may come and sit in my parlour when you want company of an evening.
+
+[941] I told you I am independent, sir, as well as rich: I am my own mistress.
+
+[942] Certainly—unless you object. I will be your neighbour, your nurse, your housekeeper. I find you lonely: I will be your companion—to read to you, to walk with you, to sit with you, to wait on you, to be eyes and hands to you. Cease to look so melancholy, my dear master; you shall not be left desolate, so long as I live.
+
+[943] Well, sir, I will stay with you: I have said so.
+
+[944] I will think what you like, sir: I am content to be only your nurse, if you think it better.
+
+[945] I don't care about being married.
+
+[946] It is time some one undertook to rehumanise you, for I see you are being metamorphosed into a lion, or something of that sort. You have a 'faux air' of Nebuchadnezzar in the fields about you, that is certain: your hair reminds me of eagles' feathers; whether your nails are grown like birds' claws or not, I have not yet noticed.
+
+[947] It is a pity to see it; and a pity to see your eyes—and the scar of fire on your forehead: and the worst of it is, one is in danger of loving you too well for all this; and making too much of you.
+
+[948] Did you? Don't tell me so—lest I should say something disparaging to your judgment. Now, let me leave you an instant, to make a better fire, and have the hearth swept up. Can you tell when there is a good fire?
+
+[949] And you see the candles?
+
+[950] Can you see me?
+
+[951] When do you take supper?
+
+[952] But you shall have some to-night. I am hungry: so are you, I daresay, only you forget.
+
+[953] I conscientiously believe so, Mr. Rochester.
+
+[954] Because I had come in, in Mary's stead, with the tray.
+
+[955] Have you a pocket-comb about you, sir?
+
+[956] Just to comb out this shaggy black mane. I find you rather alarming, when I examine you close at hand: you talk of my being a fairy, but I am sure, you are more like a brownie.
+
+[957] Very, sir: you always were, you know.
+
+[958] Yet I have been with good people; far better than you: a hundred times better people; possessed of ideas and views you never entertained in your life: quite more refined and exalted.
+
+[959] If you twist in that way you will make me pull the hair out of your head; and then I think you will cease to entertain doubts of my substantiality.
+
+[960] You shall not get it out of me to-night, sir; you must wait till to-morrow; to leave my tale half told, will, you know, be a sort of security that I shall appear at your breakfast table to finish it. By the bye, I must mind not to rise on your hearth with only a glass of water then: I must bring an egg at the least, to say nothing of fried ham.
+
+[961] There, sir, you are redd up and made decent. Now I'll leave you: I have been travelling these last three days, and I believe I am tired. Good night.
+
+[962] It is a bright, sunny morning, sir. The rain is over and gone, and there is a tender shining after it: you shall have a walk soon.
+
+[963] Well, whatever my sufferings had been, they were very short.
+
+[964] He was a very good man, sir; I could not help liking him.
+
+[965] St John was only twenty-nine, sir.
+
+[966] He is untiringly active. Great and exalted deeds are what he lives to perform.
+
+[967] He talks little, sir: what he does say is ever to the point. His brain is first-rate, I should think not impressible, but vigorous.
+
+[968] Truly able.
+
+[969] St. John is an accomplished and profound scholar.
+
+[970] I never mentioned his manners; but, unless I had a very bad taste, they must suit it; they are polished, calm, and gentlemanlike.
+
+[971] St. John dresses well. He is a handsome man: tall, fair, with blue eyes, and a Grecian profile.
+
+[972] Yes, Mr. Rochester, I liked him: but you asked me that before.
+
+[973] Why not, Mr. Rochester?
+
+[974] I never thought of it, before; but you certainly are rather like Vulcan, sir.
+
+[975] What questions, Mr. Rochester?
+
+[976] Daily.
+
+[977] He approved of them—yes.
+
+[978] I don't know about that.
+
+[979] Now and then.
+
+[980] Once or twice.
+
+[981] Five months.
+
+[982] Yes; the back parlour was both his study and ours: he sat near the window, and we by the table.
+
+[983] A good deal.
+
+[984] Hindostanee.
+
+[985] I learnt German, at first.
+
+[986] He did not understand German.
+
+[987] A little Hindostanee.
+
+[988] Yes, sir.
+
+[989] Only me.
+
+[990] He intended me to go with him to India.
+
+[991] He asked me to marry him.
+
+[992] I beg your pardon, it is the literal truth: he asked me more than once, and was as stiff about urging his point as ever you could be.
+
+[993] Because I am comfortable there.
+
+[994] Shake me off, then, sir,—push me away, for I'll not leave you of my own accord.
+
+[995] Where must I go, sir?
+
+[996] Who is that?
+
+[997] He is not my husband, nor ever will be. He does not love me: I do not love him. He loves (as he _can_ love, and that is not as you love) a beautiful young lady called Rosamond. He wanted to marry me only because he thought I should make a suitable missionary's wife, which she would not have done. He is good and great, but severe; and, for me, cold as an iceberg. He is not like you, sir: I am not happy at his side, nor near him, nor with him. He has no indulgence for me—no fondness. He sees nothing attractive in me; not even youth—only a few useful mental points.—Then I must leave you, sir, to go to him?
+
+[998] Absolutely, sir! Oh, you need not be jealous! I wanted to tease you a little to make you less sad: I thought anger would be better than grief. But if you wish me to love you, could you but see how much I _do_ love you, you would be proud and content. All my heart is yours, sir: it belongs to you; and with you it would remain, were fate to exile the rest of me from your presence for ever.
+
+[999] You are no ruin, sir—no lightning-struck tree: you are green and vigorous. Plants will grow about your roots, whether you ask them or not, because they take delight in your bountiful shadow; and as they grow they will lean towards you, and wind round you, because your strength offers them so safe a prop.
+
+[1000] Yes, of friends.
+
+[1001] Do you, sir?
+
+[1002] Of course: you said nothing about it before.
+
+[1003] That depends on circumstances, sir—on your choice.
+
+[1004] Choose then, sir—_her who loves you best_.
+
+[1005] Yes, sir.
+
+[1006] Yes, sir.
+
+[1007] Yes, sir.
+
+[1008] Most truly, sir.
+
+[1009] Mr. Rochester, if ever I did a good deed in my life—if ever I thought a good thought—if ever I prayed a sincere and blameless prayer—if ever I wished a righteous wish,—I am rewarded now. To be your wife is, for me, to be as happy as I can be on earth.
+
+[1010] Sacrifice! What do I sacrifice? Famine for food, expectation for content. To be privileged to put my arms round what I value—to press my lips to what I love—to repose on what I trust: is that to make a sacrifice? If so, then certainly I delight in sacrifice.
+
+[1011] Which are none, sir, to me. I love you better now, when I can really be useful to you, than I did in your state of proud independence, when you disdained every part but that of the giver and protector.
+
+[1012] To the finest fibre of my nature, sir.
+
+[1013] Mr. Rochester, I have just discovered the sun is far declined from its meridian, and Pilot is actually gone home to his dinner. Let me look at your watch.
+
+[1014] It is nearly four o'clock in the afternoon, sir. Don't you feel hungry?
+
+[1015] The sun has dried up all the rain-drops, sir. The breeze is still: it is quite hot.
+
+[1016] We will go home through the wood: that will be the shadiest way.
+
+[1017] Did you speak these words aloud?
+
+[1018] And it was last Monday night, somewhere near midnight?
+
+[1019] Mary, I have been married to Mr. Rochester this morning.
+

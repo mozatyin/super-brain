@@ -1,0 +1,546 @@
+[1] Seven!
+
+[2] Then, how do you know?
+
+[3] My dear Holmes, this is too much. You would certainly have been burned, had you lived a few centuries ago. It is true that I had a country walk on Thursday and came home in a dreadful mess, but as I have changed my clothes I can't imagine how you deduce it. As to Mary Jane, she is incorrigible, and my wife has given her notice, but there, again, I fail to see how you work it out.
+
+[4] When I hear you give your reasons, the thing always appears to me to be so ridiculously simple that I could easily do it myself, though at each successive instance of your reasoning I am baffled until you explain your process. And yet I believe that my eyes are as good as yours.
+
+[5] Frequently.
+
+[6] Well, some hundreds of times.
+
+[7] How many? I don't know.
+
+[8] This is indeed a mystery. What do you imagine that it means?
+
+[9] The man who wrote it was presumably well to do, such paper could not be bought under half a crown a packet. It is peculiarly strong and stiff.
+
+[10] The name of the maker, no doubt; or his monogram, rather.
+
+[11] The paper was made in Bohemia.
+
+[12] I think that I had better go, Holmes.
+
+[13] But your client—
+
+[14] And I.
+
+[15] And what of Irene Adler?
+
+[16] I am following you closely.
+
+[17] What then?
+
+[18] This is a very unexpected turn of affairs, and what then?
+
+[19] Which are?
+
+[20] I shall be delighted.
+
+[21] Not in the least.
+
+[22] Then I am your man.
+
+[23] But what is it you wish?
+
+[24] And what then?
+
+[25] I am to be neutral?
+
+[26] Entirely.
+
+[27] I am to remain neutral, to get near the window, to watch you, and at the signal to throw in this object, then to raise the cry of fire, and to wait you at the corner of the street.
+
+[28] Then you may entirely rely on me.
+
+[29] Where, indeed?
+
+[30] Where, then?
+
+[31] But it has twice been burgled.
+
+[32] But how will you look?
+
+[33] What then?
+
+[34] But she will refuse.
+
+[35] You have the photograph?
+
+[36] And how did you find out?
+
+[37] I am still in the dark.
+
+[38] I guessed as much.
+
+[39] That also I could fathom.
+
+[40] How did that help you?
+
+[41] And now?
+
+[42] And when will you call?
+
+[43] I was afraid that you were engaged.
+
+[44] Then I can wait in the next room.
+
+[45] Your cases have indeed been of the greatest interest to me.
+
+[46] A proposition which I took the liberty of doubting.
+
+[47] What on earth does this mean?
+
+[48] It is _The Morning Chronicle_ of April 27, 1890. Just two months ago.
+
+[49] I make nothing of it. It is a most mysterious business.
+
+[50] What are you going to do, then?
+
+[51] I have nothing to do to-day. My practice is never very absorbing.
+
+[52] Evidently, Mr. Wilson's assistant counts for a good deal in this mystery of the Red-headed League. I am sure that you inquired your way merely in order that you might see him.
+
+[53] What then?
+
+[54] And what did you see?
+
+[55] Why did you beat the pavement?
+
+[56] Yes, it would be as well.
+
+[57] Why serious?
+
+[58] At what time?
+
+[59] I shall be at Baker Street at ten.
+
+[60] Your French gold?
+
+[61] And sit in the dark?
+
+[62] But how could you guess what the motive was?
+
+[63] And how could you tell that they would make their attempt to-night?
+
+[64] You reasoned it out beautifully. It is so long a chain, and yet every link rings true.
+
+[65] And you are a benefactor of the race.
+
+[66] And yet I am not convinced of it. The cases which come to light in the papers are, as a rule, bald enough, and vulgar enough. We have in our police reports realism pushed to its extreme limits, and yet the result is, it must be confessed, neither fascinating nor artistic.
+
+[67] I can quite understand your thinking so. Of course, in your position of unofficial adviser and helper to everybody who is absolutely puzzled, throughout three continents, you are brought in contact with all that is strange and bizarre. But here let us put it to a practical test. Here is the first heading upon which I come. 'A husband's cruelty to his wife.' There is half a column of print, but I know without reading it that it is all perfectly familiar to me. There is, of course, the other woman, the drink, the push, the blow, the bruise, the sympathetic sister or landlady. The crudest of writers could invent nothing more crude.
+
+[68] And the ring?
+
+[69] And have you any on hand just now?
+
+[70] You appeared to read a good deal upon her which was quite invisible to me.
+
+[71] Well, she had a slate-coloured, broad-brimmed straw hat, with a feather of a brickish red. Her jacket was black, with black beads sewn upon it, and a fringe of little black jet ornaments. Her dress was brown, rather darker than coffee colour, with a little purple plush at the neck and sleeves. Her gloves were greyish and were worn through at the right forefinger. Her boots I didn't observe. She had small round, hanging gold earrings, and a general air of being fairly well-to-do in a vulgar, comfortable, easy-going way.
+
+[72] It surprised me.
+
+[73] And what else?
+
+[74] They are typewritten
+
+[75] Of what?
+
+[76] I cannot say that I do unless it were that he wished to be able to deny his signature if an action for breach of promise were instituted.
+
+[77] Well, have you solved it?
+
+[78] No, no, the mystery!
+
+[79] Who was he, then, and what was his object in deserting Miss Sutherland?
+
+[80] I cannot now entirely see all the steps of your reasoning
+
+[81] And how did you verify them?
+
+[82] I really don't know what to say. I have a fairly long list at present.
+
+[83] I should be ungrateful if I were not, seeing what I gained through one of them. But if I am to go, I must pack at once, for I have only half an hour.
+
+[84] Not a word. I have not seen a paper for some days.
+
+[85] That sounds a little paradoxical.
+
+[86] It is a murder, then?
+
+[87] What are they?
+
+[88] I could hardly imagine a more damning case. If ever circumstantial evidence pointed to a criminal it does so here.
+
+[89] I am afraid that the facts are so obvious that you will find little credit to be gained out of this case.
+
+[90] How on earth—
+
+[91] It was a confession
+
+[92] Coming on the top of such a damning series of events, it was at least a most suspicious remark.
+
+[93] Many men have been hanged on far slighter evidence
+
+[94] What is the young man's own account of the matter?
+
+[95] I see, that the coroner in his concluding remarks was rather severe upon young McCarthy. He calls attention, and with reason, to the discrepancy about his father having signalled to him before seeing him, also to his refusal to give details of his conversation with his father, and his singular account of his father's dying words. They are all, as he remarks, very much against the son.
+
+[96] I cannot admire his taste, if it is indeed a fact that he was averse to a marriage with so charming a young lady as this Miss Turner.
+
+[97] BALLARAT
+
+[98] It is wonderful!
+
+[99] Certainly.
+
+[100] Quite so.
+
+[101] But how did you gain them?
+
+[102] Yes, they were peculiar boots.
+
+[103] But his lameness?
+
+[104] But his left-handedness.
+
+[105] Holmes, you have drawn a net round this man from which he cannot escape, and you have saved an innocent human life as truly as if you had cut the cord which was hanging him. I see the direction in which all this points. The culprit is—
+
+[106] Pray do so.
+
+[107] that was surely the bell. Who could come to-night? Some friend of yours, perhaps?
+
+[108] A client, then?
+
+[109] Save, perhaps, the Sign of Four.
+
+[110] But have you formed any definite conception as to what these perils are?
+
+[111] Then what are they? Who is this K. K. K., and why does he pursue this unhappy family?
+
+[112] Yes, it was a singular document. Philosophy, astronomy, and politics were marked at zero, I remember. Botany variable, geology profound as regards the mud-stains from any region within fifty miles of town, chemistry eccentric, anatomy unsystematic, sensational literature and crime records unique, violin-player, boxer, swordsman, lawyer, and self-poisoner by cocaine and tobacco. Those, I think, were the main points of my analysis.
+
+[113] The first was from Pondicherry, the second from Dundee, and the third from London.
+
+[114] They are all seaports. That the writer was on board of a ship.
+
+[115] A greater distance to travel.
+
+[116] Then I do not see the point.
+
+[117] It is possible.
+
+[118] Good God! What can it mean, this relentless persecution?
+
+[119] But of what society?
+
+[120] I never have.
+
+[121] Then the page we have seen—
+
+[122] What steps will you take?
+
+[123] You will not go there first?
+
+[124] Holmes, you are too late.
+
+[125] To the police?
+
+[126] You are hungry.
+
+[127] Nothing?
+
+[128] And how have you succeeded?
+
+[129] You have a clue?
+
+[130] What do you mean?
+
+[131] And who is this Captain Calhoun?
+
+[132] How did you trace it, then?
+
+[133] Texas, I think.
+
+[134] What then?
+
+[135] What will you do, then?
+
+[136] Nearly eleven.
+
+[137] Of Friday, June 19th.
+
+[138] I tell you that it is Friday, man. Your wife has been waiting this two days for you. You should be ashamed of yourself!
+
+[139] Yes, I have one waiting.
+
+[140] Holmes! what on earth are you doing in this den?
+
+[141] I have a cab outside.
+
+[142] I was certainly surprised to find you there.
+
+[143] I came to find a friend.
+
+[144] An enemy?
+
+[145] What! You do not mean bodies?
+
+[146] If I can be of use.
+
+[147] The Cedars?
+
+[148] Where is it, then?
+
+[149] But I am all in the dark.
+
+[150] You forget that I know nothing about it.
+
+[151] Proceed, then.
+
+[152] It is very clear.
+
+[153] But a cripple! What could he have done single-handed against a man in the prime of life?
+
+[154] Pray continue your narrative.
+
+[155] I cannot imagine.
+
+[156] But I understand that all the other clothes were found in the room. Would the body be dressed in a coat alone?
+
+[157] It certainly sounds feasible.
+
+[158] But why are you not conducting the case from Baker Street?
+
+[159] My dear madam, I am an old campaigner, and if I were not I can very well see that no apology is needed. If I can be of any assistance, either to you or to my friend here, I shall be indeed happy.
+
+[160] Certainly.
+
+[161] And where is it?
+
+[162] You are engaged," said I; "perhaps I interrupt you.
+
+[163] I suppose," I remarked, "that, homely as it looks, this thing has some deadly story linked on to it—that it is the clue which will guide you in the solution of some mystery and the punishment of some crime.
+
+[164] So much so," I remarked, "that of the last six cases which I have added to my notes, three have been entirely free of any legal crime.
+
+[165] It is his hat.
+
+[166] Which surely he restored to their owner?
+
+[167] What, then, did Peterson do?
+
+[168] Did he not advertise?
+
+[169] Then, what clue could you have as to his identity?
+
+[170] From his hat?
+
+[171] But you are joking. What can you gather from this old battered felt?
+
+[172] I can see nothing," said I, handing it back to my friend.
+
+[173] Then, pray tell me what it is that you can infer from this hat?
+
+[174] My dear Holmes!
+
+[175] You are certainly joking, Holmes.
+
+[176] I have no doubt that I am very stupid, but I must confess that I am unable to follow you. For example, how did you deduce that this man was intellectual?
+
+[177] The decline of his fortunes, then?
+
+[178] Well, that is clear enough, certainly. But how about the foresight and the moral retrogression?
+
+[179] Your reasoning is certainly plausible.
+
+[180] But his wife—you said that she had ceased to love him.
+
+[181] But he might be a bachelor.
+
+[182] You have an answer to everything. But how on earth do you deduce that the gas is not laid on in his house?
+
+[183] Well, it is very ingenious," said I, laughing; "but since, as you said just now, there has been no crime committed, and no harm done save the loss of a goose, all this seems to be rather a waste of energy.
+
+[184] Not the Countess of Morcar's blue carbuncle!" I ejaculated.
+
+[185] It was lost, if I remember aright, at the Hotel Cosmopolitan," I remarked.
+
+[186] What will you say?
+
+[187] Very. But will he see it?
+
+[188] Do you think that this man Horner is innocent?
+
+[189] Well, then, do you imagine that this other one, Henry Baker, had anything to do with the matter?
+
+[190] And you can do nothing until then?
+
+[191] In that case I shall continue my professional round. But I shall come back in the evening at the hour you have mentioned, for I should like to see the solution of so tangled a business.
+
+[192] Not particularly.
+
+[193] By all means.
+
+[194] What is it, then—a fire?
+
+[195] My dear fellow, I would not miss it for anything.
+
+[196] By no means.
+
+[197] It seems to me to be a most dark and sinister business.
+
+[198] Yet if the lady is correct in saying that the flooring and walls are sound, and that the door, window, and chimney are impassable, then her sister must have been undoubtedly alone when she met her mysterious end.
+
+[199] I cannot think.
+
+[200] But what, then, did the gipsies do?
+
+[201] I cannot imagine.
+
+[202] I see many objections to any such theory.
+
+[203] It's a common enough lash. But I don't know why it should be tied.
+
+[204] Can I be of assistance?
+
+[205] Then I shall certainly come.
+
+[206] My dear Holmes!
+
+[207] I saw nothing remarkable save the bell-rope, and what purpose that could answer I confess is more than I can imagine.
+
+[208] Yes, but I do not think that it is such a very unusual thing to have a small opening between two rooms. It was so small that a rat could hardly pass through.
+
+[209] But what harm can there be in that?
+
+[210] I cannot as yet see any connection.
+
+[211] I cannot say that I have.
+
+[212] Holmes, I seem to see dimly what you are hinting at. We are only just in time to prevent some subtle and horrible crime.
+
+[213] My God! did you see it?
+
+[214] What can it mean?
+
+[215] What is it, then?
+
+[216] I regret that I have kept you waiting
+
+[217] You are fresh from a night journey, I understand, which is in itself a monotonous occupation.
+
+[218] Stop it! pull yourself together!
+
+[219] Not at all. Drink this.
+
+[220] Good heavens! this is a terrible injury. It must have bled considerably.
+
+[221] Excellent! You should have been a surgeon.
+
+[222] This has been done by a very heavy and sharp instrument.
+
+[223] An accident, I presume?
+
+[224] What! a murderous attack?
+
+[225] You horrify me.
+
+[226] How is that?
+
+[227] Perhaps you had better not speak of the matter. It is evidently trying to your nerves.
+
+[228] Ha! if it is anything in the nature of a problem which you desire to see solved, I should strongly recommend you to come to my friend, Mr. Sherlock Holmes, before you go to the official police.
+
+[229] I'll do better. I'll take you round to him myself.
+
+[230] I should be immensely obliged to you.
+
+[231] We'll call a cab and go together. We shall just be in time to have a little breakfast with him. Do you feel equal to it?
+
+[232] Then my servant will call a cab, and I shall be with you in an instant.
+
+[233] I have not yet done what I came for. I cannot possibly leave until I have seen the machine.
+
+[234] On the contrary, I opened the door myself because I felt the room to be a little close.
+
+[235] I had better put my hat on, I suppose.
+
+[236] What, you dig fuller's-earth in the house?
+
+[237] I was admiring your fuller's-earth, I think that I should be better able to advise you as to your machine if I knew what the exact purpose was for which it was used.
+
+[238] Hullo! Hullo! Colonel! Let me out!
+
+[239] Here is a very fashionable epistle
+
+[240] Not social, then?
+
+[241] And from a noble client?
+
+[242] My dear fellow, I congratulate you.
+
+[243] It looks like it
+
+[244] Oh, yes, with the deepest interest.
+
+[245] What I cannot understand, is why they should have spared you when they found you lying fainting in the garden. Perhaps the villain was softened by the woman's entreaties.
+
+[246] And I am for north, because there are no hills there, and our friend says that he did not notice the carriage go up any.
+
+[247] I have very little difficulty in finding what I want, for the facts are quite recent, and the matter struck me as remarkable. I feared to refer them to you, however, as I knew that you had an inq
+
+[248] You were not yourself at fault at all, then?
+
+[249] And how in the world did you find them?
+
+[250] How did you deduce the select?
+
+[251] But with no very good result," I remarked. "His conduct was certainly not very gracious.
+
+[252] Holmes," said I as I stood one morning in our bow-window looking down the street, "here is a madman coming along. It seems rather sad that his relatives should allow him to come out alone.
+
+[253] What on earth can be the matter with him?" I asked. "He is looking up at the numbers of the houses.
+
+[254] Where to?
+
+[255] How are you getting on?
+
+[256] Why, it is after nine now
+
+[257] I should not be surprised if that were he. I thought I heard a ring.
+
+[258] Deserted you?
+
+[259] I would pay ten.
+
+[260] And yet, I cannot quite hold myself absolved from the charge of sensationalism which has been urged against my records.
+
+[261] It seems to me that I have done you full justice in the matter.
+
+[262] The end may have been so, but the methods I hold to have been novel and of interest.
+
+[263] Do you know the young lady?
+
+[264] At least, she seems to be a young lady who is very well able to take care of herself.
+
+[265] I should wish to.
+
+[266] There is a train at half-past nine. It is due at Winchester at 11:30.
+
+[267] Are they not fresh and beautiful?
+
+[268] Good heavens! Who would associate crime with these dear old homesteads?
+
+[269] You horrify me!
+
+[270] No. If she can come to Winchester to meet us she can get away.
+
+[271] What _can_ be the matter, then? Can you suggest no explanation?
+
+[272] What on earth has that to do with it?
+
+[273] I have my revolver
+
