@@ -1,0 +1,49 @@
+{
+  "user": "real_user_E_122msgs",
+  "pipeline": "v2_compressed_temp0_bf",
+  "total_msgs": 117,
+  "segment_size": 25,
+  "convergence": [
+    {
+      "checkpoint": 0,
+      "cumulative_msgs": 25,
+      "pct": 21.4,
+      "mae_vs_full": 0.072,
+      "profile_delta": 0.0,
+      "elapsed": 177.2
+    },
+    {
+      "checkpoint": 1,
+      "cumulative_msgs": 50,
+      "pct": 42.7,
+      "mae_vs_full": 0.041,
+      "profile_delta": 0.0595,
+      "elapsed": 12398.6
+    },
+    {
+      "checkpoint": 2,
+      "cumulative_msgs": 75,
+      "pct": 64.1,
+      "mae_vs_full": 0.054,
+      "profile_delta": 0.0411,
+      "elapsed": 191.9
+    },
+    {
+      "checkpoint": 3,
+      "cumulative_msgs": 100,
+      "pct": 85.5,
+      "mae_vs_full": 0.033,
+      "profile_delta": 0.0424,
+      "elapsed": 232.7
+    },
+    {
+      "checkpoint": 4,
+      "cumulative_msgs": 117,
+      "pct": 100.0,
+      "mae_vs_full": 0.007,
+      "profile_delta": 0.0373,
+      "elapsed": 210.9
+    }
+  ],
+  "final_mae": 0.007
+}

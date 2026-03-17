@@ -1,0 +1,461 @@
+{
+  "literary_cross_pipeline": {
+    "scarlett": {
+      "overall_mae": 0.081,
+      "per_dim": {
+        "AGR": 0.03,
+        "OPN": 0.146,
+        "NEU": 0.107,
+        "EXT": 0.003,
+        "HON": 0.13,
+        "DRK": 0.026,
+        "VAL": 0.033,
+        "COG": 0.031,
+        "EMO": 0.113,
+        "STR": 0.231,
+        "SOC": 0.096,
+        "HUM": 0.119,
+        "CON": 0.043
+      },
+      "traits": 69,
+      "elapsed": 214.5
+    },
+    "sherlock": {
+      "overall_mae": 0.081,
+      "per_dim": {
+        "AGR": 0.131,
+        "OPN": 0.014,
+        "NEU": 0.064,
+        "EXT": 0.144,
+        "HON": 0.047,
+        "DRK": 0.005,
+        "VAL": 0.045,
+        "COG": 0.012,
+        "EMO": 0.118,
+        "STR": 0.219,
+        "SOC": 0.095,
+        "HUM": 0.135,
+        "CON": 0.025
+      },
+      "traits": 69,
+      "elapsed": 269.3
+    },
+    "elizabeth": {
+      "overall_mae": 0.075,
+      "per_dim": {
+        "AGR": 0.041,
+        "OPN": 0.01,
+        "NEU": 0.059,
+        "EXT": 0.095,
+        "HON": 0.0,
+        "DRK": 0.123,
+        "VAL": 0.035,
+        "COG": 0.038,
+        "EMO": 0.101,
+        "STR": 0.26,
+        "SOC": 0.017,
+        "HUM": 0.172,
+        "CON": 0.098
+      },
+      "traits": 69,
+      "elapsed": 254.4
+    },
+    "darcy": {
+      "overall_mae": 0.077,
+      "per_dim": {
+        "AGR": 0.119,
+        "OPN": 0.071,
+        "NEU": 0.043,
+        "EXT": 0.084,
+        "HON": 0.034,
+        "DRK": 0.064,
+        "VAL": 0.033,
+        "COG": 0.061,
+        "EMO": 0.09,
+        "STR": 0.303,
+        "SOC": 0.033,
+        "HUM": 0.046,
+        "CON": 0.044
+      },
+      "traits": 69,
+      "elapsed": 248.5
+    },
+    "watson": {
+      "overall_mae": 0.07,
+      "per_dim": {
+        "AGR": 0.085,
+        "OPN": 0.097,
+        "NEU": 0.056,
+        "EXT": 0.118,
+        "HON": 0.034,
+        "DRK": 0.013,
+        "VAL": 0.05,
+        "COG": 0.062,
+        "EMO": 0.035,
+        "STR": 0.047,
+        "SOC": 0.127,
+        "HUM": 0.0,
+        "CON": 0.09
+      },
+      "traits": 69,
+      "elapsed": 232.9
+    },
+    "hamlet": {
+      "overall_mae": 0.063,
+      "per_dim": {
+        "AGR": 0.117,
+        "OPN": 0.024,
+        "NEU": 0.049,
+        "EXT": 0.086,
+        "HON": 0.05,
+        "DRK": 0.063,
+        "VAL": 0.02,
+        "COG": 0.009,
+        "EMO": 0.055,
+        "STR": 0.019,
+        "SOC": 0.066,
+        "HUM": 0.082,
+        "CON": 0.115
+      },
+      "traits": 69,
+      "elapsed": 232.1
+    },
+    "jane_eyre": {
+      "overall_mae": 0.091,
+      "per_dim": {
+        "AGR": 0.109,
+        "OPN": 0.033,
+        "NEU": 0.125,
+        "EXT": 0.114,
+        "HON": 0.057,
+        "DRK": 0.024,
+        "VAL": 0.07,
+        "COG": 0.066,
+        "EMO": 0.109,
+        "STR": 0.163,
+        "SOC": 0.18,
+        "HUM": 0.081,
+        "CON": 0.042
+      },
+      "traits": 69,
+      "elapsed": 256.1
+    },
+    "scrooge": {
+      "overall_mae": 0.094,
+      "per_dim": {
+        "AGR": 0.045,
+        "OPN": 0.06,
+        "NEU": 0.111,
+        "EXT": 0.127,
+        "HON": 0.155,
+        "DRK": 0.059,
+        "VAL": 0.145,
+        "COG": 0.119,
+        "EMO": 0.143,
+        "STR": 0.15,
+        "SOC": 0.048,
+        "HUM": 0.094,
+        "CON": 0.045
+      },
+      "traits": 69,
+      "elapsed": 247.6
+    },
+    "huck": {
+      "overall_mae": 0.094,
+      "per_dim": {
+        "AGR": 0.069,
+        "OPN": 0.164,
+        "NEU": 0.21,
+        "EXT": 0.08,
+        "HON": 0.034,
+        "DRK": 0.162,
+        "VAL": 0.047,
+        "COG": 0.012,
+        "EMO": 0.082,
+        "STR": 0.025,
+        "SOC": 0.105,
+        "HUM": 0.159,
+        "CON": 0.031
+      },
+      "traits": 69,
+      "elapsed": 229.6
+    }
+  },
+  "real_user_profiles": {
+    "real_user_B_769msgs": {
+      "msgs": 741,
+      "traits": 69,
+      "elapsed": 216.6
+    },
+    "real_user_C_582msgs": {
+      "msgs": 552,
+      "traits": 69,
+      "elapsed": 238.2
+    },
+    "real_user_D_453msgs": {
+      "msgs": 363,
+      "traits": 69,
+      "elapsed": 228.8
+    },
+    "real_user_E_122msgs": {
+      "msgs": 117,
+      "traits": 69,
+      "elapsed": 207.8
+    }
+  },
+  "progressive_self_consistency": {
+    "real_user_E_122msgs": [
+      {
+        "checkpoint": 0,
+        "msgs": 25,
+        "pct": 21.4,
+        "mae": 0.07,
+        "delta": 0.0,
+        "elapsed": 180.6
+      },
+      {
+        "checkpoint": 1,
+        "msgs": 50,
+        "pct": 42.7,
+        "mae": 0.04,
+        "delta": 0.0534,
+        "elapsed": 190.4
+      },
+      {
+        "checkpoint": 2,
+        "msgs": 75,
+        "pct": 64.1,
+        "mae": 0.043,
+        "delta": 0.0392,
+        "elapsed": 181.8
+      },
+      {
+        "checkpoint": 3,
+        "msgs": 100,
+        "pct": 85.5,
+        "mae": 0.043,
+        "delta": 0.0395,
+        "elapsed": 197.0
+      },
+      {
+        "checkpoint": 4,
+        "msgs": 117,
+        "pct": 100.0,
+        "mae": 0.006,
+        "delta": 0.0418,
+        "elapsed": 207.6
+      }
+    ],
+    "real_user_C_582msgs": [
+      {
+        "checkpoint": 0,
+        "msgs": 50,
+        "pct": 9.1,
+        "mae": 0.102,
+        "delta": 0.0,
+        "elapsed": 192.1
+      },
+      {
+        "checkpoint": 1,
+        "msgs": 100,
+        "pct": 18.1,
+        "mae": 0.099,
+        "delta": 0.0458,
+        "elapsed": 214.0
+      },
+      {
+        "checkpoint": 2,
+        "msgs": 150,
+        "pct": 27.2,
+        "mae": 0.091,
+        "delta": 0.0286,
+        "elapsed": 220.9
+      },
+      {
+        "checkpoint": 3,
+        "msgs": 200,
+        "pct": 36.2,
+        "mae": 0.087,
+        "delta": 0.055,
+        "elapsed": 245.1
+      },
+      {
+        "checkpoint": 4,
+        "msgs": 250,
+        "pct": 45.3,
+        "mae": 0.096,
+        "delta": 0.0615,
+        "elapsed": 230.8
+      },
+      {
+        "checkpoint": 5,
+        "msgs": 300,
+        "pct": 54.3,
+        "mae": 0.072,
+        "delta": 0.0505,
+        "elapsed": 233.9
+      },
+      {
+        "checkpoint": 6,
+        "msgs": 350,
+        "pct": 63.4,
+        "mae": 0.072,
+        "delta": 0.0508,
+        "elapsed": 301.0
+      },
+      {
+        "checkpoint": 7,
+        "msgs": 400,
+        "pct": 72.5,
+        "mae": 0.075,
+        "delta": 0.0407,
+        "elapsed": 240.0
+      },
+      {
+        "checkpoint": 8,
+        "msgs": 450,
+        "pct": 81.5,
+        "mae": 0.074,
+        "delta": 0.0591,
+        "elapsed": 242.8
+      },
+      {
+        "checkpoint": 9,
+        "msgs": 500,
+        "pct": 90.6,
+        "mae": 0.071,
+        "delta": 0.0586,
+        "elapsed": 239.0
+      },
+      {
+        "checkpoint": 10,
+        "msgs": 550,
+        "pct": 99.6,
+        "mae": 0.056,
+        "delta": 0.0591,
+        "elapsed": 223.9
+      },
+      {
+        "checkpoint": 11,
+        "msgs": 552,
+        "pct": 100.0,
+        "mae": 0.017,
+        "delta": 0.0593,
+        "elapsed": 227.9
+      }
+    ],
+    "scarlett": [
+      {
+        "checkpoint": 0,
+        "msgs": 25,
+        "pct": 9.0,
+        "mae": 0.11,
+        "delta": 0.0,
+        "elapsed": 169.0
+      },
+      {
+        "checkpoint": 1,
+        "msgs": 50,
+        "pct": 18.0,
+        "mae": 0.094,
+        "delta": 0.0646,
+        "elapsed": 184.9
+      },
+      {
+        "checkpoint": 2,
+        "msgs": 75,
+        "pct": 27.0,
+        "mae": 0.095,
+        "delta": 0.0542,
+        "elapsed": 179.1
+      },
+      {
+        "checkpoint": 3,
+        "msgs": 100,
+        "pct": 36.0,
+        "mae": 0.074,
+        "delta": 0.069,
+        "elapsed": 187.1
+      },
+      {
+        "checkpoint": 4,
+        "msgs": 125,
+        "pct": 45.0,
+        "mae": 0.069,
+        "delta": 0.0765,
+        "elapsed": 189.8
+      },
+      {
+        "checkpoint": 5,
+        "msgs": 150,
+        "pct": 54.0,
+        "mae": 0.054,
+        "delta": 0.0571,
+        "elapsed": 198.9
+      },
+      {
+        "checkpoint": 6,
+        "msgs": 175,
+        "pct": 62.9,
+        "mae": 0.059,
+        "delta": 0.0385,
+        "elapsed": 192.6
+      },
+      {
+        "checkpoint": 7,
+        "msgs": 200,
+        "pct": 71.9,
+        "mae": 0.068,
+        "delta": 0.0463,
+        "elapsed": 196.8
+      },
+      {
+        "checkpoint": 8,
+        "msgs": 225,
+        "pct": 80.9,
+        "mae": 0.048,
+        "delta": 0.0377,
+        "elapsed": 193.9
+      },
+      {
+        "checkpoint": 9,
+        "msgs": 250,
+        "pct": 89.9,
+        "mae": 0.058,
+        "delta": 0.0336,
+        "elapsed": 188.7
+      },
+      {
+        "checkpoint": 10,
+        "msgs": 275,
+        "pct": 98.9,
+        "mae": 0.046,
+        "delta": 0.0376,
+        "elapsed": 199.3
+      },
+      {
+        "checkpoint": 11,
+        "msgs": 278,
+        "pct": 100.0,
+        "mae": 0.022,
+        "delta": 0.0418,
+        "elapsed": 222.4
+      }
+    ]
+  },
+  "per_dimension_mae": {
+    "AGR": 0.083,
+    "OPN": 0.069,
+    "NEU": 0.091,
+    "EXT": 0.094,
+    "HON": 0.06,
+    "DRK": 0.06,
+    "VAL": 0.053,
+    "COG": 0.046,
+    "EMO": 0.094,
+    "STR": 0.157,
+    "SOC": 0.085,
+    "HUM": 0.099,
+    "CON": 0.059
+  }
+}
