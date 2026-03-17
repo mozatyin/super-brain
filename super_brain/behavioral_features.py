@@ -300,6 +300,81 @@ _ADJUSTMENT_RULES: list[tuple[str, float, str, str, float]] = [
 ]
 
 
+# --- Rule-based direct scoring ---
+
+RULE_BASED_TRAITS: set[str] = {
+    "verbosity", "politeness", "decisiveness", "curiosity",
+    "hot_cold_oscillation", "self_mythologizing", "optimism",
+}
+
+# Mapping tables: (breakpoints, scores) for piecewise linear interpolation
+_DIRECT_SCORE_MAPS: dict[str, tuple[list[float], list[float]]] = {
+    "verbosity": ([0, 40, 80, 150, 300], [0.10, 0.20, 0.42, 0.58, 0.80]),
+    "politeness": ([0, 0.005, 0.015, 0.030, 0.060], [0.12, 0.25, 0.38, 0.58, 0.75]),
+    "decisiveness": ([-0.03, -0.01, 0, 0.01, 0.03], [0.25, 0.38, 0.50, 0.62, 0.75]),
+    "curiosity": ([0, 0.05, 0.15, 0.25, 0.40], [0.28, 0.38, 0.50, 0.62, 0.72]),
+    "hot_cold_oscillation": ([0, 30, 60, 100, 160], [0.20, 0.28, 0.38, 0.55, 0.70]),
+    "self_mythologizing": ([0, 0.03, 0.06, 0.09, 0.14], [0.25, 0.32, 0.40, 0.52, 0.65]),
+    "optimism": ([0, 0.3, 0.5, 0.7, 1.0], [0.22, 0.35, 0.47, 0.60, 0.72]),
+}
+
+
+def _interpolate(value: float, breakpoints: list[float], scores: list[float]) -> float:
+    """Piecewise linear interpolation for continuous trait scoring."""
+    if value <= breakpoints[0]:
+        return scores[0]
+    if value >= breakpoints[-1]:
+        return scores[-1]
+    for i in range(len(breakpoints) - 1):
+        if value <= breakpoints[i + 1]:
+            t = (value - breakpoints[i]) / (breakpoints[i + 1] - breakpoints[i])
+            return scores[i] + t * (scores[i + 1] - scores[i])
+    return scores[-1]
+
+
+def compute_direct_scores(features: BehavioralFeatures) -> dict[str, float]:
+    """Compute deterministic scores for rule-based traits.
+
+    These traits are fully determined by objective text statistics and do NOT
+    need LLM interpretation. Returns {trait_name: score} for all 7 rule-based
+    traits, with scores in [0.0, 1.0].
+    """
+    decisiveness_signal = (
+        features.absolutist_ratio + features.decisiveness_ratio - features.hedging_ratio
+    )
+
+    curiosity_signal = features.question_ratio * 0.6 + features.curiosity_ratio * 10.0
+    curiosity_signal = min(curiosity_signal, 0.40)
+
+    pos = features.pos_emotion_ratio
+    neg = features.neg_emotion_ratio
+    optimism_signal = pos / (pos + neg) if (pos + neg) > 0.001 else 0.5
+
+    return {
+        "verbosity": round(_interpolate(
+            features.avg_words_per_turn, *_DIRECT_SCORE_MAPS["verbosity"]
+        ), 3),
+        "politeness": round(_interpolate(
+            features.politeness_ratio, *_DIRECT_SCORE_MAPS["politeness"]
+        ), 3),
+        "decisiveness": round(_interpolate(
+            decisiveness_signal, *_DIRECT_SCORE_MAPS["decisiveness"]
+        ), 3),
+        "curiosity": round(_interpolate(
+            curiosity_signal, *_DIRECT_SCORE_MAPS["curiosity"]
+        ), 3),
+        "hot_cold_oscillation": round(_interpolate(
+            features.words_std, *_DIRECT_SCORE_MAPS["hot_cold_oscillation"]
+        ), 3),
+        "self_mythologizing": round(_interpolate(
+            features.self_ref_ratio, *_DIRECT_SCORE_MAPS["self_mythologizing"]
+        ), 3),
+        "optimism": round(_interpolate(
+            optimism_signal, *_DIRECT_SCORE_MAPS["optimism"]
+        ), 3),
+    }
+
+
 def compute_adjustments(features: BehavioralFeatures) -> dict[str, float]:
     """Map behavioral features to trait adjustment deltas.
 
