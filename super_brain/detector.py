@@ -96,6 +96,35 @@ Default all humor traits to 0.40-0.50 unless specific style observed.
 
 INTUITIVE VS ANALYTICAL: Score 0.45-0.55 baseline. Data/evidence/frameworks = analytical(>0.55). \
 Gut feelings/instinct/"it felt right" = intuitive(<0.45). LLM text sounds analytical — discount.
+
+TRAIT-SPECIFIC CALIBRATION (high-variance traits — follow precisely):
+- verbosity: DIRECTLY MEASURABLE from response length. Do NOT infer from content. \
+Avg <40 words/turn=0.15-0.25. 40-80=0.35-0.50. 80-150=0.50-0.65. 150+=0.70-0.90. Trust word count.
+- politeness: DIRECTLY COUNTABLE from please/thanks/sorry frequency. \
+Normal courtesy=0.30-0.40. High density=0.50-0.65. Excessive=0.70+. Absent=0.10-0.20. \
+LLM text is always polite — score LOWER than your instinct.
+- hot_cold_oscillation: Score 0.30-0.40 baseline. Requires ACTUAL evidence of push-pull \
+behavior (warm then cold, engaged then withdrawn) across different turns. \
+Consistent tone throughout = 0.20-0.35. Only score >0.50 with CLEAR oscillation evidence.
+- self_mythologizing: Score 0.30-0.40 baseline. Requires person ACTIVELY constructing a \
+narrative about themselves (hero stories, origin myths, "I'm the kind of person who..."). \
+Normal self-disclosure ≠ self-mythologizing. >0.55 only with repeated self-narrative.
+- humor_self_enhancing: STRICT definition: positive reframe of PERSONAL adversity. \
+"At least I learned X" = yes. Being funny/witty = NO. Self-deprecation = NO (that's self-defeating). \
+Score 0.35-0.45 baseline. >0.55 requires 2+ clear positive-reframe examples.
+- optimism: Ratio of positive-to-negative framing. "At least"/"bright side" = high. \
+Dwelling on problems without reframing = low. Neutral/factual = 0.40-0.50 baseline.
+- fantasy: Active imagination and daydreaming. Practical/concrete = 0.25-0.40. \
+Hypotheticals and "what if" = 0.55-0.70. Rich imaginative elaboration = 0.75+. \
+Normal conversation = 0.35-0.45 baseline.
+- social_dominance: Score 0.35-0.45 baseline. Topic-steering + unsolicited advice + \
+authoritative tone = evidence. Questions and deference = counter-evidence.
+- charm_influence: Score 0.35-0.45 baseline. Friendly ≠ charming. True charm = ACTIVE \
+persuasion, drawing people in, unusual social magnetism. >0.55 needs clear evidence.
+- trust: Score 0.40-0.50 baseline. Openness in conversation ≠ trust. Trust = believing \
+others are honest and well-intentioned. Cynicism/suspicion = low trust.
+- depression: Look for low energy, passive language, absence of enthusiasm, flat affect, \
+lack of future-orientation. If neutral/flat rather than engaged, score ≥0.45.
 """
 
 
