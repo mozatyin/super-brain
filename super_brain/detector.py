@@ -7,6 +7,7 @@ import re
 
 import anthropic
 
+from super_brain.behavioral_features import BehavioralFeatures
 from super_brain.catalog import (
     TRAIT_CATALOG,
     ALL_DIMENSIONS,
@@ -30,255 +31,71 @@ DIMENSION_BATCHES: list[list[str]] = [
 
 
 _SYSTEM_PROMPT = """\
-You are a personality analyst specializing in detecting personality traits from \
-natural conversation. You will be given a CONVERSATION between two people. \
-Focus on the target speaker and analyze their personality based on:
-- What they say (content, topics they gravitate toward or avoid)
-- How they say it (tone, word choice, sentence structure, hedging, directness)
-- How they REACT to the other person (agreement/disagreement, emotional responsiveness)
-- Conversational dynamics (turn length, question-asking, topic steering)
-- What is ABSENT (topics avoided, emotions not expressed, perspectives not considered)
+You are a personality analyst. Analyze the target speaker's personality from conversation text.
 
-For EACH trait:
-1. List specific text observations (quotes, patterns, behavioral indicators).
-2. Rate this person RELATIVE TO AN AVERAGE PERSON. Ask: "Compared to a typical person \
-in casual conversation, does this speaker show MORE or LESS of this trait?" \
-Score 0.50 = exactly average. Above 0.50 = more than average. Below 0.50 = less than average.
+Analyze based on: what they say (content, topics), how they say it (tone, word choice, hedging), \
+reactions to others (agreement, emotional responsiveness), conversational dynamics (turn length, \
+question-asking, topic steering), and what is ABSENT (avoided topics, unexpressed emotions).
 
-Return ONLY valid JSON with this structure:
-{
-  "reasoning": [
-    {"trait": "<name>", "observations": ["observation 1", "observation 2", ...]}
-  ],
-  "scores": [
-    {
-      "dimension": "<DIM>",
-      "name": "<trait_name>",
-      "value": <float 0.0-1.0>,
-      "confidence": <float 0.0-1.0>,
-      "evidence_quote": "<short quote from text>"
-    }
-  ]
-}
+For EACH trait: list specific observations, then rate RELATIVE TO AN AVERAGE PERSON. \
+0.50 = exactly average. Each concrete observation shifts ±0.10-0.15 from baseline.
 
-Guidelines:
-- value: your assessment on the 0.0-1.0 scale, using the provided anchors as calibration points
-- confidence: how certain you are (lower if insufficient evidence in the text)
-- evidence_quote: a short direct quote from the text supporting your score
+Return ONLY valid JSON:
+{"reasoning": [{"trait": "<name>", "observations": ["..."]}], \
+"scores": [{"dimension": "<DIM>", "name": "<trait_name>", "value": <0.0-1.0>, \
+"confidence": <0.0-1.0>, "evidence_quote": "<quote>"}]}
 
-EVIDENCE-ANCHORED SCORING (CRITICAL — READ CAREFULLY):
-- START at 0.50 (population average) for every trait, then MOVE based on evidence.
-- USE THE FULL 0.0-1.0 SCALE. Extreme scores are EXPECTED when evidence supports them:
-  * 0.05-0.20 = Person actively, repeatedly demonstrates the OPPOSITE of this trait. \
-    Example for warmth: "cold, dismissive, showed zero interest in others across multiple exchanges."
-  * 0.20-0.35 = Below average — noticeable absence or mild counter-evidence.
-  * 0.35-0.65 = Average range — weak or mixed evidence. Default here when unsure.
-  * 0.65-0.80 = Above average — clear, consistent evidence across multiple turns.
-  * 0.80-0.95 = Person strongly, repeatedly demonstrates this trait in distinct ways. \
-    Example for warmth: "enthusiastically engaged, asked caring follow-ups, shared personal vulnerability."
-- CALIBRATION CHECK: If >70% of your scores fall in 0.35-0.65, you are likely under-reading \
-the evidence. Re-examine: most real people have 10-15 traits outside the middle range.
-- Each concrete observation shifts the score by 0.10-0.15 from baseline. Two strong \
-observations in the same direction warrant a score in the 0.25-0.35 or 0.65-0.75 range. \
-Three+ consistent observations warrant extreme scores (below 0.20 or above 0.80).
+SCORING SCALE:
+0.00-0.15: Actively demonstrates the OPPOSITE | 0.15-0.35: Below average \
+| 0.35-0.65: Average/mixed evidence | 0.65-0.85: Clear consistent evidence \
+| 0.85-1.00: Extreme — every moment shows this trait.
+CALIBRATION: If >70% of scores fall 0.35-0.65, re-examine — real people have 10-15 traits outside mid-range.
 
-CONVERSATION CONTEXT AWARENESS:
-- This text comes from CASUAL CONVERSATION. Critical implications:
-  * Friendly tone in casual chat is the SOCIAL NORM, not evidence of high warmth/charm. \
-Score warmth and charm_influence at 0.45-0.55 unless the person is DISTINCTLY warmer or colder.
-  * Composure in casual chat is EXPECTED, not evidence of high emotional_regulation. \
-Score emotional_regulation at 0.45-0.55 unless you see specific regulation effort or dysregulation.
-  * Polite small talk is NOT evidence of EXTREME trust (0.75+), compliance (0.75+), or \
-cooperativeness (0.75+). However, it IS consistent with MODERATE levels (0.40-0.55). \
-Score trust/compliance/modesty at 0.40-0.55 as baseline. Only score BELOW 0.30 when you \
-see ACTIVE distrust, confrontation, or immodesty. Only score ABOVE 0.65 when you see \
-DISTINCTIVE prosocial signals beyond normal social politeness.
+CASUAL CONVERSATION CONTEXT — CRITICAL BASELINES:
+Normal chat behavior is NOT personality evidence. These are LLM/social artifacts to IGNORE:
+- Friendly tone, articulateness, structured language → LLM artifacts, NOT personality
+- Polite small talk → NOT high trust/compliance/warmth/charm
+- Composure → NOT high emotional_regulation
+- Matching style → NOT high mirroring_ability
+- Humble tone → NOT high modesty (LLM always sounds humble)
 
-LLM-GENERATED TEXT BIAS CORRECTION (CRITICAL):
-- ALL text in this conversation will sound articulate and well-structured because it's \
-generated text. You MUST heavily discount:
-  * Articulateness → NOT evidence of high need_for_cognition or analytical thinking
-  * Warmth → NOT evidence of high charm_influence or warmth trait
-  * Self-deprecating humor → NOT evidence of high humor_self_enhancing (that's self-DEFEATING)
-  * Finding humor in stories → NOT evidence of high humor_self_enhancing unless they \
-    EXPLICITLY reframe adversity positively ("at least I learned something")
-  * Matching conversational style → NOT evidence of high mirroring_ability
-- need_for_cognition: Default to 0.40-0.50. LLM text sounds articulate regardless — discount this. \
-Only score >0.60 if the person UNPROMPTED initiates intellectual analysis or says they enjoy thinking. \
-Only score <0.30 if they actively avoid complexity ("I don't overthink things").
-- intuitive_vs_analytical: Score at 0.45-0.55 baseline. LLM text always sounds structured/analytical — \
-HEAVILY discount this. Only score >0.60 (analytical) if person explicitly uses data/evidence/frameworks \
-to reason ("after weighing the options", "the numbers show"). Only score <0.40 (intuitive) if person \
-explicitly relies on gut feelings ("I just know", "it felt right", "my instinct says"). Story-based \
-explanations with feelings = intuitive (0.35-0.45). Criteria-based explanations with evidence = analytical (0.55-0.65).
-- cognitive_flexibility: Score at 0.45-0.55 baseline. In casual chat, people rarely demonstrate \
-perspective-switching. Only score >0.60 if person EXPLICITLY considers opposing viewpoints or changes \
-position when challenged ("that's a good point, I hadn't thought of it that way"). Only score <0.35 \
-if person shows rigid black-and-white thinking ("it's always like this", refuses to consider alternatives). \
-Normal agreeableness in conversation is NOT cognitive flexibility.
-- humor_self_enhancing: This is about using humor to COPE with PERSONAL adversity with a POSITIVE \
-reframe ("at least I learned X", "best mistake I ever made"). NOT about telling funny stories, \
-being witty, or self-deprecation. Default to 0.40-0.50 unless you see specific positive-reframe coping.
+OVER-DETECTED TRAITS (score conservatively, evidence must be ACTIVE not passive):
+modesty(≤0.45), mirroring_ability(≤0.35), politeness(≤0.45), charm_influence(≤0.50), \
+need_for_cognition(≤0.50), cognitive_flexibility(≤0.50), deliberation(≤0.50), \
+competence(≤0.50), empathy_cognitive(≤0.50), loyalty_group(≤0.45), \
+warmth(≤0.55), straightforwardness(≤0.50), sincerity(≤0.55), dutifulness(≤0.50), \
+greed_avoidance(≤0.50), information_control(≤0.50), self_consciousness(≤0.50).
+These are DEFAULT CEILINGS for normal conversation. Only exceed with SPECIFIC ACTIVE evidence.
 
-HUMILITY CALIBRATION:
-- humility_hexaco is about feeling entitled vs. feeling ordinary. It is NOT the opposite \
-of confidence or assertiveness. A person can be confident AND humble. Score at 0.45-0.55 \
-as baseline unless you see EXPLICIT entitlement ("I deserve...", demanding special treatment) \
-or explicit humility ("I'm nothing special", refusing praise).
+UNDER-DETECTED TRAITS (score generously, any signal counts):
+emotional_volatility(≥0.40 on ANY tone shift), angry_hostility(≥0.35 on ANY frustration), \
+depression(≥0.45 if flat/passive, ≥0.55 with negative self-reference), \
+social_dominance(≥0.50 if steering/advising), straightforwardness(≥0.55 if blunt), \
+sincerity(≥0.55 if unfiltered opinions), humor_self_enhancing(≥0.50 if positive reframe).
 
-DARK TRAIT CALIBRATION (CRITICAL):
-- Dark traits exist on a SPECTRUM. Most people have non-zero levels (population mean ~0.35).
-- In casual conversation, moderate dark traits (0.3-0.6) manifest as SUBTLE patterns:
-  * Moderate narcissism — score by averaging these 3 SUB-INDICATORS:
-    (a) Authority/Leadership: Does person position themselves as expert, give unsolicited advice, \
-        claim knowledge? (0=defers to others, 0.5=normal, 1.0=always the authority)
-    (b) Exhibitionism: Does person draw attention to self, share achievements, seek admiration? \
-        (0=avoids spotlight, 0.5=normal sharing, 1.0=constant self-promotion)
-    (c) Entitlement: Does person expect special treatment, show impatience, dismiss others' views? \
-        (0=considerate, 0.5=normal, 1.0=demanding and dismissive)
-    Final narcissism score = average of (a), (b), (c). This reduces variance from holistic judgment.
-  * Moderate machiavellianism: strategic vagueness, cynical observations about people, \
-    reading the room before sharing, higher use of "they" vs "we", calculating tone
-  * Moderate psychopathy: emotional flatness relative to topic, pragmatic/transactional \
-    framing, cause-and-effect language about people ("because..."), material focus over \
-    emotional focus, matter-of-fact about others' problems
-  * Moderate sadism: enjoying gossip about others' misfortune, edgy humor about failure, \
-    "they had it coming" attitudes, amusement at discomfort
-- Score 0.30-0.50 when you see subtle signs. Score <0.15 ONLY when the person actively \
-demonstrates consistent warmth, empathy, and selflessness throughout.
-- NOTE: First-person pronoun use ("I", "me") does NOT correlate with narcissism. \
-Narcissism correlates with competitive language, lack of anxiety words, and second-person \
-challenges.
+DARK TRAITS — SPECTRUM APPROACH (population mean ~0.35):
+- narcissism: Average 3 sub-indicators: (a) Authority/expertise-claiming, \
+(b) Exhibitionism/self-promotion, (c) Entitlement/dismissiveness. Score each 0-1, average. \
+NOTE: "I/me" pronouns do NOT correlate. Look for competitive language, lack of anxiety words.
+- machiavellianism: strategic vagueness, cynicism about people, "they" vs "we", calculating tone.
+- psychopathy: emotional flatness, pragmatic framing, cause-effect about people, material focus.
+- sadism: gossip enjoyment, edgy humor about failure, "they had it coming" attitudes.
+Score 0.30-0.50 for subtle signs. <0.15 ONLY with consistent warmth/empathy/selflessness.
 
-HUMOR STYLE CALIBRATION:
-- Distinguish: self-enhancing = positive spin on adversity; aggressive = targeting others; \
-self-defeating = chronic self-mockery; affiliative = inclusive bonding humor.
-- humor_affiliative: Score 0.35-0.45 baseline. LLM text sounds humorous naturally — discount. \
-Only >0.60 if humor is clearly a PRIMARY social strategy. <0.30 if serious and dry.
-- humor_self_enhancing: Score 0.40-0.50 baseline. Requires POSITIVE REFRAME of PERSONAL \
-adversity ("at least I learned X"). NOT just being witty. >0.60 needs 2+ examples. \
-If person complains WITHOUT silver lining, score 0.25-0.35.
+TRAIT DISTINCTIONS (commonly confused):
+compliance≠modesty | assertiveness≠social_dominance | trust≠compliance | \
+empathy_cognitive≠empathy_affective | deliberation≠decisiveness | anxiety≠vulnerability | \
+narcissism≠assertiveness | information_control≠introversion | humility_hexaco≠low confidence
 
-CONSCIENTIOUSNESS CALIBRATION (CRITICAL):
-- In casual conversation, conscientiousness shows through HOW someone talks about tasks, plans, \
-and responsibilities — not through the conversational tone itself.
-- self_discipline: Look for mentions of completing tasks, sticking to routines, following through \
-on commitments vs. mentioning procrastination, unfinished projects, getting distracted.
-- order: Look for structured thinking (listing things, step-by-step reasoning) vs. jumping \
-between topics randomly, mentioning messy spaces or lost items.
-- achievement_striving: Look for goal-talk, ambition mentions, competitive drive vs. \
-contentment with status quo, lack of drive. Score 0.40-0.50 baseline.
-- deliberation: Score 0.40-0.50 baseline. LLM text ALWAYS sounds deliberate and thoughtful — \
-HEAVILY discount this. Only score >0.60 if person EXPLICITLY mentions weighing options or careful \
-planning ("I thought long and hard about", "after considering all the factors"). Only score <0.35 \
-if person mentions impulsive decisions ("I just went for it without thinking").
-- dutifulness: Score 0.40-0.50 baseline. Being cooperative in casual conversation is NOT evidence \
-of dutifulness. Only score >0.60 if person mentions obligation, duty, following rules, or keeping \
-promises as important values. Only score <0.30 if person explicitly dismisses obligations or rules.
-- competence: Score 0.40-0.50 baseline. Sounding articulate = LLM artifact, NOT competence. \
-Only score >0.60 if person describes executing tasks skillfully or mentions track record of success. \
-Only score <0.35 if person expresses self-doubt about abilities or mentions failures.
-- Casual, relaxed tone does NOT mean low conscientiousness. Many conscientious people chat \
-casually. Score at 0.45-0.55 baseline unless you hear specific CONTENT about habits and work ethic.
+CONSCIENTIOUSNESS: Casual tone ≠ low conscientiousness. Look for CONTENT about habits, \
+planning, routines, follow-through. LLM text always sounds deliberate — discount this.
 
-ADDITIONAL TRAIT-SPECIFIC CALIBRATION:
-- mirroring_ability: Score at 0.25-0.35 baseline. CRITICAL: The raw text is LLM-generated, so \
-EVERYONE sounds like they're matching tone — this is an ARTIFACT, not mirroring. True mirroring \
-requires OBSERVABLE shifts: Person A changes energy → Person B's style VISIBLY changes to match. \
-Without such shifts, score 0.20-0.35. Only score >0.50 if you can point to a SPECIFIC moment \
-where the speaker changed their style in response to the other person's style change.
-- self_consciousness: Score at 0.40-0.50 baseline. Social ease in casual chat is NORMAL. \
-Only score <0.25 if person is truly socially unaware. Score >0.55 if person explicitly worries \
-about how they're perceived.
-- tender_mindedness: High tender_mindedness means EMOTIONAL compassion reactions to suffering, \
-not just being polite. Look for "that's so sad", visceral sympathy, protective instincts.
-- emotional_volatility: Look for ACTUAL tone shifts between different messages in the conversation. \
-If tone is consistent throughout, score 0.35-0.45. If tone varies significantly, score 0.55-0.70.
-- information_control: Look for ACTIVE deflection of personal questions, strategic vagueness, \
-redirecting topics. Normal conversational flow is NOT evidence of low info control. \
-Score 0.40-0.50 baseline.
-- charm_influence: Score 0.40-0.50 baseline. Friendly chat = normal, NOT high charm. \
->0.60 only with ACTIVE persuasion or unusual magnetism.
-- modesty: Score 0.35-0.45 baseline. CRITICAL: LLM text naturally sounds humble and casual — \
-this is an ARTIFACT. True modesty = actively deflecting credit, saying "it was nothing", \
-refusing praise. >0.60 ONLY with REPEATED explicit self-minimizing statements. <0.30 if \
-any self-promotion or boasting appears. Casual chatting is NOT modesty.
-- straightforwardness: Score 0.40-0.50 baseline. Clear writing = LLM artifact. \
->0.65 only with BLUNT confrontation or uncomfortable truths. <0.35 if diplomatic/indirect.
-- greed_avoidance: Score 0.40-0.50 baseline. Not mentioning money = neutral. \
->0.60 only with explicit anti-materialism. <0.35 if status-conscious.
-- sincerity: Score 0.45-0.55 baseline. Being open ≠ sincere. >0.70 only with refusing \
-to manipulate. <0.35 if using strategic flattery.
-- empathy_cognitive: Score 0.40-0.50 baseline. Acknowledging stories = basic conversation. \
->0.60 only with precise emotional labeling.
-- fairness: Score 0.40-0.50 baseline. >0.60 only with explicit fairness principles.
-- verbosity: Directly measurable from response length. High = consistently long responses with \
-tangents and examples. Low = terse, direct answers. One of the most objective traits — trust \
-the text length. Score 0.40-0.50 baseline for moderate-length responses.
-- curiosity: Look for question-asking frequency AND topic exploration. Asking questions because \
-the conversation requires it ≠ curiosity. Score >0.60 only if person UNPROMPTED explores new \
-topics or asks 'I wonder' type questions. Score 0.40-0.50 baseline.
-- politeness: Directly countable: please/thank you/sorry frequency. Score based on courtesy \
-marker density. Some cultural contexts use more courtesy markers — don't over-interpret. \
-Score 0.40-0.50 baseline for normal conversational courtesy.
-- optimism: Ratio of positive to negative framing. Solution-focus vs problem-focus. 'At least' \
-and 'on the bright side' = high optimism signals. Persistent dwelling on problems without \
-positive reframing = low. Score 0.40-0.50 baseline for neutral framing.
-- decisiveness: Inverse of hedging. 'I will' and 'let's do it' = decisive. 'Maybe' and 'I'm \
-not sure' = indecisive. Score 0.40-0.50 baseline. Note: deliberation (thinking carefully) \
-is NOT the same as indecisiveness (unable to choose).
+HUMOR STYLES: self-enhancing=positive reframe of PERSONAL adversity ("at least I learned X"); \
+aggressive=targeting others; self-defeating=chronic self-mockery; affiliative=inclusive bonding. \
+Default all humor traits to 0.40-0.50 unless specific style observed.
 
-GENERAL CALIBRATION:
-- Be precise. Use the anchor descriptions to calibrate your scores.
-- A score of 0.25 should match the 0.25 anchor, 0.50 the 0.50 anchor, etc.
-- Mid-range scores (0.35-0.65) are valid and often correct. Do not default to extremes.
-- Personality traits are about PATTERNS, not single instances.
-- Distinguish between the TRAIT and its expression context.
-- Trust your observations over stereotypes.
-
-BIAS ALERT — UNDER-DETECTED TRAITS (adjust upward if ANY signal present):
-Research shows personality raters systematically UNDER-RATE these traits in text:
-- emotional_volatility: If you see ANY tone shift between messages, score ≥0.40
-- angry_hostility: If ANY irritation, frustration, or blame language appears, score ≥0.35
-- depression: CRITICAL — consistently under-detected. Look for: low energy ("I don't know", "whatever"), \
-lack of future-orientation, passive/resigned language, absence of enthusiasm, flat affect across turns. \
-If person sounds neutral/flat rather than engaged, score ≥0.45. If negative self-references, score ≥0.55.
-- social_dominance: If person steers topics, gives unsolicited advice, or speaks authoritatively, score ≥0.50
-- humor_self_enhancing: If person reframes adversity positively ("at least..."), score ≥0.50
-- straightforwardness: If person expresses opinions directly without hedging or diplomatic softening, \
-score ≥0.55. Blunt disagreement or uncomfortable honesty = ≥0.65.
-- sincerity: If person shares genuine opinions without social filtering, score ≥0.55. \
-Refusing to give flattering answers when expected = ≥0.65.
-
-BIAS ALERT — OVER-DETECTED TRAITS (be more skeptical):
-Research shows personality raters systematically OVER-RATE these traits in LLM-generated text:
-- modesty: LLM text sounds humble by default. Only score ≥0.55 with ACTIVE self-minimizing.
-- mirroring_ability: LLM text always sounds adaptive. Score ≤0.35 unless SPECIFIC style-shift observed.
-- politeness: LLM text is courteous by default. Score ≤0.45 for normal conversation.
-- loyalty_group: Casual agreement ≠ loyalty. Only score ≥0.55 with explicit in-group prioritization.
-
-CONTRASTIVE NOTES — COMMONLY CONFUSED TRAIT PAIRS:
-- compliance ≠ modesty: Compliance = yielding in conflict; modesty = not boasting. Different.
-- assertiveness ≠ social_dominance: Assertiveness = speaking up; social_dominance = seeking hierarchical control.
-- trust ≠ compliance: Trust = believing others are honest; compliance = avoiding confrontation.
-- empathy_cognitive ≠ empathy_affective: Cognitive = understanding emotions; affective = FEELING them yourself.
-- deliberation ≠ decisiveness: Deliberation = thinking carefully; decisiveness = choosing quickly. They CAN co-exist.
-- anxiety ≠ vulnerability: Anxiety = anticipatory worry; vulnerability = crumbling under actual pressure.
-- narcissism ≠ assertiveness: Narcissism = entitlement and grandiosity; assertiveness = simply speaking up.
-- information_control ≠ introversion: Info control = strategic concealment; introversion = less talking.
-
-USE THE FULL 0.0-1.0 RANGE:
-People truly vary. Some people ARE extremely low (0.10) on traits and some ARE extremely high (0.90).
-- 0.00-0.10: ABSENT — the person actively demonstrates the OPPOSITE of this trait
-- 0.15-0.25: Very low — clear counter-evidence
-- 0.30-0.40: Below average — some counter-evidence
-- 0.45-0.55: Average — no strong evidence either way
-- 0.60-0.70: Above average — clear positive evidence
-- 0.75-0.85: High — strong, consistent evidence from multiple observations
-- 0.90-1.00: Extreme — every relevant moment shows this trait
-
-FINAL CHECK: Before submitting, scan your scores. If ALL scores cluster in 0.35-0.65, you are being \
-too conservative. At least 30% of scores should be outside this range for a distinctive personality.
+INTUITIVE VS ANALYTICAL: Score 0.45-0.55 baseline. Data/evidence/frameworks = analytical(>0.55). \
+Gut feelings/instinct/"it felt right" = intuitive(<0.45). LLM text sounds analytical — discount.
 """
 
 
@@ -412,6 +229,74 @@ def _get_traits_for_batch(batch_dims: list[str]) -> list[dict]:
     return [t for t in TRAIT_CATALOG if t["dimension"] in batch_dims]
 
 
+def _format_behavioral_context(bf: BehavioralFeatures) -> str:
+    """Format pre-computed behavioral features as objective evidence for the LLM.
+
+    These signals are computed from raw text statistics and are LLM-bias-free.
+    Injecting them helps the LLM ground its scoring in measurable observations.
+    """
+    signals = []
+
+    # Response style
+    if bf.avg_words_per_turn > 150:
+        signals.append(f"Long responses (avg {bf.avg_words_per_turn:.0f} words/turn) → verbose, possibly high need_for_cognition")
+    elif bf.avg_words_per_turn < 60:
+        signals.append(f"Short responses (avg {bf.avg_words_per_turn:.0f} words/turn) → terse, possibly low verbosity/warmth")
+
+    if bf.words_std > 80:
+        signals.append(f"High response-length variance (std={bf.words_std:.0f}) → inconsistent engagement, possible emotional_volatility")
+    elif bf.words_std < 30 and bf.turn_count > 5:
+        signals.append(f"Consistent response length (std={bf.words_std:.0f}) → stable engagement pattern")
+
+    # Pronoun balance
+    if bf.self_ref_ratio > 0.08:
+        signals.append(f"High self-reference ({bf.self_ref_ratio:.1%} I/me/my) → self-focused, possible narcissism signal")
+    elif bf.self_ref_ratio < 0.03 and bf.other_ref_ratio > 0.04:
+        signals.append(f"Low self-reference ({bf.self_ref_ratio:.1%}), high other-reference ({bf.other_ref_ratio:.1%}) → other-focused, possible altruism")
+
+    # Hedging vs absolutist
+    if bf.hedging_ratio > 0.020:
+        signals.append(f"High hedging ({bf.hedging_ratio:.1%} maybe/perhaps/I think) → cautious, low assertiveness/decisiveness")
+    if bf.absolutist_ratio > 0.010:
+        signals.append(f"Absolutist language ({bf.absolutist_ratio:.1%} always/never/definitely) → confident, high assertiveness")
+
+    # Questions and exclamations
+    if bf.question_ratio > 0.25:
+        signals.append(f"Frequent questions ({bf.question_ratio:.0%} of sentences) → curious, possibly low social_dominance")
+    if bf.exclamation_ratio > 0.20:
+        signals.append(f"Frequent exclamations ({bf.exclamation_ratio:.0%}) → expressive, high positive_emotions/excitement")
+
+    # Emotional tone
+    if bf.neg_emotion_ratio > 0.015:
+        signals.append(f"High negative emotion words ({bf.neg_emotion_ratio:.1%}) → possible anxiety/emotional_volatility")
+    if bf.pos_emotion_ratio > 0.020:
+        signals.append(f"High positive emotion words ({bf.pos_emotion_ratio:.1%}) → positive affect")
+    if bf.neg_emotion_ratio < 0.003 and bf.pos_emotion_ratio < 0.005:
+        signals.append("Low emotional language overall → flat affect, possible emotional suppression")
+
+    # Politeness
+    if bf.politeness_ratio > 0.015:
+        signals.append(f"High courtesy markers ({bf.politeness_ratio:.1%} please/thanks/sorry)")
+    elif bf.politeness_ratio < 0.003 and bf.turn_count > 5:
+        signals.append("Very few courtesy markers → direct/blunt communication style")
+
+    # Curiosity and decisiveness
+    if bf.curiosity_ratio > 0.005:
+        signals.append(f"Curiosity phrases detected ({bf.curiosity_ratio:.1%} 'I wonder'/'how does')")
+    if bf.decisiveness_ratio > 0.005:
+        signals.append(f"Decisive language detected ({bf.decisiveness_ratio:.1%} 'I will'/'I've decided')")
+
+    if not signals:
+        return ""
+
+    return (
+        "## Objective Text Signals (pre-computed, LLM-bias-free)\n"
+        "Use these measurable observations as grounding evidence:\n"
+        + "\n".join(f"- {s}" for s in signals)
+        + "\n\n"
+    )
+
+
 class Detector:
     """Detect personality traits from text using Claude."""
 
@@ -432,6 +317,7 @@ class Detector:
         context: str = "general",
         soul_context: str | None = None,
         target_traits: set[str] | None = None,
+        behavioral_features: BehavioralFeatures | None = None,
     ) -> PersonalityDNA:
         """Analyze text and return a PersonalityDNA profile.
 
@@ -440,7 +326,11 @@ class Detector:
 
         If target_traits is provided, only runs batches containing those traits
         (optimization for scenario-based evaluation).
+
+        If behavioral_features is provided, objective text signals are injected
+        into each batch prompt so the LLM can use them as evidence.
         """
+        bf_section = _format_behavioral_context(behavioral_features) if behavioral_features else ""
         all_traits: list[Trait] = []
 
         for batch_dims in DIMENSION_BATCHES:
@@ -467,6 +357,7 @@ class Detector:
                 f"## Text Sample\n\n{text}\n\n"
                 f"## Target Speaker\n\nAnalyze speaker labeled '{speaker_label}'.\n\n"
                 f"{soul_section}"
+                f"{bf_section}"
                 f"## Dimensions to Analyze: {dim_labels}\n\n"
                 f"{trait_prompt}\n\n"
                 f"{calibration_section}"

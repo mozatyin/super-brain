@@ -242,11 +242,15 @@ def run_experiment(character: str, segment_size: int, api_key: str) -> dict:
 
         print(f"MAE(comp)={mae_composite:.3f} MAE(v41)={mae_v41:.3f} delta={delta:.4f} | {elapsed:.0f}s")
 
-    # Find convergence point (delta < 0.02 for 3 consecutive checkpoints)
+    # Find convergence point — noise-aware threshold
+    # LLM randomness floor is ~0.05, so use 0.08 (1.5x noise) as practical threshold.
+    # Require 2 consecutive checkpoints below threshold (not 3, since even stable
+    # profiles occasionally spike due to LLM sampling).
+    CONVERGENCE_THRESHOLD = 0.08
     convergence_point = None
-    for i in range(2, len(convergence)):
-        if all(convergence[j]["profile_delta"] < 0.02 for j in range(i-2, i+1)):
-            convergence_point = convergence[i-2]
+    for i in range(1, len(convergence)):
+        if all(convergence[j]["profile_delta"] < CONVERGENCE_THRESHOLD for j in range(i-1, i+1)):
+            convergence_point = convergence[i-1]
             break
 
     # Save results
