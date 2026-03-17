@@ -1,0 +1,375 @@
+
+======================================================================
+  Profile 1/10: profile_0 (seed=0)
+======================================================================
+  Key traits: EXT:assertiveness=0.41 NEU:anxiety=0.59 AGR:trust=0.65 DRK:narcissism=0.55 OPN:ideas=0.75
+  Simulating 20-turn conversation... done (4861 speaker words)
+    ThinkSlow #1: 6 traits estimated, 67 low-confidence, avg_conf=0.47
+    ThinkSlow #2: 10 traits estimated, 59 low-confidence, avg_conf=0.60
+    ThinkSlow #3: 10 traits estimated, 59 low-confidence, avg_conf=0.61
+    ThinkSlow #4: 10 traits estimated, 59 low-confidence, avg_conf=0.68
+    ThinkSlow #5: 12 traits estimated, 58 low-confidence, avg_conf=0.63
+    ThinkSlow #6: 10 traits estimated, 59 low-confidence, avg_conf=0.73
+    ThinkSlow #7: 42 traits estimated, 27 low-confidence, avg_conf=0.67
+    ThinkSlow #8: 9 traits estimated, 60 low-confidence, avg_conf=0.77
+    ThinkSlow #9: 43 traits estimated, 28 low-confidence, avg_conf=0.64
+    Soul: 68 facts, reality=yes, 30 secrets, 24 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: Have you tried any new restaurants recently?
+  SPEAKER: Oh man, you're asking the right person! I actually discovered this incredible little Thai place last weekend - it was li...
+  CHATTER: That sounds like such a magical discovery! I love how you followed your instincts and let your nose guide you - there's ...
+  SPEAKER: You know what really got me? It was the char on the noodles - that perfect smoky flavor you only get when they're cookin...
+  CHATTER: It sounds like you really know your way around Thai food - that description of the wok char and the balance in the sauce...
+  SPEAKER: Ha! Well, in the moment I was basically having my usual "are you kidding me right now?" conversation with myself. I'm st...
+  --- end sample ---
+
+  Detecting at 10 turns (2357 speaker words)... done → MAE=0.153 ≤0.25=55/69 ≤0.40=65/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, hot_cold_oscillation:-0.05, intellectual_curiosity:+0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: CON:dutifulness(0.03→0.55, err=0.52), CON:decisiveness(0.41→0.87, err=0.46), AGR:straightforwardness(0.78→0.32, err=0.46), OPN:actions(0.30→0.75, err=0.45), AGR:altruism(0.28→0.65, err=0.37)
+  Detecting at 20 turns (4861 speaker words)... done → MAE=0.161 ≤0.25=57/69 ≤0.40=64/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, curiosity:+0.06, hot_cold_oscillation:-0.05, intellectual_curiosity:+0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: CON:dutifulness(0.03→0.60, err=0.57), EXT:excitement_seeking(0.35→0.82, err=0.47), AGR:straightforwardness(0.78→0.32, err=0.46), OPN:actions(0.30→0.75, err=0.45), VAL:care_harm(0.14→0.55, err=0.41)
+
+======================================================================
+  Profile 2/10: profile_1 (seed=42)
+======================================================================
+  Key traits: EXT:assertiveness=0.48 NEU:anxiety=0.50 AGR:trust=0.59 DRK:narcissism=0.30 OPN:ideas=0.58
+  Simulating 20-turn conversation... done (4637 speaker words)
+    ThinkSlow #1: 6 traits estimated, 65 low-confidence, avg_conf=0.57
+    ThinkSlow #2: 11 traits estimated, 58 low-confidence, avg_conf=0.68
+    ThinkSlow #3: 16 traits estimated, 53 low-confidence, avg_conf=0.70
+    ThinkSlow #4: 13 traits estimated, 56 low-confidence, avg_conf=0.67
+    ThinkSlow #5: 18 traits estimated, 51 low-confidence, avg_conf=0.70
+    ThinkSlow #6: 51 traits estimated, 34 low-confidence, avg_conf=0.52
+    ThinkSlow #7: 34 traits estimated, 45 low-confidence, avg_conf=0.57
+    ThinkSlow #8: 21 traits estimated, 48 low-confidence, avg_conf=0.70
+    ThinkSlow #9: 48 traits estimated, 33 low-confidence, avg_conf=0.59
+    Soul: 76 facts, reality=yes, 30 secrets, 21 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: Have you watched anything good on TV lately?
+  SPEAKER: Ha, well, define "good" — knowing my taste, what I think is brilliant probably means it got canceled after one season. I...
+  CHATTER: The Wire on your fourth rewatch? That's not being behind, that's having excellent taste worth savoring again. And there'...
+  SPEAKER: Oh, you're absolutely right about The Wire — it's like comfort food for cynics. Every rewatch I catch something new, and...
+  CHATTER: You're not terrible for enjoying it — there's something deeply human about wanting to see patterns of justice play out, ...
+  SPEAKER: Ha, "keen eye" — that's generous. I'd say I'm just naturally suspicious of anyone who claims their system is working per...
+  --- end sample ---
+
+  Detecting at 10 turns (2264 speaker words)... done → MAE=0.121 ≤0.25=61/69 ≤0.40=68/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: SOC:conflict_assertiveness(0.32→0.75, err=0.43), HUM:humor_aggressive(0.33→0.67, err=0.34), STR:mirroring_ability(0.68→0.35, err=0.33), VAL:care_harm(0.43→0.75, err=0.32), SOC:conflict_cooperativeness(0.40→0.70, err=0.30)
+  Detecting at 20 turns (4637 speaker words)... done → MAE=0.121 ≤0.25=62/69 ≤0.40=67/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, hot_cold_oscillation:-0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: SOC:conflict_assertiveness(0.32→0.75, err=0.43), CON:decisiveness(0.58→0.98, err=0.41), AGR:trust(0.59→0.25, err=0.34), HUM:humor_aggressive(0.33→0.67, err=0.34), OPN:feelings(0.24→0.56, err=0.32)
+
+======================================================================
+  Profile 3/10: profile_2 (seed=84)
+======================================================================
+  Key traits: EXT:assertiveness=0.39 NEU:anxiety=0.40 AGR:trust=0.35 DRK:narcissism=0.37 OPN:ideas=0.46
+  Simulating 20-turn conversation... done (2589 speaker words)
+    ThinkSlow #1: 6 traits estimated, 65 low-confidence, avg_conf=0.55
+    ThinkSlow #2: 8 traits estimated, 62 low-confidence, avg_conf=0.56
+    ThinkSlow #3: 9 traits estimated, 60 low-confidence, avg_conf=0.59
+    ThinkSlow #4: 11 traits estimated, 58 low-confidence, avg_conf=0.61
+    ThinkSlow #5: 8 traits estimated, 61 low-confidence, avg_conf=0.69
+    ThinkSlow #6: 12 traits estimated, 57 low-confidence, avg_conf=0.67
+    ThinkSlow #7: 9 traits estimated, 60 low-confidence, avg_conf=0.76
+    ThinkSlow #8: 9 traits estimated, 60 low-confidence, avg_conf=0.67
+    ThinkSlow #9: 14 traits estimated, 55 low-confidence, avg_conf=0.71
+    Soul: 47 facts, reality=yes, 33 secrets, 21 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: Hey, how's your day going?
+  SPEAKER: Oh, you know how it is - started strong, then I managed to spill coffee all over my shirt right before an important call...
+  CHATTER: Ah, the classic coffee-shirt combo right before something important - that timing is almost impressively bad! 
+
+It sound...
+  SPEAKER: *laughs* Right? It's like I have a sixth sense for the worst possible timing. 
+
+The call was for a potential new project...
+  CHATTER: Sounds like you made the best of a messy situation - that kind of resilience is actually pretty impressive, even if it d...
+  SPEAKER: Ha, "resilience" - that's a generous way to put it. Honestly? It's probably more frustrating than I let on. I mean, you'...
+  --- end sample ---
+
+  Detecting at 10 turns (1169 speaker words)... done → MAE=0.154 ≤0.25=53/69 ≤0.40=66/69
+    BF adjustments: anxiety:-0.05, curiosity:+0.06, intellectual_curiosity:+0.05, positive_emotions:-0.05, social_dominance:-0.05
+    Worst: HUM:humor_self_enhancing(0.21→0.70, err=0.49), SOC:attachment_avoidance(0.45→0.88, err=0.42), OPN:values_openness(0.77→0.35, err=0.42), CON:dutifulness(0.83→0.43, err=0.40), VAL:loyalty_group(0.09→0.47, err=0.38)
+  Detecting at 20 turns (2589 speaker words)... done → MAE=0.136 ≤0.25=57/69 ≤0.40=66/69
+    BF adjustments: anxiety:-0.05, assertiveness:+0.07, curiosity:+0.06, decisiveness:+0.06, deliberation:-0.05, intellectual_curiosity:+0.05, positive_emotions:-0.05, social_dominance:-0.05
+    Worst: STR:hot_cold_oscillation(0.16→0.70, err=0.54), OPN:values_openness(0.77→0.34, err=0.43), SOC:attachment_avoidance(0.45→0.88, err=0.42), AGR:trust(0.35→0.75, err=0.40), CON:dutifulness(0.83→0.47, err=0.36)
+
+======================================================================
+  Profile 4/10: profile_3 (seed=126)
+======================================================================
+  Key traits: EXT:assertiveness=0.57 NEU:anxiety=0.48 AGR:trust=0.31 DRK:narcissism=0.45 OPN:ideas=0.65
+  Simulating 20-turn conversation... done (4781 speaker words)
+    ThinkSlow #1: 6 traits estimated, 64 low-confidence, avg_conf=0.62
+    ThinkSlow #2: 10 traits estimated, 59 low-confidence, avg_conf=0.62
+    ThinkSlow #3: 8 traits estimated, 61 low-confidence, avg_conf=0.60
+    ThinkSlow #4: 13 traits estimated, 56 low-confidence, avg_conf=0.73
+    ThinkSlow #5: 20 traits estimated, 49 low-confidence, avg_conf=0.62
+    ThinkSlow #6: 13 traits estimated, 56 low-confidence, avg_conf=0.68
+    ThinkSlow #7: 13 traits estimated, 56 low-confidence, avg_conf=0.62
+    ThinkSlow #8: 10 traits estimated, 59 low-confidence, avg_conf=0.77
+    ThinkSlow #9: 16 traits estimated, 53 low-confidence, avg_conf=0.72
+    Soul: 63 facts, reality=yes, 35 secrets, 26 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: What did you have for lunch today?
+  SPEAKER: Oh, lunch - that's optimistic of you to assume I actually remembered to eat today! I'm basically a walking disaster when...
+  CHATTER: Ha! Leftover pasta at 2 PM definitely counts as meal planning in my book too. I love how you turned a simple lunch quest...
+  SPEAKER: Ha, you're being way too generous calling it "perfectly honest" - more like perfectly chaotic! But I appreciate you maki...
+  CHATTER: That organizational rabbit hole sounds so familiar! There's something almost magnetic about those moments when you start...
+  SPEAKER: Oh man, you really get it! It's like... okay, so you know that feeling when you're supposed to be doing one thing but yo...
+  --- end sample ---
+
+  Detecting at 10 turns (2269 speaker words)... done → MAE=0.134 ≤0.25=56/69 ≤0.40=68/69
+    BF adjustments: competence:+0.04, intellectual_curiosity:+0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: SOC:conflict_assertiveness(0.67→0.25, err=0.42), COG:cognitive_flexibility(0.80→0.42, err=0.38), CON:dutifulness(0.07→0.43, err=0.36), HUM:humor_self_enhancing(0.69→0.35, err=0.34), CON:competence(0.74→0.42, err=0.32)
+  Detecting at 20 turns (4781 speaker words)... done → MAE=0.147 ≤0.25=54/69 ≤0.40=66/69
+    BF adjustments: assertiveness:-0.07, competence:+0.04, decisiveness:-0.08, intellectual_curiosity:+0.05, intuitive_vs_analytical:+0.05, modesty:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: SOC:conflict_assertiveness(0.67→0.20, err=0.47), HUM:humor_self_enhancing(0.69→0.25, err=0.44), CON:decisiveness(0.82→0.39, err=0.43), CON:dutifulness(0.07→0.45, err=0.38), CON:order(0.61→0.25, err=0.36)
+
+======================================================================
+  Profile 5/10: profile_4 (seed=168)
+======================================================================
+  Key traits: EXT:assertiveness=0.51 NEU:anxiety=0.54 AGR:trust=0.34 DRK:narcissism=0.46 OPN:ideas=0.42
+  Simulating 20-turn conversation... done (4238 speaker words)
+    ThinkSlow #1: 7 traits estimated, 72 low-confidence, avg_conf=0.50
+    ThinkSlow #2: 14 traits estimated, 57 low-confidence, avg_conf=0.54
+    ThinkSlow #3: 17 traits estimated, 54 low-confidence, avg_conf=0.54
+    ThinkSlow #4: 11 traits estimated, 59 low-confidence, avg_conf=0.55
+    ThinkSlow #5: 10 traits estimated, 59 low-confidence, avg_conf=0.63
+    ThinkSlow #6: 11 traits estimated, 58 low-confidence, avg_conf=0.63
+    ThinkSlow #7: 10 traits estimated, 59 low-confidence, avg_conf=0.66
+    ThinkSlow #8: 14 traits estimated, 55 low-confidence, avg_conf=0.74
+    ThinkSlow #9: 17 traits estimated, 52 low-confidence, avg_conf=0.77
+    Soul: 62 facts, reality=yes, 32 secrets, 27 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: What did you have for lunch today?
+  SPEAKER: I grabbed a sandwich from that place down the street - nothing special, just turkey and swiss. Knowing me, I probably sp...
+  CHATTER: Sounds like a perfectly practical lunch choice! And hey, mustard stains are just proof you're actually enjoying your foo...
+  SPEAKER: Ha, "figure it out as you go" is basically my life motto at this point. I keep telling myself I'm going to meal prep on ...
+  CHATTER: Ha! I appreciate the vote of confidence, but honestly, I think there's something refreshing about your "figure it out as...
+  SPEAKER: Oh, "forgiving with myself" - that's generous. I think it's more like I've just accepted that I'm going to disappoint my...
+  --- end sample ---
+
+  Detecting at 10 turns (1850 speaker words)... done → MAE=0.189 ≤0.25=44/69 ≤0.40=63/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, intellectual_curiosity:+0.05, intuitive_vs_analytical:+0.05, positive_emotions:-0.05, social_dominance:+0.04
+    Worst: CON:dutifulness(0.94→0.35, err=0.59), COG:cognitive_flexibility(0.81→0.33, err=0.48), EMO:emotional_regulation(0.81→0.34, err=0.47), CON:decisiveness(0.09→0.53, err=0.43), HUM:humor_aggressive(0.21→0.64, err=0.43)
+  Detecting at 20 turns (4238 speaker words)... done → MAE=0.189 ≤0.25=51/69 ≤0.40=64/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, intellectual_curiosity:+0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: COG:intuitive_vs_analytical(0.07→0.90, err=0.83), COG:cognitive_flexibility(0.81→0.23, err=0.58), CON:dutifulness(0.94→0.40, err=0.54), EXT:excitement_seeking(0.67→0.20, err=0.47), SOC:social_dominance(0.75→0.29, err=0.46)
+
+======================================================================
+  Profile 6/10: profile_5 (seed=210)
+======================================================================
+  Key traits: EXT:assertiveness=0.65 NEU:anxiety=0.46 AGR:trust=0.61 DRK:narcissism=0.46 OPN:ideas=0.57
+  Simulating 20-turn conversation... done (5577 speaker words)
+    ThinkSlow #1: 6 traits estimated, 66 low-confidence, avg_conf=0.62
+    ThinkSlow #2: 8 traits estimated, 61 low-confidence, avg_conf=0.65
+    ThinkSlow #3: 15 traits estimated, 58 low-confidence, avg_conf=0.55
+    ThinkSlow #4: 9 traits estimated, 60 low-confidence, avg_conf=0.67
+    ThinkSlow #5: 14 traits estimated, 55 low-confidence, avg_conf=0.66
+    ThinkSlow #6: 10 traits estimated, 59 low-confidence, avg_conf=0.73
+    ThinkSlow #7: 9 traits estimated, 60 low-confidence, avg_conf=0.73
+    ThinkSlow #8: 18 traits estimated, 51 low-confidence, avg_conf=0.74
+    ThinkSlow #9: 13 traits estimated, 56 low-confidence, avg_conf=0.75
+    Soul: 77 facts, reality=yes, 41 secrets, 29 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: I've been trying to get into cooking more. Do you cook?
+  SPEAKER: Oh absolutely! I've been cooking for years and honestly, I'm pretty good at it. I started when I was in college because ...
+  CHATTER: It sounds like cooking has become such a meaningful part of your life - from those awful dining hall days to creating ex...
+  SPEAKER: Well, honestly it started out of pure necessity - I was sick of spending money on takeout that was either terrible or ov...
+  CHATTER: I can hear how much pride and joy you get from being that person who creates those special moments for everyone - the on...
+  SPEAKER: Oh god, it's honestly the best feeling in the world! You know that moment when someone takes their first bite and their ...
+  --- end sample ---
+
+  Detecting at 10 turns (2776 speaker words)... done → MAE=0.176 ≤0.25=49/69 ≤0.40=67/69
+    BF adjustments: anxiety:-0.05, assertiveness:+0.07, competence:+0.04, decisiveness:+0.06, deliberation:-0.05, hot_cold_oscillation:-0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: AGR:modesty(0.54→0.00, err=0.54), COG:cognitive_flexibility(0.65→0.23, err=0.42), OPN:values_openness(0.45→0.07, err=0.39), OPN:fantasy(0.50→0.13, err=0.37), EXT:verbosity(0.82→0.45, err=0.37)
+  Detecting at 20 turns (5577 speaker words)... done → MAE=0.158 ≤0.25=55/69 ≤0.40=65/69
+    BF adjustments: anxiety:-0.05, assertiveness:+0.07, competence:+0.04, decisiveness:+0.06, deliberation:-0.05, hot_cold_oscillation:-0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, social_dominance:+0.08, warmth:+0.03
+    Worst: AGR:modesty(0.54→0.00, err=0.54), EMO:empathy_cognitive(0.79→0.35, err=0.44), CON:order(0.32→0.75, err=0.43), COG:cognitive_flexibility(0.65→0.23, err=0.42), EMO:empathy_affective(0.77→0.42, err=0.35)
+
+======================================================================
+  Profile 7/10: profile_6 (seed=252)
+======================================================================
+  Key traits: EXT:assertiveness=0.57 NEU:anxiety=0.46 AGR:trust=0.28 DRK:narcissism=0.47 OPN:ideas=0.78
+  Simulating 20-turn conversation...     [retry 1/3] PermissionDeniedError, waiting 5s...
+    [retry 2/3] PermissionDeniedError, waiting 10s...
+    [retry 1/3] PermissionDeniedError, waiting 5s...
+    [retry 1/3] PermissionDeniedError, waiting 5s...
+done (5101 speaker words)
+    ThinkSlow #1: 7 traits estimated, 65 low-confidence, avg_conf=0.56
+    ThinkSlow #2: 15 traits estimated, 54 low-confidence, avg_conf=0.68
+    ThinkSlow #3: 10 traits estimated, 59 low-confidence, avg_conf=0.69
+    ThinkSlow #4: 9 traits estimated, 60 low-confidence, avg_conf=0.74
+    ThinkSlow #5: 9 traits estimated, 60 low-confidence, avg_conf=0.66
+    ThinkSlow #6: 12 traits estimated, 58 low-confidence, avg_conf=0.72
+    ThinkSlow #7: 15 traits estimated, 54 low-confidence, avg_conf=0.69
+    ThinkSlow #8: 16 traits estimated, 54 low-confidence, avg_conf=0.64
+    ThinkSlow #9: 16 traits estimated, 53 low-confidence, avg_conf=0.71
+    Soul: 69 facts, reality=yes, 38 secrets, 28 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: I've been trying to get into cooking more. Do you cook?
+  SPEAKER: Oh, I love that you're getting into cooking! I actually do cook quite a bit — I've gotten pretty good at it over the yea...
+  CHATTER: That's wonderful that you've built such a good system around cooking! It sounds like you've really found your rhythm wit...
+  SPEAKER: Oh, you know how it is — I saw this gorgeous coq au vin recipe online with these beautiful photos, and my brain just wen...
+  CHATTER: That image of your kitchen looking like a crime scene made me laugh! It sounds like that ambitious leap taught you somet...
+  SPEAKER: Ha! Well, I learned that my confidence in my abilities sometimes writes checks my actual skills can't quite cash yet — b...
+  --- end sample ---
+
+  Detecting at 10 turns (2582 speaker words)... done → MAE=0.140 ≤0.25=59/69 ≤0.40=65/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, hot_cold_oscillation:-0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: SOC:attachment_avoidance(0.35→0.92, err=0.57), HON:humility_hexaco(0.75→0.26, err=0.49), EMO:empathy_cognitive(0.26→0.70, err=0.44), AGR:modesty(0.51→0.11, err=0.40), EMO:optimism(0.79→0.45, err=0.34)
+  Detecting at 20 turns (5101 speaker words)... done → MAE=0.147 ≤0.25=61/69 ≤0.40=64/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, hot_cold_oscillation:-0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: SOC:attachment_avoidance(0.35→0.96, err=0.61), EMO:empathy_cognitive(0.26→0.78, err=0.52), AGR:modesty(0.51→0.00, err=0.51), HON:humility_hexaco(0.75→0.29, err=0.46), EMO:optimism(0.79→0.38, err=0.41)
+
+======================================================================
+  Profile 8/10: profile_7 (seed=294)
+======================================================================
+  Key traits: EXT:assertiveness=0.57 NEU:anxiety=0.39 AGR:trust=0.64 DRK:narcissism=0.44 OPN:ideas=0.58
+  Simulating 20-turn conversation... done (3984 speaker words)
+    ThinkSlow #1: 6 traits estimated, 65 low-confidence, avg_conf=0.64
+    ThinkSlow #2: 12 traits estimated, 57 low-confidence, avg_conf=0.60
+    ThinkSlow #3: 11 traits estimated, 59 low-confidence, avg_conf=0.59
+    ThinkSlow #4: 11 traits estimated, 58 low-confidence, avg_conf=0.70
+    ThinkSlow #5: 10 traits estimated, 59 low-confidence, avg_conf=0.76
+    ThinkSlow #6: 18 traits estimated, 51 low-confidence, avg_conf=0.73
+    ThinkSlow #7: 51 traits estimated, 24 low-confidence, avg_conf=0.62
+    ThinkSlow #8: 19 traits estimated, 50 low-confidence, avg_conf=0.70
+    ThinkSlow #9: 15 traits estimated, 55 low-confidence, avg_conf=0.66
+    Soul: 68 facts, reality=yes, 34 secrets, 30 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: Do you have any plans for the holidays?
+  SPEAKER: Oh, the holidays... well, I keep telling myself I'm going to actually plan something this year instead of my usual strat...
+  CHATTER: It sounds like you're caught between wanting that family connection and knowing how draining those big gatherings can be...
+  SPEAKER: Oh god, you really nailed it there - the holidays absolutely bring out people's inner performer, don't they? I think it'...
+  CHATTER: There's something almost liberating about recognizing your own "charmingly self-aware mess" routine - like you've caught...
+  SPEAKER: Ha, not perform at all? That's... honestly, I have no idea what that would even look like. I mean, the whole concept is ...
+  --- end sample ---
+
+  Detecting at 10 turns (2576 speaker words)... done → MAE=0.166 ≤0.25=55/69 ≤0.40=68/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, hot_cold_oscillation:-0.05, intellectual_curiosity:+0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: EMO:empathy_cognitive(0.29→0.75, err=0.46), AGR:trust(0.64→0.25, err=0.39), HON:fairness(0.15→0.53, err=0.38), COG:cognitive_flexibility(0.07→0.45, err=0.38), EXT:verbosity(0.80→0.45, err=0.35)
+  Detecting at 20 turns (3984 speaker words)... done → MAE=0.154 ≤0.25=55/69 ≤0.40=68/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, hot_cold_oscillation:+0.06, intuitive_vs_analytical:+0.05, positive_emotions:-0.05, social_dominance:+0.04
+    Worst: CON:decisiveness(0.12→0.53, err=0.41), COG:cognitive_flexibility(0.07→0.45, err=0.38), HON:greed_avoidance(0.31→0.68, err=0.37), HON:fairness(0.15→0.51, err=0.36), STR:information_control(0.35→0.71, err=0.36)
+
+======================================================================
+  Profile 9/10: profile_8 (seed=336)
+======================================================================
+  Key traits: EXT:assertiveness=0.49 NEU:anxiety=0.42 AGR:trust=0.43 DRK:narcissism=0.44 OPN:ideas=0.50
+  Simulating 20-turn conversation...     [retry 1/3] PermissionDeniedError, waiting 5s...
+done (5536 speaker words)
+    ThinkSlow #1: 6 traits estimated, 71 low-confidence, avg_conf=0.43
+    ThinkSlow #2: 12 traits estimated, 57 low-confidence, avg_conf=0.69
+    ThinkSlow #3: 35 traits estimated, 38 low-confidence, avg_conf=0.61
+    ThinkSlow #4: 13 traits estimated, 56 low-confidence, avg_conf=0.68
+    ThinkSlow #5: 14 traits estimated, 55 low-confidence, avg_conf=0.64
+    ThinkSlow #6: 18 traits estimated, 56 low-confidence, avg_conf=0.61
+    ThinkSlow #7: 25 traits estimated, 45 low-confidence, avg_conf=0.65
+    ThinkSlow #8: 12 traits estimated, 57 low-confidence, avg_conf=0.73
+    ThinkSlow #9: 57 traits estimated, 30 low-confidence, avg_conf=0.55
+    Soul: 67 facts, reality=yes, 28 secrets, 20 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: What did you have for lunch today?
+  SPEAKER: Oh wow, lunch! I actually ended up having this amazing Korean bibimbap bowl that I picked up from this little place down...
+  CHATTER: That sounds absolutely perfect - I love how you followed that instinct and let the smell guide you! There's something so...
+  SPEAKER: Oh my god, you totally get it! There's something almost magical about those moments, isn't there? It was like... okay, s...
+  CHATTER: That makes so much sense - your body pulling you out of that mental loop and into something immediate and nourishing. Th...
+  SPEAKER: You're right, it was definitely more than just being full! It's like... okay, so before lunch I was in this weird headsp...
+  --- end sample ---
+
+  Detecting at 10 turns (2670 speaker words)... done → MAE=0.137 ≤0.25=60/69 ≤0.40=68/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, curiosity:+0.06, intellectual_curiosity:+0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.04, warmth:+0.03
+    Worst: VAL:loyalty_group(0.18→0.60, err=0.42), OPN:curiosity(0.26→0.62, err=0.36), SOC:conflict_cooperativeness(0.40→0.75, err=0.35), SOC:charm_influence(0.80→0.45, err=0.35), CON:decisiveness(0.87→0.53, err=0.34)
+  Detecting at 20 turns (5536 speaker words)... done → MAE=0.132 ≤0.25=60/69 ≤0.40=67/69
+    BF adjustments: anxiety:-0.05, competence:+0.04, curiosity:+0.06, hot_cold_oscillation:-0.05, intellectual_curiosity:+0.05, intuitive_vs_analytical:+0.05, need_for_cognition:+0.05, positive_emotions:-0.05, social_dominance:+0.08, warmth:+0.03
+    Worst: OPN:curiosity(0.26→0.70, err=0.44), COG:intuitive_vs_analytical(0.23→0.65, err=0.42), NEU:angry_hostility(0.50→0.15, err=0.35), SOC:conflict_cooperativeness(0.40→0.75, err=0.35), SOC:charm_influence(0.80→0.45, err=0.35)
+
+======================================================================
+  Profile 10/10: profile_9 (seed=378)
+======================================================================
+  Key traits: EXT:assertiveness=0.46 NEU:anxiety=0.44 AGR:trust=0.54 DRK:narcissism=0.34 OPN:ideas=0.56
+  Simulating 20-turn conversation... done (1649 speaker words)
+    ThinkSlow #1: 5 traits estimated, 70 low-confidence, avg_conf=0.50
+    ThinkSlow #2: 10 traits estimated, 59 low-confidence, avg_conf=0.64
+    ThinkSlow #3: 9 traits estimated, 60 low-confidence, avg_conf=0.57
+    ThinkSlow #4: 14 traits estimated, 63 low-confidence, avg_conf=0.45
+    ThinkSlow #5: 8 traits estimated, 65 low-confidence, avg_conf=0.46
+    ThinkSlow #6: 6 traits estimated, 63 low-confidence, avg_conf=0.65
+    ThinkSlow #7: 9 traits estimated, 61 low-confidence, avg_conf=0.57
+    ThinkSlow #8: 11 traits estimated, 58 low-confidence, avg_conf=0.53
+    ThinkSlow #9: 9 traits estimated, 60 low-confidence, avg_conf=0.59
+    Soul: 49 facts, reality=yes, 33 secrets, 23 contradictions, coverage=0.60
+
+  --- Conversation sample (first 3 turns) ---
+  CHATTER: What's been keeping you busy at work?
+  SPEAKER: Oh, you know how it is - just the usual grind. Been organizing some team meetings and trying to keep everyone on the sam...
+  CHATTER: It sounds like you're carrying a lot of the responsibility for keeping things moving forward, and that disconnect betwee...
+  SPEAKER: Yeah, it's... honestly, it's maddening sometimes. You sit in these meetings where everyone nods along and says "absolute...
+  CHATTER: You don't sound cynical at all - that pattern you're describing would wear on anyone. There's something particularly dra...
+  SPEAKER: Hmm. I think most people just... they want to be seen as capable, right? So they overcommit because saying "I'm not sure...
+  --- end sample ---
+
+  Detecting at 10 turns (1031 speaker words)... done → MAE=0.157 ≤0.25=56/69 ≤0.40=67/69
+    BF adjustments: altruism:+0.05, anxiety:-0.05, assertiveness:-0.07, curiosity:+0.06, decisiveness:-0.08, intellectual_curiosity:+0.05, modesty:+0.05, positive_emotions:-0.05
+    Worst: OPN:aesthetics(0.67→0.25, err=0.42), HON:humility_hexaco(0.82→0.40, err=0.42), STR:mirroring_ability(0.05→0.45, err=0.40), COG:need_for_cognition(0.76→0.38, err=0.39), DRK:sadism(0.18→0.53, err=0.35)
+  Detecting at 20 turns (1649 speaker words)... done → MAE=0.172 ≤0.25=49/69 ≤0.40=66/69
+    BF adjustments: altruism:+0.05, anxiety:-0.05, assertiveness:-0.07, decisiveness:-0.08, intellectual_curiosity:+0.05, modesty:+0.05, positive_emotions:-0.05
+    Worst: OPN:aesthetics(0.67→0.20, err=0.47), HON:humility_hexaco(0.82→0.40, err=0.42), STR:hot_cold_oscillation(0.81→0.40, err=0.41), COG:need_for_cognition(0.76→0.38, err=0.39), STR:mirroring_ability(0.05→0.43, err=0.39)
+
+======================================================================
+  LEARNING CURVE SUMMARY
+======================================================================
+
+  10 turns:
+    Avg MAE: 0.153
+    Avg ≤0.25: 54.8/69 (79.4%)
+    Avg ≤0.40: 66.5/69 (96.4%)
+
+  20 turns:
+    Avg MAE: 0.152
+    Avg ≤0.25: 56.1/69 (81.3%)
+    Avg ≤0.40: 65.7/69 (95.2%)
+
+======================================================================
+  PER-DIMENSION MAE (at 20 turns)
+======================================================================
+
+  Dimension                                      Avg MAE
+  --------------------------------------------- --------
+  NEU (Neuroticism — Emotional instability)        0.100
+  DRK (Dark Traits — Narcissism, Machiavel)        0.133
+  HUM (Humor Style — Affiliative, self-enh)        0.135
+  EXT (Extraversion — Social energy and as)        0.138
+  OPN (Openness — Intellectual curiosity a)        0.142
+  AGR (Agreeableness — Cooperation and tru)        0.146
+  EMO (Emotional Architecture — Granularit)        0.152
+  VAL (Values & Morality — Care, fairness,)        0.154
+  CON (Conscientiousness — Organization an)        0.174
+  SOC (Social Dynamics — Attachment, domin)        0.176
+  STR (Interpersonal Strategy — Informatio)        0.176
+  COG (Cognitive Style — Need for cognitio)        0.183
+  HON (Honesty-Humility — Sincerity and fa)        0.183
+
+======================================================================
+  SOUL COVERAGE
+======================================================================
+
+  Avg coverage score: 0.600
+  Avg facts per profile: 64.6
+  Reality populated: 10/10
+  Avg secrets per profile: 33.4
+  Avg contradictions per profile: 24.9
+
+  Results saved to eval_conversation_results.json
