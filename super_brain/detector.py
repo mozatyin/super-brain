@@ -447,6 +447,8 @@ class Detector:
         # Inject rule-based traits with high confidence
         if direct_scores:
             for trait_name, score in direct_scores.items():
+                if target_traits is not None and trait_name not in target_traits:
+                    continue
                 trait_info = TRAIT_MAP.get(trait_name, {})
                 all_traits.append(
                     Trait(
@@ -631,6 +633,9 @@ def _bayesian_shrinkage(traits: list[Trait]) -> list[Trait]:
     """
     result = []
     for t in traits:
+        if t.name in RULE_BASED_TRAITS:
+            result.append(t)
+            continue
         if t.confidence < 0.60:
             shrink = (0.60 - t.confidence) * 0.5  # max 0.30 shrink at conf=0
             shrunk = t.value * (1.0 - shrink) + 0.50 * shrink
