@@ -6,8 +6,6 @@ from super_brain.behavioral_features import (
     extract_features,
     compute_adjustments,
     apply_adjustments,
-    compute_direct_scores,
-    RULE_BASED_TRAITS,
 )
 from super_brain.models import PersonalityDNA, Trait, SampleSummary
 
@@ -323,7 +321,6 @@ class TestV32AdjustmentRules:
         assert "self_consciousness" not in adj
 
     def test_hot_cold_oscillation_high_std(self):
-        """hot_cold_oscillation adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=100,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
@@ -332,10 +329,9 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert "hot_cold_oscillation" not in adj
+        assert adj.get("hot_cold_oscillation", 0) > 0
 
     def test_hot_cold_oscillation_low_std(self):
-        """hot_cold_oscillation adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
@@ -344,10 +340,9 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert "hot_cold_oscillation" not in adj
+        assert adj.get("hot_cold_oscillation", 0) < 0
 
     def test_decisiveness_hedging_reduces(self):
-        """decisiveness adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.03,
@@ -356,10 +351,9 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert "decisiveness" not in adj
+        assert adj.get("decisiveness", 0) < 0
 
     def test_decisiveness_absolutist_increases(self):
-        """decisiveness adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.005,
@@ -368,10 +362,9 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert "decisiveness" not in adj
+        assert adj.get("decisiveness", 0) > 0
 
     def test_curiosity_high_questions(self):
-        """curiosity adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
@@ -380,7 +373,7 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert "curiosity" not in adj
+        assert adj.get("curiosity", 0) > 0
 
     def test_verbosity_long_turns_no_adjustment(self):
         """Verbosity high-end rule removed (compounded with LLM over-detection)."""
@@ -395,7 +388,6 @@ class TestV32AdjustmentRules:
         assert "verbosity" not in adj  # no upward adjustment
 
     def test_verbosity_short_turns(self):
-        """verbosity adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
@@ -404,202 +396,4 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert "verbosity" not in adj
-
-
-class TestComputeDirectScores:
-    """Tests for rule-based direct trait scoring."""
-
-    def test_returns_all_seven_traits(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=40,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.15, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert set(scores.keys()) == RULE_BASED_TRAITS
-
-    def test_verbosity_short_turns(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=200, avg_words_per_turn=20, words_std=5,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert 0.10 <= scores["verbosity"] <= 0.25
-
-    def test_verbosity_medium_turns(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=600, avg_words_per_turn=60, words_std=10,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert 0.25 <= scores["verbosity"] <= 0.45
-
-    def test_verbosity_long_turns(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=2000, avg_words_per_turn=200, words_std=30,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["verbosity"] >= 0.65
-
-    def test_politeness_low(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.002, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["politeness"] < 0.25
-
-    def test_politeness_high(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.040, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["politeness"] >= 0.58
-
-    def test_decisiveness_high_hedging(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.035,
-            absolutist_ratio=0.002, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.002,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["decisiveness"] < 0.40
-
-    def test_decisiveness_high_absolutist(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.003,
-            absolutist_ratio=0.020, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.015,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["decisiveness"] > 0.55
-
-    def test_curiosity_many_questions(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.35, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.03, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["curiosity"] > 0.55
-
-    def test_hot_cold_high_variance(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=120,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["hot_cold_oscillation"] > 0.55
-
-    def test_hot_cold_low_variance(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["hot_cold_oscillation"] < 0.30
-
-    def test_self_mythologizing_high_self_ref(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
-            self_ref_ratio=0.12, other_ref_ratio=0.01, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["self_mythologizing"] > 0.50
-
-    def test_optimism_positive_dominant(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.030, neg_emotion_ratio=0.005,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["optimism"] > 0.55
-
-    def test_optimism_negative_dominant(self):
-        bf = BehavioralFeatures(
-            turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
-            self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-            absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-            pos_emotion_ratio=0.003, neg_emotion_ratio=0.025,
-            politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-        )
-        scores = compute_direct_scores(bf)
-        assert scores["optimism"] < 0.35
-
-    def test_empty_features_returns_baselines(self):
-        bf = BehavioralFeatures(
-            turn_count=0, total_words=0, avg_words_per_turn=0, words_std=0,
-            self_ref_ratio=0, other_ref_ratio=0, hedging_ratio=0,
-            absolutist_ratio=0, question_ratio=0, exclamation_ratio=0,
-            pos_emotion_ratio=0, neg_emotion_ratio=0,
-            politeness_ratio=0, curiosity_ratio=0, decisiveness_ratio=0,
-        )
-        scores = compute_direct_scores(bf)
-        assert len(scores) == 7
-        for v in scores.values():
-            assert 0.0 <= v <= 1.0
-
-    def test_interpolation_is_continuous(self):
-        """Adjacent inputs should produce scores within 0.05 of each other."""
-        for wpt in range(10, 300, 5):
-            bf1 = BehavioralFeatures(
-                turn_count=10, total_words=wpt*10, avg_words_per_turn=wpt, words_std=10,
-                self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-                absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-                pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-                politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-            )
-            bf2 = BehavioralFeatures(
-                turn_count=10, total_words=(wpt+5)*10, avg_words_per_turn=wpt+5, words_std=10,
-                self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
-                absolutist_ratio=0.005, question_ratio=0.1, exclamation_ratio=0.1,
-                pos_emotion_ratio=0.01, neg_emotion_ratio=0.005,
-                politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
-            )
-            s1 = compute_direct_scores(bf1)["verbosity"]
-            s2 = compute_direct_scores(bf2)["verbosity"]
-            assert abs(s1 - s2) < 0.05, f"Discontinuity at wpt={wpt}: {s1} vs {s2}"
-
-    def test_rule_based_traits_constant(self):
-        assert RULE_BASED_TRAITS == {
-            "verbosity", "politeness", "decisiveness", "curiosity",
-            "hot_cold_oscillation", "self_mythologizing", "optimism",
-        }
+        assert adj.get("verbosity", 0) < 0
