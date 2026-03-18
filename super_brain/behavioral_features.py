@@ -287,16 +287,10 @@ _ADJUSTMENT_RULES: list[tuple[str, float, str, str, float]] = [
     # self_consciousness — removed: +0.06 compounded with LLM over-detection
     # intuitive_vs_analytical (toward analytical)
     ("avg_words_per_turn", 160, "above", "intuitive_vs_analytical", 0.05),
-    # hot_cold_oscillation
-    ("words_std", 80, "above", "hot_cold_oscillation", 0.06),
-    ("words_std", 30, "below", "hot_cold_oscillation", -0.05),
-    # decisiveness (new trait)
-    ("hedging_ratio", 0.020, "above", "decisiveness", -0.08),
-    ("absolutist_ratio", 0.010, "above", "decisiveness", 0.06),
-    # curiosity (new trait)
-    ("question_ratio", 0.25, "above", "curiosity", 0.06),
-    # verbosity — removed: +0.08 compounded with LLM over-detection (always predicts ~0.85+)
-    ("avg_words_per_turn", 60, "below", "verbosity", -0.10),
+    # hot_cold_oscillation: removed (now rule-based)
+    # decisiveness: removed (now rule-based)
+    # curiosity: removed (now rule-based)
+    # verbosity: removed (now rule-based)
 ]
 
 
@@ -317,6 +311,12 @@ _DIRECT_SCORE_MAPS: dict[str, tuple[list[float], list[float]]] = {
     "self_mythologizing": ([0, 0.03, 0.06, 0.09, 0.14], [0.25, 0.32, 0.40, 0.52, 0.65]),
     "optimism": ([0, 0.3, 0.5, 0.7, 1.0], [0.22, 0.35, 0.47, 0.60, 0.72]),
 }
+
+# Validate maps at import time
+assert RULE_BASED_TRAITS == set(_DIRECT_SCORE_MAPS.keys()), "RULE_BASED_TRAITS and _DIRECT_SCORE_MAPS keys must match"
+for _name, (_bp, _sc) in _DIRECT_SCORE_MAPS.items():
+    assert len(_bp) == len(_sc), f"{_name}: breakpoints/scores length mismatch"
+    assert _bp == sorted(_bp), f"{_name}: breakpoints must be strictly increasing"
 
 
 def _interpolate(value: float, breakpoints: list[float], scores: list[float]) -> float:

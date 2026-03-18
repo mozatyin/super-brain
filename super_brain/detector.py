@@ -7,7 +7,7 @@ import re
 
 import anthropic
 
-from super_brain.behavioral_features import BehavioralFeatures
+from super_brain.behavioral_features import BehavioralFeatures, compute_direct_scores, RULE_BASED_TRAITS
 from super_brain.catalog import (
     TRAIT_CATALOG,
     ALL_DIMENSIONS,
@@ -60,7 +60,7 @@ Normal chat behavior is NOT personality evidence. These are LLM/social artifacts
 - Humble tone → NOT high modesty (LLM always sounds humble)
 
 OVER-DETECTED TRAITS (score conservatively, evidence must be ACTIVE not passive):
-modesty(≤0.45), mirroring_ability(≤0.35), politeness(≤0.45), charm_influence(≤0.50), \
+modesty(≤0.45), mirroring_ability(≤0.35), charm_influence(≤0.50), \
 need_for_cognition(≤0.50), cognitive_flexibility(≤0.50), deliberation(≤0.50), \
 competence(≤0.50), empathy_cognitive(≤0.50), loyalty_group(≤0.45), \
 warmth(≤0.55), straightforwardness(≤0.50), sincerity(≤0.55), dutifulness(≤0.50), \
@@ -98,22 +98,9 @@ INTUITIVE VS ANALYTICAL: Score 0.45-0.55 baseline. Data/evidence/frameworks = an
 Gut feelings/instinct/"it felt right" = intuitive(<0.45). LLM text sounds analytical — discount.
 
 TRAIT-SPECIFIC CALIBRATION (high-variance traits — follow precisely):
-- verbosity: DIRECTLY MEASURABLE from response length. Do NOT infer from content. \
-Avg <40 words/turn=0.15-0.25. 40-80=0.35-0.50. 80-150=0.50-0.65. 150+=0.70-0.90. Trust word count.
-- politeness: DIRECTLY COUNTABLE from please/thanks/sorry frequency. \
-Normal courtesy=0.30-0.40. High density=0.50-0.65. Excessive=0.70+. Absent=0.10-0.20. \
-LLM text is always polite — score LOWER than your instinct.
-- hot_cold_oscillation: Score 0.30-0.40 baseline. Requires ACTUAL evidence of push-pull \
-behavior (warm then cold, engaged then withdrawn) across different turns. \
-Consistent tone throughout = 0.20-0.35. Only score >0.50 with CLEAR oscillation evidence.
-- self_mythologizing: Score 0.30-0.40 baseline. Requires person ACTIVELY constructing a \
-narrative about themselves (hero stories, origin myths, "I'm the kind of person who..."). \
-Normal self-disclosure ≠ self-mythologizing. >0.55 only with repeated self-narrative.
 - humor_self_enhancing: STRICT definition: positive reframe of PERSONAL adversity. \
 "At least I learned X" = yes. Being funny/witty = NO. Self-deprecation = NO (that's self-defeating). \
 Score 0.35-0.45 baseline. >0.55 requires 2+ clear positive-reframe examples.
-- optimism: Ratio of positive-to-negative framing. "At least"/"bright side" = high. \
-Dwelling on problems without reframing = low. Neutral/factual = 0.40-0.50 baseline.
 - fantasy: Active imagination and daydreaming. Practical/concrete = 0.25-0.40. \
 Hypotheticals and "what if" = 0.55-0.70. Rich imaginative elaboration = 0.75+. \
 Normal conversation = 0.35-0.45 baseline.
@@ -360,10 +347,19 @@ class Detector:
         into each batch prompt so the LLM can use them as evidence.
         """
         bf_section = _format_behavioral_context(behavioral_features) if behavioral_features else ""
+        # Compute rule-based traits (deterministic, skip LLM)
+        direct_scores: dict[str, float] = {}
+        if behavioral_features:
+            direct_scores = compute_direct_scores(behavioral_features)
         all_traits: list[Trait] = []
 
         for batch_dims in DIMENSION_BATCHES:
             batch_traits = _get_traits_for_batch(batch_dims)
+            # Exclude rule-based traits from LLM batch
+            if direct_scores:
+                batch_traits = [t for t in batch_traits if t["name"] not in RULE_BASED_TRAITS]
+                if not batch_traits:
+                    continue
             if not batch_traits:
                 continue
 
@@ -445,6 +441,20 @@ class Detector:
                                 source="input_text",
                             )
                         ],
+                    )
+                )
+
+        # Inject rule-based traits with high confidence
+        if direct_scores:
+            for trait_name, score in direct_scores.items():
+                trait_info = TRAIT_MAP.get(trait_name, {})
+                all_traits.append(
+                    Trait(
+                        dimension=trait_info.get("dimension", "UNK"),
+                        name=trait_name,
+                        value=_clamp(score),
+                        confidence=0.95,
+                        evidence=[Evidence(text="rule-based: computed from text statistics", source="behavioral_features")],
                     )
                 )
 
@@ -535,7 +545,7 @@ _CALIBRATION_CORRECTIONS: dict[str, tuple[float, float]] = {
     "authority_respect": (0.60, 0.30),
     "cognitive_flexibility": (0.50, 0.10),
     "compliance": (0.50, 0.31),            # V4.0.3: +0.07 (under by -0.120 avg)
-    "curiosity": (0.80, 0.13),             # V4.0.3: +0.09 (under by -0.150 avg)
+    # curiosity: removed (now rule-based)
     "empathy_affective": (0.40, 0.26),
     "fantasy": (1.00, -0.12),
     "feelings": (0.60, 0.17),              # V4.0.3: +0.09 (under by -0.147 avg)
@@ -558,7 +568,7 @@ _CALIBRATION_CORRECTIONS: dict[str, tuple[float, float]] = {
     "activity_level": (0.50, 0.15),
     "attachment_avoidance": (0.85, 0.08),
     "competence": (0.48, 0.10),
-    "decisiveness": (1.10, -0.02),
+    # decisiveness: removed (now rule-based)
     "deliberation": (0.50, 0.22),
     "emotional_regulation": (0.50, 0.35),
     "humility_hexaco": (0.70, 0.10),
@@ -567,19 +577,19 @@ _CALIBRATION_CORRECTIONS: dict[str, tuple[float, float]] = {
     "self_discipline": (0.45, 0.23),
     "sincerity": (0.40, 0.38),
     "straightforwardness": (0.50, 0.24),
-    "verbosity": (1.00, -0.26),
+    # verbosity: removed (now rule-based)
     # --- V4.0 first-time + V4.0.3 refinement ---
     "charm_influence": (1.00, -0.16),
     "conflict_cooperativeness": (1.00, -0.19),
     "depression": (1.00, 0.34),
     "dutifulness": (1.00, -0.08),          # V4.0.3: +0.07 (under by -0.113 avg)
     "fairness_justice": (1.00, 0.16),
-    "hot_cold_oscillation": (1.00, 0.19),
+    # hot_cold_oscillation: removed (now rule-based)
     "humor_self_enhancing": (1.00, -0.11),
     "loyalty_group": (1.00, -0.20),
     "mirroring_ability": (1.00, -0.36),
-    "politeness": (1.00, -0.26),
-    "self_mythologizing": (1.00, 0.20),
+    # politeness: removed (now rule-based)
+    # self_mythologizing: removed (now rule-based)
     # --- NEW V4.0.3 first-time calibrations ---
     "angry_hostility": (1.00, 0.07),      # under by -0.120 avg
     "empathy_cognitive": (1.00, -0.14),    # over by +0.233 avg
@@ -591,6 +601,9 @@ def _calibrate_known_biases(traits: list[Trait]) -> list[Trait]:
     """Apply affine corrections to traits with known systematic biases."""
     result = []
     for t in traits:
+        if t.name in RULE_BASED_TRAITS:
+            result.append(t)
+            continue
         if t.name in _CALIBRATION_CORRECTIONS:
             scale, offset = _CALIBRATION_CORRECTIONS[t.name]
             corrected = _clamp(t.value * scale + offset)

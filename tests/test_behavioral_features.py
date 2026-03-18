@@ -323,6 +323,7 @@ class TestV32AdjustmentRules:
         assert "self_consciousness" not in adj
 
     def test_hot_cold_oscillation_high_std(self):
+        """hot_cold_oscillation adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=100,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
@@ -331,9 +332,10 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert adj.get("hot_cold_oscillation", 0) > 0
+        assert "hot_cold_oscillation" not in adj
 
     def test_hot_cold_oscillation_low_std(self):
+        """hot_cold_oscillation adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
@@ -342,9 +344,10 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert adj.get("hot_cold_oscillation", 0) < 0
+        assert "hot_cold_oscillation" not in adj
 
     def test_decisiveness_hedging_reduces(self):
+        """decisiveness adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.03,
@@ -353,9 +356,10 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert adj.get("decisiveness", 0) < 0
+        assert "decisiveness" not in adj
 
     def test_decisiveness_absolutist_increases(self):
+        """decisiveness adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.005,
@@ -364,9 +368,10 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert adj.get("decisiveness", 0) > 0
+        assert "decisiveness" not in adj
 
     def test_curiosity_high_questions(self):
+        """curiosity adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
@@ -375,7 +380,7 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert adj.get("curiosity", 0) > 0
+        assert "curiosity" not in adj
 
     def test_verbosity_long_turns_no_adjustment(self):
         """Verbosity high-end rule removed (compounded with LLM over-detection)."""
@@ -390,6 +395,7 @@ class TestV32AdjustmentRules:
         assert "verbosity" not in adj  # no upward adjustment
 
     def test_verbosity_short_turns(self):
+        """verbosity adjustment rule removed (now rule-based)."""
         features = BehavioralFeatures(
             turn_count=10, total_words=500, avg_words_per_turn=50, words_std=10,
             self_ref_ratio=0.05, other_ref_ratio=0.03, hedging_ratio=0.01,
@@ -398,7 +404,7 @@ class TestV32AdjustmentRules:
             politeness_ratio=0.01, curiosity_ratio=0.01, decisiveness_ratio=0.01,
         )
         adj = compute_adjustments(features)
-        assert adj.get("verbosity", 0) < 0
+        assert "verbosity" not in adj
 
 
 class TestComputeDirectScores:
