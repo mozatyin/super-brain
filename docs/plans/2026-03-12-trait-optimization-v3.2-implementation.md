@@ -970,7 +970,7 @@ git commit -m "docs(v3.2): update trait count references from 66 to 69"
 
 ```bash
 cd /Users/michael/super-brain
-ANTHROPIC_API_KEY=sk-or-v1-b70058c5d2ca35bdded34afc99e202e8b16ab93e093f3955f51b680db \
+ANTHROPIC_API_KEY=sk-or-... (use ANTHROPIC_API_KEY env var) \
   .venv/bin/python eval_conversation.py 5 20 2>&1 | tee eval_v32_output.txt
 ```
 
